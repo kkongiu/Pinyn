@@ -5,6 +5,7 @@ chrome.runtime.onInstalled.addListener(() => {
 });
 
 chrome.runtime.onMessage.addListener((msg, sender, sendResponse) => {
+  if (!sender || sender.id !== chrome.runtime.id) return;
   if (msg && msg.type === 'PC_SET_ENABLED') {
     sendResponse({ ok: true });
     return;
@@ -19,9 +20,6 @@ chrome.runtime.onMessage.addListener((msg, sender, sendResponse) => {
         s.createIndex('level', 'level', { unique: false });
         s.createIndex('pinyin', 'pinyin', { unique: false });
         s.createIndex('word', 'word', { unique: false });
-      }
-      if (!db.objectStoreNames.contains('correction_cache')) {
-        db.createObjectStore('correction_cache', { keyPath: 'input' });
       }
       if (!db.objectStoreNames.contains('user_stats')) {
         db.createObjectStore('user_stats', { keyPath: 'id' });

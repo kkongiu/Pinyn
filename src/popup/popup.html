@@ -8,7 +8,7 @@
 <body>
   <header>
     <h1>Pinyin Corrector</h1>
-    <span class="version">v0.10.3</span>
+    <span class="version">v0.11.0</span>
   </header>
 
   <label class="switch-row">
@@ -19,6 +19,11 @@
   <label class="switch-row">
     <span>Caratteri cinesi (hanzi)</span>
     <input type="checkbox" id="hanzi" />
+  </label>
+
+  <label class="switch-row">
+    <span>Verifica forma frase</span>
+    <input type="checkbox" id="grammar" checked />
   </label>
 
   <section class="dict">
@@ -37,7 +42,6 @@
     <div id="st-levels" class="levels"></div>
   </section>
 
-  <script src="../utils/dict-search.js"></script>
   <script src="popup.js"></script>
 </body>
 </html>

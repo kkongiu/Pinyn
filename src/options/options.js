@@ -2,12 +2,14 @@ const level = document.getElementById('hsk-level');
 const autoAccent = document.getElementById('auto-accent');
 const toneNet = document.getElementById('tone-net');
 const hanzi = document.getElementById('hanzi');
+const grammar = document.getElementById('grammar');
 
-chrome.storage.sync.get({ hskLevel: 3, autoAccent: false, toneNet: true, hanzi: false }, (data) => {
+chrome.storage.sync.get({ hskLevel: 3, autoAccent: false, toneNet: true, hanzi: false, grammar: true }, (data) => {
   level.value = String(data.hskLevel || 3);
   autoAccent.checked = !!data.autoAccent;
   toneNet.checked = data.toneNet !== false;
   hanzi.checked = !!data.hanzi;
+  grammar.checked = data.grammar !== false;
 });
 
 level.addEventListener('change', () => {
@@ -24,4 +26,8 @@ toneNet.addEventListener('change', () => {
 
 hanzi.addEventListener('change', () => {
   chrome.storage.sync.set({ hanzi: hanzi.checked });
+});
+
+grammar.addEventListener('change', () => {
+  chrome.storage.sync.set({ grammar: grammar.checked });
 });

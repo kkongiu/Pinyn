@@ -2,6 +2,7 @@ const enabled = document.getElementById('enabled');
 const searchInput = document.getElementById('search');
 const resultsEl = document.getElementById('results');
 const hanziToggle = document.getElementById('hanzi');
+const grammarToggle = document.getElementById('grammar');
 
 function escapeHtml(s) {
   return String(s)
@@ -33,21 +34,26 @@ hanziToggle.addEventListener('change', () => {
   chrome.storage.sync.set({ hanzi: hanziToggle.checked }); // il content script propaga da solo
 });
 
-// ---------- dizionario ----------
-let index = null;
+// ---------- verifica forma della frase ----------
+chrome.storage.sync.get('grammar', (data) => {
+  grammarToggle.checked = data.grammar !== false;
+});
+grammarToggle.addEventListener('change', () => {
+  chrome.storage.sync.set({ grammar: grammarToggle.checked });
+});
 
-fetch(chrome.runtime.getURL('data/hsk-3.0.json'))
-  .then((r) => {
-    if (!r.ok) throw new Error('HTTP ' + r.status);
-    return r.json();
-  })
-  .then((data) => {
-    index = PinynDict.buildIndex(data.words || []);
-    searchInput.placeholder = 'Cerca: hanzi, pinyin, inglese…';
-  })
-  .catch(() => {
-    resultsEl.innerHTML = '<div class="no-results">Dizionario non disponibile. Ricarica l\'estensione.</div>';
+// ---------- dizionario ----------
+// La ricerca chiede al content script della pagina attiva (dati già iniettati);
+// niente fetch di hsk-3.0.json (2.7MB) a ogni apertura del popup.
+function searchDict(q, limit, cb) {
+  chrome.tabs.query({ active: true, currentWindow: true }, (tabs) => {
+    if (!tabs[0] || tabs[0].id == null) { cb(null); return; }
+    chrome.tabs.sendMessage(tabs[0].id, { type: 'PC_SEARCH_DICT', q, limit }, (res) => {
+      if (chrome.runtime.lastError) { cb(null); return; }
+      cb(res && res.results || null);
+    });
   });
+}
 
 let timer = null;
 searchInput.addEventListener('input', () => {
@@ -69,16 +75,21 @@ chrome.tabs.query({ active: true, currentWindow: true }, (tabs) => {
 
 function renderResults() {
   const q = searchInput.value;
-  if (!q.trim() || !index) {
+  if (!q.trim()) {
     resultsEl.innerHTML = '';
     return;
   }
-  const res = PinynDict.search(q, index, 20);
-  if (!res.length) {
-    resultsEl.innerHTML = '<div class="no-results">Nessun risultato</div>';
-    return;
-  }
-  resultsEl.innerHTML = res.map(entryHtml).join('');
+  searchDict(q.trim(), 20, (results) => {
+    if (!results) {
+      resultsEl.innerHTML = '<div class="no-results">Apri il dizionario su una pagina web.</div>';
+      return;
+    }
+    if (!results.length) {
+      resultsEl.innerHTML = '<div class="no-results">Nessun risultato</div>';
+      return;
+    }
+    resultsEl.innerHTML = results.map(entryHtml).join('');
+  });
 }
 
 function entryHtml(r) {

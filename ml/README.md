@@ -4,6 +4,15 @@ Piccola rete che predice i **toni** del pinyin usando il **contesto di frase**.
 Risolve l'ambiguità dei toni (es. `wo` → `wǒ` vs `wò`, `xi huan` → `xǐhuan`)
 dove l'euristica per-sillaba fallisce.
 
+## LM di forma (verifica grammaticale)
+
+Secondo modello (vedi `train_sentence_lm.py` e `quantize_sentence.py`): un **LM a
+finestra** che predice la parola successiva su un vocabolario di ~3k parole pinyin
+(embedding 32 + FC 64→96 ReLU + softmax). Addestrato su ~500k finestre da Tatoeba
+segmentate in parole. Il runtime (`src/llm/sentence-net.js`, int8 ~1.4MB, lazy) calcola
+la media di `-log P(parola|contesto)`: sopra soglia la frase è "insolita". Dataset
+`ml/data/sentence-data.json`, build con `scripts/build-sentence-dataset.cjs`.
+
 ## Architettura
 
 - **Ingresso**: finestra di ±5 sillabe **senza tono** (indici su vocabolario di ~450 sillabe)

@@ -9,6 +9,7 @@ Estensione per browser (Chrome/Edge, Manifest V3) che **corregge il pinyin** cin
 - **Accenti automatici**: opzione per aggiungere i toni da solo (con pausa di digitazione); rete neurale on-device per i toni ambigui.
 - **Reverse dizionario**: scrivi una parola inglese (`water`, `*want`) → propone l'equivalente cinese con pinyin e traduzione.
 - **Conversione pinyin → caratteri**: opzione per inserire hanzi invece di pinyin all'accettazione, più azione batch "Converti in caratteri" sull'intero campo.
+- **Verifica forma della frase**: regole grammaticali precise (很+nome, 是+verbo, 吗 non finale) + LM probabilistico che segnala le frasi dalla forma insolita; attivabile dal gadget e dalle opzioni.
 - **Dizionario nel popup**: cerca per hanzi, pinyin o inglese.
 - **Lookup su selezione**: selezioni una parola nella pagina → tooltip con hanzi, pinyin, livello e traduzione.
 - **Statistiche**: correzioni/ignorati/accenti per livello HSK.
@@ -27,18 +28,22 @@ src/
 ├── options/                 # impostazioni (auto-accenti, rete toni, hanzi, HSK)
 ├── database/                # IndexedDB (vocabolario, statistiche)
 ├── llm/
-│   └── tone-net.js          # runtime JS della rete dei toni (int8)
+│   ├── tone-net.js          # runtime JS della rete dei toni (int8)
+│   └── sentence-net.js      # runtime JS del LM di forma (int8, lazy)
 ├── utils/
 │   ├── pinyin-utils.js      # tokenizer, toni (numeri<->diacritici)
 │   ├── levenshtein.js       # distanza di edit con transposizione
 │   ├── correction-engine.js # ranking contestuale, segmentazione, accenti, HSK
+│   ├── grammar-rules.js     # regole grammaticali (POS, conservative)
 │   └── dict-search.js       # ricerca dizionario
 └── data/
     ├── pinyin-syllables.js  # 444 sillabe valide
     ├── hsk-3.0.js           # vocabolario HSK 3.0 compatto (~11k parole)
     ├── hsk-defs.js          # traduzioni per lookup
-    ├── hsk-reverse.js       # indice inverso inglese -> pinyin
-    └── tone-net.json        # pesi della rete dei toni (int8, ~215KB)
+    ├── hsk-reverse.js       # indice inverso inglese -> pinyin (lazy)
+    ├── hsk-pos.js           # POS (regole grammaticali) (lazy)
+    ├── tone-net.json        # pesi della rete dei toni (int8, ~215KB, lazy)
+    └── sentence-net.json    # pesi del LM di forma (int8, ~1.4MB, lazy)
 ```
 
 ## Il popup unico
@@ -50,6 +55,14 @@ Una sola superficie flottante con **stati mutualmente esclusivi** (mai sovrappos
 
 Priorità: suggerimenti > errori > lookup.
 
+Quando la **verifica forma della frase** è attiva (gadget e opzioni), il popup mostra un blocco **Forma**: alcune regole grammaticali precise (很+nome, 是+verbo, 吗 a fine frase) e, per le frasi lunghe, un avviso probabilistico (LM di forma) quando la sequenza di parole è insolita.
+
+## Verifica forma della frase
+
+Due segnali indipendenti (attivabili insieme):
+- **Regole grammaticali** (molto conservative): solo POS non ambiguo del dataset HSK, coprono gli errori più comuni con messaggi specifici.
+- **LM di forma**: MLP a finestra (embedding + hidden + softmax su ~3k parole) che predice la parola successiva; addestrato in NumPy su ~500k finestre da Tatoeba. Esegue in JS puro (pesi int8, ~1.4MB), carico lazy. Media di `-log P` alta = frase insolita (segnalata solo per frasi ≥5 parole, soglia conservativa).
+
 ## Rete neurale dei toni (on-device)
 
 Piccolo MLP a finestra di contesto (±5 sillabe) che predice i **toni** del pinyin, addestrato in **NumPy** (senza torch) su ~200k esempi da Tatoeba + CC-CEDICT. Esegue in **JS puro** (pesi int8, ~215KB), carico lazy con fallback all'euristica. Documentazione in `ml/README.md`.
@@ -60,7 +73,7 @@ Piccolo MLP a finestra di contesto (±5 sillabe) che predice i **toni** del piny
 - **Traduzioni**: CC-CEDICT (MDBG, licenza CC-BY-SA 4.0).
 - **Frasi**: Tatoeba cinese (CC-BY) per l'addestramento.
 
-I file dati sono **iniettati** nei content script (nessun fetch): caricamento completo e offline.
+I file dati di uso frequente sono **iniettati** nei content script (caricamento completo e offline); reverse, POS e i modelli ML vengono caricati **lazy** (risorse dell'estensione) dopo il caricamento della pagina.
 
 ## Installazione
 
@@ -75,7 +88,7 @@ npm test               # unit (node:test)
 npm run test:extended  # batteria + autotest sul corpus pinyin per livello
 ```
 
-- **95 test unit** (tokenizer, toni, engine, reverse, defs, tone-net)
+- **108 test unit** (tokenizer, toni, engine, reverse, defs, tone-net, regole grammaticali, LM di forma)
 - **batteria** di robustezza (fuzz, performance, dataset)
 - **autotest pinyin**: corpus per livello HSK (1–7/9) — 0 errori rossi, diagnostica dei toni sospetti
 
@@ -83,6 +96,7 @@ npm run test:extended  # batteria + autotest sul corpus pinyin per livello
 
 - La conversione **batch** pinyin→hanzi è basata su parole del dizionario: le frasi possono segmentarsi diversamente (es. `wo shi` → `卧室`, non `我是`). La via precisa è il menu candidati.
 - I toni di una sillaba singola possono essere ambigui; la rete/euristica scelgono il più probabile, il menu permette di correggere.
+- La verifica di forma è **soft**: le regole coprono solo i 3 errori più comuni e il LM segnala la probabilità bassa (non un errore certo); su frasi corte il LM non viene valutato.
 
 ## Licenza
 

@@ -303,6 +303,7 @@
   let currentEngine = null; // ultimo engine usato (lookup/reverse)
   let insertHanzi = false;  // opzione: accetta come caratteri cinesi
   let pluginEnabled = true; // toggle "Abilitato" dal gadget
+  let checkForm = true;     // verifica grammaticale (regole + LM)
 
   function setEnabled(v) {
     pluginEnabled = !!v;
@@ -494,7 +495,8 @@
   }
 
   // ---- stato: suggerimenti (IME, tasti 1-9) ----
-  function renderSuggest(list, field) {
+  function renderSuggest(list, field, formNotes) {
+    formNotes = formNotes || [];
     const html = list
       .map((c, i) => {
         const hanzi = c.hanzi ? '<span class="' + NS + 'cand-hanzi">' + escapeHtml(c.hanzi) + '</span>' : '';
@@ -507,7 +509,10 @@
         );
       })
       .join('') +
-      '<div class="' + NS + 'cand-hint">1-9 accetta · Esc chiude · *parola = traduci</div>';
+      '<div class="' + NS + 'cand-hint">1-9 accetta · Esc chiude · *parola = traduci</div>' +
+      formNotes
+        .map((n) => '<div class="' + NS + 'cand-note">⚠ ' + escapeHtml(n.message) + '</div>')
+        .join('');
     popState = 'suggest';
     setPop(html, (el) => {
       const pos = caretScreenPos(field);
@@ -515,10 +520,52 @@
     });
   }
 
+  // ---- verifica forma della frase (regole + LM) ----
+  let sentenceModel = null; // modello LM caricato (vedi llm/sentence-net.js)
+  function segmentFieldWords(field) {
+    const text = field.value != null ? field.value : (field.textContent || '');
+    const tokens = root.PinynUtils.tokenize(text);
+    const words = [];
+    for (const t of tokens) {
+      if (!t.isLatin) continue;
+      const bare = root.PinynUtils.stripTone(t.text);
+      if (!bare) continue;
+      // hanzi TONO-aware (ma -> 吗, shì -> 是) con fallback a lookupDef
+      const d = hanziForTone(t.text) || lookupDef(t.text);
+      words.push({ bare, hanzi: d ? d.hanzi : null });
+    }
+    return words;
+  }
+
+  /** Punteggio LM (null finché il modello non è caricato). */
+  function getSentenceScore(words) {
+    if (!sentenceModel || !root.PinynSentenceNet) return null;
+    try {
+      return root.PinynSentenceNet.scoreSentence(sentenceModel, words.map((w) => w.bare));
+    } catch (_) { return null; }
+  }
+
+  function computeFormNotes(field) {
+    if (!checkForm) return [];
+    const words = segmentFieldWords(field);
+    if (words.length < 2) return [];
+    const notes = [];
+    if (root.PinynGrammar) {
+      const ruleNotes = root.PinynGrammar.checkGrammar(words);
+      for (const n of ruleNotes) notes.push({ index: n.index, message: n.message });
+    }
+    if (words.length >= 5) {
+      const sc = getSentenceScore(words);
+      if (sc && sc.flagged) notes.push({ index: -1, message: 'La frase ha una forma insolita (probabilità bassa).' });
+    }
+    return notes.slice(0, 3);
+  }
+
   // ---- stato: errori (riepilogo + Ignora/Ok + azioni) ----
-  function renderErrors(entries, accentCount, field) {
+  function renderErrors(entries, accentCount, formNotes, field) {
+    formNotes = formNotes || [];
     if (!pluginEnabled) { if (popState !== 'suggest') hidePop(); return; }
-    if (!active || (entries.length === 0 && !accentCount)) {
+    if (!active || (entries.length === 0 && !accentCount && formNotes.length === 0)) {
       if (popState !== 'suggest') hidePop();
       return;
     }
@@ -535,6 +582,12 @@
           escapeHtml(e.token) + '">' + (isTone ? 'Ok' : 'Ignora') + '</button>'
         );
         parts.push('</div>');
+      });
+    }
+    if (formNotes.length > 0) {
+      parts.push('<div class="' + NS + 'tb-title">Forma</div>');
+      formNotes.forEach((n) => {
+        parts.push('<div class="' + NS + 'tb-row ' + NS + 'tb-form">⚠ ' + escapeHtml(n.message) + '</div>');
       });
     }
     parts.push('<div class="' + NS + 'tb-foot">');
@@ -780,7 +833,7 @@
     // in modalità "*" l'accettazione consuma anche l'asterisco
     candWord = explicitReverse ? { start: wi.start - 1, end: wi.end, word: wi.word } : wi;
     candOpen = true;
-    renderSuggest(list, field); // promuove a suggerimenti
+    renderSuggest(list, field, computeFormNotes(field)); // promuove a suggerimenti
   }
 
   function acceptCandidate(i) {
@@ -925,7 +978,7 @@
     function render(entries) {
       entries = entries || getEntries();
       mirror.render(entries);
-      renderErrors(entries, getAccentCount(), field);
+      renderErrors(entries, getAccentCount(), computeFormNotes(field), field);
       return entries;
     }
 
@@ -1000,6 +1053,15 @@
       addAccents,
       convertToHanzi,
       setInsertHanzi: (v) => { insertHanzi = !!v; },
+      setCheckForm: (v) => { checkForm = v !== false; },
+      setSentenceModel: (m) => {
+        sentenceModel = m;
+        if (active && active.field === field) render();
+      },
+      setLazyData: () => {
+        reverseMap = null;
+        if (active) render();
+      },
       setAutoAccent: autoAccent.set,
       ignore: (token) => { detector.ignore(token); render(); },
       destroy() {
@@ -1024,7 +1086,7 @@
       const entries = detector.scan(getText());
       const accentCount = detector.accentable(getText()).length;
       mirror.render(entries);
-      renderErrors(entries, accentCount, el);
+      renderErrors(entries, accentCount, computeFormNotes(el), el);
       return entries;
     }
 
@@ -1077,6 +1139,15 @@
       addAccents,
       convertToHanzi,
       setInsertHanzi: (v) => { insertHanzi = !!v; },
+      setCheckForm: (v) => { checkForm = v !== false; },
+      setSentenceModel: (m) => {
+        sentenceModel = m;
+        if (active && active.field === field) render();
+      },
+      setLazyData: () => {
+        reverseMap = null;
+        if (active) render();
+      },
       setAutoAccent: autoAccent.set,
       ignore: (token) => { detector.ignore(token); render(); },
       destroy() {
@@ -1125,6 +1196,7 @@
     handle.onRecord = options.onRecord || null;
     currentEngine = engine;
     insertHanzi = !!options.insertHanzi;
+    checkForm = options.checkForm !== false;
     initLookup();
 
     element.addEventListener('focus', () => {

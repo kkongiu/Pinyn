@@ -92,6 +92,11 @@
   cursor: pointer;
   text-decoration: underline;
 }
+.pc-tb-form {
+  font-size: 12px;
+  color: #9a6700;
+  padding: 3px 0;
+}
 .pc-tb-foot {
   display: flex;
   align-items: center;
@@ -150,6 +155,12 @@
   padding: 4px 8px 2px;
   border-top: 1px solid #eef1f4;
   margin-top: 4px;
+}
+.pc-cand-note {
+  font-size: 11px;
+  color: #9a6700;
+  padding: 3px 8px;
+  border-top: 1px solid #f2eee0;
 }
 
 .pc-lookup-text { white-space: nowrap; }

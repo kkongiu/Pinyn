@@ -24,11 +24,13 @@
 
   let autoAccentEnabled = false;
   let insertHanzi = false;
+  let checkForm = true;
 
-  chrome.storage.sync.get({ hskLevel: 3, autoAccent: false, hanzi: false }, (data) => {
+  chrome.storage.sync.get({ hskLevel: 3, autoAccent: false, hanzi: false, grammar: true }, (data) => {
     engine.setLevel(Number(data.hskLevel) || 3);
     autoAccentEnabled = !!data.autoAccent;
     insertHanzi = !!data.hanzi;
+    checkForm = data.grammar !== false;
     propagateOptions();
   });
   chrome.storage.onChanged.addListener((changes, area) => {
@@ -48,6 +50,11 @@
       insertHanzi = !!changes.hanzi.newValue;
       propagateOptions();
     }
+    if (changes.grammar) {
+      checkForm = changes.grammar.newValue !== false;
+      if (checkForm && !sentenceModel) loadSentenceModel();
+      propagateOptions();
+    }
   });
 
   // Rete neurale dei toni (caricamento lazy, con fallback all'euristica).
@@ -63,6 +70,49 @@
     if (data.toneNet !== false) loadTonePredictor();
   });
 
+  // LM di forma (caricamento lazy, ~1.4MB). Se il caricamento fallisce
+  // resta null: il blocco "Forma" mostra solo le regole grammaticali.
+  let sentenceModel = null;
+  function loadSentenceModel() {
+    if (!window.PinynSentenceNet) return;
+    window.PinynSentenceNet.loadSentenceNet().then((m) => {
+      sentenceModel = m;
+      propagateOptions();
+    });
+  }
+  if (checkForm) loadSentenceModel();
+
+  // Dati lazy (non iniettati in ogni pagina): reverse dizionario (*parola)
+  // e POS (regole grammaticali). Vengono fetchati come testo .js e parsimoniosi
+  // dopo il caricamento della pagina; quando arrivano, gli handle si ri-renderizzano.
+  let lazyDataDone = false;
+  function fetchLazyData(file) {
+    const url = chrome.runtime.getURL('data/' + file);
+    return fetch(url)
+      .then((r) => {
+        if (!r.ok) throw new Error('HTTP ' + r.status);
+        return r.text();
+      })
+      .then((txt) => {
+        const eq = txt.indexOf('=');
+        if (eq < 0) throw new Error('formato');
+        return JSON.parse(txt.slice(eq + 1).replace(/;\s*$/, ''));
+      });
+  }
+  function loadLazyData() {
+    if (lazyDataDone) return;
+    lazyDataDone = true;
+    const jobs = [];
+    if (window.__PINYN_REVERSE == null) {
+      jobs.push(fetchLazyData('hsk-reverse.js').then((d) => { window.__PINYN_REVERSE = d; }).catch(() => {}));
+    }
+    if (window.__PINYN_POS == null) {
+      jobs.push(fetchLazyData('hsk-pos.js').then((d) => { window.__PINYN_POS = d; }).catch(() => {}));
+    }
+    if (jobs.length) Promise.all(jobs).then(() => propagateOptions());
+  }
+  setTimeout(loadLazyData, 800);
+
   function propagateOptions() {
     allHandles.forEach((handle) => {
       if (handle && typeof handle.setAutoAccent === 'function') {
@@ -70,6 +120,15 @@
       }
       if (handle && typeof handle.setInsertHanzi === 'function') {
         handle.setInsertHanzi(insertHanzi);
+      }
+      if (handle && typeof handle.setCheckForm === 'function') {
+        handle.setCheckForm(checkForm);
+      }
+      if (handle && typeof handle.setSentenceModel === 'function') {
+        handle.setSentenceModel(checkForm ? sentenceModel : null);
+      }
+      if (handle && typeof handle.setLazyData === 'function' && lazyDataDone) {
+        handle.setLazyData();
       }
     });
   }
@@ -114,6 +173,7 @@
     const handle = PinynUi.attach(field, detector, engine, {
       autoAccent: autoAccentEnabled,
       insertHanzi,
+      checkForm,
       onRecord: recordStat,
     });
     active.set(field, handle);
@@ -170,7 +230,8 @@
     applyEnabled(data.enabled !== false);
   });
 
-  chrome.runtime.onMessage.addListener((msg, _sender, sendResponse) => {
+  chrome.runtime.onMessage.addListener((msg, sender, sendResponse) => {
+    if (!sender || sender.id !== chrome.runtime.id) return;
     if (msg && msg.type === 'PC_SET_ENABLED') {
       applyEnabled(!!msg.enabled);
       sendResponse({ ok: true });
@@ -178,6 +239,74 @@
       const sel = window.getSelection();
       const text = (sel && sel.toString() || '').trim();
       sendResponse({ selection: text.slice(0, 200) });
+    } else if (msg && msg.type === 'PC_SEARCH_DICT') {
+      sendResponse({ results: dictSearch(msg.q, msg.limit || 20) });
     }
   });
+
+  // Ricerca dizionario per il popup: riusa i dati già iniettati
+  // (__PINYN_HSK + __PINYN_DEFS + __PINYN_REVERSE + __PINYN_POS),
+  // niente fetch di hsk-3.0.json (2.7MB) dal popup.
+  function dictSearch(query, limit) {
+    const HSK = window.__PINYN_HSK || [];
+    const DEFS = window.__PINYN_DEFS || {};
+    const REV = window.__PINYN_REVERSE || {};
+    const POS = window.__PINYN_POS || {};
+    const U = window.PinynUtils;
+    const q = (query || '').trim().toLowerCase();
+    if (!q || !U) return [];
+    const hasHanzi = /[\u3400-\u9fff]/.test(q);
+    const qBare = U.stripTone(q).replace(/[0-5]/g, '').replace(/\s+/g, '');
+    const bare = (pn) => U.stripTone(pn).replace(/[0-5]/g, '').replace(/\s+/g, '');
+    const results = [];
+    const seen = new Set();
+    const push = (word, pn, lvl, gloss) => {
+      if (!word || seen.has(word)) return;
+      seen.add(word);
+      results.push({
+        word,
+        pinyin: U.convertToneNumbers(pn || word),
+        level: lvl || 0,
+        pos: POS[word] || '',
+        definitions: gloss ? [gloss] : [],
+      });
+    };
+    const glossFor = (pn) => {
+      const v = DEFS[pn];
+      if (!v) return '';
+      const i = v.indexOf('|');
+      return i >= 0 ? v.slice(i + 1) : '';
+    };
+    if (hasHanzi) {
+      for (const w of HSK) {
+        if (w.w.startsWith(q) || w.w.includes(q)) push(w.w, w.p, w.l, glossFor(bare(w.p)));
+        if (results.length >= limit) break;
+      }
+    } else {
+      for (const w of HSK) {
+        const b = bare(w.p);
+        if (b === qBare || b.startsWith(qBare)) push(w.w, w.p, w.l, glossFor(b));
+        if (results.length >= limit) break;
+      }
+      if (results.length < limit) {
+        const pinyins = [];
+        for (const t of Object.keys(REV)) {
+          if (t.startsWith(q) || t.includes(q)) {
+            for (const p of REV[t]) if (!pinyins.includes(p)) pinyins.push(p);
+          }
+        }
+        for (const p of pinyins) {
+          const v = DEFS[p];
+          const i = v ? v.indexOf('|') : -1;
+          const word = i >= 0 ? v.slice(0, i) : '';
+          let pn = p;
+          let lvl = 0;
+          for (const w of HSK) if (bare(w.p) === p) { pn = w.p; lvl = w.l; break; }
+          push(word, pn, lvl, i >= 0 ? v.slice(i + 1) : '');
+          if (results.length >= limit) break;
+        }
+      }
+    }
+    return results;
+  }
 })();
