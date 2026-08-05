@@ -23,10 +23,12 @@
   });
 
   let autoAccentEnabled = false;
+  let insertHanzi = false;
 
-  chrome.storage.sync.get({ hskLevel: 3, autoAccent: false }, (data) => {
+  chrome.storage.sync.get({ hskLevel: 3, autoAccent: false, hanzi: false }, (data) => {
     engine.setLevel(Number(data.hskLevel) || 3);
     autoAccentEnabled = !!data.autoAccent;
+    insertHanzi = !!data.hanzi;
     propagateOptions();
   });
   chrome.storage.onChanged.addListener((changes, area) => {
@@ -38,12 +40,36 @@
       autoAccentEnabled = !!changes.autoAccent.newValue;
       propagateOptions();
     }
+    if (changes.toneNet) {
+      if (changes.toneNet.newValue) loadTonePredictor();
+      else engine.setTonePredictor(null);
+    }
+    if (changes.hanzi) {
+      insertHanzi = !!changes.hanzi.newValue;
+      propagateOptions();
+    }
+  });
+
+  // Rete neurale dei toni (caricamento lazy, con fallback all'euristica).
+  function loadTonePredictor() {
+    if (!window.PinynToneNet) return;
+    window.PinynToneNet.loadToneNet().then((model) => {
+      if (model) {
+        engine.setTonePredictor((bares) => window.PinynToneNet.predictTones(model, bares));
+      }
+    });
+  }
+  chrome.storage.sync.get({ toneNet: true }, (data) => {
+    if (data.toneNet !== false) loadTonePredictor();
   });
 
   function propagateOptions() {
     allHandles.forEach((handle) => {
       if (handle && typeof handle.setAutoAccent === 'function') {
         handle.setAutoAccent(autoAccentEnabled);
+      }
+      if (handle && typeof handle.setInsertHanzi === 'function') {
+        handle.setInsertHanzi(insertHanzi);
       }
     });
   }
@@ -56,11 +82,40 @@
     window.__PINYN_HSK_SEED = PinynHskDb.seed(full).catch(() => false);
   }
 
+  // Statistiche: scrive gli eventi su IndexedDB (non bloccante, con coda).
+  const statQueue = [];
+  let statFlushing = false;
+  function recordStat(type, detail) {
+    if (!PinynHskDb) return;
+    statQueue.push({ type, detail: detail || {} });
+    flushStats();
+  }
+  async function flushStats() {
+    if (statFlushing) return;
+    statFlushing = true;
+    while (statQueue.length) {
+      const { type, detail } = statQueue.shift();
+      try {
+        await PinynHskDb.recordStat({
+          type,
+          token: detail.token || null,
+          suggestion: detail.suggestion || null,
+          level: detail.suggestion ? engine.pinyinLevel(detail.suggestion) : null,
+        });
+      } catch (_) { /* ignora errori di scrittura */ }
+    }
+    statFlushing = false;
+  }
+
   function attachToField(field) {
     if (!PinynUi.isEditable(field)) return;
     if (active.has(field)) return;
     const detector = PinynErrorDetector.createDetector(syllableSet, { engine });
-    const handle = PinynUi.attach(field, detector, engine, { autoAccent: autoAccentEnabled });
+    const handle = PinynUi.attach(field, detector, engine, {
+      autoAccent: autoAccentEnabled,
+      insertHanzi,
+      onRecord: recordStat,
+    });
     active.set(field, handle);
     allHandles.add(handle);
   }
@@ -92,7 +147,7 @@
           if (node.nodeType !== 1) return;
           // ignora la nostra UI (overlay/toolbar) e i suoi contenuti
           if (node.classList && node.classList.contains('pc-overlay')) return;
-          if (node.classList && node.classList.contains('pc-toolbar')) return;
+          if (node.classList && node.classList.contains("pc-pop")) return;
           attachToField(node);
           scanFields(node);
         });
@@ -107,10 +162,22 @@
     mo.observe(document.body, { childList: true, subtree: true });
   });
 
+  function applyEnabled(enabled) {
+    document.body.classList.toggle('pc-disabled', !enabled);
+    if (PinynUi.setEnabled) PinynUi.setEnabled(enabled);
+  }
+  chrome.storage.sync.get({ enabled: true }, (data) => {
+    applyEnabled(data.enabled !== false);
+  });
+
   chrome.runtime.onMessage.addListener((msg, _sender, sendResponse) => {
     if (msg && msg.type === 'PC_SET_ENABLED') {
-      document.body.classList.toggle('pc-disabled', !msg.enabled);
+      applyEnabled(!!msg.enabled);
       sendResponse({ ok: true });
+    } else if (msg && msg.type === 'PC_GET_SELECTION') {
+      const sel = window.getSelection();
+      const text = (sel && sel.toString() || '').trim();
+      sendResponse({ selection: text.slice(0, 200) });
     }
   });
 })();

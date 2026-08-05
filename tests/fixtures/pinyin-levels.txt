@@ -1,0 +1,10972 @@
+# Corpus pinyin per livello HSK — usato dall'autotest
+# Formato: <pinyin accentato>	<hanzi>
+# Ogni sezione corrisponde a un livello HSK.
+
+# HSK Livello 1
+yī	一
+yī xià r	一下儿
+yī xiē	一些
+yī huì r	一会儿
+yī bàn	一半
+yī kuài r	一块儿
+yī yàng	一样
+yī diǎn r	一点儿
+yī qǐ	一起
+yī biān	一边
+qī	七
+sān	三
+shàng	上
+shàng wǔ	上午
+shàng xué	上学
+shàng cì	上次
+shàng bān	上班
+shàng wǎng	上网
+shàng kè	上课
+shàng chē	上车
+shàng bian	上边
+xià	下
+xià wǔ	下午
+xià cì	下次
+xià bān	下班
+xià kè	下课
+xià chē	下车
+xià bian	下边
+xià yǔ	下雨
+bù	不
+bù dà	不大
+bù kè qi	不客气
+bù duì	不对
+bù yòng	不用
+dōng	东
+dōng xi	东西
+dōng bian	东边
+liǎng	两
+gè	个
+zhōng	中
+zhōng wǔ	中午
+zhōng guó	中国
+zhōng xué	中学
+zhōng xué shēng	中学生
+zhōng wén	中文
+zhōng jiān	中间
+jiǔ	九
+yě	也
+shū	书
+shū bāo	书包
+shū diàn	书店
+mǎi	买
+le	了
+shì	事
+èr	二
+wǔ	五
+rén	人
+shén me	什么
+jīn tiān	今天
+jīn nián	今年
+jiè shào	介绍
+cóng	从
+tā	他
+tā men	他们
+xiū xi	休息
+huì	会
+zhù	住
+nǐ	你
+nǐ men	你们
+nǐ hǎo	你好
+zuò	做
+ér zi	儿子
+yuán	元
+xiān	先
+xiān sheng	先生
+bā	八
+liù	六
+guān	关
+guān shàng	关上
+zài	再
+zài jiàn	再见
+zuì	最
+zuì hòu	最后
+zuì hǎo	最好
+xiě	写
+lěng	冷
+zhǔn bèi	准备
+jǐ	几
+chū	出
+chū qù	出去
+chū lái	出来
+fēn	分
+bié	别
+bié ren	别人
+bié de	别的
+dào	到
+qián	前
+qián tiān	前天
+qián bian	前边
+dòng	动
+dòng zuò	动作
+bāo	包
+bāo zi	包子
+běi	北
+běi jīng	北京
+běi biān	北边
+yī shēng	医生
+yī yuàn	医院
+shí	十
+wǔ fàn	午饭
+bàn	半
+bàn tiān	半天
+bàn nián	半年
+nán	南
+nán bian	南边
+qù	去
+qù nián	去年
+kǒu	口
+jiào	叫
+yòu	右
+yòu bian	右边
+hào	号
+chī	吃
+chī fàn	吃饭
+tóng xué	同学
+míng zi	名字
+hòu	后
+hòu tiān	后天
+hòu bian	后边
+ma	吗
+ba	吧
+tīng	听
+tīng xiě	听写
+tīng dào	听到
+tīng jiàn	听见
+gào su	告诉
+ne	呢
+hé	和
+nǎ	哪
+nǎ xiē	哪些
+nǎ r	哪儿
+nǎ lǐ	哪里
+chàng	唱
+chàng gē	唱歌
+shāng chǎng	商场
+shāng diàn	商店
+xǐ huan	喜欢
+hē	喝
+hē shuǐ	喝水
+sì	四
+huí	回
+huí dào	回到
+huí qu	回去
+huí jiā	回家
+huí lai	回来
+huí dá	回答
+guó	国
+guó wài	国外
+guó jiā	国家
+tú shū guǎn	图书馆
+zài	在
+zài jiā	在家
+de	地
+dì shang	地上
+dì tú	地图
+dì fang	地方
+dì diǎn	地点
+huài	坏
+zuò	坐
+zuò xia	坐下
+kuài	块
+wài	外
+wài guó	外国
+wài yǔ	外语
+wài bian	外边
+duō	多
+duō shao	多少
+dà	大
+dà xué	大学
+dà xué shēng	大学生
+tiān	天
+tiān qì	天气
+tài	太
+nǚ	女
+nǚ rén	女人
+nǚ ér	女儿
+nǚ hái r	女孩儿
+nǚ péng you	女朋友
+nǚ shēng	女生
+nǎi	奶
+nǎi nai	奶奶
+tā	她
+tā men	她们
+hǎo	好
+hǎo chī	好吃
+hǎo ma	好吗
+hǎo tīng	好听
+hǎo wán r	好玩儿
+hǎo kàn	好看
+zì	字
+xué	学
+xué xí	学习
+xué xiào	学校
+xué sheng	学生
+xué yuàn	学院
+hái zi	孩子
+jiā	家
+jiā rén	家人
+jiā lǐ	家里
+duì	对
+duì bu qǐ	对不起
+xiǎo	小
+xiǎo jie	小姐
+xiǎo xué	小学
+xiǎo xué shēng	小学生
+xiǎo hái r	小孩儿
+xiǎo shí	小时
+xiǎo péng yǒu	小朋友
+shǎo	少
+jiù	就
+shān	山
+suì	岁
+gōng rén	工人
+gōng zuò	工作
+zuǒ	左
+zuǒ bian	左边
+chà	差
+bāng	帮
+bāng máng	帮忙
+cháng	常
+cháng cháng	常常
+gān	干
+gàn shén me	干什么
+gān jìng	干净
+nián	年
+chuáng	床
+kāi	开
+kāi huì	开会
+kāi wán xiào	开玩笑
+kāi chē	开车
+hěn	很
+hěn gāo xìng	很高兴
+dé dào	得到
+wàng	忘
+wàng jì	忘记
+máng	忙
+kuài	快
+zěn me	怎么
+nín	您
+nín hǎo	您好
+xiǎng	想
+màn	慢
+wǒ	我
+wǒ men	我们
+fáng zi	房子
+fáng jiān	房间
+shǒu	手
+shǒu jī	手机
+dǎ	打
+dǎ kāi	打开
+dǎ qiú	打球
+dǎ diàn huà	打电话
+dǎ chē	打车
+zhǎo	找
+zhǎo dào	找到
+ná	拿
+fàng	放
+fàng jià	放假
+fàng xué	放学
+jiāo	教
+jiào xué lóu	教学楼
+xīn	新
+xīn nián	新年
+páng biān	旁边
+rì	日
+rì qī	日期
+zǎo	早
+zǎo shang	早上
+zǎo shang hǎo	早上好
+zǎo fàn	早饭
+shí hou	时候
+shí jiān	时间
+míng tiān	明天
+míng nián	明年
+míng bai	明白
+xīng qī	星期
+xīng qī tiān	星期天
+xīng qī rì	星期日
+zuó tiān	昨天
+shì	是
+shì bù shì	是不是
+wǎn	晚
+wǎn shang	晚上
+wǎn fàn	晚饭
+yuè	月
+yǒu	有
+yǒu míng	有名
+yǒu yòng	有用
+yǒu de	有的
+péng you	朋友
+běn	本
+běn zi	本子
+jī chǎng	机场
+jī piào	机票
+lái	来
+lái dào	来到
+bēi	杯
+bēi zi	杯子
+shù	树
+zhuō zi	桌子
+lóu	楼
+lóu shàng	楼上
+lóu xià	楼下
+cì	次
+gē	歌
+zhèng	正
+zhèng zài	正在
+bǐ	比
+máo	毛
+shuǐ	水
+shuǐ guǒ	水果
+hàn zì	汉字
+hàn yǔ	汉语
+qì chē	汽车
+méi	没
+méi shì r	没事儿
+méi shén me	没什么
+méi guān xi	没关系
+méi yǒu	没有
+xǐ	洗
+xǐ shǒu jiān	洗手间
+kě	渴
+huǒ chē	火车
+diǎn	点
+rè	热
+ài	爱
+ài hào	爱好
+yé ye	爷爷
+niú nǎi	牛奶
+wán r	玩儿
+xiàn zài	现在
+bān	班
+qiú	球
+shēng rì	生日
+shēng qì	生气
+shēng bìng	生病
+yòng	用
+diàn	电
+diàn yǐng	电影
+diàn yǐng yuàn	电影院
+diàn shì	电视
+diàn shì jī	电视机
+diàn nǎo	电脑
+diàn huà	电话
+nán	男
+nán rén	男人
+nán hái r	男孩儿
+nán péng you	男朋友
+nán shēng	男生
+bìng	病
+bìng rén	病人
+bái	白
+bái tiān	白天
+bǎi	百
+de	的
+kàn	看
+kàn dào	看到
+kàn bìng	看病
+kàn jiàn	看见
+zhēn	真
+zhēn de	真的
+zhe	着
+shuì	睡
+shuì jiào	睡觉
+zhī shi	知识
+zhī dào	知道
+piào	票
+chuān	穿
+zhàn	站
+xiào	笑
+děng	等
+mǐ fàn	米饭
+lèi	累
+gěi	给
+wǎng shàng	网上
+wǎng yǒu	网友
+lǎo	老
+lǎo rén	老人
+lǎo shī	老师
+kǎo	考
+kǎo shì	考试
+ròu	肉
+néng	能
+huā	花
+chá	茶
+cài	菜
+xíng	行
+yī fu	衣服
+xī	西
+xī biān	西边
+yào	要
+jiàn	见
+jiàn miàn	见面
+jué de	觉得
+rèn zhēn	认真
+rèn shi	认识
+jì	记
+jì zhu	记住
+jì de	记得
+shì	试
+huà	话
+shuō	说
+shuō huà	说话
+qǐng	请
+qǐng jià	请假
+qǐng zuò	请坐
+qǐng jìn	请进
+qǐng wèn	请问
+dú	读
+dú shū	读书
+kè	课
+kè wén	课文
+kè běn	课本
+xiè xie	谢谢
+guì	贵
+guì xìng	贵姓
+zǒu	走
+zǒu lù	走路
+qǐ	起
+qǐ chuáng	起床
+qǐ lai	起来
+pǎo	跑
+gēn	跟
+lù	路
+lù shang	路上
+lù kǒu	路口
+shēn shang	身上
+shēn tǐ	身体
+chē	车
+chē shang	车上
+chē piào	车票
+chē zhàn	车站
+guò	过
+hái	还
+hái shi	还是
+hái yǒu	还有
+zhè	这
+zhè xiē	这些
+zhè r	这儿
+zhè biān	这边
+zhè lǐ	这里
+jìn	进
+jìn qù	进去
+jìn lái	进来
+yuǎn	远
+sòng	送
+nà	那
+nà xiē	那些
+nà r	那儿
+nà bian	那边
+nà li	那里
+dōu	都
+lǐ	里
+lǐ bian	里边
+zhòng	重
+zhòng yào	重要
+qián	钱
+qián bāo	钱包
+cuò	错
+mén	门
+mén kǒu	门口
+mén piào	门票
+wèn	问
+jiān	间
+nán	难
+yǔ	雨
+fēi cháng	非常
+miàn bāo	面包
+miàn tiáo r	面条儿
+yè	页
+fēng	风
+fēi	飞
+fēi jī	飞机
+fàn	饭
+fàn diàn	饭店
+è	饿
+mǎ shàng	马上
+mǎ lù	马路
+gāo	高
+gāo xìng	高兴
+jī dàn	鸡蛋
+
+# HSK Livello 2
+yī gòng	一共
+yī dìng	一定
+yī diǎn diǎn	一点点
+yī shēng	一生
+yī zhí	一直
+yī bān	一般
+yī lù píng ān	一路平安
+yī lù shùn fēng	一路顺风
+yī bù fen	一部分
+wàn	万
+shàng zhōu	上周
+shàng hǎi	上海
+xià zhōu	下周
+xià xuě	下雪
+bù	不一会儿
+bù yī dìng	不一定
+bù jiǔ	不久
+bù dàn	不但
+bù tóng	不同
+bù gòu	不够
+bú	不太
+bù hǎo yì si	不好意思
+bù rú	不如
+bù shǎo	不少
+bù mǎn	不满
+bù xíng	不行
+bù yào	不要
+bù guò	不过
+bù cuò	不错
+dōng jīng	东京
+dōng běi	东北
+dōng nán	东南
+dōng fāng	东方
+gè zi	个子
+zhōng yī	中医
+zhōng xiǎo xué	中小学
+zhōng nián	中年
+zhōng xīn	中心
+zhōng jí	中级
+zhōng cān	中餐
+wèi	为
+wèi shén me	为什么
+zhǔ rén	主人
+zhǔ yào	主要
+jǔ	举
+jǔ shǒu	举手
+jǔ xíng	举行
+yě xǔ	也许
+xí guàn	习惯
+shì qing	事情
+yún	云
+jiāo	交
+jiāo péng you	交朋友
+jiāo gěi	交给
+jiāo tōng	交通
+liàng	亮
+rén men	人们
+rén kǒu	人口
+rén shù	人数
+yì	亿
+shén me yàng	什么样
+jīn hòu	今后
+cóng xiǎo	从小
+yǐ shàng	以上
+yǐ xià	以下
+yǐ wéi	以为
+yǐ qián	以前
+yǐ hòu	以后
+yǐ wài	以外
+jiàn	件
+fèn	份
+xiū jià	休假
+lún dūn	伦敦
+dàn	但
+dàn shì	但是
+wèi	位
+dī	低
+zhù fáng	住房
+zhù yuàn	住院
+tǐ yù	体育
+tǐ yù chǎng	体育场
+tǐ yù guǎn	体育馆
+zuò yè	作业
+zuò jiā	作家
+zuò wén	作文
+zuò yòng	作用
+shǐ yòng	使用
+lì rú	例如
+lì zi	例子
+pián yi	便宜
+é luó sī	俄罗斯
+xìn	信
+xìn hào	信号
+xìn xīn	信心
+xìn xī	信息
+xìn yòng kǎ	信用卡
+dǎo	倒
+jiè	借
+jiǎ	假
+jià qī	假期
+zuò dào	做到
+zuò fǎ	做法
+zuò fàn	做饭
+tíng	停
+tíng chē	停车
+tíng chē chǎng	停车场
+jiàn kāng	健康
+xiàng	像
+kè	克
+rù kǒu	入口
+quán	全
+quán tǐ	全体
+quán guó	全国
+quán jiā	全家
+quán nián	全年
+quán shēn	全身
+quán bù	全部
+gōng jiāo chē	公交车
+gōng gòng qì chē	公共汽车
+gōng sī	公司
+gōng yuán	公园
+gōng píng	公平
+gōng jīn	公斤
+gōng lù	公路
+gōng lǐ	公里
+guān xīn	关心
+guān jī	关机
+qí zhōng	其中
+qí tā	其他
+yǎng	养
+zuì jìn	最近
+dōng tiān	冬天
+zhǔn què	准确
+liáng	凉
+liáng kuai	凉快
+chū fā	出发
+chū kǒu	出口
+chū guó	出国
+chū xiàn	出现
+chū shēng	出生
+chū zū	出租
+chū zū chē	出租车
+chū mén	出门
+chū yuàn	出院
+fēn kāi	分开
+fēn shù	分数
+fēn zhōng	分钟
+gāng	刚
+gāng gang	刚刚
+gāng cái	刚才
+dào chù	到处
+kè	刻
+qián nián	前年
+bàn	办
+bàn gōng shì	办公室
+bàn fǎ	办法
+jiā	加
+jiā ná dà	加拿大
+jiā yóu	加油
+dòng wù	动物
+dòng wù yuán	动物园
+nǔ lì	努力
+běi fāng	北方
+shí fēn	十分
+qiān	千
+qiān kè	千克
+wǔ shuì	午睡
+wǔ cān	午餐
+bàn yè	半夜
+dān wèi	单位
+mài	卖
+nán fāng	南方
+zhàn	占
+kǎ	卡
+yìn dù	印度
+yìn dù ní xī yà	印度尼西亚
+yuán yīn	原因
+yuán lái	原来
+cān jiā	参加
+cān guān	参观
+yòu	又
+yǒu hǎo	友好
+fā	发
+fā xiàn	发现
+qǔ	取
+qǔ dé	取得
+shòu dào	受到
+biàn	变
+biàn chéng	变成
+jù	句
+jù zi	句子
+zhǐ	只
+zhǐ néng	只能
+zhǐ yào	只要
+jiào zuò	叫作
+kě yǐ	可以
+kě pà	可怕
+kě shì	可是
+kě ài	可爱
+kě néng	可能
+tái wān	台湾
+sī jī	司机
+hé shì	合适
+tóng shì	同事
+tóng shí	同时
+tóng yàng	同样
+míng	名
+míng dān	名单
+míng chēng	名称
+hòu lái	后来
+xiàng	向
+tīng jiǎng	听讲
+tīng shuō	听说
+chuī	吹
+zhōu	周
+zhōu nián	周年
+zhōu mò	周末
+wèi dao	味道
+zán	咱
+zán men	咱们
+xiǎng	响
+kū	哭
+shāng rén	商人
+shāng liang	商量
+a	啊
+wèi	喂
+hǎn	喊
+zuǐ	嘴
+huí guó	回国
+yīn wèi	因为
+guó jì	国际
+tú piàn	图片
+tǔ ěr qí	土耳其
+dì qiú	地球
+dì tiě	地铁
+dì tiě zhàn	地铁站
+chǎng	场
+huài rén	坏人
+huài chu	坏处
+āi jí	埃及
+qiáng	墙
+shēng yīn	声音
+fù xí	复习
+xià tiān	夏天
+wài mài	外卖
+wài dì	外地
+duō jiǔ	多久
+duō me	多么
+duō yún	多云
+duō lún duō	多伦多
+duō shù	多数
+yè	夜
+yè li	夜里
+gòu	够
+dà ren	大人
+dà shēng	大声
+dà duō shù	大多数
+dà dà	大大
+dà jiā	大家
+dà xiǎo	大小
+dà hǎi	大海
+dà zì rán	大自然
+dà yī	大衣
+dà bù fen	大部分
+dà liàng	大量
+dà mén	大门
+tiān shàng	天上
+tiān ān mén	天安门
+tài tai	太太
+tài yang	太阳
+tóu	头
+tóu fa	头发
+tào	套
+ào dì lì	奥地利
+hǎo jiǔ	好久
+hǎo shì	好事
+hǎo rén	好人
+hǎo xiàng	好像
+hǎo chu	好处
+hǎo duō	好多
+hǎo wán	好玩
+rú guǒ	如果
+xìng	姓
+xìng míng	姓名
+zì diǎn	字典
+xué qī	学期
+tā	它
+tā men	它们
+ān quán	安全
+ān jìng	安静
+wán	完
+wán quán	完全
+wán chéng	完成
+shí xí	实习
+shí zài	实在
+shí xiàn	实现
+shí jì	实际
+kè rén	客人
+jiā tíng	家庭
+jiā zhǎng	家长
+duì huà	对话
+duì miàn	对面
+fēng	封
+xiǎo shēng	小声
+xiǎo xīn	小心
+xiǎo shí hou	小时候
+xiǎo zǔ	小组
+xiǎo shuō	小说
+shào nián	少年
+shǎo shù	少数
+jiù yào	就要
+céng	层
+chà bu duō	差不多
+yǐ jīng	已经
+bā xī	巴西
+bā lí	巴黎
+shì	市
+shì zhǎng	市长
+xī là	希腊
+dài	带
+dài lái	带来
+bāng zhù	帮助
+cháng yòng	常用
+cháng jiàn	常见
+gān bēi	干杯
+gàn huó r	干活儿
+píng	平
+píng ān	平安
+píng cháng	平常
+píng shí	平时
+píng děng	平等
+nián jí	年级
+nián qīng	年轻
+guǎng gào	广告
+guǎng chǎng	广场
+guǎng zhōu	广州
+yīng gāi	应该
+diàn	店
+dù	度
+zuò	座
+zuò wèi	座位
+kāi xué	开学
+kāi xīn	开心
+kāi jī	开机
+nòng	弄
+dāng	当
+dāng shí	当时
+yǐng xiǎng	影响
+yǐng piàn	影片
+wǎng	往
+dé	得
+dé chū	得出
+dé guó	德国
+xīn zhōng	心中
+xīn qíng	心情
+xīn li	心里
+bì xū	必须
+kuài lè	快乐
+kuài diǎn r	快点儿
+kuài yào	快要
+kuài cān	快餐
+hū rán	忽然
+tài du	态度
+zěn me bàn	怎么办
+zěn me yàng	怎么样
+zěn yàng	怎样
+pà	怕
+jí	急
+xī ní	悉尼
+xiǎng dào	想到
+xiǎng fǎ	想法
+xiǎng qǐ	想起
+yì dà lì	意大利
+yì si	意思
+yì jiàn	意见
+gǎn dào	感到
+gǎn dòng	感动
+gǎn jué	感觉
+gǎn xiè	感谢
+yuàn yì	愿意
+dǒng	懂
+dǒng de	懂得
+chéng	成
+chéng wéi	成为
+chéng jì	成绩
+huò	或
+huò zhě	或者
+suǒ yǐ	所以
+suǒ yǒu	所有
+shǒu biǎo	手表
+cái	才
+dǎ yìn	打印
+dǎ gōng	打工
+dǎ suàn	打算
+zhǎo chū	找出
+hù zhào	护照
+bào míng	报名
+bào zhǐ	报纸
+lā	拉
+ná chū	拿出
+ná dào	拿到
+nuó wēi	挪威
+tǐng	挺
+tǐng hǎo	挺好
+huàn	换
+diào	掉
+pái	排
+pái qiú	排球
+pái duì	排队
+jiē	接
+jiē xià lái	接下来
+jiē dào	接到
+jiē shòu	接受
+jiē zhe	接着
+tuī	推
+tí	提
+tí chū	提出
+tí dào	提到
+tí gāo	提高
+shōu	收
+shōu rù	收入
+shōu dào	收到
+gǎi	改
+gǎi biàn	改变
+fàng xià	放下
+fàng xīn	放心
+gù shi	故事
+gù yì	故意
+jiào xué	教学
+jiào shì	教室
+jiào shī	教师
+jiào yù	教育
+shǔ	数
+shù zì	数字
+jīn	斤
+xīn jiā pō	新加坡
+xīn wén	新闻
+fāng biàn	方便
+fāng biàn miàn	方便面
+fāng xiàng	方向
+fāng fǎ	方法
+fāng miàn	方面
+lǚ kè	旅客
+lǚ yóu	旅游
+lǚ xíng	旅行
+rì zi	日子
+rì bào	日报
+rì běn	日本
+zǎo jiù	早就
+zǎo chén	早晨
+zǎo cān	早餐
+míng xīng	明星
+xīng xing	星星
+chūn tiān	春天
+chūn jié	春节
+wǎn huì	晚会
+wǎn ān	晚安
+wǎn bào	晚报
+wǎn cān	晚餐
+pǔ tōng	普通
+pǔ tōng huà	普通话
+qíng	晴
+qíng tiān	晴天
+gèng	更
+yuè liang	月亮
+yuè fèn	月份
+yǒu rén	有人
+yǒu yì si	有意思
+yǒu kòng r	有空儿
+fú wù	服务
+jī huì	机会
+tiáo	条
+tiáo jiàn	条件
+lái zì	来自
+bó lín	柏林
+chá	查
+xiào yuán	校园
+xiào zhǎng	校长
+yàng zi	样子
+jiǎn chá	检查
+yǐ zi	椅子
+huān yíng	欢迎
+zhèng hǎo	正好
+zhèng cháng	正常
+zhèng shì	正是
+zhèng què	正确
+duàn	段
+bǐ lì shí	比利时
+bǐ rú	比如
+bǐ rú shuō	比如说
+qì	气
+qì wēn	气温
+shuǐ píng	水平
+yǒng yuǎn	永远
+qiú	求
+hé	河
+yóu	油
+fǎ guó	法国
+bō lán	波兰
+tài guó	泰国
+xǐ zǎo	洗澡
+xǐ yī jī	洗衣机
+huó dòng	活动
+liú	流
+liú lì	流利
+liú xíng	流行
+hǎi	海
+hǎi biān	海边
+shēn zhèn	深圳
+qīng chu	清楚
+wēn dù	温度
+yóu kè	游客
+hú	湖
+mǎn	满
+mǎn yì	满意
+piào liang	漂亮
+ào dà lì yà	澳大利亚
+ào mén	澳门
+dēng	灯
+diǎn tóu	点头
+rè qíng	热情
+rán hòu	然后
+zhào piàn	照片
+zhào xiàng	照相
+zhào gu	照顾
+pá	爬
+pá shān	爬山
+ài ren	爱人
+ài qíng	爱情
+piàn	片
+tè bié	特别
+tè diǎn	特点
+gǒu	狗
+māo	猫
+bān zhǎng	班长
+qiú chǎng	球场
+qiú duì	球队
+qiú xié	球鞋
+lǐ xiǎng	理想
+ruì diǎn	瑞典
+ruì shì	瑞士
+píng	瓶
+píng zi	瓶子
+shēng	生
+shēng huó	生活
+shēng cí	生词
+huà	画
+huà r	画儿
+huà jiā	画家
+liú	留
+liú xià	留下
+liú xué shēng	留学生
+téng	疼
+bái sè	白色
+de huà	的话
+mù dì	目的
+zhí jiē	直接
+xiāng xìn	相信
+xiāng tóng	相同
+xiàng jī	相机
+shěng	省
+kàn fǎ	看法
+zhēn zhèng	真正
+yǎn	眼
+yǎn jing	眼睛
+duǎn	短
+duǎn xìn	短信
+wǎn	碗
+pèng	碰
+pèng dào	碰到
+pèng jiàn	碰见
+lǐ wù	礼物
+lí	离
+lí kāi	离开
+qiū tiān	秋天
+kē	科
+kē xué	科学
+zū	租
+kōng qì	空气
+zhàn zhù	站住
+xiào hua	笑话
+xiào hua r	笑话儿
+bǐ	笔
+bǐ jì	笔记
+bǐ jì běn	笔记本
+děng yú	等于
+děng dào	等到
+dā ying	答应
+kuài zi	筷子
+suàn	算
+piān	篇
+lán qiú	篮球
+mǐ	米
+hóng	红
+hóng sè	红色
+jí	级
+zhǐ	纸
+niǔ yuē	纽约
+liàn	练
+liàn xí	练习
+zǔ	组
+zǔ chéng	组成
+zǔ zhǎng	组长
+jīng cháng	经常
+jīng lǐ	经理
+jīng guò	经过
+jié guǒ	结果
+lǜ	绿
+lǜ sè	绿色
+wǎng	网
+wǎng qiú	网球
+wǎng zhàn	网站
+luó mǎ	罗马
+měi guó	美国
+lǎo nián	老年
+lǎo shi	老是
+lǎo péng you	老朋友
+kǎo shēng	考生
+ér qiě	而且
+bèi	背
+néng gòu	能够
+zāng	脏
+jiǎo	脚
+liǎn	脸
+tuǐ	腿
+zì jǐ	自己
+zì yóu	自由
+zì xíng chē	自行车
+shū fu	舒服
+chuán	船
+jié	节
+jié rì	节日
+jié mù	节目
+huā yuán	花园
+yīng guó	英国
+yīng wén	英文
+yīng yǔ	英语
+cǎo	草
+cǎo dì	草地
+yào	药
+yào diàn	药店
+yào shuǐ	药水
+yào piàn	药片
+hé lán	荷兰
+mò sī kē	莫斯科
+cài dān	菜单
+pú táo yá	葡萄牙
+lán	蓝
+lán sè	蓝色
+suī rán	虽然
+dàn	蛋
+xíng wéi	行为
+xíng rén	行人
+xíng dòng	行动
+jiē	街
+biǎo	表
+biǎo shì	表示
+zhuāng	装
+xī běi	西北
+xī yī	西医
+xī nán	西南
+xī fāng	西方
+xī bān yá	西班牙
+xī cān	西餐
+yāo qiú	要求
+jiàn dào	见到
+guān diǎn	观点
+jiǎo	角
+jiǎo dù	角度
+jì huà	计划
+jì suàn jī	计算机
+rèn wéi	认为
+tǎo lùn	讨论
+ràng	让
+jiǎng	讲
+jiǎng huà	讲话
+xǔ duō	许多
+cí	词
+cí diǎn	词典
+cí yǔ	词语
+gāi	该
+yǔ yán	语言
+shuō míng	说明
+qǐng kè	请客
+qǐng qiú	请求
+dú yīn	读音
+kè táng	课堂
+zǒu kāi	走开
+zǒu guò	走过
+zǒu jìn	走进
+qǐ fēi	起飞
+chāo shì	超市
+chāo guò	超过
+yuè	越
+yuè nán	越南
+yuè lái yuè	越来越
+lù biān	路边
+shēn biān	身边
+chē liàng	车辆
+qīng	轻
+liàng	辆
+biān	边
+guò qù	过去
+guò nián	过年
+guò lái	过来
+yùn dòng	运动
+jìn	近
+zhè me	这么
+zhè yàng	这样
+jìn rù	进入
+jìn xíng	进行
+sòng gěi	送给
+xuǎn	选
+tōng	通
+tōng zhī	通知
+tōng guò	通过
+biàn	遍
+dào	道
+dào li	道理
+dào lù	道路
+nà me	那么
+nà huì r	那会儿
+nà yàng	那样
+bù fen	部分
+jiǔ	酒
+jiǔ diàn	酒店
+lǐ tou	里头
+chóng fù	重复
+chóng xīn	重新
+zhòng diǎn	重点
+zhòng shì	重视
+yín háng	银行
+yín háng kǎ	银行卡
+cháng	长
+zhǎng dà	长大
+wèn lù	问路
+wèn tí	问题
+wén	闻
+duì	队
+duì zhǎng	队长
+yīn	阴
+yīn tiān	阴天
+ā gēn tíng	阿根廷
+yuàn	院
+yuàn zi	院子
+yuàn zhǎng	院长
+suí biàn	随便
+suí shí	随时
+nán shòu	难受
+nán tīng	难听
+nán kàn	难看
+nán guò	难过
+nán tí	难题
+xuě	雪
+líng xià	零下
+qīng shào nián	青少年
+qīng nián	青年
+kào	靠
+miàn qián	面前
+miàn tiáo	面条
+xié	鞋
+hán guó	韩国
+yīn yuè	音乐
+yīn yuè huì	音乐会
+yīn jié	音节
+shùn lì	顺利
+gù kè	顾客
+tí	题
+yán sè	颜色
+shí wù	食物
+fàn guǎn	饭馆
+bǎo	饱
+jiǎo zi	饺子
+shǒu ěr	首尔
+xiāng gǎng	香港
+mǎ lái xī yà	马来西亚
+qí	骑
+qí chē	骑车
+gāo zhōng	高中
+gāo jí	高级
+yú	鱼
+niǎo	鸟
+jī	鸡
+huáng	黄
+huáng sè	黄色
+hēi	黑
+hēi bǎn	黑板
+hēi sè	黑色
+mò xī gē	墨西哥
+
+# HSK Livello 3
+yī qiè	一切
+yī fāng miàn	一方面
+shàng shēng	上升
+shàng qù	上去
+shàng lái	上来
+shàng yī	上衣
+shàng miàn	上面
+xià qù	下去
+xià lai	下来
+xià miàn	下面
+bù jǐn	不仅
+bù guāng	不光
+bù ān	不安
+bù dé bù	不得不
+bù bì	不必
+bù duàn	不断
+bù lùn	不论
+zhuān yè	专业
+zhuān jiā	专家
+zhuān mén	专门
+zhuān tí	专题
+shì jiè	世界
+shì jiè bēi	世界杯
+shì jì	世纪
+dōng bù	东部
+gè rén	个人
+gè xìng	个性
+zhōng huá mín zú	中华民族
+zhōng bù	中部
+fēng fù	丰富
+wèi le	为了
+zhǔ rèn	主任
+zhǔ dòng	主动
+zhǔ zhāng	主张
+zhǔ yi	主意
+zhǔ chí	主持
+jǔ bàn	举办
+jiǔ	久
+lè	乐
+lè guān	乐观
+yuè duì	乐队
+shū jià	书架
+luàn	乱
+zhēng	争
+zhēng qǔ	争取
+shì yè	事业
+shì jiàn	事件
+shì shí	事实
+shì shí shàng	事实上
+shì gù	事故
+hù xiāng	互相
+hù lián wǎng	互联网
+jiāo wǎng	交往
+jiāo yì	交易
+jiāo liú	交流
+jiāo jǐng	交警
+jiāo fèi	交费
+chǎn shēng	产生
+jīng jù	京剧
+qīn	亲
+qīn rén	亲人
+qīn qiè	亲切
+qīn zì	亲自
+rén yuán	人员
+rén gōng	人工
+rén cái	人才
+rén mín	人民
+rén mín bì	人民币
+rén shēng	人生
+rén lèi	人类
+rén qún	人群
+jǐn	仅
+jǐn jǐn	仅仅
+réng	仍
+réng rán	仍然
+cóng shì	从事
+cóng qián	从前
+cóng lái	从来
+fù	付
+dài	代
+dài biǎo	代表
+dài biǎo tuán	代表团
+yǐ lái	以来
+jià zhí	价值
+jià gé	价格
+jià qian	价钱
+rèn	任
+rèn hé	任何
+rèn wu	任务
+yōu shì	优势
+yōu diǎn	优点
+huì yuán	会员
+huì yì	会议
+wěi dà	伟大
+chuán	传
+chuán bō	传播
+chuán lái	传来
+chuán shuō	传说
+shāng	伤
+shāng xīn	伤心
+tǐ huì	体会
+tǐ xiàn	体现
+tǐ yàn	体验
+zuò pǐn	作品
+zuò zhě	作者
+shǐ	使
+bǎo	保
+bǎo cún	保存
+bǎo ān	保安
+bǎo hù	保护
+bǎo chí	保持
+bǎo liú	保留
+bǎo zhèng	保证
+bǎo xiǎn	保险
+xìn rèn	信任
+xìn fēng	信封
+xiū	修
+xiū gǎi	修改
+zhí	值
+zhí de	值得
+zuò kè	做客
+tíng zhǐ	停止
+chōng mǎn	充满
+xiān jìn	先进
+guāng	光
+guāng míng	光明
+kè fú	克服
+quán chǎng	全场
+quán qiú	全球
+quán miàn	全面
+gōng gòng	公共
+gōng wù yuán	公务员
+gōng bù	公布
+gōng kāi	公开
+gōng mín	公民
+gòng tóng	共同
+gòng yǒu	共有
+guān zhù	关注
+guān xi	关系
+qí shí	其实
+qí cì	其次
+jù tǐ	具体
+jù yǒu	具有
+nèi	内
+nèi róng	内容
+nèi xīn	内心
+xiě zuò	写作
+nóng yè	农业
+nóng cūn	农村
+nóng mín	农民
+jué dìng	决定
+jué xīn	决心
+jué sài	决赛
+zhǔn	准
+liáng shuǐ	凉水
+dāo	刀
+fēn bié	分别
+fēn zǔ	分组
+fēn pèi	分配
+huá chuán	划船
+chuàng yè	创业
+chuàng zuò	创作
+chuàng xīn	创新
+chuàng zào	创造
+chū	初
+chū zhōng	初中
+chū bù	初步
+chū jí	初级
+pàn duàn	判断
+lì yòng	利用
+dào dǐ	到底
+dào dá	到达
+zhì zuò	制作
+zhì dìng	制定
+zhì dù	制度
+zhì zào	制造
+qián hòu	前后
+qián wǎng	前往
+qián jìn	前进
+qián miàn	前面
+jù chǎng	剧场
+lì	力
+lì liang	力量
+bàn lǐ	办理
+gōng fu	功夫
+gōng néng	功能
+gōng kè	功课
+jiā gōng	加工
+jiā qiáng	加强
+jiā kuài	加快
+dòng rén	动人
+dòng lì	动力
+běi bù	北部
+qū	区
+qū bié	区别
+qiān wàn	千万
+shēng	升
+huá rén	华人
+dān yuán	单元
+nán bù	南部
+wèi shēng	卫生
+wèi shēng jiān	卫生间
+yìn xiàng	印象
+wēi hài	危害
+wēi xiǎn	危险
+chǎng	厂
+yā	压
+yā lì	压力
+qù shì	去世
+jí shí	及时
+shuāng	双
+shuāng fāng	双方
+fǎn fù	反复
+fǎn duì	反对
+fǎn yìng	反应
+fǎn zhèng	反正
+fā chū	发出
+fā dòng	发动
+fā zhǎn	发展
+fā míng	发明
+fā shēng	发生
+fā biǎo	发表
+fā yán	发言
+fā dá	发达
+fā sòng	发送
+qǔ xiāo	取消
+shòu	受
+shòu shāng	受伤
+biàn wéi	变为
+biàn huà	变化
+gǔ	古
+gǔ dài	古代
+lìng yī fāng miàn	另一方面
+lìng wài	另外
+zhǐ hǎo	只好
+zhǐ shì	只是
+zhǐ yǒu	只有
+kě lè	可乐
+kě kào	可靠
+tái	台
+gè	各
+gè wèi	各位
+gè dì	各地
+gè zhǒng	各种
+gè zì	各自
+hé	合
+hé zuò	合作
+hé gé	合格
+hé fǎ	合法
+hé lǐ	合理
+tóng yì	同意
+hòu nián	后年
+hòu guǒ	后果
+hòu mian	后面
+fǒu dìng	否定
+fǒu rèn	否认
+tīng zhòng	听众
+tīng lì	听力
+chǎo	吵
+chǎo jià	吵架
+gào bié	告别
+yuán gōng	员工
+zhōu wéi	周围
+mìng yùn	命运
+hé píng	和平
+kā fēi	咖啡
+hā hā	哈哈
+shāng yè	商业
+shāng pǐn	商品
+pí jiǔ	啤酒
+yīn cǐ	因此
+tuán	团
+tuán tǐ	团体
+tuán jié	团结
+kùn	困
+kùn nan	困难
+wéi	围
+guó nèi	国内
+guó qìng	国庆
+tú	图
+tú huà	图画
+tǔ	土
+dì qū	地区
+chǎng hé	场合
+chǎng suǒ	场所
+jiān jué	坚决
+jiān qiáng	坚强
+jiān chí	坚持
+chéng	城
+chéng shì	城市
+jī běn	基本
+jī běn shang	基本上
+jī chǔ	基础
+zēng jiā	增加
+zēng zhǎng	增长
+shēng míng	声明
+chǔ lǐ	处理
+fù yìn	复印
+fù zá	复杂
+wài jiāo	外交
+wài wén	外文
+wài miàn	外面
+dà shǐ guǎn	大使馆
+dài fu	大夫
+dà gài	大概
+dà yuē	大约
+tiān kōng	天空
+shī qù	失去
+tóu nǎo	头脑
+qí guài	奇怪
+nǚ zǐ	女子
+nǎi chá	奶茶
+hào qí	好奇
+hǎo hǎo	好好
+rú hé	如何
+shǐ zhōng	始终
+gū niang	姑娘
+méi tǐ	媒体
+zǐ nǚ	子女
+cún	存
+cún zài	存在
+xué fèi	学费
+ān pái	安排
+ān zhuāng	安装
+wán shàn	完善
+wán zhěng	完整
+wán měi	完美
+dìng qī	定期
+shí lì	实力
+shí xíng	实行
+shí jì shàng	实际上
+shí yàn	实验
+shí yàn shì	实验室
+kè guān	客观
+xuān chuán	宣传
+xuān bù	宣布
+shì	室
+hài pà	害怕
+jiā jù	家具
+jiā shǔ	家属
+jiā xiāng	家乡
+róng yì	容易
+fù	富
+duì dài	对待
+duì shǒu	对手
+duì fāng	对方
+duì xiàng	对象
+dǎo yǎn	导演
+jiāng lái	将来
+jiāng jìn	将近
+jiù yè	就业
+jiù shì	就是
+jǐn liàng	尽量
+wū zi	屋子
+zhǎn kāi	展开
+shǔ	属
+shǔ yú	属于
+gōng yè	工业
+gōng jù	工具
+gōng chǎng	工厂
+gōng fu	工夫
+gōng chéng shī	工程师
+gōng zī	工资
+zuǒ yòu	左右
+qiǎo	巧
+yǐ	已
+shì chǎng	市场
+bù	布
+xī wàng	希望
+dài dòng	带动
+dài lǐng	带领
+gàn má	干吗
+nián dài	年代
+nián chū	年初
+nián dǐ	年底
+nián jì	年纪
+bìng	并
+bìng qiě	并且
+xìng fú	幸福
+xìng yùn	幸运
+guǎng dà	广大
+guǎng bō	广播
+qìng zhù	庆祝
+yīng dāng	应当
+yìng yòng	应用
+dǐ xia	底下
+jiàn	建
+jiàn chéng	建成
+jiàn lì	建立
+jiàn yì	建议
+jiàn shè	建设
+kāi yè	开业
+kāi fā	开发
+kāi shǐ	开始
+kāi zhǎn	开展
+kāi fàng	开放
+zhāng	张
+qiáng	强
+qiáng dà	强大
+qiáng liè	强烈
+qiáng diào	强调
+dāng zhōng	当中
+dāng chū	当初
+dāng dì	当地
+dāng rán	当然
+lù	录
+lù yīn	录音
+xíng shì	形式
+xíng chéng	形成
+xíng zhuàng	形状
+xíng xiàng	形象
+cǎi sè	彩色
+yǐng shì	影视
+wǎng wǎng	往往
+dé fēn	得分
+xīn	心
+bì rán	必然
+bì yào	必要
+zhì yuàn	志愿
+zhì yuàn zhě	志愿者
+kuài sù	快速
+niàn	念
+sī xiǎng	思想
+xìng bié	性别
+xìng gé	性格
+zǒng	总
+zǒng shì	总是
+zǒng jié	总结
+kǒng pà	恐怕
+qíng kuàng	情况
+qíng gǎn	情感
+yì yì	意义
+yì wài	意外
+gǎn mào	感冒
+gǎn shòu	感受
+gǎn qíng	感情
+yuàn wàng	愿望
+màn màn	慢慢
+chéng gōng	成功
+chéng yuán	成员
+chéng jiù	成就
+chéng guǒ	成果
+chéng shú	成熟
+chéng lì	成立
+chéng zhǎng	成长
+fáng dōng	房东
+fáng wū	房屋
+fáng zū	房租
+suǒ	所
+suǒ zhǎng	所长
+shǒu zhǐ	手指
+shǒu xù	手续
+cái néng	才能
+dǎ ting	打听
+dǎ pò	打破
+pī zhǔn	批准
+pī píng	批评
+jì shù	技术
+bǎ	把
+bǎ wò	把握
+zhuā	抓
+zhuā zhù	抓住
+bào	报
+bào dào	报到
+bào gào	报告
+bào dào	报道
+pāi	拍
+chí xù	持续
+guà	挂
+zhǐ	指
+zhǐ chū	指出
+zhǐ dǎo	指导
+àn	按
+àn zhào	按照
+jù shuō	据说
+pái míng	排名
+jiē dài	接待
+jiē jìn	接近
+tuī dòng	推动
+tuī guǎng	推广
+tuī kāi	推开
+tuī jìn	推进
+tí qián	提前
+tí wèn	提问
+wò shǒu	握手
+bān	搬
+bān jiā	搬家
+bō chū	播出
+bō fàng	播放
+zhī	支
+zhī fù	支付
+zhī chí	支持
+shōu tīng	收听
+shōu kàn	收看
+shōu fèi	收费
+shōu yīn jī	收音机
+gǎi jìn	改进
+gǎi zào	改造
+gù xiāng	故乡
+xiào guǒ	效果
+jiù	救
+jiào cái	教材
+jiào liàn	教练
+gǎn	敢
+sàn bù	散步
+shù liàng	数量
+zhěng	整
+zhěng gè	整个
+zhěng tǐ	整体
+zhěng tiān	整天
+zhěng zhěng	整整
+zhěng lǐ	整理
+zhěng qí	整齐
+wén jiàn	文件
+wén huà	文化
+wén zì	文字
+wén xué	文学
+wén míng	文明
+wén zhāng	文章
+duàn	断
+fāng shì	方式
+lǚ xíng shè	旅行社
+lǚ guǎn	旅馆
+rì cháng	日常
+jiù	旧
+zǎo yǐ	早已
+shí	时
+shí dài	时代
+shí kè	时刻
+míng xiǎn	明显
+míng què	明确
+xiǎn de	显得
+xiǎn rán	显然
+xiǎn shì	显示
+pǔ jí	普及
+pǔ biàn	普遍
+jǐng sè	景色
+nuǎn huo	暖和
+gèng jiā	更加
+céng jīng	曾经
+yǒu lì	有利
+yǒu xiào	有效
+yǒu de shì	有的是
+fú zhuāng	服装
+cháo	朝
+qī	期
+mù tou	木头
+běn shi	本事
+běn lái	本来
+běn lǐng	本领
+jī qì	机器
+zá zhì	杂志
+cūn	村
+shù	束
+bǎn	板
+guǒ zhī	果汁
+guǒ rán	果然
+jià	架
+mǒu	某
+biāo zhǔn	标准
+biāo tí	标题
+gēn běn	根本
+qiáo	桥
+gài niàn	概念
+huān lè	欢乐
+gē shēng	歌声
+gē shǒu	歌手
+gē mí	歌迷
+zhèng shì	正式
+bù	步
+wǔ qì	武器
+wǔ shù	武术
+sǐ	死
+mǔ qīn	母亲
+měi	每
+bǐ lì	比例
+bǐ sài	比赛
+bǐ jiào	比较
+máo bìng	毛病
+mín zú	民族
+mín jiān	民间
+qì hòu	气候
+tāng	汤
+shā fā	沙发
+shā zi	沙子
+méi yòng	没用
+zhù yì	注意
+huó	活
+pài	派
+làng fèi	浪费
+hǎi guān	海关
+xiāo shī	消失
+xiāo xi	消息
+xiāo fèi	消费
+shēn	深
+shēn rù	深入
+shēn kè	深刻
+wēn nuǎn	温暖
+yóu	游
+yóu xì	游戏
+yóu yǒng	游泳
+mǎn zú	满足
+yǎn	演
+yǎn chū	演出
+yǎn yuán	演员
+yǎn chàng	演唱
+yǎn chàng huì	演唱会
+huǒ	火
+yān	烟
+rè liè	热烈
+rè ài	热爱
+zhào	照
+shú rén	熟人
+ài xīn	爱心
+fù qīn	父亲
+fù mǔ	父母
+pái zi	牌子
+niú	牛
+tè sè	特色
+zhuàng kuàng	状况
+zhuàng tài	状态
+zhū	猪
+wán jù	玩具
+huán	环
+huán bǎo	环保
+huán jìng	环境
+xiàn dài	现代
+xiàn chǎng	现场
+xiàn shí	现实
+xiàn xiàng	现象
+xiàn jīn	现金
+bān jí	班级
+qiú mí	球迷
+lǐ fà	理发
+lǐ yóu	理由
+lǐ jiě	理解
+lǐ lùn	理论
+tián	甜
+shēng chǎn	生产
+shēng dòng	生动
+shēng mìng	生命
+shēng cún	生存
+shēng yi	生意
+shēng zhǎng	生长
+yóu	由
+yóu yú	由于
+diàn tái	电台
+diàn zǐ yóu jiàn	电子邮件
+diàn shì jù	电视剧
+diàn shì tái	电视台
+nán zǐ	男子
+liú xué	留学
+tòng	痛
+tòng kǔ	痛苦
+bái cài	白菜
+pí	皮
+pí bāo	皮包
+mù qián	目前
+mù biāo	目标
+zhí	直
+zhí dào	直到
+zhí bō	直播
+xiāng hù	相互
+xiāng sì	相似
+xiāng guān	相关
+xiāng dāng	相当
+xiāng bǐ	相比
+kàn shang qu	看上去
+kàn qǐ lai	看起来
+zhēn shí	真实
+yǎn qián	眼前
+duǎn chù	短处
+duǎn qī	短期
+duǎn kù	短裤
+shí tou	石头
+shí yóu	石油
+pò	破
+pò huài	破坏
+què bǎo	确保
+què dìng	确定
+què shí	确实
+shè huì	社会
+zhù	祝
+piào jià	票价
+fú	福
+lí hūn	离婚
+zhǒng	种
+zhǒng zi	种子
+kē jì	科技
+jī jí	积极
+chēng wéi	称为
+chéng dù	程度
+kōng	空
+kòng r	空儿
+kōng tiáo	空调
+tū chū	突出
+tū rán	突然
+lì kè	立刻
+děng dài	等待
+jiǎn dān	简单
+jiǎn zhí	简直
+guǎn	管
+guǎn lǐ	管理
+lèi	类
+lèi sì	类似
+jīng cǎi	精彩
+jīng shén	精神
+táng	糖
+xì	系
+hóng chá	红茶
+hóng jiǔ	红酒
+yuē	约
+jì lù	纪录
+jì niàn	纪念
+jǐn	紧
+jǐn zhāng	紧张
+jǐn jí	紧急
+xiàn	线
+zǔ hé	组合
+zhōng yú	终于
+jīng lì	经历
+jīng jì	经济
+jīng yíng	经营
+jīng yàn	经验
+jié hé	结合
+jié hūn	结婚
+jiē shi	结实
+jié shù	结束
+jué duì	绝对
+jì xù	继续
+lǜ chá	绿茶
+quē	缺
+quē shǎo	缺少
+quē diǎn	缺点
+yáng	羊
+měi	美
+měi lì	美丽
+měi yuán	美元
+měi hǎo	美好
+měi shù	美术
+měi shí	美食
+qún	群
+lǎo tài tai	老太太
+lǎo tóu r	老头儿
+lǎo bǎn	老板
+lǎo bǎi xìng	老百姓
+kǎo yàn	考验
+zhí yè	职业
+zhí gōng	职工
+lián hé	联合
+lián hé guó	联合国
+lián xì	联系
+bèi hòu	背后
+pàng	胖
+shèng	胜
+shèng lì	胜利
+bu	能不能
+néng lì	能力
+zì zhǔ	自主
+zì cóng	自从
+zì dòng	自动
+zì rán	自然
+zì jué	自觉
+zì shēn	自身
+zhì jīn	至今
+zhì shǎo	至少
+wǔ tái	舞台
+yì shù	艺术
+jié yuē	节约
+píng guǒ	苹果
+fàn wéi	范围
+yíng yǎng	营养
+luò hòu	落后
+xuè	血
+xíng li	行李
+yī jià	衣架
+bǔ	补
+bǔ chōng	补充
+biǎo míng	表明
+biǎo gé	表格
+biǎo yǎn	表演
+biǎo xiàn	表现
+biǎo dá	表达
+biǎo miàn	表面
+chèn yī	衬衣
+chèn shān	衬衫
+bèi	被
+bèi zi	被子
+qún zi	裙子
+kù zi	裤子
+xī bù	西部
+yào shi	要是
+guān zhòng	观众
+guān chá	观察
+guān niàn	观念
+guān kàn	观看
+guī dìng	规定
+guī fàn	规范
+jiě jué	解决
+jiě kāi	解开
+jì suàn	计算
+dìng	订
+rèn chū	认出
+rèn kě	认可
+rèn de	认得
+xùn liàn	训练
+jì lù	记录
+jì zhě	记者
+shè bèi	设备
+shè lì	设立
+shè jì	设计
+fǎng wèn	访问
+zhèng	证
+zhèng jiàn	证件
+zhèng jù	证据
+zhèng míng	证明
+píng jià	评价
+shì tí	试题
+shì yàn	试验
+huà jù	话剧
+huà tí	话题
+qǐng jiào	请教
+dú zhě	读者
+kè chéng	课程
+diào	调
+tiáo zhěng	调整
+diào chá	调查
+tán	谈
+tán pàn	谈判
+tán huà	谈话
+jǐng chá	警察
+fù zé	负责
+zé rèn	责任
+fèi	费
+fèi yòng	费用
+zī gé	资格
+zī jīn	资金
+yíng	赢
+gǎn	赶
+gǎn dào	赶到
+gǎn kuài	赶快
+gǎn jǐn	赶紧
+chāo jí	超级
+zú gòu	足够
+zú qiú	足球
+pǎo bù	跑步
+lù xiàn	路线
+tiào	跳
+tiào wǔ	跳舞
+tiào yuǎn	跳远
+tiào gāo	跳高
+shēn fèn zhèng	身份证
+zhuǎn	转
+zhuǎn biàn	转变
+jiào	较
+shū	输
+shū rù	输入
+dá dào	达到
+guò chéng	过程
+yíng jiē	迎接
+yùn shū	运输
+jìn qī	近期
+jìn yī bù	进一步
+jìn zhǎn	进展
+jìn bù	进步
+lián	连
+lián máng	连忙
+lián xù	连续
+lián xù jù	连续剧
+mí	迷
+zhuī	追
+tuì	退
+tuì xiū	退休
+tuì chū	退出
+shì hé	适合
+shì yìng	适应
+shì yòng	适用
+xuǎn shǒu	选手
+tōng xìn	通信
+tōng cháng	通常
+sù dù	速度
+zào	造
+zào chéng	造成
+yóu jiàn	邮件
+yóu piào	邮票
+yóu xiāng	邮箱
+bù	部
+bù zhǎng	部长
+bù mén	部门
+pèi	配
+pèi hé	配合
+cǎi qǔ	采取
+cǎi yòng	采用
+lǐ miàn	里面
+zhòng dà	重大
+jīn	金
+jīn pái	金牌
+zhōng	钟
+tiě	铁
+tiě lù	铁路
+yín	银
+yín pái	银牌
+cuò wù	错误
+cháng chéng	长城
+cháng chù	长处
+cháng qī	长期
+duì yuán	队员
+fáng	防
+fáng zhǐ	防止
+yáng guāng	阳光
+chú le	除了
+suí	随
+nán dù	难度
+nán dào	难道
+jí zhōng	集中
+jí tǐ	集体
+xū qiú	需求
+xū yào	需要
+jìng	静
+miàn duì	面对
+miàn jī	面积
+dùn	顿
+yù xí	预习
+yù bào	预报
+yù jì	预计
+yù fáng	预防
+lǐng	领
+lǐng xiān	领先
+lǐng dǎo	领导
+tí mù	题目
+fēng xiǎn	风险
+fēi xíng	飞行
+shí pǐn	食品
+shǒu xiān	首先
+shǒu dū	首都
+xiāng	香
+xiāng jiāo	香蕉
+mǎ	马
+gāo sù	高速
+gāo sù gōng lù	高速公路
+má fan	麻烦
+qí	齐
+lóng	龙
+
+# HSK Livello 4
+yī zài	一再
+yī lǜ	一律
+yī zhì	一致
+yī bān lái shuō	一般来说
+wàn yī	万一
+zhàng fu	丈夫
+shàng gè yuè	上个月
+shàng lóu	上楼
+shàng mén	上门
+xià gè yuè	下个月
+xià lóu	下楼
+xià zǎi	下载
+xià jiàng	下降
+bù zài hu	不在乎
+bù rán	不然
+bù guǎn	不管
+bù yào jǐn	不要紧
+zhuān xīn	专心
+yè yú	业余
+liǎng biān	两边
+yán	严
+yán gé	严格
+yán zhòng	严重
+gè tǐ	个体
+gè bié	个别
+zhōng jiè	中介
+zhòng jiǎng	中奖
+lín shí	临时
+yì wù	义务
+zhǔ xí	主席
+zhǔ tí	主题
+zhī yī	之一
+zhī qián	之前
+zhī hòu	之后
+zhī jiān	之间
+lè qù	乐趣
+liǎo bu qǐ	了不起
+liǎo jiě	了解
+zhēng lùn	争论
+shì xiān	事先
+shì wù	事物
+èr shǒu	二手
+yú shì	于是
+wǔ yán liù sè	五颜六色
+yà yùn huì	亚运会
+xiē	些
+jiāo huàn	交换
+jiāo jì	交际
+chǎn pǐn	产品
+qīn mì	亲密
+qīn ài	亲爱
+rén jia	人家
+cóng cǐ	从此
+fù chū	付出
+dài tì	代替
+yǐ nèi	以内
+yǐ jí	以及
+qǐ yè	企业
+yōu xiù	优秀
+yōu měi	优美
+yōu liáng	优良
+huǒ	伙
+huǒ bàn	伙伴
+kuài jì	会计
+sǎn	伞
+chuán tǒng	传统
+shāng hài	伤害
+sì hū	似乎
+shì de	似的
+wèi yú	位于
+wèi zhi	位置
+tǐ cāo	体操
+tǐ jiǎn	体检
+tǐ zhòng	体重
+zuò wéi	作为
+zuò chū	作出
+shǐ jìn	使劲
+gōng yìng	供应
+yī rán	依然
+yī kào	依靠
+cù shǐ	促使
+cù jìn	促进
+cù xiāo	促销
+bǎo shǒu	保守
+bǎo mì	保密
+liǎ	俩
+xiū lǐ	修理
+bèi	倍
+dǎo chē	倒车
+dǎo bì	倒闭
+jiǎ rú	假如
+zuò mèng	做梦
+tíng xià	停下
+jiàn shēn	健身
+ér tóng	儿童
+xiōng dì	兄弟
+chōng fèn	充分
+chōng diàn	充电
+chōng diàn qì	充电器
+guāng lín	光临
+guāng pán	光盘
+miǎn fèi	免费
+gōng yuán	公元
+gòng	共
+guān yú	关于
+guān bì	关闭
+xīng fèn	兴奋
+xìng qù	兴趣
+bīng	兵
+qí yú	其余
+jù bèi	具备
+diǎn xíng	典型
+yǎng chéng	养成
+nèi kē	内科
+nèi bù	内部
+zài sān	再三
+zuì chū	最初
+dōng jì	冬季
+bīng	冰
+bīng xiāng	冰箱
+bīng xuě	冰雪
+chōng	冲
+lěng jìng	冷静
+zhǔn shí	准时
+jiǎn	减
+jiǎn shǎo	减少
+jiǎn féi	减肥
+jī hū	几乎
+chū shòu	出售
+chū xí	出席
+chū sè	出色
+fēn wéi	分为
+fēn bù	分布
+fēn shǒu	分手
+fēn sàn	分散
+qiē	切
+huá	划
+liè	列
+liè wéi	列为
+liè rù	列入
+liè chē	列车
+lì xī	利息
+lì yì	利益
+zhì dìng	制订
+shuā	刷
+shuā zi	刷子
+shuā yá	刷牙
+cì	刺
+cì jī	刺激
+qián tou	前头
+qián tú	前途
+lì qi	力气
+bàn shì	办事
+jiā rù	加入
+jiā yóu zhàn	加油站
+jiā bān	加班
+dòng yáo	动摇
+dòng huà piàn	动画片
+yǒng gǎn	勇敢
+yǒng qì	勇气
+bāo hán	包含
+bāo kuò	包括
+bāo guǒ	包裹
+yī xué	医学
+yī liáo	医疗
+dān	单
+dān dú	单独
+dān chún	单纯
+dān diào	单调
+jí jiāng	即将
+què	却
+juǎn	卷
+lì shǐ	历史
+lí mǐ	厘米
+hòu	厚
+yuán zé	原则
+yuán liào	原料
+xiàn	县
+cān yù	参与
+cān kǎo	参考
+jí gé	及格
+fǎn	反
+fǎn yìng	反映
+fǎn ér	反而
+fā huī	发挥
+fā shāo	发烧
+fā piào	发票
+shū shu	叔叔
+shòu bù liǎo	受不了
+kǒu dài	口袋
+kǒu yǔ	口语
+zhào kāi	召开
+kě jiàn	可见
+tái shàng	台上
+tái jiē	台阶
+yè zi	叶子
+hào mǎ	号码
+chī jīng	吃惊
+gè gè	各个
+hé tong	合同
+tóng qíng	同情
+míng rén	名人
+míng piàn	名片
+míng pái r	名牌儿
+hòu tou	后头
+fǒu zé	否则
+hán	含
+hán yì	含义
+hán yǒu	含有
+hán liàng	含量
+xī	吸
+xī yǐn	吸引
+xī shōu	吸收
+xī yān	吸烟
+xī guǎn	吸管
+ya	呀
+wèi r	味儿
+hū xī	呼吸
+xián	咸
+pǐn zhì	品质
+nǎ pà	哪怕
+shòu huò yuán	售货员
+chàng piàn	唱片
+shāng wù	商务
+shàn yú	善于
+shàn liáng	善良
+xǐ ài	喜爱
+zuǐ ba	嘴巴
+qì guān	器官
+huí fù	回复
+wéi jīn	围巾
+gù dìng	固定
+tú àn	图案
+yuán	圆
+yuán mǎn	圆满
+quān	圈
+tǔ dì	土地
+zài hu	在乎
+zài yú	在于
+dì xià	地下
+dì wèi	地位
+dì zhǐ	地址
+dì miàn	地面
+jiān gù	坚固
+lā jī	垃圾
+xíng	型
+xíng hào	型号
+péi yǎng	培养
+péi yù	培育
+péi xùn	培训
+péi xùn bān	培训班
+dǔ	堵
+dǔ chē	堵车
+sù liào	塑料
+sù liào dài	塑料袋
+tián	填
+tián kòng	填空
+shì bīng	士兵
+chù	处
+chǔ yú	处于
+fù zhì	复制
+xià jì	夏季
+wài jiāo guān	外交官
+wài tào	外套
+wài huì	外汇
+duō nián	多年
+duō yàng	多样
+duō cì	多次
+duō zhǒng	多种
+dà zhòng	大众
+dà huì	大会
+dà gē	大哥
+dà xíng	大型
+dà duō	大多
+dà mā	大妈
+dà jiě	大姐
+dà bā	大巴
+dà fang	大方
+dà lóu	大楼
+dà ye	大爷
+dà guī mó	大规模
+dà lù	大陆
+tiān zhēn	天真
+fū ren	夫人
+fū fù	夫妇
+fū qī	夫妻
+shī yè	失业
+shī wàng	失望
+shī bài	失败
+fèn dòu	奋斗
+jiǎng	奖
+jiǎng xué jīn	奖学金
+jiǎng jīn	奖金
+tào cān	套餐
+nǚ shì	女士
+hǎo yǒu	好友
+rú jīn	如今
+qī zi	妻子
+jiě mèi	姐妹
+hūn lǐ	婚礼
+zì mǔ	字母
+sūn nǚ	孙女
+sūn zi	孙子
+jì	季
+jì dù	季度
+jì jié	季节
+xué fēn	学分
+xué nián	学年
+xué shí	学时
+xué shù	学术
+xué wèn	学问
+níng jìng	宁静
+shǒu	守
+ān	安
+ān zhì	安置
+guān	官
+guān fāng	官方
+dìng	定
+bǎo	宝
+bǎo bao	宝宝
+bǎo shí	宝石
+bǎo bèi	宝贝
+bǎo guì	宝贵
+shí shī	实施
+shí yòng	实用
+jiā wù	家务
+kuān	宽
+kuān guǎng	宽广
+jì	寄
+mì	密
+mì qiè	密切
+mì mǎ	密码
+hán jià	寒假
+hán lěng	寒冷
+duì yú	对于
+duì fu	对付
+duì bǐ	对比
+xún zhǎo	寻找
+dǎo yóu	导游
+dǎo zhì	导致
+fēng bì	封闭
+xiǎo huǒ zi	小伙子
+xiǎo chī	小吃
+xiǎo xíng	小型
+chǐ	尺
+chǐ zi	尺子
+chǐ cun	尺寸
+jìn lì	尽力
+jǐn kuài	尽快
+wěi ba	尾巴
+jú	局
+jū zhù	居住
+jū mín	居民
+gōng chéng	工程
+qiǎo kè lì	巧克力
+jù dà	巨大
+bā shì	巴士
+shì qū	市区
+bù zhì	布置
+shuài	帅
+shuài gē	帅哥
+cháng shí	常识
+mào zi	帽子
+píng jūn	平均
+píng fāng	平方
+píng wěn	平稳
+píng jìng	平静
+yòu ér yuán	幼儿园
+yīng	应
+dǐ	底
+dù guò	度过
+yán qī	延期
+yán xù	延续
+yán cháng	延长
+kāi shuǐ	开水
+kāi huā	开花
+yǐn	引
+yǐn dǎo	引导
+yǐn qǐ	引起
+yǐn jìn	引进
+wān	弯
+ruò	弱
+guī	归
+lù qǔ	录取
+xíng shì	形势
+xíng róng	形容
+yǐng zi	影子
+chè dǐ	彻底
+zhēng fú	征服
+zhēng qiú	征求
+dài yù	待遇
+lǜ shī	律师
+dé yì	得意
+wēi xìn	微信
+wēi xiào	微笑
+xīn lǐ	心理
+kuài dì	快递
+hū shì	忽视
+huái niàn	怀念
+huái yí	怀疑
+sī kǎo	思考
+jí máng	急忙
+xìng zhì	性质
+guài	怪
+zǒng zhī	总之
+zǒng gòng	总共
+zǒng lǐ	总理
+zǒng tǒng	总统
+ě xīn	恶心
+qíng jǐng	情景
+xiǎng niàn	想念
+xiǎng xiàng	想象
+gǎn xìng qù	感兴趣
+chéng rén	成人
+huò xǔ	或许
+zhàn zhēng	战争
+zhàn shì	战士
+zhàn dòu	战斗
+zhàn shèng	战胜
+dài	戴
+hù	户
+shǒu tào	手套
+shǒu gōng	手工
+shǒu shù	手术
+shǒu lǐ	手里
+dǎ sǎo	打扫
+dǎ zhé	打折
+dǎ bài	打败
+dǎ zhēn	打针
+dǎ léi	打雷
+kuò dà	扩大
+kuò zhǎn	扩展
+sǎo	扫
+pī	批
+chéng shòu	承受
+chéng dān	承担
+chéng rèn	承认
+jì qiǎo	技巧
+chāo	抄
+chāo xiě	抄写
+zhuā jǐn	抓紧
+tóu	投
+tóu rù	投入
+tóu sù	投诉
+tóu zī	投资
+zhé	折
+hù shi	护士
+bào	抱
+chōu	抽
+chōu jiǎng	抽奖
+chōu yān	抽烟
+dān rèn	担任
+dān bǎo	担保
+dān xīn	担心
+lā kāi	拉开
+pāi zhào	拍照
+zhāo hu	招呼
+kuò hào	括号
+zhǐ huī	指挥
+àn shí	按时
+tiāo	挑
+tiǎo zhàn	挑战
+tiāo xuǎn	挑选
+pái liè	排列
+tuī chí	推迟
+tuī xiāo	推销
+cuò shī	措施
+miáo xiě	描写
+miáo shù	描述
+tí gōng	提供
+tí xǐng	提醒
+bǎi	摆
+bǎi dòng	摆动
+bǎi tuō	摆脱
+yáo	摇
+mō	摸
+cāo zuò	操作
+cāo chǎng	操场
+cā	擦
+shōu huí	收回
+shōu yì	收益
+shōu huò	收获
+gǎi shàn	改善
+gǎi zhèng	改正
+fàng sōng	放松
+zhèng fǔ	政府
+zhèng zhì	政治
+xiào lǜ	效率
+dí rén	敌人
+jiào shòu	教授
+jiào xun	教训
+sàn	散
+shù jù	数据
+shù mǎ	数码
+xīn xíng	新型
+xīn niáng	新娘
+xīn láng	新郎
+xīn xiān	新鲜
+fāng	方
+fāng àn	方案
+fāng zhēn	方针
+wú	无
+wú suǒ wèi	无所谓
+wú shù	无数
+wú fǎ	无法
+wú liáo	无聊
+wú lùn	无论
+wú xiàn	无限
+jì	既
+jì rán	既然
+rì lì	日历
+rì jì	日记
+chūn jì	春季
+shì fǒu	是否
+xiǎn zhù	显著
+shài	晒
+wǎn diǎn	晚点
+zhì lì	智力
+zhì néng	智能
+shǔ jià	暑假
+nuǎn qì	暖气
+àn	暗
+àn shì	暗示
+céng	曾
+tì	替
+tì dài	替代
+yuè dǐ	月底
+yǒu qù	有趣
+yǒu xiàn	有限
+qī zhōng	期中
+qī dài	期待
+qī mò	期末
+qī jiān	期间
+qī xiàn	期限
+wèi bì	未必
+wèi lái	未来
+mò	末
+běn kē	本科
+jī gòu	机构
+jī yù	机遇
+quán lì	权利
+cái liào	材料
+lái bu jí	来不及
+lái de jí	来得及
+lái yuán	来源
+jí	极
+jí qí	极其
+sōng	松
+sōng shù	松树
+gòu chéng	构成
+gòu zào	构造
+guǒ shí	果实
+biāo zhì	标志
+shù yè	树叶
+shù lín	树林
+gēn	根
+gēn jù	根据
+gé wài	格外
+mèng	梦
+mèng xiǎng	梦想
+mèng jiàn	梦见
+jiǎn cè	检测
+sēn lín	森林
+kē	棵
+zhí wù	植物
+lóu tī	楼梯
+gài kuò	概括
+mó xíng	模型
+mó tè r	模特儿
+cǐ	此
+cǐ wài	此外
+bù xíng	步行
+bǐ fēn	比分
+bì yè	毕业
+bì yè shēng	毕业生
+máo jīn	毛巾
+máo yī	毛衣
+háo shēng	毫升
+háo mǐ	毫米
+qì qiú	气球
+huì	汇
+huì bào	汇报
+huì lǜ	汇率
+jiāng	江
+qì shuǐ	汽水
+qì yóu	汽油
+chén	沉
+chén zhòng	沉重
+chén mò	沉默
+méi xiǎng dào	没想到
+méi fǎ r	没法儿
+méi cuò	没错
+zhì	治
+zhì liáo	治疗
+fǎ	法
+fǎ guān	法官
+fǎ lǜ	法律
+fǎ yuàn	法院
+lèi	泪
+lèi shuǐ	泪水
+liú chuán	流传
+qiǎn	浅
+cè	测
+cè shì	测试
+cè liáng	测量
+nóng	浓
+hǎi shuǐ	海水
+hǎi xiān	海鲜
+xiāo huà	消化
+dàn	淡
+shēn hòu	深厚
+qīng xǐng	清醒
+jiàn jiàn	渐渐
+shī	湿
+yǎn jiǎng	演讲
+cháo	潮
+cháo liú	潮流
+cháo shī	潮湿
+jī dòng	激动
+jī liè	激烈
+dēng guāng	灯光
+diǎn míng	点名
+fán	烦
+shāo	烧
+rè xīn	热心
+rè nao	热闹
+rán ér	然而
+shú liàn	熟练
+rán liào	燃料
+rán shāo	燃烧
+ài guó	爱国
+ài hù	爱护
+piàn miàn	片面
+pái	牌
+yá	牙
+yá shuā	牙刷
+tè jià	特价
+tè zhēng	特征
+tè shū	特殊
+dú tè	独特
+dú lì	独立
+dú zì	独自
+shuài xiān	率先
+yù	玉
+yù mǐ	玉米
+wáng	王
+guā	瓜
+shèn zhì	甚至
+yòng tú	用途
+shēn qǐng	申请
+diàn dòng chē	电动车
+diàn tī	电梯
+diàn yuán	电源
+diàn dēng	电灯
+nán shì	男士
+nán nǚ	男女
+yí wèn	疑问
+liáo yǎng	疗养
+tòng kuài	痛快
+dēng	登
+dēng shān	登山
+dēng lù	登录
+dēng jì	登记
+bǎi huò	百货
+dí què	的确
+yán	盐
+gài	盖
+pán	盘
+pán zi	盘子
+xiāng fǎn	相反
+xiāng chǔ	相处
+xiàng piàn	相片
+kàn bu qǐ	看不起
+kàn wàng	看望
+kàn lai	看来
+yǎn lèi	眼泪
+yǎn jìng	眼镜
+zháo jí	着急
+zháo huǒ	着火
+shuì zháo	睡着
+ǎi	矮
+ǎi xiǎo	矮小
+kuàng quán shuǐ	矿泉水
+yán zhì	研制
+yán jiū	研究
+yán jiū shēng	研究生
+pò chǎn	破产
+què rèn	确认
+zhù fú	祝福
+shén mì	神秘
+shén huà	神话
+jìn zhǐ	禁止
+lí bu kāi	离不开
+qiū jì	秋季
+zhòng zhí	种植
+zhǒng lèi	种类
+mì shū	秘书
+mì mì	秘密
+jī lěi	积累
+chēng zàn	称赞
+yí	移
+yí dòng	移动
+yí mín	移民
+chéng xù	程序
+wěn	稳
+wěn dìng	稳定
+jiū jìng	究竟
+qióng	穷
+qióng rén	穷人
+kōng jiān	空间
+chuān shang	穿上
+chuāng tái	窗台
+chuāng zi	窗子
+chuāng hu	窗户
+lì jí	立即
+tóng nián	童年
+tóng huà	童话
+fú hào	符号
+fú hé	符合
+bèn	笨
+dá àn	答案
+jiǎn lì	简历
+xiāng	箱
+xiāng zi	箱子
+lèi xíng	类型
+cū	粗
+cū xīn	粗心
+liáng shi	粮食
+jīng lì	精力
+xì liè	系列
+xì tǒng	系统
+hóng bāo	红包
+yuē huì	约会
+jì lǜ	纪律
+jǐn mì	紧密
+chún	纯
+chún jìng shuǐ	纯净水
+fēn fēn	纷纷
+xì	细
+xì zhì	细致
+xì jié	细节
+jīng diǎn	经典
+jié	结
+jié gòu	结构
+jié lùn	结论
+tǒng yī	统一
+tǒng jì	统计
+wéi xiū	维修
+wéi hù	维护
+wéi chí	维持
+zōng hé	综合
+huǎn jiě	缓解
+biān	编
+suō xiǎo	缩小
+suō duǎn	缩短
+wǎng zhǐ	网址
+wǎng luò	网络
+měi nǚ	美女
+měi jīn	美金
+fān	翻
+fān yì	翻译
+lǎo gōng	老公
+lǎo pó	老婆
+lǎo shi	老实
+lǎo jiā	老家
+kǎo chá	考察
+kǎo lǜ	考虑
+ér	而
+ér shì	而是
+ěr jī	耳机
+jù	聚
+jù huì	聚会
+dù zi	肚子
+féi	肥
+bèi jǐng	背景
+pàng zi	胖子
+xiōng bù	胸部
+néng gàn	能干
+nǎo dai	脑袋
+tuō	脱
+yāo	腰
+zì	自
+zì xìn	自信
+shū shì	舒适
+háng bān	航班
+háng kōng	航空
+liáng hǎo	良好
+sè	色
+sè cǎi	色彩
+jié shěng	节省
+kǔ	苦
+yīng yǒng	英勇
+chá yè	茶叶
+yào wù	药物
+huò	获
+huò qǔ	获取
+huò jiǎng	获奖
+huò dé	获得
+yíng yè	营业
+zhù zuò	著作
+zhù míng	著名
+luò	落
+báo	薄
+chóng zi	虫子
+háng yè	行业
+jiē dào	街道
+biǎo qíng	表情
+biǎo yáng	表扬
+dài	袋
+wà zi	袜子
+bèi pò	被迫
+zhuāng xiū	装修
+zhuāng zhì	装置
+xī guā	西瓜
+guī zé	规则
+guī lǜ	规律
+guī mó	规模
+jué sè	角色
+jiě shì	解释
+yì lùn	议论
+jì zǎi	记载
+jiǎng zuò	讲座
+jiǎng jiu	讲究
+lùn wén	论文
+shè shī	设施
+shè zhì	设置
+cí huì	词汇
+shì juàn	试卷
+shī	诗
+shī rén	诗人
+chéng xìn	诚信
+chéng shí	诚实
+yǔ fǎ	语法
+yǔ yīn	语音
+wù huì	误会
+shuō bu dìng	说不定
+shuō fú	说服
+tiáo pí	调皮
+dòu fu	豆腐
+fù dān	负担
+cái chǎn	财产
+cái fù	财富
+bài	败
+huò	货
+zhì liàng	质量
+gòu mǎi	购买
+gòu wù	购物
+tiē	贴
+zī liào	资料
+zī yuán	资源
+shǎng	赏
+zàn zhù	赞助
+zàn chéng	赞成
+zàn shǎng	赞赏
+yíng dé	赢得
+qū shì	趋势
+jù lí	距离
+shēn fèn	身份
+shēn cái	身材
+shēn gāo	身高
+tǎng	躺
+zhuǎn dòng	转动
+zhuǎn gào	转告
+zhuǎn wān	转弯
+zhuǎn yí	转移
+zhuǎn shēn	转身
+lún	轮
+lún zi	轮子
+lún yǐ	轮椅
+lún chuán	轮船
+qīng yì	轻易
+qīng sōng	轻松
+là	辣
+biàn lùn	辩论
+xùn sù	迅速
+guò fèn	过分
+yùn dòng huì	运动会
+yùn dòng yuán	运动员
+yùn qi	运气
+yùn yòng	运用
+jìn dài	近代
+jìn kǒu	进口
+chí dào	迟到
+pò qiè	迫切
+zhuī qiú	追求
+xuǎn zé	选择
+tòu	透
+tòu míng	透明
+zhú bù	逐步
+zhú jiàn	逐渐
+tú zhōng	途中
+tōng zhī shū	通知书
+guàng	逛
+zào xíng	造型
+yù	遇
+yù dào	遇到
+yù jiàn	遇见
+yí chǎn	遗产
+yí chuán	遗传
+bì	避
+bì miǎn	避免
+yóu jú	邮局
+jiǔ bā	酒吧
+suān	酸
+suān nǎi	酸奶
+xǐng	醒
+cǎi fǎng	采访
+zhòng liàng	重量
+liáng	量
+zhēn	针
+zhēn duì	针对
+xiāo shòu	销售
+duàn liàn	锻炼
+jìng tóu	镜头
+jìng zi	镜子
+cháng tú	长途
+shǎn	闪
+shǎn diàn	闪电
+wèn hòu	问候
+nào	闹
+nào zhōng	闹钟
+yuè dú	阅读
+yáng tái	阳台
+zhèn	阵
+jiē duàn	阶段
+zǔ zhǐ	阻止
+ā yí	阿姨
+fù jìn	附近
+lù dì	陆地
+lù xù	陆续
+jiàng	降
+jiàng jià	降价
+jiàng dī	降低
+jiàng wēn	降温
+jiàng luò	降落
+xiàn zhì	限制
+suí shǒu	随手
+gé	隔
+gé kāi	隔开
+nán miǎn	难免
+jí hé	集合
+líng shí	零食
+qīng chūn	青春
+fēi	非
+miàn lín	面临
+miàn shì	面试
+jìng rán	竟然
+dǐng	顶
+xiàng	项
+xiàng mù	项目
+shùn xù	顺序
+yù cè	预测
+yù dìng	预订
+fēng sú	风俗
+fēng jǐng	风景
+fēng gé	风格
+shí táng	食堂
+shǒu	首
+gǔ tou	骨头
+gāo jià	高价
+gāo shàng	高尚
+gāo cháo	高潮
+gāo tiě	高铁
+xiān	鲜
+xiān míng	鲜明
+xiān huā	鲜花
+huáng guā	黄瓜
+huáng jīn	黄金
+hēi àn	黑暗
+mò mò	默默
+
+# HSK Livello 5
+yī xià zi	一下子
+yī kǒu qì	一口气
+yī jù huà	一句话
+yī xiàng	一向
+yī dài	一带
+yī dàn	一旦
+yī liú	一流
+yī lù	一路
+yī shēn	一身
+yī bèi zi	一辈子
+shàng xià	上下
+shàng zhǎng	上涨
+shàng jí	上级
+bù tíng	不停
+bù miǎn	不免
+bù lì	不利
+bù xìng	不幸
+bù dé liǎo	不得了
+bù gǎn dāng	不敢当
+bù shí	不时
+bù yì	不易
+bù céng	不曾
+bù zhǐ	不止
+bù nài fán	不耐烦
+bù néng bù	不能不
+bù liáng	不良
+bù xǔ	不许
+bù zú	不足
+bù gù	不顾
+chǒu	丑
+zhuān lì	专利
+zhuān jí	专辑
+yè wù	业务
+diū	丢
+liǎng àn	两岸
+yán lì	严厉
+yán sù	严肃
+gè r	个儿
+zhōng yāng	中央
+zhōng duàn	中断
+zhòng dú	中毒
+zhōng qiū jié	中秋节
+zhōng yào	中药
+fēng shōu	丰收
+wéi zhǔ	为主
+wéi qī	为期
+wéi zhǐ	为止
+wéi nán	为难
+zhǔ tǐ	主体
+zhǔ bàn	主办
+zhǔ dǎo	主导
+zhǔ guǎn	主管
+zhǔ guān	主观
+jǔ dòng	举动
+zhī xià	之下
+zhī zhōng	之中
+zhī nèi	之内
+zhī wài	之外
+chéng	乘
+chéng zuò	乘坐
+chéng kè	乘客
+chéng chē	乘车
+yǐ	乙
+yě hǎo	也好
+shū guì	书柜
+shū zhuō	书桌
+shū fǎ	书法
+mǎi mài	买卖
+zhēng yì	争议
+èr wéi mǎ	二维码
+kuī	亏
+yà jūn	亚军
+jiāo dài	交代
+chǎn yè	产业
+xiǎng shòu	享受
+rén lì	人力
+rén shì	人士
+rén wù	人物
+rén jiān	人间
+jīn rì	今日
+réng jiù	仍旧
+cóng zhōng	从中
+cóng ér	从而
+zǐ xì	仔细
+dài jià	代价
+dài lǐ	代理
+lìng	令
+yǐ biàn	以便
+yǐ wǎng	以往
+jià	价
+xiū xián	休闲
+zhòng duō	众多
+yōu xiān	优先
+yōu huì	优惠
+huì tán	会谈
+chuán zhēn	传真
+chuán dá	传达
+chuán dì	传递
+gū jì	估计
+shēn	伸
+dī yú	低于
+tǐ lì	体力
+tǐ jī	体积
+shǐ de	使得
+lì wài	例外
+yī jù	依据
+yī jiù	依旧
+yī fǎ	依法
+yī zhào	依照
+biàn yú	便于
+biàn lì	便利
+biàn tiáo	便条
+bǎo yǎng	保养
+bǎo wèi	保卫
+xìn niàn	信念
+xìn xiāng	信箱
+xiū yǎng	修养
+xiū fù	修复
+xiū jiàn	修建
+jù lè bù	俱乐部
+dào shi	倒是
+chàng dǎo	倡导
+zhí bān	值班
+tíng liú	停留
+jiàn quán	健全
+ǒu xiàng	偶像
+ǒu ěr	偶尔
+ǒu rán	偶然
+tōu	偷
+tōu tōu	偷偷
+shǎ	傻
+ér nǚ	儿女
+yuán dàn	元旦
+chōng zú	充足
+xiān qián	先前
+xiān hòu	先后
+guāng xiàn	光线
+guāng róng	光荣
+tù	兔
+rù mén	入门
+quán shì jiè	全世界
+quán dōu	全都
+gōng gào	公告
+gōng shì	公式
+gōng zhèng	公正
+gōng rèn	公认
+gòng xiǎng	共享
+gòng jì	共计
+guān huái	关怀
+guān jiàn	关键
+qí	其
+diǎn lǐ	典礼
+nèi zài	内在
+cè	册
+zài yě	再也
+zài cì	再次
+mào	冒
+jūn rén	军人
+nóng chǎn pǐn	农产品
+guàn jūn	冠军
+chōng dòng	冲动
+chōng tū	冲突
+jué bù	决不
+dòng	冻
+jiǎn qīng	减轻
+píng	凭
+chū yú	出于
+chū chāi	出差
+chū hàn	出汗
+chū bǎn	出版
+fēn xiǎng	分享
+fēn chéng	分成
+fēn xī	分析
+fēn lí	分离
+fēn lèi	分类
+fēn jiě	分解
+huà fēn	划分
+chuàng lì	创立
+chū qī	初期
+lì rùn	利润
+dào lái	到来
+zhì chéng	制成
+zhì yuē	制约
+qián tí	前提
+qián jǐng	前景
+jù běn	剧本
+jiǎn	剪
+jiǎn dāo	剪刀
+jiǎn zi	剪子
+shèng	剩
+shèng xià	剩下
+quàn	劝
+jiā shàng	加上
+jiā yǐ	加以
+jiā rè	加热
+jiā sù	加速
+dòng yuán	动员
+dòng tài	动态
+dòng shǒu	动手
+dòng jī	动机
+zhù shǒu	助手
+zhù lǐ	助理
+láo dòng	劳动
+shì li	势力
+qín fèn	勤奋
+bāo wéi	包围
+bāo zhuāng	包装
+huà shí	化石
+běi jí	北极
+pǐ	匹
+qū yù	区域
+shí zú	十足
+shēng gāo	升高
+huá yǔ	华语
+xié yì	协议
+xié yì shū	协议书
+dān yī	单一
+nán běi	南北
+nán jí	南极
+bó shì	博士
+bó kè	博客
+bó wù guǎn	博物馆
+bó lǎn huì	博览会
+zhàn yǒu	占有
+zhàn lǐng	占领
+wò shì	卧室
+wèi xīng	卫星
+yìn shuā	印刷
+jí shǐ	即使
+chǎng zhǎng	厂长
+tīng	厅
+lì hai	厉害
+yuán xiān	原先
+yuán shǐ	原始
+yuán yǒu	原有
+yuán lǐ	原理
+chú fáng	厨房
+chā	叉
+chā zi	叉子
+yǒu yì	友谊
+shuāng shǒu	双手
+fā shè	发射
+fā bù	发布
+fā xíng	发行
+fā jué	发觉
+shòu zāi	受灾
+biàn dòng	变动
+kǒu hào	口号
+gǔ lǎo	古老
+zhǐ bu guò	只不过
+zhǐ jiàn	只见
+kě	可
+kě lián	可怜
+kě xī	可惜
+tái fēng	台风
+hào zhào	号召
+chī lì	吃力
+hé bìng	合并
+hé chéng	合成
+hòu huǐ	后悔
+tǔ	吐
+xiàng shàng	向上
+xiàng qián	向前
+xiàng dǎo	向导
+xià	吓
+dūn	吨
+qǐ shì	启事
+qǐ dòng	启动
+qǐ fā	启发
+dāi	呆
+zhōu qī	周期
+mìng lìng	命令
+yǎo	咬
+ké	咳
+pǐn	品
+pǐn zhǒng	品种
+wéi yī	唯一
+shāng biāo	商标
+xǐ jù	喜剧
+pēn	喷
+sì zhōu	四周
+huí xìn	回信
+huí tóu	回头
+huí yì	回忆
+huí bào	回报
+huí shōu	回收
+huí bì	回避
+huí gù	回顾
+yīn ér	因而
+tuán zhǎng	团长
+yuán lín	园林
+kùn rǎo	困扰
+wéi rào	围绕
+guó mín	国民
+guó jí	国籍
+tǔ dòu	土豆
+zài nèi	在内
+zài chǎng	在场
+dì dài	地带
+dì xíng	地形
+dì zhèn	地震
+chǎng miàn	场面
+jiān dìng	坚定
+jī dì	基地
+jī jīn	基金
+duī	堆
+qiáng bì	墙壁
+zēng	增
+zēng chǎn	增产
+zēng duō	增多
+zēng dà	增大
+zēng qiáng	增强
+shēng	声
+chǔ fèn	处分
+chǔ zài	处在
+chǔ fá	处罚
+wài jiè	外界
+yè jiān	夜间
+dà shì	大事
+dà yú	大于
+dà huǒ r	大伙儿
+dà tīng	大厅
+dà jiǎng sài	大奖赛
+dà xióng māo	大熊猫
+dà gāng	大纲
+dà dǎn	大胆
+dà nǎo	大脑
+dà zhì	大致
+dà xiàng	大象
+dà dū	大都
+tiān cái	天才
+tiān wén	天文
+tiān rán qì	天然气
+tài kōng	太空
+shī wù	失误
+jiā	夹
+jiǎng lì	奖励
+nǚ xìng	女性
+hǎo yùn	好运
+rú xià	如下
+rú tóng	如同
+rú cǐ	如此
+wěi tuō	委托
+zǐ dàn	子弹
+cún kuǎn	存款
+xué wèi	学位
+xué kē	学科
+xué zhě	学者
+ān wèi	安慰
+wán le	完了
+shí huì	实惠
+kè tīng	客厅
+kè hù	客户
+kè qi	客气
+hài	害
+kuān dù	宽度
+bīn guǎn	宾馆
+sù shè	宿舍
+cùn	寸
+duì yìng	对应
+duì lì	对立
+xún qiú	寻求
+shòu sī	寿司
+jiāng	将
+jiāng yào	将要
+shè	射
+shè jī	射击
+zūn jìng	尊敬
+zūn zhòng	尊重
+xiǎo tōu r	小偷儿
+cháng	尝
+cháng shì	尝试
+yóu qí	尤其
+jìn kě néng	尽可能
+jǐn guǎn	尽管
+jú zhǎng	局长
+jú miàn	局面
+céng cì	层次
+jū rán	居然
+jiè	届
+wū	屋
+zhǎn xiàn	展现
+zhǎn shì	展示
+zhǎn lǎn	展览
+shān qū	山区
+suì yuè	岁月
+àn	岸
+àn shàng	岸上
+gōng zuò rì	工作日
+gōng yì	工艺
+chā bié	差别
+chā jù	差距
+shī fu	师傅
+dài yǒu	带有
+fú	幅
+fú dù	幅度
+gān rǎo	干扰
+gān cuì	干脆
+gān yù	干预
+píng yuán	平原
+píng tǎn	平坦
+nián qián	年前
+nián dù	年度
+nián líng	年龄
+xiāng	乡
+xiāng cūn	乡村
+yōu mò	幽默
+guǎng	广
+guǎng fàn	广泛
+kù	库
+yán shēn	延伸
+jiàn zhù	建筑
+jiàn zào	建造
+kāi mù	开幕
+kāi mù shì	开幕式
+shì	式
+tán	弹
+qiáng dù	强度
+qiǎng pò	强迫
+dāng dài	当代
+dāng qián	当前
+dāng chǎng	当场
+dāng nián	当年
+dāng xuǎn	当选
+xíng tài	形态
+cǎi piào	彩票
+bǐ cǐ	彼此
+dāi	待
+dé le	得了
+dé yǐ	得以
+wēi bó	微博
+xīn tài	心态
+xīn téng	心疼
+bì	必
+bì xū	必需
+rěn	忍
+rěn bu zhù	忍不住
+rěn shòu	忍受
+kuài huo	快活
+sī wéi	思维
+xìng néng	性能
+yuàn	怨
+zǒng tǐ	总体
+zǒng shù	总数
+zǒng suàn	总算
+zǒng cái	总裁
+liàn ài	恋爱
+huī fù	恢复
+hèn	恨
+qiāo qiāo	悄悄
+bēi shāng	悲伤
+bēi jù	悲剧
+qíng xing	情形
+qíng jié	情节
+chóu	愁
+yì wèi zhe	意味着
+yì zhì	意志
+yì shí	意识
+gǎn xiǎng	感想
+yuàn	愿
+huāng	慌
+huāng máng	慌忙
+wèi wèn	慰问
+xì	戏
+xì jù	戏剧
+chéng jiāo	成交
+chéng xiào	成效
+chéng běn	成本
+chéng yǔ	成语
+jiè	戒
+huò shì	或是
+suǒ zài	所在
+shān	扇
+shàn zi	扇子
+shǒu duàn	手段
+shǒu fǎ	手法
+dǎ jī	打击
+dǎ bāo	打包
+dǎ ban	打扮
+dǎ rǎo	打扰
+dǎ jià	打架
+rēng	扔
+zhí xíng	执行
+bàn yǎn	扮演
+fú	扶
+chéng bàn	承办
+jì néng	技能
+qiǎng	抢
+qiǎng jiù	抢救
+bào dá	报答
+bào jǐng	报警
+pī	披
+tái	抬
+tái tóu	抬头
+bào yuàn	抱怨
+yā jīn	押金
+chāi	拆
+chāi chú	拆除
+pāi shè	拍摄
+jù jué	拒绝
+bá	拔
+zhāo shǒu	招手
+zhāo shēng	招生
+bài fǎng	拜访
+yōng bào	拥抱
+yōng yǒu	拥有
+pīn	拼
+shí	拾
+zhǐ biāo	指标
+zhǐ jia	指甲
+zhǐ shì	指示
+zhǐ zé	指责
+àn mó	按摩
+dǎng	挡
+zhèng	挣
+zhèng qián	挣钱
+jǐ	挤
+zhèn dòng	振动
+sǔn shī	损失
+sǔn hài	损害
+zhǎng wò	掌握
+pái chú	排除
+jiē chù	接触
+jiē lián	接连
+kòng zhì	控制
+tuī xíng	推行
+tí chàng	提倡
+tí shì	提示
+tí qǐ	提起
+chā	插
+wò	握
+sōu	搜
+sōu suǒ	搜索
+gǎo	搞
+gǎo hǎo	搞好
+shè xiàng	摄像
+shè xiàng jī	摄像机
+shè yǐng	摄影
+shè yǐng shī	摄影师
+yáo tóu	摇头
+shuāi	摔
+shuāi dǎo	摔倒
+zhāi	摘
+mó tuō	摩托
+mó cā	摩擦
+zhuàng	撞
+zhī chū	支出
+zhī pèi	支配
+shōu shi	收拾
+shōu gòu	收购
+shōu jí	收集
+gǎi gé	改革
+fàng dà	放大
+fàng qì	放弃
+mǐn gǎn	敏感
+jiù zāi	救灾
+sǎn wén	散文
+shù mù	数目
+qiāo	敲
+qiāo mén	敲门
+wén yì	文艺
+xié	斜
+páng	旁
+wú nài	无奈
+wú yí	无疑
+zǎo qī	早期
+shí shì	时事
+shí guāng	时光
+shí cháng	时常
+shí jī	时机
+míng liàng	明亮
+míng míng	明明
+xiǎn	显
+jǐng xiàng	景象
+qíng lǎng	晴朗
+zàn tíng	暂停
+zàn shí	暂时
+nuǎn	暖
+gēng huàn	更换
+gēng xīn	更新
+yuè qiú	月球
+yuè bǐng	月饼
+yǒu lì yú	有利于
+yǒu lì	有力
+yǒu hài	有害
+yǒu dú	有毒
+yǒu zhe	有着
+fú cóng	服从
+lǎng dú	朗读
+qī wàng	期望
+běn rén	本人
+duǒ	朵
+jī zhì	机制
+jī qì rén	机器人
+shā	杀
+shā dú	杀毒
+lái xìn	来信
+qiāng	枪
+rǎn	染
+guì zi	柜子
+chá xún	查询
+táo	桃
+táo shù	桃树
+táo huā	桃花
+lí	梨
+jiǎn yàn	检验
+bàng	棒
+mó fǎng	模仿
+mó shì	模式
+mú yàng	模样
+mó hu	模糊
+mó fàn	模范
+qiàn	欠
+xīn shǎng	欣赏
+xiē	歇
+gē qǔ	歌曲
+zhèng yì	正义
+zhèng rú	正如
+zhèng bǎn	正版
+zhèng guī	正规
+cǐ kè	此刻
+cǐ hòu	此后
+cǐ shí	此时
+dú	毒
+bǐ fang	比方
+bǐ zhòng	比重
+bì jìng	毕竟
+máo bǐ	毛笔
+qì tǐ	气体
+qì xiàng	气象
+shuǐ chǎn pǐn	水产品
+shuǐ fèn	水分
+shuǐ kù	水库
+shuǐ zāi	水灾
+huì kuǎn	汇款
+hàn	汗
+chí zi	池子
+wū rǎn	污染
+wū shuǐ	污水
+shā mò	沙漠
+gōu	沟
+gōu tōng	沟通
+zhì ān	治安
+zhì lǐ	治理
+quán	泉
+fǎ zhì	法制
+fǎ guī	法规
+zhù cè	注册
+zhù shè	注射
+zhù shì	注视
+zhù zhòng	注重
+pō	泼
+sǎ	洒
+dòng	洞
+huó lì	活力
+huó po	活泼
+liú dòng	流动
+liú tōng	流通
+làng màn	浪漫
+xiāo jí	消极
+xiāo dú	消毒
+xiāo fèi zhě	消费者
+xiāo fáng	消防
+xiāo chú	消除
+zhǎng	涨
+zhǎng jià	涨价
+shēn chù	深处
+shēn dù	深度
+qīng chén	清晨
+qīng lǐ	清理
+wēn hé	温和
+kě wàng	渴望
+yóu yǒng chí	游泳池
+huá	滑
+gǔn	滚
+lòu	漏
+lòu dòng	漏洞
+màn huà	漫画
+màn cháng	漫长
+huǒ chái	火柴
+huǒ zāi	火灾
+huǒ tuǐ	火腿
+huī sè	灰色
+zāi	灾
+zāi qū	灾区
+zāi hài	灾害
+zāi nàn	灾难
+diǎn rán	点燃
+làn	烂
+kǎo ròu	烤肉
+kǎo yā	烤鸭
+rè liàng	热量
+rè mén	热门
+méi	煤
+méi qì	煤气
+xióng	熊
+shú xī	熟悉
+bǎn	版
+niú zǎi kù	牛仔裤
+wù yè	物业
+wù jià	物价
+wù zhì	物质
+tè dìng	特定
+tè xìng	特性
+tè yǒu	特有
+yóu yù	犹豫
+kuáng	狂
+cāi	猜
+cāi cè	猜测
+xiàn	献
+hóu	猴
+shuài lǐng	率领
+huán jié	环节
+xiàn yǒu	现有
+xiàn zhuàng	现状
+bō li	玻璃
+zhēn xī	珍惜
+zhēn zhū	珍珠
+zhēn guì	珍贵
+qín	琴
+shēng chéng	生成
+yòng bu zháo	用不着
+yòng yú	用于
+yòng hù	用户
+yòng lái	用来
+yóu cǐ	由此
+jiǎ	甲
+diàn zǐ bǎn	电子版
+diàn chí	电池
+diàn fàn guō	电饭锅
+nán xìng	男性
+huà miàn	画面
+fēng	疯
+fēng kuáng	疯狂
+bìng dú	病毒
+shòu	瘦
+bái jiǔ	白酒
+pí fū	皮肤
+pí xié	皮鞋
+pén	盆
+hé	盒
+hé zi	盒子
+hé fàn	盒饭
+mù guāng	目光
+zhí xiàn	直线
+xiàng sheng	相声
+xiāng yìng	相应
+xiāng děng	相等
+kàn chū	看出
+kàn dài	看待
+kàn chéng	看成
+zhēn lǐ	真理
+zhēn xiàng	真相
+zhēn chéng	真诚
+yǎn guāng	眼光
+shuì mián	睡眠
+qiáo	瞧
+máo dùn	矛盾
+mǎ tóu	码头
+yán jiū suǒ	研究所
+shuò shì	硕士
+yìng	硬
+yìng jiàn	硬件
+què lì	确立
+suì	碎
+shì fàn	示范
+lǐ	礼
+lǐ bài	礼拜
+lǐ mào	礼貌
+shè	社
+shè qū	社区
+shì wéi	视为
+shì pín	视频
+zhù hè	祝贺
+shén	神
+shén qí	神奇
+shén qíng	神情
+shén jīng	神经
+fú lì	福利
+sī rén	私人
+miǎo	秒
+chēng hào	称号
+shāo	稍
+shāo wēi	稍微
+kōng zhōng	空中
+tū pò	突破
+chuāng lián	窗帘
+lì	立
+lì chǎng	立场
+jìng zhēng	竞争
+jìng sài	竞赛
+zhú zi	竹子
+děng hòu	等候
+děng jí	等级
+dá	答
+dá fù	答复
+qiān	签
+qiān míng	签名
+qiān zì	签字
+qiān yuē	签约
+qiān dìng	签订
+qiān zhèng	签证
+zāo	糟
+zāo gāo	糟糕
+yuē shù	约束
+jǐn jǐn	紧紧
+zǐ	紫
+xiàn suǒ	线索
+zǔ zhī	组织
+zhōng zhǐ	终止
+zhōng diǎn	终点
+zhōng shēn	终身
+jīng fèi	经费
+rào	绕
+jué wàng	绝望
+jì chéng	继承
+biān jí	编辑
+fán róng	繁荣
+quē fá	缺乏
+fá	罚
+fá kuǎn	罚款
+qún zhòng	群众
+qún tǐ	群体
+yǔ máo qiú	羽毛球
+yǔ róng fú	羽绒服
+kǎo hé	考核
+nài xīn	耐心
+ěr duo	耳朵
+zhí wèi	职位
+zhí wù	职务
+zhí néng	职能
+lián xiǎng	联想
+lián luò	联络
+cōng ming	聪明
+jī ròu	肌肉
+cháng	肠
+jiān	肩
+kěn dìng	肯定
+wèi	胃
+dǎn	胆
+dǎn xiǎo	胆小
+bēi bāo	背包
+shèng fù	胜负
+hú tòng r	胡同儿
+hú zi	胡子
+jiāo dài	胶带
+jiāo shuǐ	胶水
+néng liàng	能量
+cuì	脆
+nǎo zi	脑子
+jiǎo bù	脚步
+tuō lí	脱离
+liǎn pén	脸盆
+liǎn sè	脸色
+pí qi	脾气
+zì yuàn	自愿
+zì shā	自杀
+zì háo	自豪
+chòu	臭
+zhì	至
+shě bu de	舍不得
+shě de	舍得
+wǔ	舞
+jiān kǔ	艰苦
+jiān nán	艰难
+cǎo yuán	草原
+luò shí	落实
+pú tao	葡萄
+pú tao jiǔ	葡萄酒
+shū cài	蔬菜
+bó ruò	薄弱
+hǔ	虎
+xū xīn	虚心
+shé	蛇
+dàn gāo	蛋糕
+xíng shǐ	行驶
+bǔ cháng	补偿
+bǔ tiē	补贴
+bèi dòng	被动
+cái pàn	裁判
+zhuāng shì	装饰
+xī hóng shì	西红柿
+xī zhuāng	西装
+guī huà	规划
+jiě fàng	解放
+jiě chú	解除
+yán yǔ	言语
+rèn	认
+rèn dìng	认定
+tǎo yàn	讨厌
+jì yì	记忆
+xǔ kě	许可
+shè xiǎng	设想
+zhèng shū	证书
+zhèng shí	证实
+píng gū	评估
+píng lùn	评论
+zhěn duàn	诊断
+shì tú	试图
+shī gē	诗歌
+xún wèn	询问
+xiáng xì	详细
+wù jiě	误解
+shuō fǎ	说法
+kè tí	课题
+diào dòng	调动
+tiáo jié	调节
+tiáo jiě	调解
+jǐng gào	警告
+dòu zhì pǐn	豆制品
+xiàng zhēng	象征
+fù zé rén	负责人
+dài kuǎn	贷款
+mào yì	贸易
+hè kǎ	贺卡
+zī chǎn	资产
+zī zhù	资助
+zī běn	资本
+péi	赔
+péi cháng	赔偿
+zèng	赠
+zèng sòng	赠送
+qǐ dào	起到
+qǐ mǎ	起码
+chāo yuè	超越
+gēn qián	跟前
+gēn suí	跟随
+duǒ	躲
+chē zhǔ	车主
+zhuǎn huà	转化
+zhuǎn xiàng	转向
+zhuǎn huàn	转换
+zhuǎn ràng	转让
+ruǎn	软
+ruǎn jiàn	软件
+fǔ zhù	辅助
+bèi	辈
+shū chū	输出
+xīn kǔ	辛苦
+cí diǎn	辞典
+cí zhí	辞职
+biān jìng	边境
+dá chéng	达成
+guò yú	过于
+guò dù	过度
+guò mǐn	过敏
+yùn	运
+yùn xíng	运行
+jìn lái	近来
+fǎn huí	返回
+jìn huà	进化
+yuǎn chù	远处
+wéi fǎn	违反
+wéi fǎ	违法
+wéi guī	违规
+lián jiē	连接
+chí	迟
+mí rén	迷人
+mí xìn	迷信
+táo	逃
+táo zǒu	逃走
+táo pǎo	逃跑
+xuǎn xiū	选修
+dì	递
+dì gěi	递给
+tōng yòng	通用
+luó ji	逻辑
+dào dé	道德
+zūn shǒu	遵守
+yāo qǐng	邀请
+lín jū	邻居
+jiāo qū	郊区
+bù wèi	部位
+pèi bèi	配备
+pèi tào	配套
+jiǔ guǐ	酒鬼
+suān tián kǔ là	酸甜苦辣
+zuì	醉
+cǎi gòu	采购
+gāng qín	钢琴
+gāng bǐ	钢笔
+líng	铃
+líng shēng	铃声
+suǒ	锁
+guō	锅
+jiàn	键
+jiàn pán	键盘
+cháng shòu	长寿
+cháng dù	长度
+mén zhěn	门诊
+bì mù	闭幕
+bì mù shì	闭幕式
+chuǎng	闯
+xián	闲
+jiàn jiē	间接
+yuè lǎn shì	阅览室
+fáng zhì	防治
+zǔ ài	阻碍
+fù jiàn	附件
+chú xī	除夕
+chú fēi	除非
+péi	陪
+suí hòu	随后
+suí yì	随意
+suí zhe	随着
+gé bì	隔壁
+nán yǐ	难以
+nán dé	难得
+xióng wěi	雄伟
+jí tuán	集团
+yǔ shuǐ	雨水
+zhèn jīng	震惊
+qīng	青
+kào jìn	靠近
+miàn zi	面子
+miàn mào	面貌
+gù wèn	顾问
+yù bèi	预备
+yù qī	预期
+lǐng dài	领带
+pín fán	频繁
+pín dào	频道
+kē	颗
+tí cái	题材
+fēng guāng	风光
+fēng dù	风度
+yǐn liào	饮料
+yǐn shí	饮食
+bǐng	饼
+bǐng gān	饼干
+cān tīng	餐厅
+cān yǐn	餐饮
+cān guǎn	餐馆
+xiāng cháng	香肠
+jià zhào	驾照
+jià shǐ	驾驶
+mà	骂
+piàn	骗
+piàn zi	骗子
+gāo yú	高于
+gāo yuán	高原
+gāo dà	高大
+gāo dù	高度
+gāo wēn	高温
+gāo gēn xié	高跟鞋
+guǐ	鬼
+xiān yàn	鲜艳
+yā zi	鸭子
+gǔ	鼓
+gǔ lì	鼓励
+gǔ zhǎng	鼓掌
+shǔ	鼠
+shǔ biāo	鼠标
+bí zi	鼻子
+qí quán	齐全
+
+# HSK Livello 6
+yī dài	一代
+yī tóng	一同
+yī shí	一时
+yī mú yī yàng	一模一样
+yī cì xìng	一次性
+yī xíng	一行
+yī guàn	一贯
+yī lù shàng	一路上
+yī dào	一道
+yī qí	一齐
+sān míng zhì	三明治
+shàng tái	上台
+shàng shì	上市
+shàng dì	上帝
+shàng dàng	上当
+shàng yǎn	上演
+bù jǐn jǐn	不仅仅
+bù biàn	不便
+bù zhí	不值
+bù zài	不再
+bù zěn me	不怎么
+bù zěn me yàng	不怎么样
+bù chéng	不成
+bù liào	不料
+bù jīn	不禁
+bù zhì yú	不至于
+bù jiàn	不见
+bù tōng	不通
+yǔ	与
+zhuān yòng	专用
+liǎng cè	两侧
+liǎng shǒu	两手
+sàng shī	丧失
+zhōng huá	中华
+zhōng wài	中外
+zhōng qī	中期
+zhōng děng	中等
+chuàn	串
+wèi hé	为何
+wèi cǐ	为此
+zhǔ chí rén	主持人
+zhǔ liú	主流
+zhǔ jué	主角
+zhī lèi	之类
+wū yún	乌云
+yuè qǔ	乐曲
+shū fáng	书房
+rǔ zhì pǐn	乳制品
+zhēng duó	争夺
+shì hòu	事后
+yú	于
+hù dòng	互动
+jǐng	井
+chǎn liàng	产量
+qīn shǔ	亲属
+qīn yǎn	亲眼
+rén quán	人权
+cóng bù	从不
+cóng méi	从没
+cāng kù	仓库
+yí qì	仪器
+yí shì	仪式
+yǎng	仰
+fǎng fú	仿佛
+qǐ tú	企图
+yōu zhì	优质
+huì jiàn	会见
+huì zhǎng	会长
+chuán chū	传出
+chuán méi	传媒
+chuán yán	传言
+chuán shū	传输
+shāng wáng	伤亡
+shāng kǒu	伤口
+shāng yuán	伤员
+dī tóu	低头
+dī wēn	低温
+zhù zhái	住宅
+fó	佛
+fó jiào	佛教
+zuò	作
+zuò fèi	作废
+zuò zhàn	作战
+gōng jǐ	供给
+yī cì	依次
+yī lài	依赖
+cè	侧
+qīn fàn	侵犯
+biàn	便
+biàn shì	便是
+bǎo jiàn	保健
+xìn yǎng	信仰
+xìn yòng	信用
+xiū chē	修车
+jiè jiàn	借鉴
+zhài	债
+qīng xiàng	倾向
+jià rì	假日
+piān	偏
+bàng wǎn	傍晚
+chǔ cún	储存
+ér kē	儿科
+yǔn xǔ	允许
+yuán sù	元素
+xiān fēng	先锋
+guāng huī	光辉
+miǎn de	免得
+dǎng	党
+rù	入
+rù xué	入学
+quán lì	全力
+quán xīn	全新
+gōng	公
+gōng zhǔ	公主
+gōng zhòng	公众
+gōng ān	公安
+gōng jī	公鸡
+guān ài	关爱
+guān lián	关联
+xīng wàng	兴旺
+yǎng lǎo	养老
+nèi dì	内地
+nèi wài	内外
+nèi yī	内衣
+zài shēng	再生
+zài shuō	再说
+zuì jiā	最佳
+zuì zhōng	最终
+xiě zì tái	写字台
+xiě zì lóu	写字楼
+jūn shì	军事
+jūn jiàn	军舰
+jūn duì	军队
+chōng jī	冲击
+jué cè	决策
+lěng qì	冷气
+lěng shuǐ	冷水
+jìng	净
+liáng xié	凉鞋
+fán shì	凡是
+xiōng	凶
+xiōng shǒu	凶手
+chū shì	出事
+chū rù	出入
+chū dòng	出动
+chū tái	出台
+chū míng	出名
+chū chǎng	出场
+chū xíng	出行
+chū fǎng	出访
+chū lù	出路
+chū miàn	出面
+fēn gōng	分工
+fēn liè	分裂
+qiè shí	切实
+gāng hǎo	刚好
+chuàng bàn	创办
+chuàng jiàn	创建
+chuàng yì	创意
+chū děng	初等
+pàn	判
+lì	利
+guā	刮
+dào qī	到期
+quàn	券
+qián fāng	前方
+qián lái	前来
+jiàn	剑
+jù	剧
+fù	副
+bàn shì chù	办事处
+bàn gōng	办公
+bàn xué	办学
+jiā méng	加盟
+dòng huà	动画
+sháo	勺
+huà jiě	化解
+qū fēn	区分
+yī yào	医药
+shēng zhí	升值
+shēng xué	升学
+shēng jí	升级
+bàn jué sài	半决赛
+xié huì	协会
+xié zhù	协助
+xié shāng	协商
+xié tiáo	协调
+dān dǎ	单打
+zhàn jù	占据
+wò pù	卧铺
+yìn	印
+wēi jī	危机
+què shì	却是
+chǎng shāng	厂商
+yā pò	压迫
+cè suǒ	厕所
+yuán	原
+yuán gào	原告
+yuán liàng	原谅
+chú shī	厨师
+qù diào	去掉
+cān zhǎn	参展
+cān sài	参赛
+shuāng dǎ	双打
+fǎn xiǎng	反响
+fǎn kàng	反抗
+fǎn wèn	反问
+fā nù	发怒
+fā fàng	发放
+fā yán	发炎
+fā diàn	发电
+fā bìng	发病
+fā yán rén	发言人
+fā qǐ	发起
+qǔ kuǎn	取款
+qǔ kuǎn jī	取款机
+biàn xíng	变形
+biàn huàn	变换
+biàn gēng	变更
+kǒu shì	口试
+gǔ diǎn	古典
+lìng	另
+zhǐ dé	只得
+zhǐ guǎn	只管
+zhǐ gù	只顾
+tái dēng	台灯
+sī zhǎng	司长
+tàn qì	叹气
+hé yuē	合约
+jí lì	吉利
+jí xiáng	吉祥
+diào	吊
+tóng	同
+tóng yī	同一
+tóng qī	同期
+tóng bāo	同胞
+tóng háng	同行
+míng yì	名义
+míng shèng	名胜
+míng yù	名誉
+míng é	名额
+tūn	吞
+tīng qǔ	听取
+xī dú	吸毒
+mìng	命
+hé xié	和谐
+zī xún	咨询
+pǐn pái	品牌
+wa	哇
+xiǎng shēng	响声
+zhé xué	哲学
+shāng chéng	商城
+la	啦
+jiā bīn	嘉宾
+ma	嘛
+sì chù	四处
+huí yìng	回应
+yīn	因
+yīn sù	因素
+tuán duì	团队
+yuán	园
+yuán dì	园地
+guó chǎn	国产
+guó huì	国会
+guó qí	国旗
+guó gē	国歌
+guó wáng	国王
+tú shū	图书
+yuán zhū bǐ	圆珠笔
+shèng dàn jié	圣诞节
+dì xià shì	地下室
+dì míng	地名
+dì bǎn	地板
+chǎng dì	场地
+chǎng jǐng	场景
+chǎng guǎn	场馆
+pō	坡
+chéng qū	城区
+chéng xiāng	城乡
+chéng zhèn	城镇
+mái	埋
+jī dū jiào	基督教
+tǎ	塔
+sāi	塞
+mù	墓
+zēng zhí	增值
+zēng jìn	增进
+zhuàng guān	壮观
+hú	壶
+chù chù	处处
+chù zhǎng	处长
+fù sū	复苏
+wài chū	外出
+wài tou	外头
+wài bì	外币
+wài lái	外来
+wài kē	外科
+wài yī	外衣
+wài guān	外观
+wài zī	外资
+wài bù	外部
+duō bàn	多半
+duō méi tǐ	多媒体
+duō fāng miàn	多方面
+dà shǐ	大使
+dà lì	大力
+dà shī	大师
+dà pī	大批
+dà mǐ	大米
+dà jiē	大街
+dà sài	大赛
+dà dào	大道
+tiān xià	天下
+tiān táng	天堂
+tiān rán	天然
+tài yáng néng	太阳能
+tóu téng	头疼
+duó	夺
+duó qǔ	夺取
+qí miào	奇妙
+fèng xiàn	奉献
+bēn pǎo	奔跑
+zòu	奏
+nǎi niú	奶牛
+nǎi fěn	奶粉
+hǎo sì	好似
+hào xué	好学
+hǎo zhuǎn	好转
+rú	如
+rú yī	如一
+fù nǚ	妇女
+miào	妙
+gū gu	姑姑
+wēi xié	威胁
+wá wa	娃娃
+yú lè	娱乐
+xián	嫌
+gū ér	孤儿
+gū dú	孤独
+xué huì	学会
+xué yuán	学员
+yǔ háng yuán	宇航员
+ān jiǎn	安检
+hóng dà	宏大
+zōng jiào	宗教
+guān si	官司
+dìng jià	定价
+dìng wèi	定位
+dìng shí	定时
+shí jiàn	实践
+chǒng wù	宠物
+shěn chá	审查
+kè chē	客车
+gōng	宫
+yàn huì	宴会
+jiā yuán	家园
+jiā diàn	家电
+kuān kuò	宽阔
+fù rén	富人
+fù yǒu	富有
+duì wài	对外
+duì kàng	对抗
+sì	寺
+jiāng jūn	将军
+xiǎo yú	小于
+xiǎo fèi	小费
+xiǎo mài	小麦
+shào ér	少儿
+jiān	尖
+jiù shì shuō	就是说
+jiù suàn	就算
+jìn	尽
+céng miàn	层面
+píng mù	屏幕
+shān pō	山坡
+shān fēng	山峰
+shān gǔ	山谷
+suì shu	岁数
+gǎng wèi	岗位
+dǎo	岛
+fēng huì	峰会
+chóng bài	崇拜
+gōng shāng	工商
+qiǎo miào	巧妙
+gǒng gù	巩固
+chā yì	差异
+shì mín	市民
+bù mǎn	布满
+shī fu	师父
+shī shēng	师生
+cháng nián	常年
+cháng guī	常规
+gān shè	干涉
+píng fán	平凡
+píng tái	平台
+píng fāng mǐ	平方米
+píng héng	平衡
+huàn xiǎng	幻想
+guǎng kuò	广阔
+yìng duì	应对
+yìng jí	应急
+zuò tán huì	座谈会
+kāng fù	康复
+kāi guān	开关
+kāi chuàng	开创
+kāi yè chē	开夜车
+kāi tóu	开头
+kāi shè	开设
+kāi tōng	开通
+yì cháng	异常
+wān qū	弯曲
+qiáng shì	强势
+qiáng huà	强化
+qiáng zhuàng	强壮
+qiáng dào	强盗
+dàng zuò	当作
+dàng tiān	当天
+dàng chéng	当成
+lù xiàng	录像
+lù yīn jī	录音机
+xíng	形
+yǐng xīng	影星
+yǐng mí	影迷
+wǎng hòu	往后
+wǎng nián	往年
+wǎng lái	往来
+dāi huì r	待会儿
+tú dì	徒弟
+xún huán	循环
+wēi bō lú	微波炉
+xīn yuàn	心愿
+xīn líng	心灵
+xīn zàng	心脏
+xīn zàng bìng	心脏病
+bì xiū	必修
+bì jiāng	必将
+zhōng xīn	忠心
+kuài chē	快车
+hū lüè	忽略
+jí jiù	急救
+zǒng jiān	总监
+zǒng jīng lǐ	总经理
+zǒng bù	总部
+zǒng liàng	总量
+ēn rén	恩人
+qià hǎo	恰好
+qià dàng	恰当
+qià qià	恰恰
+huàn zhě	患者
+xuán	悬
+bēi cǎn	悲惨
+qíng xù	情绪
+jīng rén	惊人
+jīng xǐ	惊喜
+cǎn	惨
+xiǎng bu dào	想不到
+yú kuài	愉快
+yì xiǎng bù dào	意想不到
+yì yuàn	意愿
+gǎn rén	感人
+fèn nù	愤怒
+màn chē	慢车
+lǎn	懒
+xì qǔ	戏曲
+chéng fèn	成分
+chéng pǐn	成品
+zhàn yǒu	战友
+zhàn chǎng	战场
+zhàn shù	战术
+zhàn lüè	战略
+jié zhǐ	截止
+jié zhì	截至
+hù wài	户外
+fáng jià	房价
+biǎn	扁
+shǒu xù fèi	手续费
+zhā	扎
+zhā shi	扎实
+pū	扑
+dǎ dòng	打动
+dǎ yìn jī	打印机
+dǎ fa	打发
+dǎ guān si	打官司
+dǎ duàn	打断
+dǎ pái	打牌
+dǎ zào	打造
+tuō	托
+kòu	扣
+niǔ	扭
+chéng nuò	承诺
+tóu piào	投票
+kàng yì	抗议
+hù	护
+bào kān	报刊
+bào kǎo	报考
+bào qiàn	抱歉
+dǐ kàng	抵抗
+dǐ dá	抵达
+dān yōu	担忧
+chāi qiān	拆迁
+guǎi	拐
+tuō	拖
+tuō xié	拖鞋
+zhāo	招
+zhāo pìn	招聘
+bō dǎ	拨打
+ná zǒu	拿走
+chí yǒu	持有
+zhǐ tou	指头
+zhǐ dìng	指定
+zhǐ shù	指数
+wā	挖
+ái	挨
+ái dǎ	挨打
+āi zhe	挨着
+zhuō	捉
+juān	捐
+juān zhù	捐助
+juān kuǎn	捐款
+juān zèng	捐赠
+bǔ	捕
+jiǎn	捡
+jù	据
+zhǎng shēng	掌声
+tāo	掏
+pái háng bǎng	排行榜
+tàn suǒ	探索
+tàn tǎo	探讨
+jiē shōu	接收
+tuī chū	推出
+tí jiāo	提交
+tí shēng	提升
+jiē	揭
+yuán zhù	援助
+dā	搭
+dā dàng	搭档
+dā pèi	搭配
+chēng	撑
+chè lí	撤离
+chè xiāo	撤销
+bō	播
+cāo zòng	操纵
+zhī yuán	支援
+zhī chēng	支撑
+shōu yǎng	收养
+shōu qǔ	收取
+shōu cáng	收藏
+gǎi zhuāng	改装
+gōng jī	攻击
+zhèng dǎng	政党
+zhèng quán	政权
+zhèng cè	政策
+gù zhàng	故障
+jiù zhù	救助
+jiù mìng	救命
+jiù yuán	救援
+jiào táng	教堂
+jiào yù bù	教育部
+gǎn yú	敢于
+zhěng zhì	整治
+zhěng dùn	整顿
+wén yú	文娱
+dòu zhēng	斗争
+liào	料
+xīn rén	新人
+xīn xīng	新兴
+lǚ diàn	旅店
+xuán zhuǎn	旋转
+zú	族
+wú guān	无关
+wú xiào	无效
+wú biān	无边
+rì yè	日夜
+rì yǔ	日语
+zǎo wǎn	早晚
+shí shí	时时
+shí qī	时期
+shí ér	时而
+shí jié	时节
+shí zhuāng	时装
+chāng shèng	昌盛
+míng rì	明日
+hūn	昏
+xiǎn chū	显出
+xiǎo de	晓得
+yūn	晕
+yùn chē	晕车
+jǐng	景
+jǐng diǎn	景点
+zhì huì	智慧
+bào lì	暴力
+bào yǔ	暴雨
+bào lù	暴露
+bào fēng yǔ	暴风雨
+gèng shì	更是
+yǒu shì	有事
+yǒu guān	有关
+yǒu méi yǒu	有没有
+fú	服
+wàng jiàn	望见
+běn tǔ	本土
+běn dì	本地
+běn qī	本期
+běn zhì	本质
+běn shēn	本身
+jī guān	机关
+jī dòng chē	机动车
+jī xiè	机械
+zá	杂
+quán	权
+quán lì	权力
+gǎn	杆
+cūn zhuāng	村庄
+lái wǎng	来往
+jí duān	极端
+jié chū	杰出
+gòu jiàn	构建
+guǒ shù	果树
+guǒ jiàng	果酱
+zhī	枝
+chá chū	查出
+chá kàn	查看
+zhù zi	柱子
+lán mù	栏目
+yàng	样
+hé xīn	核心
+dàng	档
+dàng àn	档案
+qiáo liáng	桥梁
+méi huā	梅花
+mián	棉
+lóu fáng	楼房
+lóu dào	楼道
+héng	横
+cì shù	次数
+qī fu	欺负
+gē chàng	歌唱
+gē xīng	歌星
+gē cí	歌词
+zhǐ	止
+zhèng dàng	正当
+cǐ shì	此事
+cǐ qián	此前
+cǐ chù	此处
+cǐ cì	此次
+cǐ zhì	此致
+sǐ wáng	死亡
+cán jí	残疾
+cán jí rén	残疾人
+cán kù	残酷
+huǐ	毁
+mǔ	母
+mǔ nǚ	母女
+mǔ zǐ	母子
+mǔ jī	母鸡
+dú pǐn	毒品
+mín zhǔ	民主
+mín gōng	民工
+mín yì	民意
+mín gē	民歌
+mín jǐng	民警
+qì fēn	气氛
+yǎng qì	氧气
+shuǐ ní	水泥
+qiú zhí	求职
+mò shōu	没收
+zhì bìng	治病
+yán	沿
+yán hǎi	沿海
+yán zhe	沿着
+fǎ tíng	法庭
+fǎ yǔ	法语
+pào	泡
+bō dòng	波动
+bō làng	波浪
+ní	泥
+yáng	洋
+xǐ yī fěn	洗衣粉
+hóng shuǐ	洪水
+huó yuè	活跃
+pài chū	派出
+liú gǎn	流感
+cè dìng	测定
+fú	浮
+hǎi jūn	海军
+hǎi wài	海外
+hǎi dǐ	海底
+hǎi bào	海报
+hǎi yáng	海洋
+hǎi làng	海浪
+hǎi wān	海湾
+xiāo miè	消灭
+xiāo hào	消耗
+shè jí	涉及
+shēn huà	深化
+shēn shēn	深深
+hùn	混
+hùn luàn	混乱
+hùn hé	混合
+tiān	添
+qīng	清
+qīng míng jié	清明节
+qīng jié	清洁
+qīng jié gōng	清洁工
+qīng xǐ	清洗
+qú dào	渠道
+dù	渡
+gǎng kǒu	港口
+yóu rén	游人
+yóu xì jī	游戏机
+yóu wán	游玩
+yóu xíng	游行
+dī	滴
+yǎn zòu	演奏
+qián lì	潜力
+jī qíng	激情
+huǒ jiàn	火箭
+miè	灭
+líng huó	灵活
+chǎo	炒
+chǎo zuò	炒作
+chǎo gǔ	炒股
+pào	炮
+zhà	炸
+zhà dàn	炸弹
+zhà yào	炸药
+yān huā	烟花
+rè shuǐ	热水
+rè shuǐ qì	热水器
+rè diǎn	热点
+rè xiàn	热线
+jiāo diǎn	焦点
+zhǔ	煮
+zhào yàng	照样
+zhào yào	照耀
+bào	爆
+bào fā	爆发
+bào zhà	爆炸
+fù nǚ	父女
+fù zǐ	父子
+shuǎng	爽
+láo	牢
+wù pǐn	物品
+qiān	牵
+tè	特
+tè dì	特地
+tè dà	特大
+tè kuài	特快
+tè yì	特意
+xī shēng	牺牲
+fàn	犯
+fàn zuì	犯罪
+fàn guī	犯规
+hěn	狠
+měng	猛
+wáng hòu	王后
+wáng zǐ	王子
+zhū bǎo	珠宝
+qiú yuán	球员
+qiú pāi	球拍
+qiú xīng	球星
+lǐ	理
+lǐ zhì	理智
+lǐ cái	理财
+shēng huó fèi	生活费
+yòng pǐn	用品
+yòng chu	用处
+yòng de zháo	用得着
+yòng xīn	用心
+yòng fǎ	用法
+tián	田
+tián jìng	田径
+diàn lì	电力
+diàn dòng	电动
+diàn qì	电器
+diàn chē	电车
+chàng tōng	畅通
+jiè	界
+liú yán	留言
+fān	番
+fān qié	番茄
+téng tòng	疼痛
+jí bìng	疾病
+bìng qíng	病情
+bìng fáng	病房
+zhèng zhuàng	症状
+bái lǐng	白领
+bǎi fēn diǎn	百分点
+huáng dì	皇帝
+pí qiú	皮球
+jiān cè	监测
+jiān dū	监督
+dào bǎn	盗版
+shèng xíng	盛行
+máng rén	盲人
+zhí shēng jī	直升机
+pàn wàng	盼望
+shěng qián	省钱
+kàn zuò	看作
+kàn hǎo	看好
+kàn dé jiàn	看得见
+kàn de qǐ	看得起
+kān guǎn	看管
+yǎn kàn	眼看
+zhī míng	知名
+duǎn piàn	短片
+kuàng	矿
+yán fā	研发
+mó	磨
+lǐ táng	礼堂
+zǔ guó	祖国
+zǔ mǔ	祖母
+zǔ fù	祖父
+zhù yuàn	祝愿
+zhǒng zhǒng	种种
+kē yán	科研
+zū jīn	租金
+shuì	税
+gǎo zi	稿子
+kōng jūn	空军
+chuāng kǒu	窗口
+zhàn tái	站台
+duān	端
+duān wǔ jié	端午节
+xiào shēng	笑声
+xiào róng	笑容
+xiào liǎn	笑脸
+bǐ shì	笔试
+cè huà	策划
+cè lüè	策略
+jiǎn jiè	简介
+suàn le	算了
+suàn shì	算是
+guǎn dào	管道
+jiàn	箭
+zhōu	粥
+jīng	精
+jīng pǐn	精品
+jīng měi	精美
+jiū zhèng	纠正
+jiū fēn	纠纷
+yuē dìng	约定
+sù zhì	素质
+xiàn lù	线路
+xì bāo	细胞
+xì jūn	细菌
+zhī	织
+huì huà	绘画
+jǐ yǔ	给予
+jué	绝
+jué dà duō shù	绝大多数
+wéi shēng sù	维生素
+lǜ huà	绿化
+biān zhì	编制
+yuán gù	缘故
+fán zhí	繁殖
+quē xiàn	缺陷
+wǎng bā	网吧
+wǎng yè	网页
+bà le	罢了
+bà gōng	罢工
+zuì	罪
+zuì è	罪恶
+měi róng	美容
+lǎo xiāng	老乡
+kǎo chǎng	考场
+kǎo tí	考题
+liáo	聊
+liáo tiān r	聊天儿
+zhí zé	职责
+lián shǒu	联手
+lián méng	联盟
+lián sài	联赛
+pìn qǐng	聘请
+gān	肝
+gǔ	股
+gǔ dōng	股东
+gǔ piào	股票
+kěn	肯
+fèi	肺
+zhǒng	肿
+bèi xīn	背心
+bèi zhe	背着
+néng fǒu	能否
+jiǎo yìn	脚印
+mó	膜
+zì zai	自在
+zì xué	自学
+zì wǒ	自我
+zì lái shuǐ	自来水
+zì yán zì yǔ	自言自语
+zhì yú	至于
+shé tou	舌头
+wǔ dǎo	舞蹈
+chuán zhī	船只
+chuán yuán	船员
+chuán zhǎng	船长
+yì rén	艺人
+jié jià rì	节假日
+jié zòu	节奏
+jié néng	节能
+huā píng	花瓶
+huā shēng	花生
+huā fèi	花费
+ruò	若
+yīng xióng	英雄
+qié zi	茄子
+yào pǐn	药品
+mēng	蒙
+lán tiān	蓝天
+lán lǐng	蓝领
+xīn shuǐ	薪水
+shǔ tiáo	薯条
+shǔ piàn	薯片
+cáng	藏
+suī	虽
+róng rù	融入
+róng hé	融合
+xuè yè	血液
+xuè guǎn	血管
+xíng chéng	行程
+jiē tóu	街头
+héng liáng	衡量
+bǔ xí	补习
+bǔ zhù	补助
+bǔ kǎo	补考
+bǔ kè	补课
+biǎo miàn shang	表面上
+xiù zhēn	袖珍
+bèi gào	被告
+liè	裂
+zhuāng bèi	装备
+xī bān yá yǔ	西班牙语
+yào bù rán	要不然
+yào me	要么
+yào hǎo	要好
+yào sù	要素
+guān guāng	观光
+jiào	觉
+jué wù	觉悟
+jiě	解
+jiě shuō	解说
+rèn tóng	认同
+ràng zuò	让座
+yì tí	议题
+jiǎng kè	讲课
+shè jì shī	设计师
+píng	评
+píng xuǎn	评选
+shí	识
+shí zì	识字
+shì diǎn	试点
+dàn shēng	诞生
+wù	误
+shuō shí huà	说实话
+shuō míng shū	说明书
+zhū wèi	诸位
+diào yán	调研
+qiān xū	谦虚
+fù	负
+gòng xiàn	贡献
+zhàng	账
+zhàng hù	账户
+pín kùn	贫困
+dǔ	赌
+dǔ bó	赌博
+lài	赖
+zhuàn	赚
+zhuàn qián	赚钱
+sài	赛
+sài chǎng	赛场
+zǒu sī	走私
+gǎn shàng	赶上
+gǎn bù shàng	赶不上
+gǎn máng	赶忙
+qǐ diǎn	起点
+qǐ sù	起诉
+chāo	超
+chāo chū	超出
+tàng	趟
+zú	足
+zú yǐ	足以
+diē	跌
+kuà	跨
+guì	跪
+lù guò	路过
+tiào shuǐ	跳水
+tà	踏
+tā shi	踏实
+tī	踢
+cǎi	踩
+dūn	蹲
+chē hào	车号
+chē zhǎn	车展
+chē pái	车牌
+guǐ dào	轨道
+biān yuán	边缘
+guò hòu	过后
+guò shí	过时
+guò dù	过渡
+yíng lái	迎来
+yùn zuò	运作
+jìn rì	近日
+jìn shì	近视
+zhè jiù shì shuō	这就是说
+jìn gōng	进攻
+yuǎn fāng	远方
+yuǎn lí	远离
+yuǎn yuǎn	远远
+zhuī jiū	追究
+tuì piào	退票
+sòng lǐ	送礼
+sòng xíng	送行
+shì dàng	适当
+xuǎn jǔ	选举
+xuǎn bá	选拔
+tòu lù	透露
+tú jìng	途径
+tōng bào	通报
+tōng hóng	通红
+tōng xíng	通行
+tōng xùn	通讯
+tōng huà	通话
+tōng dào	通道
+bī	逼
+biàn dì	遍地
+dào jiào	道教
+dào qiàn	道歉
+yí hàn	遗憾
+zāo dào	遭到
+zāo shòu	遭受
+zāo yù	遭遇
+bù duì	部队
+dū shì	都市
+pèi zhì	配置
+jiǔ shuǐ	酒水
+jiàng	酱
+jiàng yóu	酱油
+kù	酷
+cù	醋
+cǎi nà	采纳
+chóng jiàn	重建
+chóng zǔ	重组
+yě	野
+yě shēng	野生
+jīn róng	金融
+jīn qián	金钱
+jīn é	金额
+zhōng tóu	钟头
+jiàn dìng	鉴定
+zuān	钻
+qiān bǐ	铅笔
+tóng pái	铜牌
+pū	铺
+cuò guò	错过
+zhèn	镇
+cháng jiǔ	长久
+cháng jià	长假
+cháng duǎn	长短
+cháng pǎo	长跑
+cháng yuǎn	长远
+bì	闭
+kuò	阔
+duì wǔ	队伍
+fáng shǒu	防守
+fáng fàn	防范
+yīn yǐng	阴影
+yīn móu	阴谋
+lù jūn	陆军
+chú	除
+xiǎn	险
+péi tóng	陪同
+xiàn rù	陷入
+yǐn sī	隐私
+yǐn cáng	隐藏
+zhàng ài	障碍
+nán wàng	难忘
+jí	集
+yǔ yī	雨衣
+lòu	露
+miàn xiàng	面向
+miàn duì miàn	面对面
+gé xīn	革新
+yīn xiàng	音像
+yīn liàng	音量
+zhāng	章
+shùn	顺
+wán qiáng	顽强
+wán pí	顽皮
+gù	顾
+yù yuē	预约
+lǐng qǔ	领取
+lǐng xiù	领袖
+fēng bào	风暴
+fēi chuán	飞船
+fēi xíng yuán	飞行员
+shí yù	食欲
+cān	餐
+mán tou	馒头
+shǒu xí	首席
+shǒu cì	首次
+shǒu xiàng	首相
+shǒu nǎo	首脑
+mǎ chē	马车
+zhù	驻
+jiāo ào	骄傲
+gāo céng	高层
+gāo fēng	高峰
+gāo shǒu	高手
+gāo dàng	高档
+gāo kē jì	高科技
+gāo děng	高等
+gāo kǎo	高考
+hēi yè	黑夜
+mò shuǐ	墨水
+
+# HSK Livello 7-9
+yī yī	一一
+yī bù xiǎo xīn	一不小心
+yī gè jìn r	一个劲儿
+yī jǔ	一举
+yī jǔ yī dòng	一举一动
+yī shì wú chéng	一事无成
+yī tǐ	一体
+yī chà nà	一刹那
+yī dòng bù dòng	一动不动
+yī kǎ tōng	一卡通
+yī wèi	一味
+yī huí shì	一回事
+yī tā hú tu	一塌糊涂
+yī shēng bù kēng	一声不吭
+yī dà zǎo	一大早
+yī tiān dào wǎn	一天到晚
+yī tóu	一头
+yī rú jì wǎng	一如既往
+yī jiā rén	一家人
+yī fān fēng shùn	一帆风顺
+yī gān èr jìng	一干二净
+yī nián dào tóu	一年到头
+yī yīng jù quán	一应俱全
+yī dù	一度
+yī xīn	一心
+yī xīn yī yì	一心一意
+yī chéng bù biàn	一成不变
+yī shǒu	一手
+yī jì zhī cháng	一技之长
+yī bǎ shǒu	一把手
+yī lǎn zi	一揽子
+yī páng	一旁
+yī wú suǒ yǒu	一无所有
+yī wú suǒ zhī	一无所知
+yī zǎo	一早
+yī huǎng	一晃
+yī gài	一概
+yī gài ér lùn	一概而论
+yī máo bù bá	一毛不拔
+yī mù liǎo rán	一目了然
+yī yǎn	一眼
+yī shùn jiān	一瞬间
+yī chóu mò zhǎn	一筹莫展
+yī xì liè	一系列
+yī xiàn	一线
+yī jīng	一经
+yī yán yī xíng	一言一行
+yī yán bù fā	一言不发
+yī lián	一连
+yī lián chuàn	一连串
+yī guō zhōu	一锅粥
+yī cháng yī duǎn	一长一短
+yī zhèn	一阵
+yī miàn	一面
+yī gǔ zuò qì	一鼓作气
+dīng	丁
+qī zuǐ bā shé	七嘴八舌
+wàn wàn	万万
+wàn fēn	万分
+wàn gǔ cháng qīng	万古长青
+wàn wú yī shī	万无一失
+wàn néng	万能
+sān fān wǔ cì	三番五次
+sān wéi	三维
+sān jiǎo	三角
+shàng rèn	上任
+shàng si	上司
+shàng chǎng	上场
+shàng tou	上头
+shàng gǎng	上岗
+shàng bào	上报
+shàng fāng	上方
+shàng xún	上旬
+shàng yìng	上映
+shàng qī	上期
+shàng liú	上流
+shàng yóu	上游
+shàng huǒ	上火
+shàng yǐn	上瘾
+shàng kōng	上空
+shàng sù	上诉
+shàng tiáo	上调
+shàng shù	上述
+shàng xiàn	上限
+xià yī dài	下一代
+xià lìng	下令
+xià jué xīn	下决心
+xià gōng fu	下功夫
+xià tái	下台
+xià chǎng	下场
+xià zhuì	下坠
+xià shǔ	下属
+xià shān	下山
+xià gǎng	下岗
+xià xiāng	下乡
+xià yì shí	下意识
+xià shǒu	下手
+xià xún	下旬
+xià qī	下期
+xià qí	下棋
+xià hǎi	下海
+xià yóu	下游
+xià jí	下级
+xià luò	下落
+xià tiáo	下调
+xià diē	下跌
+bù wéi rén zhī	不为人知
+bù liǎo liǎo zhī	不了了之
+bù yǔ	不予
+bù yà yú	不亚于
+bù yì lè hū	不亦乐乎
+bù yǐ wéi rán	不以为然
+bù jiǎ sī suǒ	不假思索
+bù xiàng huà	不像话
+bù zhǔn	不准
+yú	不利于
+bù kě sī yì	不可思议
+bù kě bì miǎn	不可避免
+bù tóng xún cháng	不同寻常
+bù kān	不堪
+shuō	不如说
+bù fáng	不妨
+bù dìng	不定
+bù yí	不宜
+bù róng	不容
+bù xiè	不屑
+bù yǐ	不已
+bù píng	不平
+bù dé yǐ	不得已
+bù dé ér zhī	不得而知
+bù xī	不惜
+bù shèn	不慎
+bù xiè	不懈
+bù jǐng qì	不景气
+bù fú	不服
+bù fú qì	不服气
+bù zhèng zhī fēng	不正之风
+bù lǐ	不理
+bù yòng shuō	不用说
+bù yóu de	不由得
+bù yóu zì zhǔ	不由自主
+bù xiāng shàng xià	不相上下
+bù zhī	不知
+bù zhī bù jué	不知不觉
+bù suàn	不算
+bù yuē ér tóng	不约而同
+bù jīng yì	不经意
+bù yì ér fēi	不翼而飞
+bù chǐ xià wèn	不耻下问
+bù	不肯
+bù jiàn de	不见得
+bù jiě	不解
+bù qǐ yǎn	不起眼
+bù cí ér bié	不辞而别
+bù shì	不适
+bù	不难
+yǔ zhòng bù tóng	与众不同
+yǔ qí	与其
+yǔ fǒu	与否
+yǔ rì jù zēng	与日俱增
+yǔ shí jù jìn	与时俱进
+yǔ cǐ tóng shí	与此同时
+chǒu è	丑恶
+chǒu wén	丑闻
+chǒu lòu	丑陋
+zhuān rén	专人
+zhuān zhì	专制
+zhuān mài diàn	专卖店
+zhuān guì	专柜
+zhuān lán	专栏
+zhuān zhù	专注
+zhuān chéng	专程
+zhuān zhí	专职
+zhuān zhù	专著
+zhuān cháng	专长
+qiě	且
+shì dài	世代
+shì gu	世故
+shì jiè jí	世界级
+shì xí	世袭
+qiū líng	丘陵
+bǐng	丙
+yè jì	业绩
+cóng lín	丛林
+dōng bēn xī zǒu	东奔西走
+dōng zhāng xī wàng	东张西望
+dōng dào zhǔ	东道主
+sī	丝
+sī háo	丝毫
+sī chóu	丝绸
+diū rén	丢人
+diū shī	丢失
+diū qì	丢弃
+diū diào	丢掉
+diū liǎn	丢脸
+liǎng kǒu zi	两口子
+liǎng qī	两栖
+yán mì	严密
+yán jùn	严峻
+yán jìn	严禁
+yán jǐn	严谨
+sàng shēng	丧生
+gè tóu r	个头儿
+gè àn	个案
+yā tou	丫头
+zhōng guó huà	中国画
+zhōng xíng	中型
+zhōng yōng	中庸
+zhōng xìng	中性
+zhōng xún	中旬
+zhōng zhǐ	中止
+zhōng lì	中立
+zhōng tú	中途
+fēng hòu	丰厚
+fēng fù duō cǎi	丰富多彩
+fēng mǎn	丰满
+fēng shèng	丰盛
+fēng shuò	丰硕
+chuàn mén	串门
+lín	临
+lín chuáng	临床
+lín jiē	临街
+lín jìn	临近
+wán	丸
+yì gōng	义工
+wéi rén	为人
+zhǔ	主
+zhǔ yì	主义
+zhǔ rén gōng	主人公
+zhǔ lì	主力
+zhǔ fù	主妇
+zhǔ zǎi	主宰
+zhǔ quán	主权
+zhǔ yǎn	主演
+zhǔ biān	主编
+zhǔ yè	主页
+zhǔ tí gē	主题歌
+zhǔ shí	主食
+jǔ yī fǎn sān	举一反三
+jǔ shì wú shuāng	举世无双
+jǔ shì zhǔ mù	举世瞩目
+jǔ shì wén míng	举世闻名
+jǔ lì	举例
+jǔ bào	举报
+jǔ cuò	举措
+jǔ zhǐ	举止
+jǔ zhòng	举重
+nǎi	乃
+nǎi zhì	乃至
+jiǔ yǎng	久仰
+jiǔ wéi	久违
+zhī	之
+zhī suǒ yǐ	之所以
+yuè qì	乐器
+lè yuán	乐园
+lè yì	乐意
+pīng pāng qiú	乒乓球
+qiáo zhuāng	乔装
+guāi	乖
+guāi qiǎo	乖巧
+chéng rén zhī wēi	乘人之危
+qǐ gài	乞丐
+qǐ qiú	乞求
+qǐ tǎo	乞讨
+yě jiù shì shuō	也就是说
+xí sú	习俗
+shū xiě	书写
+shū chú	书橱
+shū jí	书籍
+shū ji	书记
+shū miàn	书面
+mǎi bu qǐ	买不起
+luàn qī bā zāo	乱七八糟
+liǎo què	了却
+liǎo jié	了结
+yǔ yǐ	予以
+zhēng xiān kǒng hòu	争先恐后
+zhēng guāng	争光
+zhēng fēn duó miǎo	争分夺秒
+zhēng chǎo	争吵
+zhēng zhí	争执
+zhēng qì	争气
+zhēng duān	争端
+shì wù	事务
+shì wù suǒ	事务所
+shì yí	事宜
+shì tài	事态
+shì jì	事迹
+shì xiàng	事项
+èr shǒu chē	二手车
+èr yǎng huà tàn	二氧化碳
+kuī sǔn	亏损
+kuī běn	亏本
+hù xìn	互信
+hù zhù	互助
+hù bǔ	互补
+hù fǎng	互访
+wǔ xīng jí	五星级
+wǔ huā bā mén	五花八门
+wáng yáng bǔ láo	亡羊补牢
+jiāo fù	交付
+jiāo chā	交叉
+jiāo xiǎng yuè	交响乐
+jiāo tóu jiē ěr	交头接耳
+jiāo qing	交情
+jiāo jiē	交接
+jiāo tì	交替
+jiāo shè	交涉
+jiāo jiè	交界
+jiāo nà	交纳
+jiāo tán	交谈
+jiāo fēng	交锋
+jiāo jí	交集
+yì	亦
+chǎn	产
+chǎn zhí	产值
+chǎn dì	产地
+chǎn wù	产物
+mǔ	亩
+xiǎng	享
+xiǎng yǒu	享有
+liàng lì	亮丽
+liàng diǎn	亮点
+liàng xiàng	亮相
+qīn yǒu	亲友
+qīn hé lì	亲和力
+qīn qíng	亲情
+qīn qi	亲戚
+qīn shǒu	亲手
+qīn péng hǎo yǒu	亲朋好友
+qīn rè	亲热
+qīn shēng	亲生
+qīn shēn	亲身
+qīn jìn	亲近
+rén wéi	人为
+rén shì	人事
+rén tǐ	人体
+rén pǐn	人品
+rén jūn	人均
+rén gōng zhì néng	人工智能
+rén xìng	人性
+rén qíng	人情
+rén shǒu	人手
+rén wén	人文
+rén gé	人格
+rén cì	人次
+rén qì	人气
+rén yuán r	人缘儿
+rén xíng dào	人行道
+rén zhì	人质
+rén shēn	人身
+rén xuǎn	人选
+rén zào	人造
+rén dào	人道
+rén cí	仁慈
+jǐn cì yú	仅次于
+chóu	仇
+chóu rén	仇人
+chóu hèn	仇恨
+jiè yú	介于
+jiè rù	介入
+jiè yì	介意
+cóng yè	从业
+cóng jīn yǐ hòu	从今以后
+cóng tóu	从头
+cóng róng	从容
+cóng róng bù pò	从容不迫
+cóng zǎo dào wǎn	从早到晚
+cóng wèi	从未
+cóng lái bù	从来不
+tā rén	他人
+fù kuǎn	付款
+fù fèi	付费
+xiān nǚ	仙女
+xiān hè	仙鹤
+dài hào	代号
+dài lǐ rén	代理人
+dài yán rén	代言人
+yǐ	以
+yǐ miǎn	以免
+yǐ zhì yú	以至于
+yǐ zhì	以致
+yǐ shēn zuò zé	以身作则
+yí biǎo	仪表
+zhòng cái	仲裁
+jià wèi	价位
+jià zhí guān	价值观
+rèn rén zǎi gē	任人宰割
+rèn mìng	任命
+rèn yì	任意
+rèn qī	任期
+rèn zhí	任职
+fèn é	份额
+fǎng	仿
+fǎng zhì	仿制
+yī sī lán jiào	伊斯兰教
+xiū kè	休克
+xiū yǎng	休养
+xiū xiǎng	休想
+xiū mián	休眠
+zhòng rén	众人
+zhòng zhì chéng chéng	众志成城
+zhòng suǒ zhōu zhī	众所周知
+yōu	优
+yōu huà	优化
+yōu yì	优异
+yōu yuè	优越
+yōu yǎ	优雅
+huǒ shí	伙食
+huì chǎng	会场
+huì yì	会意
+huì wù	会晤
+huì zhěn	会诊
+huì miàn	会面
+chuán rén	传人
+chuán qí	传奇
+chuán chéng	传承
+chuán shòu	传授
+chuán rǎn	传染
+chuán rǎn bìng	传染病
+zhuàn jì	传记
+chuán wén	传闻
+shāng shì	伤势
+shāng gǎn	伤感
+shāng cán	伤残
+shāng hén	伤痕
+shāng nǎo jīn	伤脑筋
+lún lǐ	伦理
+wěi zhuāng	伪装
+wěi zào	伪造
+bó bo	伯伯
+bó mǔ	伯母
+bó fù	伯父
+gū suàn	估算
+bàn	伴
+bàn lǚ	伴侣
+bàn zòu	伴奏
+bàn suí	伴随
+shēn zhāng	伸张
+shēn shǒu	伸手
+shēn suō	伸缩
+cì hou	伺候
+sì jī	伺机
+sì shì ér fēi	似是而非
+sì céng xiāng shí	似曾相识
+dàn yuàn	但愿
+wèi zi	位子
+dī xià	低下
+dī jià	低价
+dī gū	低估
+dī tàn	低碳
+dī diào	低调
+dī gǔ	低谷
+dī mí	低迷
+zhù zhǐ	住址
+zhù chù	住处
+zhù sù	住宿
+zhù hù	住户
+zuǒ liào	佐料
+tǐ zhì	体制
+tǐ wēn	体温
+tǐ xì	体系
+tǐ néng	体能
+tǐ liàng	体谅
+tǐ zhì	体质
+tǐ tiē	体贴
+tǐ miàn	体面
+hé kuàng	何况
+hé chù	何处
+hé bì	何必
+hé shí	何时
+hé kǔ	何苦
+yú	余
+yú dì	余地
+yú é	余额
+zuò kè	作客
+zuò duì	作对
+zuò bì	作弊
+zuò wù	作物
+zuò fēng	作风
+pèi fú	佩服
+jiā jié	佳节
+shǐ mìng	使命
+shǐ huan	使唤
+shǐ zhě	使者
+kǎn dà shān	侃大山
+shì hòu	侍候
+gōng	供
+gōng bù yìng qiú	供不应求
+gòng fèng	供奉
+gōng nuǎn	供暖
+gōng qiú	供求
+yī	依
+yī yī bù shě	依依不舍
+yī tuō	依托
+xiá yì	侠义
+zhēn chá	侦察
+cè zhòng	侧重
+cè miàn	侧面
+wǔ rǔ	侮辱
+qīn zhàn	侵占
+qīn hài	侵害
+qīn quán	侵权
+qīn lüè	侵略
+biàn lì diàn	便利店
+biàn jié	便捷
+biàn dào	便道
+biàn fàn	便饭
+cù chéng	促成
+é yǔ	俄语
+jùn	俊
+jùn qiào	俊俏
+sú	俗
+sú huà	俗话
+sú huà shuō	俗话说
+sú yǔ	俗语
+fú huò	俘获
+fú lǔ	俘虏
+bǎo yòu	保佑
+bǎo xiū	保修
+bǎo mǔ	保姆
+bǎo nuǎn	保暖
+bǎo guǎn	保管
+bǎo zhì qī	保质期
+bǎo zhòng	保重
+bǎo zhàng	保障
+bǎo xiān	保鲜
+xìn jiàn	信件
+xìn yù	信誉
+xìn dài	信贷
+xìn lài	信赖
+xiū zhèng	修正
+xiū bǔ	修补
+xiū dìng	修订
+xiū lù	修路
+xiū cháng	修长
+fǔ shǒu	俯首
+dǎo xià	倒下
+dǎo mài	倒卖
+dǎo tā	倒塌
+dào shǔ	倒数
+dào jì shí	倒计时
+dǎo méi	倒霉
+juè	倔
+jué jiàng	倔强
+tǎng ruò	倘若
+hòu xuǎn rén	候选人
+yǐ	倚
+jiè zhù	借助
+jiè kǒu	借口
+jiè tiáo	借条
+jiè yòng	借用
+chàng yì	倡议
+zhài wù	债务
+zhí qián	值钱
+qīng tīng	倾听
+qīng jiā dàng chǎn	倾家荡产
+qīng xié	倾斜
+qīng sù	倾诉
+qīng xiāo	倾销
+jiǎ shǐ	假使
+jiǎ mào	假冒
+jiǎ dìng	假定
+jiǎ zhuāng	假装
+jiǎ shè	假设
+piān piān	偏偏
+piān pì	偏僻
+piān xiàng	偏向
+piān chā	偏差
+piān fāng	偏方
+piān jiàn	偏见
+piān yuǎn	偏远
+zuò shēng yì	做生意
+zuò zhèng	做证
+tíng yè	停业
+tíng fàng	停放
+tíng bó	停泊
+tíng diàn	停电
+tíng chē wèi	停车位
+tíng dùn	停顿
+jiàn zhuàng	健壮
+jiàn měi	健美
+tōu lǎn	偷懒
+tōu kàn	偷看
+tōu kuī	偷窥
+cháng huán	偿还
+chǔ bèi	储备
+chǔ xù	储蓄
+cuī	催
+cuī cù	催促
+cuī mián	催眠
+ào	傲
+ào màn	傲慢
+shǎ guā	傻瓜
+xiàng yàng	像样
+sēng rén	僧人
+jiāng	僵
+jiāng huà	僵化
+jiāng jú	僵局
+pì jìng	僻静
+rú xué	儒学
+rú jiā	儒家
+yuán xiāo jié	元宵节
+yuán lǎo	元老
+yuán shǒu	元首
+chōng	充
+chōng shí	充实
+chōng dāng	充当
+chōng pèi	充沛
+zhào tou	兆头
+xiān lì	先例
+xiān tiān	先天
+guāng cǎi	光彩
+guāng míng lěi luò	光明磊落
+guāng zé	光泽
+guāng huá	光滑
+guāng huán	光环
+guāng dié	光碟
+guāng lǎn	光缆
+guāng máng	光芒
+guāng gù	光顾
+kè zhì	克制
+kè lóng	克隆
+miǎn	免
+miǎn bù liǎo	免不了
+miǎn yì	免疫
+miǎn zhí	免职
+miǎn chú	免除
+duì huàn	兑换
+duì xiàn	兑现
+dōu	兜
+dōu r	兜儿
+dōu shòu	兜售
+jīng jīng yè yè	兢兢业业
+rù qīn	入侵
+rù chǎng	入场
+rù chǎng quàn	入场券
+rù jìng	入境
+rù shǒu	入手
+rù xuǎn	入选
+quán lì yǐ fù	全力以赴
+quán jú	全局
+quán xīn quán yì	全心全意
+quán wén	全文
+quán fāng wèi	全方位
+quán chéng	全程
+quán néng	全能
+quán cháng	全长
+bā guà	八卦
+gōng shì	公事
+gōng pú	公仆
+gōng gòng chǎng suǒ	公共场所
+gōng guān	公关
+gōng hán	公函
+gōng wù	公务
+gōng mù	公墓
+gōng ān jú	公安局
+gōng yù	公寓
+gōng kāi xìn	公开信
+gōng kuǎn	公款
+gōng rán	公然
+gōng yòng	公用
+gōng yì	公益
+gōng shì	公示
+gōng jī jīn	公积金
+gōng lì	公立
+gōng yuē	公约
+gōng zhí	公职
+gōng zhèng	公证
+gōng fèi	公费
+gōng chē	公车
+gōng dao	公道
+gōng qǐng	公顷
+gòng tóng tǐ	共同体
+gòng xìng	共性
+gòng shí	共识
+gòng míng	共鸣
+guān tóu	关头
+guān diào	关掉
+guān zhào	关照
+guān shuì	关税
+guān jié	关节
+xīng fèn jì	兴奋剂
+xīng jiàn	兴建
+xìng zhì	兴致
+xīng qǐ	兴起
+xìng gāo cǎi liè	兴高采烈
+qí hòu	其后
+qí jiān	其间
+diǎn fàn	典范
+zī	兹
+yǎng zhí	养殖
+yǎng huo	养活
+yǎng shēng	养生
+yǎng lǎo jīn	养老金
+yǎng lǎo yuàn	养老院
+jiān	兼
+jiān rèn	兼任
+jiān róng	兼容
+jiān zhí	兼职
+jiān gù	兼顾
+nèi xiàng	内向
+nèi cún	内存
+nèi mù	内幕
+nèi hán	内涵
+nèi háng	内行
+nèi gé	内阁
+nèi xū	内需
+zài dù	再度
+zài xiàn	再现
+mào chōng	冒充
+mào mèi	冒昧
+mào fàn	冒犯
+mào xiǎn	冒险
+rǒng cháng	冗长
+xiě zhào	写照
+jūn guān	军官
+nóng zuò wù	农作物
+nóng lì	农历
+nóng chǎng	农场
+nóng mín gōng	农民工
+yuān	冤
+yuān wang	冤枉
+bīng shān	冰山
+bīng gùn r	冰棍儿
+chōng cì	冲刺
+chōng zhuàng	冲撞
+chōng xǐ	冲洗
+chōng làng	冲浪
+jué yì	决议
+kuàng qiě	况且
+lěng dòng	冷冻
+lěng zhàn	冷战
+lěng dàn	冷淡
+lěng mò	冷漠
+lěng xiào	冷笑
+lěng luò	冷落
+lěng kù	冷酷
+lěng kù wú qíng	冷酷无情
+lěng mén	冷门
+dòng jié	冻结
+jìng huà	净化
+qī liáng	凄凉
+zhǔn zé	准则
+zhǔn xǔ	准许
+liáng shuǎng	凉爽
+líng chén	凌晨
+jiǎn miǎn	减免
+jiǎn yā	减压
+jiǎn ruò	减弱
+jiǎn sù	减速
+còu	凑
+còu he	凑合
+còu qiǎo	凑巧
+níng gù	凝固
+níng jù	凝聚
+jī lǜ	几率
+fán	凡
+fèng huáng	凤凰
+píng jiè	凭借
+píng zhe	凭着
+píng zhèng	凭证
+kǎi gē	凯歌
+dèng zi	凳子
+xiōng è	凶恶
+xiōng cán	凶残
+xiōng hěn	凶狠
+xiōng měng	凶猛
+tū	凸
+tū xiǎn	凸显
+āo	凹
+chū chǒu	出丑
+chū zhǔ yi	出主意
+chū rén yì liào	出人意料
+chū rèn	出任
+chū zhòng	出众
+chū jù	出具
+chū mài	出卖
+chū chǎng	出厂
+chū fā diǎn	出发点
+chū kǒu chéng zhāng	出口成章
+chū tǔ	出土
+chū jìng	出境
+chū tóu	出头
+chū jú	出局
+chū shān	出山
+chū xi	出息
+chū shǒu	出手
+chū máo bìng	出毛病
+chū yáng xiàng	出洋相
+chū yóu	出游
+chū yǎn	出演
+chū bǎn shè	出版社
+chū shì	出示
+chū zì	出自
+chū xuè	出血
+chū zī	出资
+chū zǒu	出走
+chū shēn	出身
+chū dào	出道
+chū nán tí	出难题
+chū fēng tou	出风头
+hán shòu	函授
+záo	凿
+diāo nàn	刁难
+fēn gē	分割
+fēn huà	分化
+fèn wài	分外
+fēn cun	分寸
+fēn dān	分担
+fēn zhī	分支
+fēn míng	分明
+fēn qí	分歧
+fēn mì	分泌
+fēn hóng	分红
+fēn zāng	分赃
+fēn biàn	分辨
+fèn liang	分量
+qiē gē	切割
+qiē duàn	切断
+qiè shēn	切身
+qiē chú	切除
+kān wù	刊物
+kān dēng	刊登
+xíng fǎ	刑法
+huà shí dài	划时代
+huá suàn	划算
+liè jǔ	列举
+zé	则
+gāng yì	刚毅
+chuàng	创
+chuāng shāng	创伤
+chuàng shǐ rén	创始人
+chū cì	初次
+chū zhōng	初衷
+shān	删
+shān chú	删除
+pàn jué	判决
+pàn chǔ	判处
+pàn dìng	判定
+páo	刨
+lì hài	利害
+lì lǜ	利率
+lì suo	利索
+bié jù jiàng xīn	别具匠心
+bié shù	别墅
+biè niu	别扭
+bié tí le	别提了
+bié kàn	别看
+bié zhì	别致
+bié shuō	别说
+guā fēng	刮风
+dào wèi	到位
+dào tóu lái	到头来
+zhì	制
+zhì pǐn	制品
+zhì fú	制服
+zhì zhǐ	制止
+zhì cái	制裁
+shuā xīn	刷新
+shā chē	刹车
+cì xiù	刺绣
+cì ěr	刺耳
+cì gǔ	刺骨
+kè yì	刻意
+kè zhōu qiú jiàn	刻舟求剑
+kè kǔ	刻苦
+jì	剂
+tì	剃
+xiāo	削
+xuē ruò	削弱
+qián bù jiǔ	前不久
+qián yǎng hòu hé	前仰后合
+qián rèn	前任
+qián tái	前台
+qián xī	前夕
+qián suǒ wèi yǒu	前所未有
+qián wú gǔ rén	前无古人
+qián qī	前期
+qián yán	前沿
+qián xiàn	前线
+qián zhě	前者
+qián fù hòu jì	前赴后继
+qián bèi	前辈
+tī chú	剔除
+bāo	剥
+bō xuē	剥削
+bō duó	剥夺
+jù tuán	剧团
+jù qíng	剧情
+jù liè	剧烈
+jù mù	剧目
+jù zǔ	剧组
+jù yuàn	剧院
+fù zuò yòng	副作用
+shèng yú	剩余
+gē	割
+pī	劈
+lì bù cóng xīn	力不从心
+lì zhēng	力争
+lì dù	力度
+lì suǒ néng jí	力所能及
+lì qiú	力求
+quàn gào	劝告
+quàn shuō	劝说
+quàn zǔ	劝阻
+bàn bu dào	办不到
+gōng	功
+gōng lì	功力
+gōng láo	功劳
+gōng dǐ	功底
+gōng xiào	功效
+gōng lǜ	功率
+gōng chén	功臣
+jiā jù	加剧
+jiā shēn	加深
+jiā jǐn	加紧
+jiā zhòng	加重
+wù shí	务实
+wù bì	务必
+liè shì	劣势
+liè zhì	劣质
+dòng bu dòng	动不动
+dòng xiàng	动向
+dòng tīng	动听
+dòng gōng	动工
+dòng tan	动弹
+dòng gǎn	动感
+dòng yòng	动用
+dòng mài	动脉
+dòng dàng	动荡
+dòng shēn	动身
+dòng jìng	动静
+zhù wēi	助威
+jié	劫
+jié chí	劫持
+lì zhì	励志
+jìn tóu	劲头
+láo wù	劳务
+láo dòng lì	劳动力
+láo lèi	劳累
+shì bù kě dāng	势不可当
+shì tóu	势头
+shì bì	势必
+yǒng yú	勇于
+yǒng wǎng zhí qián	勇往直前
+miǎn qiǎng	勉强
+xūn zhāng	勋章
+lēi	勒
+kān tàn	勘探
+mù juān	募捐
+qín láo	勤劳
+qín gōng jiǎn xué	勤工俭学
+qín kuài	勤快
+gōu	勾
+gōu huà	勾画
+gōu jié	勾结
+wù	勿
+bāo róng	包容
+bāo zā	包扎
+bāo fu	包袱
+cōng cōng	匆匆
+cōng máng	匆忙
+huà zhuāng	化妆
+huà xiān	化纤
+huà féi	化肥
+huà shēn	化身
+huà xiǎn wéi yí	化险为夷
+huà yàn	化验
+pǐ pèi	匹配
+yī wù	医务
+nì míng	匿名
+shí zì lù kǒu	十字路口
+qiān jūn wàn mǎ	千军万马
+qiān biàn wàn huà	千变万化
+qiān jiā wàn hù	千家万户
+qiān fāng bǎi jì	千方百计
+qiān jūn yī fà	千钧一发
+shēng wēn	升温
+bàn xìn bàn yí	半信半疑
+bàn chǎng	半场
+bàn dǎo	半岛
+bàn shù	半数
+bàn zhēn bàn jiǎ	半真半假
+bàn lù	半路
+bàn biān tiān	半边天
+bàn tú ér fèi	半途而废
+huá lì	华丽
+huá qiáo	华侨
+huá yì	华裔
+xié zuò	协作
+xié tóng	协同
+xié dìng	协定
+bēi bǐ	卑鄙
+zhuó yuè	卓越
+dān fāng miàn	单方面
+dān bó	单薄
+dān shēn	单身
+dān biān	单边
+mài nong	卖弄
+nán guā	南瓜
+zhān bǔ	占卜
+zhàn yòng	占用
+qiǎ zi	卡子
+kǎ piàn	卡片
+kǎ chē	卡车
+kǎ tōng	卡通
+lǔ wèi	卤味
+wò	卧
+wèi shì	卫视
+yìn shuā shù	印刷术
+yìn zhèng	印证
+yìn zhāng	印章
+wēi jí	危及
+wēi jí	危急
+jí	即
+jí biàn	即便
+jí kě	即可
+luǎn	卵
+juǎn rù	卷入
+juàn zi	卷子
+xiè	卸
+chǎng jiā	厂家
+è yùn	厄运
+lì jiè	历届
+lì shí	历时
+lì lái	历来
+lì chéng	历程
+lì jīng	历经
+yā dǎo	压倒
+yā zhì	压制
+yā yì	压抑
+yā suō	压缩
+yàn juàn	厌倦
+yàn fán	厌烦
+hòu dù	厚度
+hòu dao	厚道
+yuán chuàng	原创
+yuán dì	原地
+yuán xíng	原型
+yuán běn	原本
+yuán cái liào	原材料
+yuán zhī yuán wèi	原汁原味
+yuán zhuāng	原装
+qù xiàng	去向
+qù chù	去处
+qù chú	去除
+cān jūn	参军
+cān zhào	参照
+cān jiàn	参见
+cān móu	参谋
+jí	及
+jí qí	及其
+jí zǎo	及早
+yǒu rén	友人
+yǒu shàn	友善
+yǒu qíng	友情
+shuāng xiàng	双向
+shuāng bāo tāi	双胞胎
+shuāng yíng	双赢
+shuāng biān	双边
+shuāng chóng	双重
+fǎn dào	反倒
+fǎn jī	反击
+fǎn chā	反差
+fǎn cháng	反常
+fǎn tán	反弹
+fǎn sī	反思
+fǎn gǎn	反感
+fǎn xǐng	反省
+fǎn guo lái	反过来
+fǎn miàn	反面
+fǎn kuì	反馈
+fǎn bó	反驳
+fā zuò	发作
+fā guāng	发光
+fà xíng	发型
+fā bù huì	发布会
+fā chóu	发愁
+fā lèng	发愣
+fā fèn tú qiáng	发愤图强
+fā yáng	发扬
+fā yáng guāng dà	发扬光大
+fā dǒu	发抖
+fā jué	发掘
+fā xiè	发泄
+fā yuán dì	发源地
+fā huǒ	发火
+fā rè	发热
+fā diàn jī	发电机
+fā yù	发育
+fā pí qì	发脾气
+fā shì	发誓
+fā cái	发财
+fā qǐ rén	发起人
+fā jiào	发酵
+qǔ dài	取代
+qǔ jué yú	取决于
+qǔ nuǎn	取暖
+qǔ xiào	取笑
+qǔ jīng	取经
+qǔ dì	取缔
+qǔ ér dài zhī	取而代之
+qǔ shèng	取胜
+shòu hài	受害
+shòu hài rén	受害人
+shòu jīng	受惊
+shòu lǐ	受理
+shòu yì	受益
+shòu kǔ	受苦
+shòu huì	受贿
+shòu guò	受过
+shòu piàn	受骗
+biàn huàn mò cè	变幻莫测
+biàn yì	变异
+biàn zhì	变质
+biàn qiān	变迁
+biàn gé	变革
+xù shù	叙述
+pàn nì	叛逆
+dié	叠
+kǒu lìng	口令
+kǒu chī	口吃
+kǒu wèi	口味
+kǒu shào	口哨
+kǒu tóu	口头
+kǒu zi	口子
+kǒu jìng	口径
+kǒu gǎn	口感
+kǒu cái	口才
+kǒu qì	口气
+kǒu shuǐ	口水
+kǒu bēi	口碑
+kǒu zhào	口罩
+kǒu qiāng	口腔
+kǒu yīn	口音
+kǒu xiāng táng	口香糖
+gǔ rén	古人
+gǔ jīn zhōng wài	古今中外
+gǔ guài	古怪
+gǔ pǔ	古朴
+gǔ dǒng	古董
+gǔ jì	古迹
+jiào hǎo	叫好
+jiào bǎn	叫板
+zhào jí	召集
+dīng zhǔ	叮嘱
+kě bu shì	可不是
+kě chéng zhī jī	可乘之机
+kě xìn	可信
+kě kǒu	可口
+kě wù	可恶
+kě bēi	可悲
+kě xiǎng ér zhī	可想而知
+kě gē kě qì	可歌可泣
+kě yí	可疑
+kě xiào	可笑
+kě chǐ	可耻
+kě xíng	可行
+kě guān	可观
+kě wèi	可谓
+kě guì	可贵
+tái qiú	台球
+shǐ wú qián lì	史无前例
+hào chēng	号称
+sī lìng	司令
+sī fǎ	司法
+sī kōng jiàn guàn	司空见惯
+diāo	叼
+chī bu shàng	吃不上
+chī kuī	吃亏
+chī hē wán lè	吃喝玩乐
+chī kǔ	吃苦
+gè bèn qián chéng	各奔前程
+gè shì gè yàng	各式各样
+hé hū	合乎
+hé huǒ	合伙
+hé zuò shè	合作社
+hé chàng	合唱
+hé yǐng	合影
+hé qíng hé lǐ	合情合理
+hé jì	合计
+hé zī	合资
+jí tā	吉他
+jí pǔ	吉普
+jí xiáng wù	吉祥物
+diào xiāo	吊销
+tóng rén	同人
+tóng huǒ	同伙
+tóng bàn	同伴
+tóng nián	同年
+tóng zhì	同志
+tóng gǎn	同感
+tóng bù	同步
+tóng méng	同盟
+tóng děng	同等
+tóng lèi	同类
+tóng zhōu gòng jì	同舟共济
+míng lì	名利
+míng fù qí shí	名副其实
+míng shēng	名声
+míng qì	名气
+míng zhù	名著
+míng yán	名言
+míng guì	名贵
+hòu rén	后人
+hòu dài	后代
+hòu qín	后勤
+hòu tái	后台
+hòu bèi	后备
+hòu bèi xiāng	后备箱
+hòu qī	后期
+hòu dùn	后盾
+hòu xù	后续
+hòu zhě	后者
+hòu yì	后裔
+hòu tuì	后退
+hòu yí zhèng	后遗症
+hòu gù zhī yōu	后顾之忧
+xiàng wǎng	向往
+xiàng lái	向来
+xiàng zhe	向着
+xià rén	吓人
+xià hu	吓唬
+jūn zǐ	君子
+fǒu jué	否决
+fēn fù	吩咐
+hán hu	含糊
+hán xù	含蓄
+tīng cóng	听从
+tīng huà	听话
+qǐ shì	启示
+qǐ méng	启蒙
+qǐ dí	启迪
+chǎo zuǐ	吵嘴
+xī qǔ	吸取
+xī nà	吸纳
+chuī le	吹了
+chuī pěng	吹捧
+chuī niú	吹牛
+wěn	吻
+wěn hé	吻合
+hǒu	吼
+chéng xiàn	呈现
+gào	告
+gào zhuàng	告状
+gào zhī	告知
+gào shi	告示
+gào jiè	告诫
+gào cí	告辞
+nà hǎn	呐喊
+ǒu tù	呕吐
+qiāng	呛
+wū yè	呜咽
+zhōu dào	周到
+zhōu mì	周密
+zhōu xuán	周旋
+zhōu biān	周边
+wèi jīng	味精
+hē hù	呵护
+hū yù	呼吁
+hū huàn	呼唤
+hū shēng	呼声
+hū yìng	呼应
+hū jiù	呼救
+hū fēng huàn yǔ	呼风唤雨
+mìng míng	命名
+mìng tí	命题
+hé shang	和尚
+hé píng gòng chǔ	和平共处
+hé qi	和气
+hé mù	和睦
+hé ǎi	和蔼
+hé jiě	和解
+liě zuǐ	咧嘴
+ké sou	咳嗽
+yàn	咽
+yān hóu	咽喉
+āi qiú	哀求
+pǐn wèi	品位
+pǐn cháng	品尝
+pǐn dé	品德
+pǐn xíng	品行
+hōng	哄
+hōng táng dà xiào	哄堂大笑
+duō suo	哆嗦
+xiǎng liàng	响亮
+xiǎng yìng	响应
+xiǎng qǐ	响起
+āi	哎
+āi yā	哎呀
+yǎ	哑
+huá biàn	哗变
+huá rán	哗然
+ò	哦
+nǎ zhī dào	哪知道
+kū qì	哭泣
+kū xiào bù dé	哭笑不得
+bǔ yù	哺育
+hēng	哼
+ài	唉
+láo dao	唠叨
+huàn qǐ	唤起
+shòu jià	售价
+shòu piào	售票
+wéi	唯
+wéi dú	唯独
+tuò yè	唾液
+kěn	啃
+shāng tǎo	商讨
+shāng fàn	商贩
+shāng gǔ	商贾
+lā lā duì	啦啦队
+wèi yǎng	喂养
+shàn	善
+shàn yì	善意
+lǎ ba	喇叭
+hóu lóng	喉咙
+chuǎn	喘
+chuǎn xī	喘息
+xǐ shì	喜事
+xǐ chū wàng wài	喜出望外
+xǐ hào	喜好
+xǐ qìng	喜庆
+xǐ nù āi lè	喜怒哀乐
+xǐ yuè	喜悦
+xǐ yáng yáng	喜洋洋
+xǐ táng	喜糖
+xǐ jiǔ	喜酒
+hè cǎi	喝彩
+xuān huá	喧哗
+xuān nào	喧闹
+pēn quán	喷泉
+xiù jué	嗅觉
+sǎng zi	嗓子
+shì hào	嗜好
+jiā nián huá	嘉年华
+zhǔ fù	嘱咐
+cháo nòng	嘲弄
+cháo xiào	嘲笑
+zuǐ chún	嘴唇
+hēi	嘿
+qì cái	器材
+qì xiè	器械
+zào shēng	噪声
+zào yīn	噪音
+rǎng	嚷
+jiáo	嚼
+qiú fàn	囚犯
+sì hé yuàn	四合院
+sì jì	四季
+sì miàn bā fāng	四面八方
+huí shēng	回升
+huí wèi	回味
+huí guī	回归
+huí yì lù	回忆录
+huí xiǎng	回想
+huí kòu	回扣
+huí luò	回落
+huí kuì	回馈
+huí shǒu	回首
+yīn rén ér yì	因人而异
+tuán huǒ	团伙
+tuán yuán	团员
+tuán yuán	团圆
+tuán jù	团聚
+kùn jìng	困境
+kùn huò	困惑
+wéi qiáng	围墙
+gù zhí	固执
+gù rán	固然
+guó tǔ	国土
+guó xué	国学
+guó bǎo	国宝
+guó huī	国徽
+guó qíng	国情
+guó yǒu	国有
+guó huà	国画
+guó fáng	国防
+tú xiàng	图像
+tú xíng	图形
+tú zhǐ	图纸
+tú biǎo	图表
+yuán xíng	圆形
+quān tào	圈套
+quān zi	圈子
+tǔ fěi	土匪
+tǔ rǎng	土壤
+tǔ shēng tǔ zhǎng	土生土长
+shèng xián	圣贤
+zài yì	在意
+zài xiàn	在线
+zài zhí	在职
+dì xià shuǐ	地下水
+dì yù	地域
+dì bù	地步
+dì duàn	地段
+dì tǎn	地毯
+dì yù	地狱
+dì lǐ	地理
+dì zhì	地质
+dì dào	地道
+jūn yún	均匀
+jūn héng	均衡
+huài shì	坏事
+zuò luò	坐落
+kēng	坑
+jiān xìn	坚信
+jiān shǒu	坚守
+jiān shí	坚实
+jiān chí bù xiè	坚持不懈
+jiān yìng	坚硬
+jiān rèn	坚韧
+tán	坛
+bà	坝
+fén	坟
+fén mù	坟墓
+zhuì	坠
+tǎn kè	坦克
+tǎn rán	坦然
+tǎn shuài	坦率
+tǎn bái	坦白
+tǎn chéng	坦诚
+chuí	垂
+chuí tóu sàng qì	垂头丧气
+lǒng duàn	垄断
+diàn	垫
+diàn zi	垫子
+diàn dǐ	垫底
+kuǎ	垮
+chéng qiáng	城墙
+mái fú	埋伏
+mán yuàn	埋怨
+mái mò	埋没
+mái cáng	埋藏
+jī yú	基于
+jī zhǔn	基准
+jī yīn	基因
+jī céng	基层
+jī běn gōng	基本功
+táng	堂
+duī qì	堆砌
+duò luò	堕落
+bǎo lěi	堡垒
+dī	堤
+dī bà	堤坝
+kān chēng	堪称
+dǔ sè	堵塞
+tā	塌
+sù zào	塑造
+tián chōng	填充
+tián xiě	填写
+tián bǔ	填补
+jìng nèi	境内
+jìng dì	境地
+jìng wài	境外
+jìng jiè	境界
+jìng yù	境遇
+mù dì	墓地
+mù bēi	墓碑
+zēng shōu	增收
+zēng tiān	增添
+bì huà	壁画
+shì qì	士气
+zhuàng	壮
+zhuàng lì	壮丽
+zhuàng dà	壮大
+zhuàng shi	壮实
+zhuàng dǎn	壮胆
+shēng wàng	声望
+shēng chēng	声称
+shēng yù	声誉
+qiào	壳
+chǔ jìng	处境
+chǔ fāng	处方
+chǔ zhì	处置
+bèi shòu	备受
+bèi yòng	备用
+bèi kè	备课
+fù xīng	复兴
+fù yuán	复原
+fù fā	复发
+fù hé	复合
+fù chá	复查
+fù huó	复活
+xià lìng yíng	夏令营
+wài qǐ	外企
+wài gōng	外公
+wài hào	外号
+wài pó	外婆
+wài xíng	外形
+wài yuán	外援
+wài xīng rén	外星人
+wài jí	外籍
+wài háng	外行
+wài biǎo	外表
+wài mào	外貌
+wài mào	外贸
+duō kuī	多亏
+duō yú	多余
+duō yuán	多元
+duō gōng néng	多功能
+duō láo duō dé	多劳多得
+duō nián lái	多年来
+duō xīn	多心
+duō biān	多边
+yè yǐ jì rì	夜以继日
+yè shì	夜市
+yè zǒng huì	夜总会
+yè wǎn	夜晚
+yè xiào	夜校
+yè bān	夜班
+gòu qiàng	够呛
+dà tǐ	大体
+dà tǐ shàng	大体上
+dà gōng wú sī	大公无私
+dà bāo dà lǎn	大包大揽
+dà shà	大厦
+dà chī yī jīng	大吃一惊
+dà tóng xiǎo yì	大同小异
+dà míng dǐng dǐng	大名鼎鼎
+dà dì	大地
+dà dà liē liē	大大咧咧
+dà zōng	大宗
+dà jiā tíng	大家庭
+dà jú	大局
+dà fú dù	大幅度
+dà jīng xiǎo guài	大惊小怪
+dà yì	大意
+dà shù jù	大数据
+dà yǒu kě wéi	大有可为
+dà péng	大棚
+dà mú dà yàng	大模大样
+dà kuǎn	大款
+dà qì	大气
+dà piàn	大片
+dà bǐ	大笔
+dà sì	大肆
+dà wàn r	大腕儿
+dà chén	大臣
+dà jiē xiǎo xiàng	大街小巷
+dà xuǎn	大选
+dà duì	大队
+dà yàn	大雁
+dà miàn jī	大面积
+tiān zhǔ jiào	天主教
+tiān shǐ	天使
+tiān fèn	天分
+tiān dì	天地
+tiān píng	天平
+tiān xìng	天性
+tiān qiáo	天桥
+tiān shēng	天生
+tiān xiàn	天线
+tiān jīng dì yì	天经地义
+tiān fù	天赋
+tiān cháng dì jiǔ	天长地久
+tiān é	天鹅
+tài píng	太平
+tài jí	太极
+tài jí quán	太极拳
+shī yè lǜ	失业率
+shī chuán	失传
+shī lì	失利
+shī liàn	失恋
+shī kòng	失控
+shī xiào	失效
+shī míng	失明
+shī líng	失灵
+shī mián	失眠
+shī luò	失落
+shī zōng	失踪
+tóu hào	头号
+tóu tóu shì dào	头头是道
+tóu yūn	头晕
+tóu tiáo	头条
+tóu xián	头衔
+tóu bù	头部
+tóu dǐng	头顶
+kuā	夸
+kuā dà	夸大
+kuā kuā qí tán	夸夸其谈
+kuā jiǎng	夸奖
+kuā zhāng	夸张
+kuā yào	夸耀
+duó guàn	夺冠
+duó kuí	夺魁
+qí tè	奇特
+qí huā yì cǎo	奇花异草
+qí jì	奇迹
+fèn lì	奋力
+fèn yǒng	奋勇
+bèn	奔
+bēn bō	奔波
+bēn fù	奔赴
+zòu xiào	奏效
+qì jī	契机
+qì yuē	契约
+jiǎng pǐn	奖品
+jiǎng bēi	奖杯
+jiǎng pái	奖牌
+jiǎng xiàng	奖项
+diàn dìng	奠定
+shē chǐ	奢侈
+shē wàng	奢望
+ào mì	奥秘
+ào yùn huì	奥运会
+nǚ xu	女婿
+nú lì	奴隶
+jiān zhà	奸诈
+hǎo zài	好在
+hǎo huài	好坏
+hào qí xīn	好奇心
+hào kè	好客
+hǎo jiā huo	好家伙
+hǎo xīn	好心
+hǎo xīn rén	好心人
+hǎo yì	好意
+hǎo gǎn	好感
+hǎo dǎi	好歹
+hǎo bǐ	好比
+hǎo xiào	好笑
+hǎo píng	好评
+hǎo shuō	好说
+rú shí	如实
+rú yì	如意
+rú yuàn yǐ cháng	如愿以偿
+rú guǒ shuō	如果说
+rú zuì rú chī	如醉如痴
+wàng xiǎng	妄想
+dù jì	妒忌
+yāo guài	妖怪
+tuǒ	妥
+tuǒ xié	妥协
+tuǒ shàn	妥善
+tuǒ dang	妥当
+fáng hài	妨害
+fáng ài	妨碍
+xìng shì	姓氏
+wěi yuán	委员
+wěi yuán huì	委员会
+wěi wǎn	委婉
+wěi qu	委屈
+jiāng	姜
+lǎo lao	姥姥
+lǎo ye	姥爷
+yí	姨
+zī shì	姿势
+zī tài	姿态
+wēi xìn	威信
+wēi lì	威力
+wēi shè	威慑
+wēi fēng	威风
+jiāo guàn	娇惯
+jiāo qì	娇气
+niáng	娘
+qǔ	娶
+hūn yīn	婚姻
+hūn shā	婚纱
+yīng ér	婴儿
+pì měi	媲美
+xí fù	媳妇
+jià	嫁
+jià zhuang	嫁妆
+sǎo zi	嫂子
+jí dù	嫉妒
+xián qì	嫌弃
+xián yí	嫌疑
+cháng é	嫦娥
+nèn	嫩
+xī xiào	嬉笑
+zǐ sūn	子孙
+zǐ dì	子弟
+yùn fù	孕妇
+yùn yù	孕育
+zì tǐ	字体
+zì mù	字幕
+zì yǎn	字眼
+zì jì	字迹
+cún xīn	存心
+cún zhé	存折
+cún fàng	存放
+xiào jìng	孝敬
+xiào shùn	孝顺
+gū dān	孤单
+gū lì	孤立
+gū lòu guǎ wén	孤陋寡闻
+gū líng líng	孤零零
+xué yè	学业
+xué lì	学历
+xué táng	学堂
+xué shì	学士
+xué zǐ	学子
+xué yì	学艺
+xué shuō	学说
+luán shēng	孪生
+fū huà	孵化
+nìng kě	宁可
+nìng yuàn	宁愿
+yǔ zhòu	宇宙
+shǒu hòu	守候
+shǒu hù	守护
+shǒu zhū dài tù	守株待兔
+ān níng	安宁
+ān dìng	安定
+ān xīn	安心
+ān fǔ	安抚
+ān mián yào	安眠药
+ān wěn	安稳
+ān yì	安逸
+wán bèi	完备
+wán hǎo	完好
+wán bì	完毕
+wán dàn	完蛋
+hóng wěi	宏伟
+hóng guān	宏观
+zōng	宗
+zōng zhǐ	宗旨
+guān liáo	官僚
+guān liáo zhǔ yì	官僚主义
+guān bīng	官兵
+guān lì	官吏
+guān yuán	官员
+dìng yì	定义
+dìng zuò	定做
+dìng xiàng	定向
+dìng jū	定居
+dìng xīn wán	定心丸
+dìng lùn	定论
+dìng jīn	定金
+bǎo kù	宝库
+bǎo zàng	宝藏
+shí shì qiú shì	实事求是
+shí tǐ	实体
+shí kuàng	实况
+shí dì	实地
+shí wù	实物
+shí huà	实话
+shí huà shí shuō	实话实说
+shí zhì	实质
+chǒng	宠
+chǒng ài	宠爱
+shěn	审
+shěn pàn	审判
+shěn dìng	审定
+shěn pī	审批
+shěn hé	审核
+shěn shì	审视
+shěn měi	审美
+kè fáng	客房
+kè jī	客机
+kè liú	客流
+kè yùn	客运
+xuān gào	宣告
+xuān yáng	宣扬
+xuān xiè	宣泄
+xuān chēng	宣称
+xuān yán	宣言
+xuān shì	宣誓
+xuān dú	宣读
+xiàn fǎ	宪法
+gōng tíng	宫廷
+gōng diàn	宫殿
+zǎi	宰
+hài xiū	害羞
+hài sào	害臊
+hài chóng	害虫
+jiā huo	家伙
+jiā yù hù xiǎo	家喻户晓
+jiā jìng	家境
+jiā jiā hù hù	家家户户
+jiā zhèng	家政
+jiā jiào	家教
+jiā zú	家族
+jiā yòng	家用
+jiā qín	家禽
+róng guāng huàn fā	容光焕发
+róng rěn	容忍
+róng nà	容纳
+róng xǔ	容许
+róng liàng	容量
+róng yán	容颜
+kuān hòu	宽厚
+kuān róng	宽容
+kuān shù	宽恕
+kuān chang	宽敞
+kuān sōng	宽松
+kuān fàn	宽泛
+jì mò	寂寞
+jì jìng	寂静
+jì tuō	寄托
+mì bù kě fēn	密不可分
+mì fēng	密封
+mì dù	密度
+mì jí	密集
+fù hán	富含
+fù qiáng	富强
+fù wēng	富翁
+fù yù	富裕
+fù háo	富豪
+fù zú	富足
+yù yì	寓意
+yù yán	寓言
+qǐn shì	寝室
+chá kàn	察看
+chá jué	察觉
+guǎ fu	寡妇
+liáo liáo wú jǐ	寥寥无几
+duì zhǔn	对准
+duì zhì	对峙
+duì yì	对弈
+duì de qǐ	对得起
+duì zhào	对照
+duì bái	对白
+duì chèn	对称
+duì cè	对策
+duì lián	对联
+sì miào	寺庙
+xún	寻
+xún cháng	寻常
+xún mì	寻觅
+dǎo xiàng	导向
+dǎo shī	导师
+dǎo dàn	导弹
+dǎo huǒ suǒ	导火索
+dǎo háng	导航
+shòu mìng	寿命
+fēng jiàn	封建
+fēng suǒ	封锁
+fēng miàn	封面
+fēng dǐng	封顶
+zūn yán	尊严
+zūn guì	尊贵
+xiǎo chǒu	小丑
+xiǎo rén	小人
+xiǎo qū	小区
+xiǎo zú	小卒
+xiǎo pǐn	小品
+xiǎo kāng	小康
+xiǎo xīn yì yì	小心翼翼
+xiǎo tí qín	小提琴
+xiǎo qǔ	小曲
+xiǎo qì	小气
+xiǎo xī	小溪
+xiǎo kàn	小看
+xiǎo fàn	小贩
+xiǎo lù	小路
+shǎo bu liǎo	少不了
+shào nǚ	少女
+shǎo yǒu	少有
+shào lín sì	少林寺
+shǎo jiàn	少见
+shǎo liàng	少量
+jiān duān	尖端
+jiān ruì	尖锐
+shàng	尚
+shàng wèi	尚未
+yóu wéi	尤为
+jiù rèn	就任
+jiù yī	就医
+jiù dì	就地
+jiù zuò	就座
+jiù zhí	就职
+jiù zhěn	就诊
+jiù dú	就读
+jiù jìn	就近
+jiù cān	就餐
+gān gà	尴尬
+shī tǐ	尸体
+chǐ dù	尺度
+ní lóng	尼龙
+jìn tóu	尽头
+jìn qíng	尽情
+jǐn zǎo	尽早
+wěi shēng	尾声
+wěi qì	尾气
+niào	尿
+jú shì	局势
+jú bù	局部
+jú xiàn	局限
+céng chū bù qióng	层出不穷
+jū mín lóu	居民楼
+jū gāo lín xià	居高临下
+qū fú	屈服
+jiè shí	届时
+wū dǐng	屋顶
+zhǎn chū	展出
+zhǎn wàng	展望
+zhǎn lǎn huì	展览会
+shǔ xìng	属性
+tú shā	屠杀
+lǚ	屡
+lǚ cì	屡次
+lǚ xíng	履行
+tún	屯
+shān gāng	山冈
+shān zhài	山寨
+shān lǐng	山岭
+shān chuān	山川
+shān lù	山路
+shān dǐng	山顶
+yì lì	屹立
+qǐ yǒu cǐ lǐ	岂有此理
+dǎo yǔ	岛屿
+yán shí	岩石
+yuè mǔ	岳母
+yuè fù	岳父
+xiá gǔ	峡谷
+fēng huí lù zhuǎn	峰回路转
+chóng shàng	崇尚
+chóng gāo	崇高
+jué qǐ	崛起
+bēng kuì	崩溃
+zhǎn xīn	崭新
+diān fēng	巅峰
+chuān liú bù xī	川流不息
+gōng huì	工会
+gōng zuò liàng	工作量
+gōng shāng jiè	工商界
+gōng dì	工地
+gōng xù	工序
+gōng zhěng	工整
+gōng kē	工科
+zuǒ gù yòu pàn	左顾右盼
+qiǎo hé	巧合
+jù rén	巨人
+jù xíng	巨型
+jù tóu	巨头
+jù xīng	巨星
+jù é	巨额
+wū pó	巫婆
+chā cuò	差错
+chā é	差额
+bā bu de	巴不得
+shì chǎng jīng jì	市场经济
+bù jú	布局
+fān	帆
+fān chuán	帆船
+shī fàn	师范
+shī zī	师资
+shī zhǎng	师长
+zhàng zi	帐子
+zhàng peng	帐篷
+tiě zi	帖子
+lián zi	帘子
+dì guó	帝国
+dì guó zhǔ yì	帝国主义
+dài tóu	带头
+dài tóu rén	带头人
+dài lù	带路
+dài duì	带队
+xí	席
+xí wèi	席位
+bāng shǒu	帮手
+cháng rén	常人
+cháng tài	常态
+cháng wēn	常温
+cháng lǐ	常理
+mù	幕
+mù hòu	幕后
+zhuàng	幢
+gàn shi	干事
+gān gē	干戈
+gān hàn	干旱
+gān zào	干燥
+gàn bù	干部
+píng jià	平价
+píng hé	平和
+píng cháng xīn	平常心
+píng xī	平息
+píng rì	平日
+píng mín	平民
+píng dàn	平淡
+píng miàn	平面
+nián yè fàn	年夜饭
+nián huà	年画
+nián zhōng	年终
+nián xīn	年薪
+nián mài	年迈
+nián xiàn	年限
+bìng liè	并列
+bìng xíng	并行
+bìng gòu	并购
+bìng fēi	并非
+xìng kuī	幸亏
+xìng miǎn	幸免
+xìng hǎo	幸好
+xìng cún	幸存
+xiāng xia	乡下
+xiāng qīn	乡亲
+huàn yǐng	幻影
+huàn jué	幻觉
+yòu zhì	幼稚
+guǎng yì	广义
+zhuāng yán	庄严
+zhuāng yuán	庄园
+zhuāng jia	庄稼
+qìng diǎn	庆典
+qìng xìng	庆幸
+qìng hè	庆贺
+chuáng wèi	床位
+xù	序
+xù mù	序幕
+yìng fu	应付
+yīng yǒu jìn yǒu	应有尽有
+yìng pìn	应聘
+yìng yāo	应邀
+yìng chou	应酬
+dǐ zi	底子
+dǐ céng	底层
+dǐ xiàn	底线
+dǐ yùn	底蕴
+miào	庙
+miào huì	庙会
+páng dà	庞大
+fèi	废
+fèi pǐn	废品
+fèi xū	废墟
+fèi qǐn wàng shí	废寝忘食
+fèi wù	废物
+fèi huà	废话
+fèi chú	废除
+dù jià	度假
+zuò yòu míng	座右铭
+zuò tán	座谈
+yōng sú	庸俗
+lián jià	廉价
+lián zhèng	廉政
+lián zhèng	廉正
+lián jié	廉洁
+yán	延
+yán huǎn	延缓
+yán wù	延误
+jiàn jiāo	建交
+jiàn shù	建树
+jiàn zhù shī	建筑师
+jiàn zhù wù	建筑物
+kāi bàn	开办
+kāi dòng	开动
+kāi fā qū	开发区
+kāi fā shāng	开发商
+kāi kǒu	开口
+kāi qǐ	开启
+kāi chǎng	开场
+kāi chǎng bái	开场白
+kāi kěn	开垦
+kāi tiān pì dì	开天辟地
+kāi gōng	开工
+kāi zhāng	开张
+kāi tuò	开拓
+kāi zhī	开支
+kāi lǎng	开朗
+kāi qiāng	开枪
+kāi pì	开辟
+kāi cǎi	开采
+kāi xiāo	开销
+kāi kuò	开阔
+kāi chú	开除
+yì kǒu tóng shēng	异口同声
+yì xìng	异性
+yì xiǎng tiān kāi	异想天开
+yì yì	异议
+nòng xū zuò jiǎ	弄虚作假
+bì bìng	弊病
+bì duān	弊端
+gōng	弓
+yǐn rén rù shèng	引人入胜
+yǐn rén zhù mù	引人注目
+yǐn rù	引入
+yǐn fā	引发
+yǐn qíng	引擎
+yǐn yòng	引用
+yǐn jīng jù diǎn	引经据典
+yǐn yòu	引诱
+yǐn lǐng	引领
+hóng yáng	弘扬
+dì zǐ	弟子
+zhāng yáng	张扬
+zhāng dēng jié cǎi	张灯结彩
+zhāng tiē	张贴
+mí màn	弥漫
+mí bǔ	弥补
+xián	弦
+ruò shì	弱势
+ruò diǎn	弱点
+tán xìng	弹性
+qiáng zhì	强制
+qiáng jiā	强加
+qiáng jìng	强劲
+qiáng zhàn	强占
+qiáng yìng	强硬
+qiáng xíng	强行
+qiáng xiàng	强项
+guī sù	归宿
+guī shǔ	归属
+guī lái	归来
+guī gēn dào dǐ	归根到底
+guī nà	归纳
+guī jié	归结
+guī huán	归还
+dāng xià	当下
+dāng zhī wú kuì	当之无愧
+dāng shì rén	当事人
+dāng jīn	当今
+dāng zhòng	当众
+dāng wù zhī jí	当务之急
+dāng jí	当即
+dāng xīn	当心
+dāng rì	当日
+dàng wǎn	当晚
+dàng zhēn	当真
+dāng zhe	当着
+dāng miàn	当面
+lù zhì	录制
+xíng xíng sè sè	形形色色
+xíng yǐng bù lí	形影不离
+cǎi diàn	彩电
+cǎi hóng	彩虹
+cǎi xiá	彩霞
+bīn bīn yǒu lǐ	彬彬有礼
+yǐng xiàng	影像
+chè yè	彻夜
+wǎng shì	往事
+wǎng cháng	往常
+wǎng rì	往日
+wǎng fǎn	往返
+zhēng	征
+zhēng shōu	征收
+zhēng jí	征集
+xú xú	徐徐
+tú bù	徒步
+dé bù cháng shī	得不偿失
+dé tǐ	得体
+dé lì	得力
+dé tiān dú hòu	得天独厚
+dé shī	得失
+dé dàng	得当
+dé yì yáng yáng	得意扬扬
+dé shǒu	得手
+dé yì yú	得益于
+dé zhī	得知
+dé zuì	得罪
+pái huái	徘徊
+xún xù jiàn jìn	循序渐进
+wēi bù zú dào	微不足道
+wēi xíng	微型
+wēi miào	微妙
+wēi ruò	微弱
+wēi guān	微观
+dé	德
+xīn shì	心事
+xīn shēng	心声
+xīn ān lǐ dé	心安理得
+xīn dé	心得
+xīn si	心思
+xīn jí rú fén	心急如焚
+xīn xiǎng shì chéng	心想事成
+xīn yì	心意
+xīn huāng	心慌
+xīn líng shǒu qiǎo	心灵手巧
+xīn ài	心爱
+xīn bìng	心病
+xīn mù	心目
+xīn yǎn r	心眼儿
+xīn cháng	心肠
+xīn xiōng	心胸
+xīn xuè	心血
+xīn suān	心酸
+xīn li huà	心里话
+bì bù kě shǎo	必不可少
+bì dìng	必定
+jì	忌
+jì kǒu	忌口
+jì huì	忌讳
+rěn xīn	忍心
+rěn nài	忍耐
+rěn jī ái è	忍饥挨饿
+zhì qì	志气
+wàng bù liǎo	忘不了
+wàng diào	忘掉
+máng luàn	忙乱
+máng huo	忙活
+máng lù	忙碌
+zhōng yú	忠于
+zhōng shí	忠实
+zhōng chéng	忠诚
+zhōng zhēn	忠贞
+yōu chóu	忧愁
+yōu lǜ	忧虑
+yōu yù	忧郁
+kuài jié	快捷
+niàn shū	念书
+niàn tou	念头
+niàn niàn bù wàng	念念不忘
+hū you	忽悠
+hū gāo hū dī	忽高忽低
+huái yùn	怀孕
+huái bào	怀抱
+huái jiù	怀旧
+huái lǐ	怀里
+lián xī	怜惜
+sī qián xiǎng hòu	思前想后
+sī niàn	思念
+sī suǒ	思索
+sī lù	思路
+dài gōng	怠工
+dài màn	怠慢
+yí rán zì dé	怡然自得
+jí yú	急于
+jí jù	急剧
+jí xìng	急性
+jí zhěn	急诊
+jí zhuǎn wān	急转弯
+jí pò	急迫
+jí xū	急需
+xìng jià bǐ	性价比
+xìng mìng	性命
+xìng qíng	性情
+yuàn hèn	怨恨
+yuàn qì	怨气
+yuàn yán	怨言
+guài bu de	怪不得
+guài yì	怪异
+guài wu	怪物
+zǒng de lái shuō	总的来说
+zǒng ér yán zhī	总而言之
+zǒng jì	总计
+zǒng é	总额
+liàn liàn bù shě	恋恋不舍
+huǎng rán dà wù	恍然大悟
+kǒng hè	恐吓
+kǒng bù	恐怖
+kǒng jù	恐惧
+kǒng huāng	恐慌
+kǒng lóng	恐龙
+hèn bu de	恨不得
+ēn yuàn	恩怨
+ēn qíng	恩情
+ēn huì	恩惠
+ēn cì	恩赐
+gōng xǐ	恭喜
+gōng wei	恭维
+xī xī xiāng guān	息息相关
+qià dào hǎo chù	恰到好处
+qià rú qí fèn	恰如其分
+qià qiǎo	恰巧
+qià qià xiāng fǎn	恰恰相反
+kěn qiú	恳求
+è	恶
+è liè	恶劣
+è huà	恶化
+è xìng	恶性
+è yì	恶意
+nǎo xiū chéng nù	恼羞成怒
+huǐ hèn	悔恨
+yōu jiǔ	悠久
+yōu xián	悠闲
+huàn	患
+huàn yǒu	患有
+huàn bìng	患病
+yuè ěr	悦耳
+xuán yá	悬崖
+xuán niàn	悬念
+xuán guà	悬挂
+xuán shū	悬殊
+bēi āi	悲哀
+bēi huān lí hé	悲欢离合
+bēi tòng	悲痛
+bēi guān	悲观
+dào niàn	悼念
+qíng	情
+qíng bù zì jīn	情不自禁
+qíng rén	情人
+qíng lǚ	情侣
+qíng huái	情怀
+qíng yuàn	情愿
+qíng bào	情报
+qíng jié	情结
+qíng diào	情调
+qíng yì	情谊
+jīng	惊
+jīng tàn	惊叹
+jīng tiān dòng dì	惊天动地
+jīng qí	惊奇
+jīng xīn dòng pò	惊心动魄
+jīng huāng	惊慌
+jīng huāng shī cuò	惊慌失措
+jīng yà	惊讶
+jīng chà	惊诧
+jīng xǐng	惊醒
+jīng xiǎn	惊险
+wǎn xī	惋惜
+diàn jì	惦记
+cǎn tòng	惨痛
+cǎn bái	惨白
+cǎn zhòng	惨重
+chéng chǔ	惩处
+chéng fá	惩罚
+cán kuì	惭愧
+guàn	惯
+guàn lì	惯例
+guàn xìng	惯性
+xiǎng fāng shè fǎ	想方设法
+rě	惹
+chóu méi kǔ liǎn	愁眉苦脸
+yù hé	愈合
+yù lái yù	愈来愈
+yù yǎn yù liè	愈演愈烈
+yì xiàng	意向
+yì tú	意图
+yì liào	意料
+yì liào zhī wài	意料之外
+yú gōng yí shān	愚公移山
+yú chǔn	愚蠢
+gǎn tàn	感叹
+gǎn xìng	感性
+gǎn ēn	感恩
+gǎn kǎi	感慨
+gǎn rǎn	感染
+gǎn rǎn lì	感染力
+gǎn jī	感激
+gǎn chù	感触
+lèng	愣
+cí shàn	慈善
+cí xiáng	慈祥
+huāng luàn	慌乱
+huāng zhāng	慌张
+shèn zhòng	慎重
+màn xìng	慢性
+màn màn lái	慢慢来
+wèi láo	慰劳
+kāng kǎi	慷慨
+biē	憋
+dǒng shì	懂事
+lǎn dé	懒得
+lǎn duò	懒惰
+gē bì	戈壁
+chéng qiān shàng wàn	成千上万
+chéng xíng	成型
+chéng tiān	成天
+chéng jiā	成家
+chéng nián	成年
+chéng cái	成才
+chéng qún jié duì	成群结队
+chéng wèn tí	成问题
+jiè bèi	戒备
+jiè zhi	戒指
+jiè yān	戒烟
+huò duō huò shǎo	或多或少
+jié	截
+jié rán bù tóng	截然不同
+chuō	戳
+fáng dì chǎn	房地产
+suǒ zuò suǒ wéi	所作所为
+suǒ shǔ	所属
+suǒ wèi	所谓
+shǒu cè	手册
+shǒu dòng	手动
+shǒu shì	手势
+shǒu tóu	手头
+shǒu pà	手帕
+shǒu zhǎng	手掌
+shǒu shù shì	手术室
+shǒu qiāng	手枪
+shǒu jiǎo	手脚
+shǒu wàn	手腕
+shǒu bì	手臂
+shǒu yì	手艺
+cái huá	才华
+zhā gēn	扎根
+pū kè	扑克
+pū miàn ér lái	扑面而来
+bā	扒
+dǎ jiāo dào	打交道
+dǎ zhàng	打仗
+dǎ dǎo	打倒
+dǎ chà	打岔
+dǎ zhāo hu	打招呼
+dǎ lāo	打捞
+dǎ jiǎo	打搅
+dǎ liè	打猎
+dǎ dǔn r	打盹儿
+dǎ mó	打磨
+dǎ tōng	打通
+dǎ liang	打量
+tuō fù	托付
+káng	扛
+kòu rén xīn xián	扣人心弦
+kòu yā	扣押
+kòu liú	扣留
+kòu chú	扣除
+zhí yì	执意
+zhí fǎ	执法
+zhí zhào	执照
+zhí zhuó	执着
+kuò	扩
+kuò jiàn	扩建
+kuò zhāng	扩张
+kuò sàn	扩散
+sǎo xìng	扫兴
+sǎo mù	扫墓
+sǎo miáo	扫描
+sǎo chú	扫除
+yáng	扬
+niǔ tóu	扭头
+niǔ qū	扭曲
+niǔ zhuǎn	扭转
+bàn	扮
+chě	扯
+rǎo luàn	扰乱
+bān	扳
+fú chí	扶持
+pī pàn	批判
+pī fā	批发
+chéng bāo	承包
+chéng zài	承载
+jì yì	技艺
+chāo xí	抄袭
+bǎ guān	把关
+bǎ shou	把手
+bǎ bǐng	把柄
+yì zhì	抑制
+yì yáng dùn cuò	抑扬顿挫
+yì yù	抑郁
+yì yù zhèng	抑郁症
+shū qíng	抒情
+tóu bèn	投奔
+tóu shè	投射
+tóu jī	投机
+tóu gǎo	投稿
+tóu shēn	投身
+tóu xiáng	投降
+dǒu	抖
+kàng zhēng	抗争
+kàng jù	抗拒
+kàng shēng sù	抗生素
+kàng héng	抗衡
+zhé dié	折叠
+zhé hé	折合
+zhé shè	折射
+zhé kòu	折扣
+zhé mó	折磨
+zhē teng	折腾
+fǔ yǎng	抚养
+fǔ yǎng fèi	抚养费
+fǔ xù	抚恤
+fǔ mō	抚摸
+pāo	抛
+pāo kāi	抛开
+pāo qì	抛弃
+kōu	抠
+lūn	抡
+qiǎng jié	抢劫
+qiǎng duó	抢夺
+qiǎng yǎn	抢眼
+hù lǐ	护理
+bào tíng	报亭
+bào chóu	报仇
+bào fù	报复
+bào fèi	报废
+bào shè	报社
+bào chou	报酬
+bào xiāo	报销
+pēng jī	抨击
+pī lù	披露
+bào fù	抱负
+dǐ zhì	抵制
+dǐ yù	抵御
+dǐ yā	抵押
+dǐ dǎng	抵挡
+dǐ xiāo	抵消
+dǐ chù	抵触
+mǒ	抹
+yā	押
+chōu ti	抽屉
+chōu qiān	抽签
+chōu xiàng	抽象
+zhǔ	拄
+dān	担
+dàn zi	担子
+dān dāng	担当
+dān fù	担负
+lā dòng	拉动
+lā lǒng	拉拢
+lā suǒ	拉锁
+bàn	拌
+pāi mài	拍卖
+pāi xì	拍戏
+pāi bǎn	拍板
+līn	拎
+guǎi wān	拐弯
+guǎi zhàng	拐杖
+tuò kuān	拓宽
+tuò zhǎn	拓展
+tuō yán	拖延
+tuō qiàn	拖欠
+tuō lěi	拖累
+jū shù	拘束
+jū liú	拘留
+zhuō liè	拙劣
+zhāo mù	招募
+zhāo dài	招待
+zhāo dài huì	招待会
+zhāo lǎn	招揽
+zhāo shōu	招收
+zhāo shù	招数
+zhāo biāo	招标
+zhāo pai	招牌
+bài huì	拜会
+bài nián	拜年
+bài tuō	拜托
+bài jiàn	拜见
+nǐ	拟
+nǐ dìng	拟定
+jiǎn	拣
+yōng hù	拥护
+yōng jǐ	拥挤
+lán	拦
+níng	拧
+bō	拨
+bō kuǎn	拨款
+bō tōng	拨通
+kuò hú	括弧
+zhěng jiù	拯救
+gǒng	拱
+quán	拳
+quán tou	拳头
+shuān	拴
+pīn mìng	拼命
+pīn bó	拼搏
+zhuài	拽
+ná shǒu	拿手
+chí	持
+chí jiǔ	持久
+chí zhī yǐ héng	持之以恒
+guà hào	挂号
+guà shī	挂失
+guà niàn	挂念
+guà gōu	挂钩
+zhǐ lìng	指令
+zhǐ nán	指南
+zhǐ nán zhēn	指南针
+zhǐ xiàng	指向
+zhǐ yǐn	指引
+zhǐ shǒu huà jiǎo	指手画脚
+zhǐ jiào	指教
+zhǐ wàng	指望
+zhǐ diǎn	指点
+àn lǐ shuō	按理说
+àn shuō	按说
+àn jiàn	按键
+kuà	挎
+tiāo ti	挑剔
+tiǎo xìn	挑衅
+tiǎo qǐ	挑起
+wā jué	挖掘
+wā kǔ	挖苦
+xié chí	挟持
+náo	挠
+zhēng zhá	挣扎
+jǐ yā	挤压
+huī	挥
+āi jiā āi hù	挨家挨户
+nuó	挪
+cuò zhé	挫折
+zhèn zuò	振作
+zhèn xīng	振兴
+zhèn fèn	振奋
+wǎn	挽
+wǎn huí	挽回
+wǎn jiù	挽救
+wǔ	捂
+tǒng	捅
+kǔn	捆
+zhuō mí cáng	捉迷藏
+hàn wèi	捍卫
+shāo	捎
+niē	捏
+juān xiàn	捐献
+bǔ zhuō	捕捉
+lāo	捞
+sǔn	损
+sǔn rén lì jǐ	损人利己
+sǔn shāng	损伤
+sǔn huài	损坏
+huàn wèi	换位
+huàn qǔ	换取
+huàn chéng	换成
+huàn yán zhī	换言之
+dǎo luàn	捣乱
+pěng	捧
+pěng chǎng	捧场
+jù xī	据悉
+jù cǐ	据此
+chuí	捶
+xiān	掀
+xiān qǐ	掀起
+shòu yǔ	授予
+shòu quán	授权
+diào tóu	掉头
+diào duì	掉队
+zhǎng guǎn	掌管
+tāo qián	掏钱
+qiā	掐
+pái fàng	排放
+pái chì	排斥
+pái liàn	排练
+lüè duó	掠夺
+tàn	探
+tàn qīn	探亲
+tàn wàng	探望
+tàn qiú	探求
+tàn cè	探测
+tàn xiǎn	探险
+jiē èr lián sān	接二连三
+jiē lì	接力
+jiē tīng	接听
+jiē shǒu	接手
+jiē tì	接替
+jiē jì	接济
+jiē bān	接班
+jiē bān rén	接班人
+jiē nà	接纳
+jiē jiàn	接见
+jiē guǐ	接轨
+jiē sòng	接送
+jiē tōng	接通
+kòng gào	控告
+tuī xiè	推卸
+tuī qiāo	推敲
+tuī duàn	推断
+tuī cè	推测
+tuī lǐ	推理
+tuī yí	推移
+tuī suàn	推算
+tuī fān	推翻
+tuī jiàn	推荐
+tuī cí	推辞
+tuī xuǎn	推选
+yǎn hù	掩护
+yǎn gài	掩盖
+yǎn shì	掩饰
+cuò shǒu bù jí	措手不及
+bāi	掰
+chān	掺
+róu	揉
+zòu	揍
+miáo huì	描绘
+tí míng	提名
+tí xīn diào dǎn	提心吊胆
+tí bá	提拔
+tí zǎo	提早
+tí liàn	提炼
+tí yì	提议
+tí sù	提速
+dī fang	提防
+chā zuǐ	插嘴
+chā tú	插图
+chā shǒu	插手
+chuāi	揣
+chuǎi mó	揣摩
+chuǎi cè	揣测
+jiū	揪
+jiē fā	揭发
+jiē xiǎo	揭晓
+jiē shì	揭示
+jiē lù	揭露
+lǎn	揽
+chān	搀
+gē	搁
+gē qiǎn	搁浅
+gē zhì	搁置
+lǒu	搂
+jiǎo	搅
+jiǎo bàn	搅拌
+sōu xún	搜寻
+sōu jiù	搜救
+sōu chá	搜查
+sōu jí	搜集
+bó dòu	搏斗
+cuō	搓
+gǎo xiào	搞笑
+gǎo guǐ	搞鬼
+bān qiān	搬迁
+dā chéng	搭乘
+dā jiàn	搭建
+xié dài	携带
+xié shǒu	携手
+shè shì dù	摄氏度
+bǎi píng	摆平
+bǎi fàng	摆放
+bǎi she	摆设
+yáo bǎi	摇摆
+yáo yáo yù zhuì	摇摇欲坠
+yáo huàng	摇晃
+yáo gǔn	摇滚
+yáo lán	摇篮
+tān	摊
+shuāi jiāo	摔跤
+cuī huǐ	摧毁
+mō suo	摸索
+piě	撇
+sā	撒
+sā huǎng	撒谎
+sī	撕
+zhuàng jī	撞击
+chè	撤
+chè huàn	撤换
+qiào	撬
+zhuàn xiě	撰写
+shàn zì	擅自
+shàn cháng	擅长
+cāo láo	操劳
+cāo xīn	操心
+cāo kòng	操控
+pān	攀
+pān shēng	攀升
+zǎn	攒
+zhī zhù	支柱
+zhī piào	支票
+shōu mǎi	收买
+shōu fù	收复
+shōu jù	收据
+shōu zhī	收支
+shōu liǎn	收敛
+shōu liú	收留
+shōu shì lǜ	收视率
+shōu suō	收缩
+gǎi wéi	改为
+gǎi dòng	改动
+gǎi míng	改名
+gǎi rì	改日
+gǎi bǎn	改版
+gǎi biān	改编
+gǎi liáng	改良
+gǎi xié guī zhèng	改邪归正
+gǎi gé kāi fàng	改革开放
+gōng	攻
+gōng guān	攻关
+gōng dú	攻读
+fàng yìng	放映
+fàng shuǐ	放水
+fàng zòng	放纵
+fàng zhì	放置
+fàng sì	放肆
+fàng guò	放过
+gù	故
+xiào lì	效力
+xiào yìng	效应
+xiào yì	效益
+mǐn jié	敏捷
+mǐn ruì	敏锐
+jiù hù chē	救护车
+jiù zhì	救治
+jiù jì	救济
+jiào yǎng	教养
+jiào tiáo	教条
+jiào kē shū	教科书
+chǎng kāi	敞开
+gǎn qing	敢情
+sàn fā	散发
+sàn bù	散布
+dūn cù	敦促
+dūn hòu	敦厚
+jìng	敬
+jìng yè	敬业
+jìng pèi	敬佩
+jìng yì	敬意
+jìng ài	敬爱
+jìng lǐ	敬礼
+jìng ér yuǎn zhī	敬而远之
+jìng qǐng	敬请
+jìng jiǔ	敬酒
+jìng zhòng	敬重
+shù jù kù	数据库
+shù é	数额
+qiāo zhà	敲诈
+qiāo biān gǔ	敲边鼓
+zhěng hé	整合
+zhěng shù	整数
+zhěng jié	整洁
+fū	敷
+wén	文
+wén rén	文人
+wén jù	文具
+wén píng	文凭
+wén wù	文物
+wén xiàn	文献
+wén máng	文盲
+wén kē	文科
+wén yǎ	文雅
+bān diǎn	斑点
+dòu	斗
+dòu zhì	斗志
+liào dào	料到
+liào lǐ	料理
+fǔ zi	斧子
+zhǎn	斩
+zhǎn cǎo chú gēn	斩草除根
+duàn dìng	断定
+duàn duàn xù xù	断断续续
+duàn liè	断裂
+xīn qí	新奇
+xīn shì	新式
+xīn fáng	新房
+xīn shǒu	新手
+xīn kuǎn	新款
+xīn cháo	新潮
+xīn shēng	新生
+xīn chén dài xiè	新陈代谢
+xīn yǐng	新颖
+fāng xiàng pán	方向盘
+fāng fāng miàn miàn	方方面面
+fāng yán	方言
+shī jiā	施加
+shī yā	施压
+shī gōng	施工
+shī xíng	施行
+páng guān	旁观
+lǚ chéng	旅程
+lǚ tú	旅途
+xuán lǜ	旋律
+xuán wō	旋涡
+qí zhì	旗帜
+qí páo	旗袍
+wú bù	无不
+wú cháng	无偿
+wú guān jǐn yào	无关紧要
+wú lì	无力
+wú kě hòu fēi	无可厚非
+wú kě nài hé	无可奈何
+wú kě fèng gào	无可奉告
+wú jiā kě guī	无家可归
+wú xíng	无形
+wú xíng zhōng	无形中
+wú wēi bù zhì	无微不至
+wú yōu wú lǜ	无忧无虑
+wú è bù zuò	无恶不作
+wú qíng	无情
+wú qíng wú yì	无情无义
+wú yì	无意
+wú suǒ shì shì	无所事事
+wú suǒ zuò wéi	无所作为
+wú gù	无故
+wú dí	无敌
+wú tiáo jiàn	无条件
+wú bǐ	无比
+wú jì yú shì	无济于事
+wú lǐ	无理
+wú zhī	无知
+wú sī	无私
+wú qióng	无穷
+wú jīng dǎ cǎi	无精打采
+wú xiàn	无线
+wú xiàn diàn	无线电
+wú yuán	无缘
+wú néng	无能
+wú néng wéi lì	无能为力
+wú lùn rú hé	无论如何
+wú huà kě shuō	无话可说
+wú zú qīng zhòng	无足轻重
+wú gū	无辜
+wú fēi	无非
+wú xū	无须
+rì qián	日前
+rì hòu	日后
+rì fù yī rì	日复一日
+rì xīn yuè yì	日新月异
+rì yì	日益
+rì chéng	日程
+rì qū	日趋
+zhǐ zài	旨在
+zǎo nián	早年
+zǎo rì	早日
+xù rì	旭日
+hàn	旱
+hàn zāi	旱灾
+shí bù shí	时不时
+shí hǎo shí huài	时好时坏
+shí shàng	时尚
+shí duàn	时段
+shí kōng	时空
+shí sù	时速
+shí jiān biǎo	时间表
+shí gé	时隔
+shí máo	时髦
+kuàng kè	旷课
+wàng	旺
+wàng jì	旺季
+wàng shèng	旺盛
+áng guì	昂贵
+kūn chóng	昆虫
+míng mèi	明媚
+míng zhì	明智
+míng lǎng	明朗
+hūn mí	昏迷
+yì lā guàn	易拉罐
+xī rì	昔日
+xīng zuò	星座
+yìng	映
+shì fēi	是非
+zhòu yè	昼夜
+xiǎn xiàn	显现
+xiǎn yǎn	显眼
+xiǎn shì qì	显示器
+xiǎn ér yì jiàn	显而易见
+xiǎn hè	显赫
+huǎng	晃
+huàng dang	晃荡
+jìn shēng	晋升
+shài tài yáng	晒太阳
+yūn dǎo	晕倒
+wǎn nián	晚年
+wǎn qī	晚期
+wǎn jiān	晚间
+pǔ tōng rén	普通人
+jǐng qū	景区
+jǐng guān	景观
+jīng yíng	晶莹
+zhì shāng	智商
+zàn	暂
+shǔ qī	暑期
+nuǎn hōng hōng	暖烘烘
+àn zhōng	暗中
+àn dì li	暗地里
+àn shā	暗杀
+bào lì	暴利
+bào zào	暴躁
+bào fēng zhòu yǔ	暴风骤雨
+shǔ guāng	曙光
+bào guāng	曝光
+yuē	曰
+qǔ	曲
+qū zhé	曲折
+qū xiàn	曲线
+gēng gǎi	更改
+gēng yī shì	更衣室
+tì huàn	替换
+tì shēn	替身
+yuè chū	月初
+yuè piào	月票
+yǒu liǎng xià zi	有两下子
+yǒu zhù yú	有助于
+yǒu kǒu wú xīn	有口无心
+yǒu shēng yǒu sè	有声有色
+yǒu xìng	有幸
+yǒu xù	有序
+yǒu dài	有待
+yǒu yì	有意
+yǒu suǒ	有所
+yǒu suǒ bù tóng	有所不同
+yǒu xiào qī	有效期
+yǒu wàng	有望
+yǒu zhāo yī rì	有朝一日
+yǒu jī	有机
+yǒu dì fàng shǐ	有的放矢
+yǒu yì	有益
+fú wù qì	服务器
+fú yòng	服用
+fú shì	服饰
+lǎng sòng	朗诵
+wàng	望
+wàng yuǎn jìng	望远镜
+zhāo sān mù sì	朝三暮四
+cháo dài	朝代
+zhāo xī xiāng chǔ	朝夕相处
+zhāo qì péng bó	朝气蓬勃
+cháo zhe	朝着
+qī pàn	期盼
+méng lóng	朦胧
+mù ǒu	木偶
+mù jiàng	木匠
+mù cái	木材
+mù bǎn	木板
+wèi	未
+wèi miǎn	未免
+wèi chéng nián rén	未成年人
+wèi zhī shù	未知数
+wèi jīng	未经
+mò rì	末日
+běn fèn	本分
+běn xìng	本性
+běn yì	本意
+běn zhe	本着
+běn néng	本能
+běn sè	本色
+běn qián	本钱
+zhū hóng	朱红
+pǔ shí	朴实
+pǔ sù	朴素
+jī dòng	机动
+jī mì	机密
+jī zhì	机智
+jī ling	机灵
+jī cāng	机舱
+shā hài	杀害
+shā shǒu	杀手
+zá luàn wú zhāng	杂乱无章
+zá jiāo	杂交
+zá jì	杂技
+quán wēi	权威
+quán yì	权益
+quán héng	权衡
+dù jué	杜绝
+shù fù	束缚
+gàng líng	杠铃
+tiáo lì	条例
+tiáo kuǎn	条款
+tiáo yuē	条约
+lái lín	来临
+lái lì	来历
+lái huí	来回
+lái bīn	来宾
+lái nián	来年
+lái yuán yú	来源于
+lái diàn	来电
+lái fǎng	来访
+lái lóng qù mài	来龙去脉
+yáng shù	杨树
+jí wéi	极为
+jí lì	极力
+jí shǎo shù	极少数
+jí dù	极度
+jí xiàn	极限
+sōng chí	松弛
+sōng bǎng	松绑
+bǎn kuài	板块
+gòu sī	构思
+gòu xiǎng	构想
+zhěn tou	枕头
+méi	枚
+guǒ yuán	果园
+guǒ duàn	果断
+guǒ zhēn	果真
+shū niǔ	枢纽
+zǎo	枣
+qiāng bì	枪毙
+kū zào	枯燥
+jià shi	架势
+jià zi	架子
+bǎi shù	柏树
+róu hé	柔和
+róu ruǎn	柔软
+guì tái	柜台
+chá chǔ	查处
+chá zhǎo	查找
+chá míng	查明
+liǔ shù	柳树
+shì zi	柿子
+biāo	标
+biāo běn	标本
+biāo bǎng	标榜
+biāo shì	标示
+biāo qiān	标签
+biāo zhì	标致
+biāo yǔ	标语
+dòng	栋
+dòng liáng	栋梁
+lán	栏
+lán gān	栏杆
+shù mù	树木
+shù zhī	树枝
+shù shāo	树梢
+shù lì	树立
+shù yīn	树荫
+zhū	株
+yàng pǐn	样品
+yàng běn	样本
+hé	核
+hé shí	核实
+hé duì	核对
+hé tao	核桃
+hé wǔ qì	核武器
+hé diàn zhàn	核电站
+hé néng	核能
+gēn jī	根基
+gēn zhì	根治
+gēn shēn dì gù	根深蒂固
+gēn yuán	根源
+gé	格
+gé jú	格局
+gé shì	格式
+gé gé bù rù	格格不入
+zāi	栽
+zāi péi	栽培
+guì huā	桂花
+kuàng	框
+kuàng jià	框架
+àn jiàn	案件
+sāng ná	桑拿
+dàng cì	档次
+zhuāng	桩
+tǒng	桶
+mèng huàn	梦幻
+tī zi	梯子
+shū	梳
+shū zi	梳子
+shū lǐ	梳理
+jiǎn chá	检察
+jiǎn tǎo	检讨
+mián hua	棉花
+qí	棋
+qí zǐ	棋子
+gùn	棍
+gùn zi	棍子
+bàng qiú	棒球
+jí shǒu	棘手
+léng jiǎo	棱角
+guān cai	棺材
+yē zi	椰子
+kǎi mó	楷模
+gài kuàng	概况
+gài lǜ	概率
+gài lùn	概论
+bǎng yàng	榜样
+zhà	榨
+huái shù	槐树
+cáo	槽
+mó nǐ	模拟
+héng qī shù bā	横七竖八
+héng xiàng	横向
+jú zi	橘子
+chéng zhī	橙汁
+xiàng pí	橡皮
+xiàng jiāo	橡胶
+qiàn tiáo	欠条
+qiàn quē	欠缺
+cì rì	次日
+huān hū	欢呼
+huān shēng xiào yǔ	欢声笑语
+huān kuài	欢快
+huān jù	欢聚
+xīn xǐ	欣喜
+xīn wèi	欣慰
+xīn xīn xiàng róng	欣欣向荣
+yù wàng	欲望
+qī zhà	欺诈
+qī piàn	欺骗
+kuǎn shì	款式
+kuǎn xiàng	款项
+qiàn yì	歉意
+gē jù	歌剧
+gē yǒng	歌咏
+gē wǔ	歌舞
+gē sòng	歌颂
+zhǐ ké	止咳
+zhǐ bù	止步
+zhǐ xuè	止血
+zhèng zōng	正宗
+zhèng zhí	正直
+zhèng shì	正视
+zhèng néng liàng	正能量
+zhèng miàn	正面
+cǐ qǐ bǐ fú	此起彼伏
+bù fá	步伐
+bù rù	步入
+bù zhòu	步骤
+wǔ lì	武力
+wǔ zhuāng	武装
+qí shì	歧视
+wāi	歪
+wāi qū	歪曲
+dǎi tú	歹徒
+sǐ xīn	死心
+sǐ xīn tā dì	死心塌地
+jiān miè	歼灭
+cán	残
+cán rěn	残忍
+cán liú	残留
+cán quē	残缺
+ōu dǎ	殴打
+duàn luò	段落
+yīn qín	殷勤
+diàn táng	殿堂
+huǐ huài	毁坏
+huǐ miè	毁灭
+yì lì	毅力
+yì rán	毅然
+měi dāng	每当
+měi féng	每逢
+bǐ bù shàng	比不上
+bǐ yù	比喻
+bǐ bǐ jiē shì	比比皆是
+bǐ shì	比试
+bǐ qǐ	比起
+háo bù	毫不
+háo bù yóu yù	毫不犹豫
+háo wú	毫无
+tǎn zi	毯子
+mín zhòng	民众
+mín sú	民俗
+mín bàn	民办
+mín yòng	民用
+qì shì	气势
+qì wèi	气味
+qì xī	气息
+qì fèn	气愤
+qì pào	气泡
+qì pài	气派
+qì guǎn	气管
+qì zhì	气质
+qì něi	气馁
+qì pò	气魄
+fēn wéi	氛围
+yǎng	氧
+shuǐ zhǔn	水准
+shuǐ lì	水利
+shuǐ yù	水域
+shuǐ hú	水壶
+shuǐ shǒu	水手
+shuǐ jīng	水晶
+shuǐ cáo	水槽
+shuǐ zhǎng chuán gāo	水涨船高
+shuǐ wēn	水温
+shuǐ yuán	水源
+shuǐ líng líng	水灵灵
+shuǐ dào	水稻
+shuǐ guǎn	水管
+shuǐ luò shí chū	水落石出
+shuǐ huò	水货
+shuǐ miàn	水面
+shuǐ lóng tóu	水龙头
+yǒng bù	永不
+yǒng jiǔ	永久
+yǒng héng	永恒
+zhī	汁
+qiú zhù	求助
+qiú yī	求医
+qiú hūn	求婚
+qiú xué	求学
+qiú jiù	求救
+qiú zhèng	求证
+huì hé	汇合
+huì jù	汇聚
+huì jí	汇集
+hàn shuǐ	汗水
+chí táng	池塘
+wū huì	污秽
+tāng yuán	汤圆
+wāng yáng	汪洋
+xiōng yǒng	汹涌
+chén sī	沉思
+chén jìn	沉浸
+chén diàn	沉淀
+chén diàn diàn	沉甸甸
+chén zhuó	沉着
+chén wěn	沉稳
+chén mí	沉迷
+chén mèn	沉闷
+qī	沏
+mù yù lù	沐浴露
+shā tān	沙滩
+shā lóng	沙龙
+méi zhǔn r	没准儿
+méi jìn	没劲
+méi wán méi liǎo	没完没了
+méi yì si	没意思
+mò luò	没落
+méi shuō de	没说的
+méi zhé	没辙
+cāng sāng	沧桑
+jǔ sàng	沮丧
+hé liú	河流
+hé pàn	河畔
+fèi fèi yáng yáng	沸沸扬扬
+fèi téng	沸腾
+yóu huà	油画
+zhì xué	治学
+zhì yù	治愈
+zhǎo zé	沼泽
+gū míng diào yù	沽名钓誉
+zhān	沾
+zhān guāng	沾光
+yán àn	沿岸
+yán xiàn	沿线
+yán tú	沿途
+xiè	泄
+xiè mì	泄密
+xiè qì	泄气
+xiè lòu	泄漏
+xiè lù	泄露
+fàn làn	泛滥
+pào mò	泡沫
+bō jí	波及
+bō zhé	波折
+bō tāo	波涛
+bō lán	波澜
+ní tǔ	泥土
+ní tán	泥潭
+zhù	注
+zhù rù	注入
+zhù dìng	注定
+tài dǒu	泰斗
+xiè	泻
+pō lěng shuǐ	泼冷水
+jié jìng	洁净
+yáng yì	洋溢
+xǐ dí jì	洗涤剂
+xǐ lǐ	洗礼
+jīn jīn yǒu wèi	津津有味
+jīn tiē	津贴
+hóng liàng	洪亮
+huó r	活儿
+huó qī	活期
+huó gāi	活该
+qià tán	洽谈
+pài bié	派别
+pài qiǎn	派遣
+liú rù	流入
+liú xiàng	流向
+liú yù	流域
+liú shī	流失
+liú máng	流氓
+liú shuǐ	流水
+liú lèi	流泪
+liú làng	流浪
+liú tǎng	流淌
+liú chàng	流畅
+liú chéng	流程
+liú xuè	流血
+liú zhuǎn	流转
+liú liàng	流量
+liú lù	流露
+jiāo	浇
+cè suàn	测算
+cè yàn	测验
+liú lǎn	浏览
+liú lǎn qì	浏览器
+hún shēn	浑身
+nóng hòu	浓厚
+nóng suō	浓缩
+nóng yù	浓郁
+nóng zhòng	浓重
+hào jié	浩劫
+làng	浪
+fú lì	浮力
+fú xiàn	浮现
+fú zào	浮躁
+yù shì	浴室
+hǎi nèi wài	海内外
+hǎi xiào	海啸
+hǎi yù	海域
+hǎi àn	海岸
+hǎi xiá	海峡
+hǎi bá	海拔
+hǎi bīn	海滨
+hǎi tān	海滩
+hǎi dào	海盗
+hǎi mián	海绵
+hǎi zǎo	海藻
+hǎi yùn	海运
+hǎi liàng	海量
+hǎi miàn	海面
+jìn pào	浸泡
+tú	涂
+xiāo	消
+xiāo chén	消沉
+xiāo qiǎn	消遣
+shè xián	涉嫌
+yǒng	涌
+yǒng rù	涌入
+yǒng xiàn	涌现
+lào	涝
+rùn	润
+shuàn	涮
+yè tǐ	液体
+yè jīng	液晶
+hán yì	涵义
+hán gài	涵盖
+diàn fěn	淀粉
+lín	淋
+tǎng	淌
+táo	淘
+táo qì	淘气
+táo tài	淘汰
+dàn huà	淡化
+dàn jì	淡季
+shēn xìn	深信
+shēn rù rén xīn	深入人心
+shēn qiè	深切
+shēn shòu	深受
+shēn yè	深夜
+shēn ào	深奥
+shēn sī	深思
+shēn qíng	深情
+shēn yuǎn	深远
+hùn níng tǔ	混凝土
+hùn zhuó	混浊
+hùn xiáo	混淆
+yān	淹
+tiān jiā	添加
+qīng liáng	清凉
+qīng dān	清单
+qīng xīn	清新
+qīng míng	清明
+qīng xī	清晰
+qīng dàn	清淡
+qīng zhēn sì	清真寺
+qīng cuì	清脆
+qīng chú	清除
+qīng jìng	清静
+yuān yuán	渊源
+yú mín	渔民
+yú chuán	渔船
+shèn	渗
+shèn tòu	渗透
+dù guò	渡过
+zhā zi	渣子
+wēn xí	温习
+wēn shì	温室
+wēn dù jì	温度计
+wēn róu	温柔
+wēn quán	温泉
+wēn xīn	温馨
+gǎng	港
+yóu chuán	游船
+yóu lǎn	游览
+miǎo xiǎo	渺小
+hú pō	湖泊
+shī dù	湿度
+shī rùn	湿润
+jiàn	溅
+zī wèi	滋味
+zī rùn	滋润
+zhì hòu	滞后
+zhì liú	滞留
+yuán yú	源于
+yuán tóu	源头
+yuán quán	源泉
+yuán yuán bù duàn	源源不断
+liū	溜
+liū da	溜达
+yì	溢
+róng jiě	溶解
+huá bīng	滑冰
+huá tī	滑梯
+huá jī	滑稽
+huá xuě	滑雪
+tāo tāo bù jué	滔滔不绝
+mǎn huái	满怀
+làn yòng	滥用
+bīn hǎi	滨海
+gǔn dòng	滚动
+piāo	漂
+qī	漆
+yǎn xí	演习
+yǎn biàn	演变
+yǎn xì	演戏
+yǎn jì	演技
+yǎn bō shì	演播室
+yǎn shì	演示
+yǎn liàn	演练
+yǎn yì	演绎
+yǎn yì quān	演艺圈
+yǎn shuō	演说
+mò rán	漠然
+màn	漫
+màn yóu	漫游
+xiāo sǎ	潇洒
+qián zài	潜在
+qián shuǐ	潜水
+qián yí mò huà	潜移默化
+qián néng	潜能
+qián tǐng	潜艇
+liáo cǎo	潦草
+chéng qīng	澄清
+jī guāng	激光
+jī lì	激励
+jī huà	激化
+jī fā	激发
+jī huó	激活
+jī sù	激素
+jī qǐ	激起
+pù bù	瀑布
+guàn	灌
+guàn gài	灌溉
+guàn shū	灌输
+huǒ hou	火候
+huǒ shān	火山
+huǒ bào	火暴
+huǒ jù	火炬
+huǒ rè	火热
+huǒ yàn	火焰
+huǒ huā	火花
+huǒ yào	火药
+huǒ là là	火辣辣
+huǒ sù	火速
+huǒ guō	火锅
+miè wáng	灭亡
+miè jué	灭绝
+dēng pào	灯泡
+dēng lóng	灯笼
+huī	灰
+huī chén	灰尘
+huī xīn	灰心
+líng	灵
+líng qiǎo	灵巧
+líng gǎn	灵感
+líng mǐn	灵敏
+líng jī yī dòng	灵机一动
+líng tōng	灵通
+líng hún	灵魂
+zhuó rè	灼热
+càn làn	灿烂
+lú zi	炉子
+lú zào	炉灶
+yán rè	炎热
+yán zhèng	炎症
+dùn	炖
+xuàn yào	炫耀
+tàn	炭
+diǎn jī lǜ	点击率
+diǎn zi	点子
+diǎn xin	点心
+diǎn huǒ	点火
+diǎn zhuì	点缀
+diǎn píng	点评
+liàn	炼
+liè shì	烈士
+hōng gān	烘干
+hōng tuō	烘托
+yān cōng	烟囱
+yān huǒ	烟火
+kǎo	烤
+fán nǎo	烦恼
+fán zào	烦躁
+fán mèn	烦闷
+shāo huǐ	烧毁
+shāo kǎo	烧烤
+tàng	烫
+rè dài	热带
+rè qì	热气
+rè qì qiú	热气球
+rè cháo	热潮
+rè téng téng	热腾腾
+rè zhōng	热衷
+pēng tiáo	烹调
+hàn	焊
+huàn fā	焕发
+fén shāo	焚烧
+jiāo	焦
+jiāo jí	焦急
+jiāo lǜ	焦虑
+jiāo jù	焦距
+jiāo zào	焦躁
+yàn huǒ	焰火
+jiān	煎
+méi tàn	煤炭
+méi kuàng	煤矿
+zhào lì	照例
+zhào bàn	照办
+zhào cháng	照常
+zhào liào	照料
+zhào míng	照明
+bāo	煲
+shān dòng	煽动
+xī huǒ	熄火
+xūn	熏
+xūn táo	熏陶
+xī xī rǎng rǎng	熙熙攘攘
+zhēng	蒸
+áo	熬
+áo yè	熬夜
+rán fàng	燃放
+rán qì	燃气
+rán yóu	燃油
+yàn zi	燕子
+bào lěng mén	爆冷门
+bào mǎn	爆满
+bào zhú	爆竹
+zhuǎ zi	爪子
+ài bù shì shǒu	爱不释手
+ài xī	爱惜
+ài lǐ bù lǐ	爱理不理
+ài miàn zi	爱面子
+jué shì	爵士
+diē	爹
+shuǎng kuai	爽快
+piān zi	片子
+piàn duàn	片段
+pái zhào	牌照
+yá gāo	牙膏
+yá chǐ	牙齿
+mǔ dan	牡丹
+láo gù	牢固
+láo láo	牢牢
+láo jì	牢记
+mù chǎng	牧场
+mù mín	牧民
+wù tǐ	物体
+wù liú	物流
+wù zhèng	物证
+wù zī	物资
+shēng chù	牲畜
+qiān zhì	牵制
+qiān tóu	牵头
+qiān chě	牵扯
+qiān guà	牵挂
+qiān shè	牵涉
+tè chǎn	特产
+tè lì	特例
+tè zhì	特制
+tè quán	特权
+tè zhì	特质
+tè yāo	特邀
+tè cháng	特长
+fàn chóu	犯愁
+zhuàng yuán	状元
+yóu rú	犹如
+yóu yù bù jué	犹豫不决
+kuáng huān	狂欢
+kuáng huān jié	狂欢节
+kuáng rè	狂热
+jiǎo huá	狡猾
+dú	独
+dú yī wú èr	独一无二
+dú chàng	独唱
+dú jiā	独家
+dú lì zì zhǔ	独立自主
+dú shēn	独身
+xiá xiǎo	狭小
+xiá zhǎi	狭窄
+xiá ài	狭隘
+shī zi	狮子
+láng	狼
+láng bèi	狼狈
+liè rén	猎人
+liè quǎn	猎犬
+chāng kuáng	猖狂
+měng liè	猛烈
+měng rán	猛然
+cāi xiǎng	猜想
+cāi mí	猜谜
+xīng xing	猩猩
+xiàn xuè	献血
+xuán	玄
+xuán jī	玄机
+shuài	率
+wáng guó	王国
+wáng pái	王牌
+wán yì r	玩意儿
+wán shuǎ	玩耍
+méi guī	玫瑰
+huán qiú	环球
+huán rào	环绕
+xiàn rèn	现任
+xiàn chéng	现成
+xiàn xíng	现行
+zhēn shì	珍视
+zhēn cáng	珍藏
+zhēn zhòng	珍重
+lǐ shì	理事
+lǐ huì	理会
+lǐ niàn	理念
+lǐ xìng	理性
+lǐ suǒ dāng rán	理所当然
+lǐ zhí qì zhuàng	理直气壮
+lǐ cǎi	理睬
+lǐ kē	理科
+zuó mo	琢磨
+ruì xuě	瑞雪
+guī bǎo	瑰宝
+guā fēn	瓜分
+guā zǐ	瓜子
+wǎ	瓦
+píng jǐng	瓶颈
+cí	瓷
+cí qì	瓷器
+gān xīn	甘心
+shèn zhì yú	甚至于
+tián tou	甜头
+tián měi	甜美
+tián mì	甜蜜
+shēng qián	生前
+shēng mìng xiàn	生命线
+shēng píng	生平
+shēng tài	生态
+shēng pà	生怕
+shēng xiào	生效
+shēng jī	生机
+shēng sǐ	生死
+shēng yá	生涯
+shēng wù	生物
+shēng lǐ	生理
+shēng yìng	生硬
+shēng yù	生育
+yòng rén	用人
+yòng lì	用力
+yòng gōng	用功
+yòng yì	用意
+yòng cān	用餐
+shuǎi	甩
+yóu lái	由来
+yóu cǐ kě jiàn	由此可见
+yóu cǐ kàn lái	由此看来
+yóu zhōng	由衷
+shēn bàn	申办
+shēn bào	申报
+shēn lǐng	申领
+diàn xìn	电信
+diàn bào	电报
+diàn xiàn	电线
+diàn wǎng	电网
+diàn xùn	电讯
+diàn líng	电铃
+huà cè	画册
+huà zhǎn	画展
+huà shé tiān zú	画蛇添足
+huà lóng diǎn jīng	画龙点睛
+chàng tán	畅谈
+chàng xiāo	畅销
+jiè dìng	界定
+jiè xiàn	界线
+jiè xiàn	界限
+wèi jù	畏惧
+wèi suō	畏缩
+liú xīn	留心
+liú niàn	留念
+liú liàn	留恋
+liú yì	留意
+liú shén	留神
+lüè	略
+lüè wēi	略微
+jī xíng	畸形
+shū dǎo	疏导
+shū hu	疏忽
+shū sàn	疏散
+shū tōng	疏通
+yí huò	疑惑
+yí diǎn	疑点
+yí lǜ	疑虑
+liáo xiào	疗效
+liáo fǎ	疗法
+yì miáo	疫苗
+fēng zi	疯子
+pí juàn	疲倦
+pí láo	疲劳
+pí bèi	疲惫
+pí bèi bù kān	疲惫不堪
+bìng chuáng	病床
+bìng zhèng	病症
+zhēng jié	症结
+yǎng	痒
+hén jì	痕迹
+tòng xīn	痛心
+tán	痰
+chī dāi	痴呆
+chī xīn	痴心
+chī mí	痴迷
+wēn yì	瘟疫
+tān	瘫
+tān huàn	瘫痪
+yǐn	瘾
+ái	癌
+ái zhèng	癌症
+dēng jī	登机
+dēng lù	登陆
+bái bái	白白
+bǎi fēn bǐ	百分比
+bǎi hé	百合
+bǎi kē quán shū	百科全书
+jiē	皆
+huáng shang	皇上
+huáng hòu	皇后
+huáng shì	皇室
+huáng gōng	皇宫
+pí dài	皮带
+zhòu	皱
+yíng lì	盈利
+yì chu	益处
+zhǎn	盏
+jiān chá	监察
+jiān hù	监护
+jiān kòng	监控
+jiān yù	监狱
+jiān shì	监视
+jiān guǎn	监管
+gài zi	盖子
+dào	盗
+dào qiè	盗窃
+pán suàn	盘算
+chéng	盛
+shèng huì	盛会
+shèng dà	盛大
+shèng kāi	盛开
+shèng qì líng rén	盛气凌人
+méng yǒu	盟友
+mù bù zhuǎn jīng	目不转睛
+mù zhōng wú rén	目中无人
+mù lù	目录
+mù dì dì	目的地
+mù dǔ	目睹
+mù dèng kǒu dāi	目瞪口呆
+dīng	盯
+máng mù	盲目
+zhí bèn	直奔
+zhí jìng	直径
+zhí shì	直视
+zhí zhì	直至
+zhí guān	直观
+zhí jué	直觉
+zhí dá	直达
+xiāng chuán	相传
+xiāng bàn	相伴
+xiāng yī wéi mìng	相依为命
+xiāng duì	相对
+xiāng duì ér yán	相对而言
+xiāng chà	相差
+xiāng dāng yú	相当于
+xiāng tí bìng lùn	相提并论
+xiāng bǐ zhī xià	相比之下
+xiāng yuē	相约
+xiāng jì	相继
+xiāng shí	相识
+xiāng fǔ xiāng chéng	相辅相成
+xiāng lián	相连
+xiāng tōng	相通
+xiāng yù	相遇
+pàn	盼
+shěng shì	省事
+shěng lüè	省略
+méi kāi yǎn xiào	眉开眼笑
+méi mao	眉毛
+kàn zhòng	看中
+kàn sì	看似
+kàn tái	看台
+kàn de chū	看得出
+kān hù	看护
+kàn yàng zi	看样子
+kàn rè nao	看热闹
+kàn zhòng	看重
+zhēn jiǎ	真假
+zhēn xīn	真心
+zhēn qíng	真情
+zhēn zhì	真挚
+zhēn shi de	真是的
+zhēn kōng	真空
+zhǎ yǎn	眨眼
+yǎn xià	眼下
+yǎn jiè	眼界
+yǎn shén	眼神
+yǎn hóng	眼红
+yǎn sè	眼色
+zhēng	睁
+zhuó lì	着力
+zhuó shí	着实
+zhuó xiǎng	着想
+zhuó shǒu	着手
+zhuó yǎn	着眼
+yú	着眼于
+zhuó luò	着落
+zháo mí	着迷
+zhuó zhòng	着重
+dū cù	督促
+shuì dài	睡袋
+miáo zhǔn	瞄准
+chǒu	瞅
+xiā	瞎
+mán	瞒
+qiáo bù qǐ	瞧不起
+zhǔ mù	瞩目
+dèng	瞪
+shùn jiān	瞬间
+zhān yǎng	瞻仰
+máo tóu	矛头
+yǐ	矣
+zhī jǐ	知己
+zhī jué	知觉
+zhī shi fèn zǐ	知识分子
+zhī zú	知足
+jiǎo zhèng	矫正
+duǎn zàn	短暂
+duǎn quē	短缺
+kuàng cáng	矿藏
+mǎ	码
+shā táng	砂糖
+kǎn	砍
+yán tǎo	研讨
+zhuān	砖
+pò jiù	破旧
+pò àn	破案
+pò miè	破灭
+pò suì	破碎
+pò liè	破裂
+pò jiě	破解
+pò chú	破除
+zá	砸
+shuò guǒ	硕果
+yìng bì	硬币
+yìng lǎng	硬朗
+yìng pán	硬盘
+què xìn	确信
+què záo	确凿
+què qiè	确切
+què zhěn	确诊
+ài shì	碍事
+bēi	碑
+pèng shàng	碰上
+pèng qiǎo	碰巧
+pèng zhuàng	碰撞
+pèng dīng zi	碰钉子
+bì lǜ	碧绿
+tàn	碳
+cí kǎ	磁卡
+cí dài	磁带
+cí pán	磁盘
+bàng	磅
+cuō shāng	磋商
+kē	磕
+mó hé	磨合
+mó sǔn	磨损
+mó nàn	磨难
+jiāo shí	礁石
+shì wēi	示威
+shì yì	示意
+lǐ yí	礼仪
+lǐ pǐn	礼品
+lǐ fú	礼服
+shè jiāo	社交
+shè huì zhǔ yì	社会主义
+shè tuán	社团
+shè lùn	社论
+qí dǎo	祈祷
+shì lì	视力
+shì chá	视察
+shì xiàn	视线
+shì jué	视觉
+shì jiǎo	视角
+shì yě	视野
+zǔ chuán	祖传
+zǔ xiān	祖先
+zǔ zōng	祖宗
+zǔ jí	祖籍
+shén xiān	神仙
+shén shèng	神圣
+shén tài	神态
+shén qì	神气
+xiáng hé	祥和
+piào fáng	票房
+jì	祭
+jì diàn	祭奠
+jì sì	祭祀
+huò hài	祸害
+jīn bu zhù	禁不住
+jìn qū	禁区
+jìn jì	禁忌
+chán zhàng	禅杖
+fú qi	福气
+lí qí	离奇
+lí zhí	离职
+hé miáo	禾苗
+xiù lì	秀丽
+xiù měi	秀美
+sī xià	私下
+sī shì	私事
+sī jiā chē	私家车
+sī fáng qián	私房钱
+sī yǒu	私有
+sī lì	私立
+sī zì	私自
+sī yíng	私营
+tū	秃
+bǐng chéng	秉承
+zhǒng zú	种族
+kē huàn	科幻
+kē pǔ	科普
+kē mù	科目
+mì fāng	秘方
+mì jué	秘诀
+zū lìn	租赁
+chèng	秤
+yāng ge	秧歌
+zhì xù	秩序
+jī	积
+jī diàn	积淀
+jī xù	积蓄
+chēng zuò	称作
+chēng hu	称呼
+yí jiāo	移交
+yí zhí	移植
+xī	稀
+xī qí	稀奇
+xī shǎo	稀少
+xī han	稀罕
+shāo hòu	稍候
+shāo hòu	稍后
+shāo shāo	稍稍
+shuì wù	税务
+shuì shōu	税收
+chóu	稠
+chóu mì	稠密
+wěn jiàn	稳健
+wěn gù	稳固
+wěn tuǒ	稳妥
+wěn zhòng	稳重
+dào cǎo	稻草
+mù sī lín	穆斯林
+xué wèi	穴位
+kōng qián	空前
+kòng dì	空地
+kōng xiǎng	空想
+kòng bái	空白
+kōng dàng dàng	空荡荡
+kōng xū	空虚
+kòng xì	空隙
+kōng nàn	空难
+chuān xiǎo xié	穿小鞋
+chuān zhuó	穿着
+chuān yuè	穿越
+chuān guò	穿过
+tū jī	突击
+tū fā	突发
+tū rú qí lái	突如其来
+tū pò kǒu	突破口
+qiè qǔ	窃取
+zhǎi	窄
+qiào mén	窍门
+yáo	窑
+zhì xī	窒息
+jiǒng pò	窘迫
+cuàn	窜
+wō	窝
+kū long	窟窿
+lì jiāo qiáo	立交桥
+lì tǐ	立体
+lì gōng	立功
+lì fāng	立方
+lì fāng mǐ	立方米
+lì zú	立足
+shù	竖
+zhàn lì	站立
+jìng jì	竞技
+jìng xiāng	竞相
+jìng xuǎn	竞选
+jùn gōng	竣工
+jié lì	竭力
+jié jìn quán lì	竭尽全力
+duān zhèng	端正
+zhú gān	竹竿
+dí zi	笛子
+bèn dàn	笨蛋
+bèn zhòng	笨重
+dì yī shǒu	第一手
+dì yī xiàn	第一线
+lóng zi	笼子
+lǒng tǒng	笼统
+lǒng zhào	笼罩
+jīn	筋
+kuāng	筐
+zhù	筑
+tǒng	筒
+dá biàn	答辩
+shāi	筛
+shāi xuǎn	筛选
+chóu	筹
+chóu huà	筹划
+chóu bàn	筹办
+chóu bèi	筹备
+chóu cuò	筹措
+chóu mǎ	筹码
+chóu jí	筹集
+qiān shǔ	签署
+jiǎn tǐ zì	简体字
+jiǎn huà	简化
+jiǎn yì	简易
+jiǎn jié	简洁
+jiǎn duǎn	简短
+jiǎn chēng	简称
+jiǎn yào	简要
+jiǎn lòu	简陋
+suàn pán	算盘
+suàn ji	算计
+suàn zhàng	算账
+guǎn zi	管子
+guǎn jiā	管家
+guǎn jiào	管教
+guǎn lǐ fèi	管理费
+guǎn yòng	管用
+guǎn xiá	管辖
+piān fu	篇幅
+cù yōng	簇拥
+lèi bié	类别
+fěn	粉
+fěn sī	粉丝
+fěn suì	粉碎
+lì	粒
+cū xīn dà yì	粗心大意
+cū bào	粗暴
+cū lüè	粗略
+cū cāo	粗糙
+cū lǔ	粗鲁
+zhān	粘
+fèn	粪
+fèn biàn	粪便
+zòng zi	粽子
+jīng huá	精华
+jīng miào	精妙
+jīng xīn	精心
+jīng dǎ xì suàn	精打细算
+jīng míng	精明
+jīng pí lì jié	精疲力竭
+jīng yì qiú jīng	精益求精
+jīng què	精确
+jīng shén bìng	精神病
+jīng jiǎn	精简
+jīng liàn	精练
+jīng xì	精细
+jīng zhì	精致
+jīng yīng	精英
+jīng tōng	精通
+jīng suǐ	精髓
+hú	糊
+hú tu	糊涂
+táng niào bìng	糖尿病
+táng guǒ	糖果
+jiū chán	纠缠
+hóng pū pū	红扑扑
+hóng rùn	红润
+hóng huǒ	红火
+hóng dēng	红灯
+hóng yǎn	红眼
+hóng shǔ	红薯
+xiān wéi	纤维
+yuē dìng sú chéng	约定俗成
+jí bié	级别
+jì shí	纪实
+jì lù piàn	纪录片
+jì niàn rì	纪念日
+jì niàn bēi	纪念碑
+jì niàn guǎn	纪念馆
+wěn luàn	紊乱
+sù	素
+sù bù xiāng shí	素不相识
+sù yǎng	素养
+sù miáo	素描
+sù cái	素材
+sù shí	素食
+suǒ qǔ	索取
+suǒ xìng	索性
+suǒ péi	索赔
+jǐn còu	紧凑
+jǐn jiē zhe	紧接着
+jǐn suō	紧缩
+jǐn quē	紧缺
+jǐn pò	紧迫
+wěi dù	纬度
+chún pǔ	纯朴
+chún jié	纯洁
+chún cuì	纯粹
+shā	纱
+gāng yào	纲要
+gāng lǐng	纲领
+nà rù	纳入
+nà shuì	纳税
+nà shuì rén	纳税人
+nà mèn r	纳闷儿
+zòng róng	纵容
+zòng héng jiāo cuò	纵横交错
+zòng shēn	纵深
+zòng rán	纵然
+zòng guān	纵观
+fǎng zhī	纺织
+niǔ dài	纽带
+niǔ kòu	纽扣
+lěi jī	累积
+lěi jì	累计
+xiàn tiáo	线条
+zǔ jiàn	组建
+zǔ zhuāng	组装
+shēn shì	绅士
+xì wēi	细微
+xì xīn	细心
+xì nì	细腻
+zhōng shēng	终生
+zhōng jiū	终究
+zhōng jié	终结
+jīng	经
+jīng jiǔ bù xī	经久不息
+jīng shòu	经受
+jīng shāng	经商
+jīng dù	经度
+jīng mào	经贸
+xù dao	絮叨
+bǎng	绑
+bǎng jià	绑架
+jié bīng	结冰
+jié wěi	结尾
+jié jú	结局
+jié jīng	结晶
+jié shí	结识
+rào xíng	绕行
+huì shēng huì sè	绘声绘色
+luò yì bù jué	络绎不绝
+jué jì	绝技
+jué zhāo	绝招
+jué yuán	绝缘
+jiǎo	绞
+tǒng zhì	统治
+tǒng chóu	统筹
+tǒng tǒng	统统
+xiù	绣
+jì	继
+jì mǔ	继母
+jì fù	继父
+jì ér	继而
+xù	续
+fēi wén	绯闻
+chuò hào	绰号
+shéng zi	绳子
+bēng	绷
+bēng dài	绷带
+zōng shàng suǒ shù	综上所述
+zhàn fàng	绽放
+lǜ dì	绿地
+lǜ dēng	绿灯
+miǎn huái	缅怀
+lǎn chē	缆车
+huǎn	缓
+huǎn hé	缓和
+huǎn màn	缓慢
+huǎn huǎn	缓缓
+lǚ	缕
+biān xiě	编写
+biān jù	编剧
+biān hào	编号
+biān pái	编排
+biān zào	编造
+yuán fèn	缘分
+féng	缝
+féng hé	缝合
+chán	缠
+bīn fēn	缤纷
+fán tǐ zì	繁体字
+fán huá	繁华
+fán máng	繁忙
+fán zhòng	繁重
+suō	缩
+suō yǐng	缩影
+suō shuǐ	缩水
+jiǎo	缴
+jiǎo nà	缴纳
+jiǎo fèi	缴费
+gāng	缸
+quē kǒu	缺口
+quē shī	缺失
+quē xí	缺席
+guàn	罐
+guàn tou	罐头
+wǎng mín	网民
+wǎng diǎn	网点
+hǎn jiàn	罕见
+luó	罗
+bà xiū	罢休
+bà miǎn	罢免
+zhào	罩
+zuì fàn	罪犯
+zuì kuí huò shǒu	罪魁祸首
+zhì	置
+měi zhōng bù zú	美中不足
+měi rén	美人
+měi huà	美化
+měi wèi	美味
+měi miào	美妙
+měi dé	美德
+měi jǐng	美景
+měi zī zī	美滋滋
+měi mǎn	美满
+měi guān	美观
+xiū kuì	羞愧
+xiàn mù	羡慕
+chì bǎng	翅膀
+qiào	翘
+cuì lǜ	翠绿
+fān tiān fù dì	翻天覆地
+fān lái fù qù	翻来覆去
+fān fān	翻番
+yào yǎn	耀眼
+lǎo rén jiā	老人家
+lǎo bàn r	老伴儿
+lǎo huà	老化
+lǎo dà	老大
+lǎo zì hào	老字号
+lǎo shí shuō	老实说
+lǎo hàn	老汉
+lǎo yuǎn	老远
+kǎo liáng	考量
+ér yǐ	而已
+shuǎ	耍
+shuǎ lài	耍赖
+nài	耐
+nài rén xún wèi	耐人寻味
+nài xìng	耐性
+gēng dì	耕地
+hào	耗
+hào shí	耗时
+hào fèi	耗费
+ěr guāng	耳光
+ěr shú néng xiáng	耳熟能详
+ěr mù yī xīn	耳目一新
+ěr wén mù dǔ	耳闻目睹
+sǒng lì	耸立
+chǐ xiào	耻笑
+chǐ rǔ	耻辱
+dān ge	耽搁
+dān wu	耽误
+gěng zhí	耿直
+lóng	聋
+lóng rén	聋人
+zhí yè bìng	职业病
+zhí yuán	职员
+zhí quán	职权
+lián huān	联欢
+lián wǎng	联网
+lián bāng	联邦
+pìn	聘
+pìn rèn	聘任
+pìn yòng	聘用
+jù jīng huì shén	聚精会神
+jù jí	聚集
+zhào shì	肇事
+jī fū	肌肤
+xiào xiàng	肖像
+gān zàng	肝脏
+gǔ fèn	股份
+gǔ shì	股市
+gǔ mín	股民
+zhī tǐ	肢体
+féi liào	肥料
+féi wò	肥沃
+féi zào	肥皂
+féi pàng	肥胖
+jiān bǎng	肩膀
+jiān fù	肩负
+shèn	肾
+zhǒng liú	肿瘤
+zhàng	胀
+wèi kǒu	胃口
+dǎn zi	胆子
+dǎn qiè	胆怯
+bèi pàn	背叛
+bèi sòng	背诵
+bèi miàn	背面
+tāi	胎
+tāi ér	胎儿
+pēi tāi	胚胎
+shèng rèn	胜任
+shèng chū	胜出
+hú sī luàn xiǎng	胡思乱想
+hú shuō	胡说
+hú nào	胡闹
+mài bó	脉搏
+mài luò	脉络
+gē bo	胳膊
+jiāo náng	胶囊
+jiāo piàn	胶片
+xiōng yǒu chéng zhú	胸有成竹
+xiōng táng	胸膛
+néng rén	能人
+néng yuán	能源
+néng nài	能耐
+néng hào	能耗
+zhī fáng	脂肪
+cuì ruò	脆弱
+jǐ liáng	脊梁
+nǎo hǎi	脑海
+nǎo jīn	脑筋
+bó zi	脖子
+tuō kǒu ér chū	脱口而出
+tuō jié	脱节
+tuō luò	脱落
+tuō shēn	脱身
+tuō yǐng ér chū	脱颖而出
+liǎn jiá	脸颊
+pí	脾
+là yuè	腊月
+fǔ huà	腐化
+fǔ xiǔ	腐朽
+fǔ làn	腐烂
+fǔ shí	腐蚀
+fǔ bài	腐败
+qiāng	腔
+xīng	腥
+fù xiè	腹泻
+fù bù	腹部
+xiàn	腺
+téng	腾
+xī gài	膝盖
+péng zhàng	膨胀
+shàn shí	膳食
+zì yǐ wéi shì	自以为是
+zì xìn xīn	自信心
+zì lì gēng shēng	自力更生
+zì zhù	自助
+zì bēi	自卑
+zì wèi	自卫
+zì fā	自发
+zì rú	自如
+zì shǐ zhì zhōng	自始至终
+zì zūn	自尊
+zì zūn xīn	自尊心
+zì qiáng bù xī	自强不息
+zì rán jiè	自然界
+zì rán ér rán	自然而然
+zì lǐ	自理
+zì yóu zì zài	自由自在
+zì xiāng máo dùn	自相矛盾
+zì sī	自私
+zì sī zì lì	自私自利
+zì chēng	自称
+zì lì	自立
+zì xíng	自行
+zì fù	自负
+zì zé	自责
+zì fèi	自费
+zhì guān zhòng yào	至关重要
+zhì cǐ	至此
+zhì	致
+zhì shǐ	致使
+yú	致力于
+zhì mìng	致命
+zhì fù	致富
+zhì jìng	致敬
+zhì cí	致辞
+jiù jiu	舅舅
+yú lùn	舆论
+shū chàng	舒畅
+tiǎn	舔
+wǔ tīng	舞厅
+háng tiān	航天
+háng tiān yuán	航天员
+háng hǎi	航海
+háng xíng	航行
+háng yùn	航运
+cāng	舱
+duò shǒu	舵手
+chuán jiǎng	船桨
+chuán bó	船舶
+sōu	艘
+liáng	良
+liáng xīn	良心
+liáng xìng	良性
+jiān jù	艰巨
+jiān kǔ fèn dòu	艰苦奋斗
+jiān xīn	艰辛
+jiān xiǎn	艰险
+yàn lì	艳丽
+ài zī bìng	艾滋病
+jié jiǎn	节俭
+jié qi	节气
+jié shuǐ	节水
+jié yī suō shí	节衣缩食
+zhī shì	芝士
+zhī ma	芝麻
+lú huā	芦花
+fēn fāng	芬芳
+bā lěi	芭蕾
+xīn piàn	芯片
+huā huì	花卉
+huā yàng	花样
+huā bàn	花瓣
+huā wén	花纹
+yá	芽
+cāng ying	苍蝇
+sū xǐng	苏醒
+miáo	苗
+miáo tou	苗头
+miáo tiao	苗条
+kē kè	苛刻
+ruò gān	若干
+kǔ lì	苦力
+kǔ xīn	苦心
+kǔ nǎo	苦恼
+kǔ xiào	苦笑
+kǔ liàn	苦练
+kǔ nàn	苦难
+yīng jùn	英俊
+yīng bàng	英镑
+mào mì	茂密
+mào shèng	茂盛
+fàn chóu	范畴
+jīng	茎
+máng rán	茫然
+chá dào	茶道
+chá guǎn r	茶馆儿
+jīng jí	荆棘
+cǎo píng	草坪
+cǎo àn	草案
+huāng	荒
+huāng liáng	荒凉
+huāng dàn	荒诞
+huāng miù	荒谬
+dàng yàng	荡漾
+róng xìng	荣幸
+róng huò	荣获
+róng yù	荣誉
+yíng guāng	荧光
+yào fāng	药方
+yào cái	药材
+hé huā	荷花
+mò míng qí miào	莫名其妙
+mò guò yú	莫过于
+mò fēi	莫非
+lián zǐ	莲子
+huò xī	获悉
+huò shèng	获胜
+jú huā	菊花
+cài shì chǎng	菜市场
+pú sà	菩萨
+méng fā	萌发
+méng yá	萌芽
+píng shuǐ xiāng féng	萍水相逢
+wěi suō	萎缩
+luó bo	萝卜
+yíng jiù	营救
+yíng zào	营造
+xiāo tiáo	萧条
+luò xià	落下
+luò dì	落地
+luò chā	落差
+luò hù	落户
+dǒng shì	董事
+dǒng shì huì	董事会
+dǒng shì zhǎng	董事长
+zàng	葬
+zàng lǐ	葬礼
+cōng	葱
+suàn	蒜
+lán tú	蓝图
+péng bó	蓬勃
+màn yán	蔓延
+yùn hán	蕴涵
+yùn cáng	蕴藏
+cáng nì	藏匿
+cáng pǐn	藏品
+cáng shēn	藏身
+téng yǐ	藤椅
+mó gu	蘑菇
+zhàn	蘸
+nüè dài	虐待
+qián chéng	虔诚
+xū	虚
+xū wěi	虚伪
+xū jiǎ	虚假
+xū huàn	虚幻
+xū ruò	虚弱
+xū nǐ	虚拟
+xū gòu	虚构
+suī shuō	虽说
+xiā	虾
+wén zi	蚊子
+wén zhàng	蚊帐
+dàn bái zhì	蛋白质
+mán	蛮
+fēng mì	蜂蜜
+mì	蜜
+mì yuè	蜜月
+mì fēng	蜜蜂
+là	蜡
+là zhú	蜡烛
+róng	融
+róng huà	融化
+róng qià	融洽
+luó sī	螺丝
+chǔn	蠢
+xuè yā	血压
+xuè shuān	血栓
+xuè yuán	血缘
+xuè mài	血脉
+xíng shǐ	行使
+háng liè	行列
+háng jiā	行家
+háng qíng	行情
+xíng zhèng	行政
+xíng zǒu	行走
+yǎn shēng	衍生
+xián jiē	衔接
+yī shí zhù xíng	衣食住行
+bǔ jiù	补救
+bǔ jǐ	补给
+biǎo jué	表决
+biǎo zhāng	表彰
+biǎo tài	表态
+biǎo shuài	表率
+biǎo bái	表白
+biǎo shù	表述
+chèn tuō	衬托
+shuāi jiǎn	衰减
+shuāi ruò	衰弱
+shuāi jié	衰竭
+shuāi lǎo	衰老
+shuāi tuì	衰退
+zhōng xīn	衷心
+xiù shǒu páng guān	袖手旁观
+bèi bǔ	被捕
+xí jī	袭击
+cái	裁
+cái jué	裁决
+cái dìng	裁定
+liè hén	裂痕
+liè fèng	裂缝
+zhuāng bàn	装扮
+luǒ	裸
+luǒ lù	裸露
+guǒ	裹
+yào bù	要不
+yào bu shì	要不是
+yào mìng	要命
+yào hài	要害
+yào qiáng	要强
+yào diǎn	要点
+yào jǐn	要紧
+yào lǐng	要领
+fù gài	覆盖
+jiàn yì yǒng wéi	见义勇为
+jiàn rén jiàn zhì	见仁见智
+jiàn wài	见外
+jiàn xiào	见效
+jiàn jiě	见解
+jiàn zhèng	见证
+jiàn shi	见识
+jiàn qián yǎn kāi	见钱眼开
+guān gǎn	观感
+guān mó	观摩
+guān wàng	观望
+guān cè	观测
+guān shǎng	观赏
+guī gé	规格
+guī ju	规矩
+jué xǐng	觉醒
+jiǎo luò	角落
+jué zhú	角逐
+jiě tǐ	解体
+jiě pōu	解剖
+jiě wéi	解围
+jiě jiù	解救
+jiě sàn	解散
+jiě xī	解析
+jiě dá	解答
+jiě tuō	解脱
+jiě dú	解读
+jiě gù	解雇
+chù dòng	触动
+chù mō	触摸
+chù fàn	触犯
+chù mù jīng xīn	触目惊心
+chù jué	触觉
+yán xíng	言行
+yán lùn	言论
+yán cí	言辞
+jì	计
+jì shí	计时
+jì cè	计策
+jì jiào	计较
+dìng dān	订单
+dìng hūn	订婚
+dìng lì	订立
+dìng gòu	订购
+rèn zhī	认知
+rèn zhèng	认证
+rèn cuò	认错
+jī xiào	讥笑
+tǎo	讨
+tǎo rén xǐ huan	讨人喜欢
+tǎo jià huán jià	讨价还价
+tǎo hǎo	讨好
+ràng bù	让步
+xùn	训
+yì	议
+yì huì	议会
+yì yuán	议员
+yì chéng	议程
+jì hao	记号
+jì yì yóu xīn	记忆犹新
+jiǎng xué	讲学
+jiǎng jiě	讲解
+jiǎng shù	讲述
+xǔ	许
+xǔ kě zhèng	许可证
+é zhà	讹诈
+lùn tán	论坛
+lùn zhèng	论证
+lùn shù	论述
+fěng cì	讽刺
+shè	设
+shè dìng	设定
+shè fǎ	设法
+fǎng tán	访谈
+jué bié	诀别
+jué qiào	诀窍
+zhèng rén	证人
+píng pàn	评判
+píng wěi	评委
+píng dìng	评定
+píng shěn	评审
+píng lùn yuán	评论员
+shí bié	识别
+zhà piàn	诈骗
+sù kǔ	诉苦
+sù sòng	诉讼
+sù shuō	诉说
+zhěn suǒ	诊所
+yì	译
+shì tàn	试探
+shì yòng	试用
+shì yòng qī	试用期
+shì xíng	试行
+chéng xīn chéng yì	诚心诚意
+chéng kěn	诚恳
+chéng yì	诚意
+chéng zhì	诚挚
+huà tǒng	话筒
+huà yǔ	话语
+huà fèi	话费
+dàn chén	诞辰
+xiáng jìn	详尽
+chà yì	诧异
+yǔ qì	语气
+wù qū	误区
+wù dǎo	误导
+wù chā	误差
+yòu rén	诱人
+yòu fā	诱发
+yòu huò	诱惑
+yòu ěr	诱饵
+shuō bu shàng	说不上
+shuō dào dǐ	说到底
+shuō gàn jiù gàn	说干就干
+shuō qíng	说情
+shuō bái le	说白了
+shuō zhēn de	说真的
+shuō lǎo shi huà	说老实话
+shuō huǎng	说谎
+shuō	说起来
+shuō dao	说道
+shuō xián huà	说闲话
+qǐng tiě	请帖
+qǐng jiǎn	请柬
+zhū duō	诸多
+zhū rú cǐ lèi	诸如此类
+nuò yán	诺言
+fěi bàng	诽谤
+shéi zhī dào	谁知道
+tiáo kǎn	调侃
+diào dù	调度
+tiáo kòng	调控
+tiáo liào	调料
+tiáo shì	调试
+liàng jiě	谅解
+tán bu shàng	谈不上
+tán dào	谈到
+tán lùn	谈论
+tán qǐ	谈起
+móu hài	谋害
+móu qiú	谋求
+móu shēng	谋生
+huǎng yán	谎言
+huǎng huà	谎话
+mí	谜
+mí tuán	谜团
+mí dǐ	谜底
+mí yǔ	谜语
+yáo yán	谣言
+qiān xùn	谦逊
+jǐn shèn	谨慎
+pǔ	谱
+jǐng guān	警官
+jǐng tì	警惕
+jǐng chē	警车
+jǐng zhōng	警钟
+pì rú	譬如
+pì rú shuō	譬如说
+qiǎn zé	谴责
+huō	豁
+huō chu qu	豁出去
+huò dá	豁达
+dòu zi	豆子
+dòu jiāng	豆浆
+háo huá	豪华
+bào	豹
+bèi ké	贝壳
+fù yǒu	负有
+fù miàn	负面
+cái lì	财力
+cái wù	财务
+cái zhèng	财政
+cái wù	财物
+cái jīng	财经
+zé bèi	责备
+zé guài	责怪
+zhàng dān	账单
+zhàng hào	账号
+huò bì	货币
+huò wù	货物
+huò chē	货车
+huò yùn	货运
+zhì dì	质地
+zhì pǔ	质朴
+zhì yí	质疑
+zhì wèn	质问
+fàn mài	贩卖
+tān	贪
+tān lán	贪婪
+tān wū	贪污
+tān wán r	贪玩儿
+pín fù	贫富
+pín qióng	贫穷
+biǎn zhí	贬值
+gòu	购
+zhù cáng	贮藏
+guàn chè	贯彻
+guàn chuān	贯穿
+guàn tōng	贯通
+jiàn	贱
+tiē qiè	贴切
+tiē jìn	贴近
+guì bīn	贵宾
+guì zú	贵族
+guì zhòng	贵重
+fèi jìn	费劲
+hè xìn	贺信
+hè diàn	贺电
+zéi	贼
+huì lù	贿赂
+zī lì	资历
+zī běn zhǔ yì	资本主义
+zī shēn	资深
+zī xùn	资讯
+fù yǔ	赋予
+shú	赎
+cì	赐
+cì jiào	赐教
+péi qián	赔钱
+sài pǎo	赛跑
+sài chē	赛车
+zàn bù jué kǒu	赞不绝口
+zàn tàn	赞叹
+zàn tàn bù yǐ	赞叹不已
+zàn tóng	赞同
+zàn yáng	赞扬
+zàn měi	赞美
+zàn xǔ	赞许
+shàn yǎng	赡养
+yíng jiā	赢家
+chì zì	赤字
+hè rán	赫然
+zǒu hòu mén	走后门
+zǒu láng	走廊
+zǒu wān lù	走弯路
+zǒu tóu wú lù	走投无路
+zǒu guò chǎng	走过场
+zǒu jìn	走近
+fù	赴
+gǎn wǎng	赶往
+gǎn fù	赶赴
+qǐ fú	起伏
+qǐ chū	起初
+qǐ jìn	起劲
+qǐ bù	起步
+qǐ yuán	起源
+qǐ chéng	起程
+qǐ cǎo	起草
+qǐ pǎo xiàn	起跑线
+chèn	趁
+chèn zǎo	趁早
+chèn jī	趁机
+chāo qián	超前
+chāo biāo	超标
+chāo chē	超车
+chāo sù	超速
+yuè fā	越发
+yuè guò	越过
+qū yú	趋于
+qù wèi	趣味
+zú zhì duō móu	足智多谋
+zú jì	足迹
+pā	趴
+pǎo chē	跑车
+pǎo dào	跑道
+pǎo lóng tào	跑龙套
+jù	距
+gēn shàng	跟上
+gēn bu shàng	跟不上
+gēn zōng	跟踪
+kuà guó	跨国
+kuà yuè	跨越
+lù rén	路人
+lù kuàng	路况
+lù zi	路子
+lù duàn	路段
+lù dēng	路灯
+lù chéng	路程
+lù tú	路途
+lù miàn	路面
+tiào sǎn	跳伞
+tiào dòng	跳动
+tiào cáo	跳槽
+tiào yuè	跳跃
+yǒng yuè	踊跃
+tà shàng	踏上
+chuài	踹
+bèng	蹦
+dēng	蹬
+cèng	蹭
+shēn bù yóu jǐ	身不由己
+shēn jià	身价
+shēn zi	身子
+shēn yǐng	身影
+shēn xīn	身心
+shēn qū	身躯
+duǒ cáng	躲藏
+duǒ bì	躲避
+chē wèi	车位
+chē xiāng	车厢
+chē xíng	车型
+chē huò	车祸
+chē lún	车轮
+chē zhóu	车轴
+chē sù	车速
+chē dào	车道
+chē jiān	车间
+guǐ jì	轨迹
+zhuǎn jiāo	转交
+zhuǎn xíng	转型
+zhuǎn xué	转学
+zhuàn you	转悠
+zhuǎn zhé	转折
+zhuǎn zhé diǎn	转折点
+zhuǎn bō	转播
+zhuǎn jī	转机
+zhuǎn yǎn	转眼
+zhuǎn zǎi	转载
+zhuǎn dá	转达
+lún kuò	轮廓
+lún huàn	轮换
+lún liú	轮流
+lún tāi	轮胎
+ruǎn shí lì	软实力
+ruǎn ruò	软弱
+hōng	轰
+hōng dòng	轰动
+hōng zhà	轰炸
+qīng xíng	轻型
+qīng wēi	轻微
+qīng ér yì jǔ	轻而易举
+qīng miè	轻蔑
+zài tǐ	载体
+jiào chē	轿车
+jiào jìn	较劲
+jiào liàng	较量
+fǔ dǎo	辅导
+huī huáng	辉煌
+fú shè	辐射
+shū jiā	输家
+shū yè	输液
+shū xuè	输血
+shū sòng	输送
+xīn qín	辛勤
+xīn suān	辛酸
+gū fù	辜负
+cí	辞
+cí qù	辞去
+cí chéng	辞呈
+cí tuì	辞退
+là jiāo	辣椒
+biàn bié	辨别
+biàn rèn	辨认
+biàn	辩
+biàn hù	辩护
+biàn jiě	辩解
+biàn zi	辫子
+biān jiè	边界
+biān jiāng	边疆
+biān yuǎn	边远
+liáo kuò	辽阔
+xún luó	巡逻
+dá biāo	达标
+qiān	迁
+qiān jiù	迁就
+qiān yí	迁移
+qì jīn	迄今
+qì jīn wéi zhǐ	迄今为止
+guò bu qù	过不去
+guò guān	过关
+guò shèng	过剩
+guò bàn	过半
+guò jìng	过境
+guò shī	过失
+guò tóu	过头
+guò jiǎng	过奖
+guò wǎng	过往
+guò yì bù qù	过意不去
+guò rì zi	过日子
+guò zǎo	过早
+guò qī	过期
+guò lǜ	过滤
+guò yǐn	过瘾
+guò yìng	过硬
+guò jié	过节
+guò dào	过道
+guò cuò	过错
+mài	迈
+mài jìn	迈进
+yíng	迎
+yíng hé	迎合
+yùn hé	运河
+yùn yíng	运营
+yùn zhuǎn	运转
+yùn sòng	运送
+jìn nián lái	近年来
+fǎn huán	返还
+huán yuán	还原
+huán kuǎn	还款
+zhè huì r	这会儿
+zhè yàng yī lái	这样一来
+jìn xiū	进修
+jìn chū	进出
+jìn chū kǒu	进出口
+jìn chǎng	进场
+jìn dù	进度
+jìn chéng	进程
+jìn ér	进而
+yuǎn chéng	远程
+yuǎn jiàn	远见
+yuǎn jìn wén míng	远近闻名
+wéi yuē	违约
+wéi bèi	违背
+wéi zhāng	违章
+lián rèn	连任
+lián yè	连夜
+lián gǔn dài pá	连滚带爬
+lián mián	连绵
+lián suǒ	连锁
+lián suǒ diàn	连锁店
+chí zǎo	迟早
+chí yí	迟疑
+chí chí	迟迟
+pò bù jí dài	迫不及待
+pò shǐ	迫使
+pò hài	迫害
+dié qǐ	迭起
+mí shī	迷失
+mí liàn	迷恋
+mí huo	迷惑
+mí huò bù jiě	迷惑不解
+mí lù	迷路
+jì xiàng	迹象
+zhuī wěi	追尾
+zhuī dào huì	追悼会
+zhuī sù	追溯
+zhuī gǎn	追赶
+zhuī zōng	追踪
+zhuī zhú	追逐
+zhuī wèn	追问
+zhuī suí	追随
+tuì xiū jīn	退休金
+tuì què	退却
+tuì huí	退回
+tuì xué	退学
+tuì yì	退役
+tuì suō	退缩
+tuì ràng	退让
+sòng bié	送别
+shì yí	适宜
+shì dù	适度
+shì shí	适时
+shì liàng	适量
+táo wáng	逃亡
+táo shēng	逃生
+táo bì	逃避
+nì	逆
+xuǎn mín	选民
+xuǎn yòng	选用
+xuǎn xiàng	选项
+xùn sè	逊色
+tòu chè	透彻
+tòu zhī	透支
+tòu qì	透气
+tòu guò	透过
+zhú nián	逐年
+dì jiāo	递交
+dòu	逗
+tōng sú	通俗
+tōng gào	通告
+tōng xiāo	通宵
+tōng wǎng	通往
+tōng chàng	通畅
+tōng jī	通缉
+tōng xíng zhèng	通行证
+tōng chē	通车
+tōng tōng	通通
+tōng shùn	通顺
+tōng fēng	通风
+shì shì	逝世
+chěng qiáng	逞强
+chěng néng	逞能
+zào jià	造价
+zào jiǎ	造假
+zào jiù	造就
+zào fú	造福
+zào zhǐ shù	造纸术
+féng	逢
+dǎi	逮
+dài bǔ	逮捕
+bī zhēn	逼真
+bī jìn	逼近
+bī pò	逼迫
+yú qī	逾期
+suì xīn	遂心
+yù shàng	遇上
+yù xiǎn	遇险
+yù nàn	遇难
+biàn bù	遍布
+è zhì	遏制
+dào jù	道具
+yí tǐ	遗体
+yí zhǔ	遗嘱
+yí zhǐ	遗址
+yí qì	遗弃
+yí wàng	遗忘
+yí yuàn	遗愿
+yí wù	遗物
+yí liú	遗留
+liù	遛
+yáo kòng	遥控
+yáo yuǎn	遥远
+zāo yāng	遭殃
+zhē	遮
+zhē gài	遮盖
+zūn xún	遵循
+zūn zhào	遵照
+bì shǔ	避暑
+bì nàn	避难
+yāo	邀
+xié	邪
+xié è	邪恶
+yóu zhèng	邮政
+yóu biān	邮编
+lín guó	邻国
+jiāo wài	郊外
+jiāo yóu	郊游
+zhèng zhòng	郑重
+bù jiàn	部件
+bù shǔ	部署
+dū huì	都会
+bǐ shì	鄙视
+zhuó qíng	酌情
+pèi jiàn	配件
+pèi ǒu	配偶
+pèi sòng	配送
+pèi yīn	配音
+jiǔ lóu	酒楼
+jiǔ jīng	酒精
+xù jiǔ	酗酒
+yùn niàng	酝酿
+hān chàng	酣畅
+hān shuì	酣睡
+sū	酥
+kù sì	酷似
+niàng zào	酿造
+chún hòu	醇厚
+xǐng wù	醒悟
+xǐng lái	醒来
+xǐng mù	醒目
+cǎi	采
+cǎi kuàng	采矿
+cǎi jí	采集
+shì fàng	释放
+lǐ chéng bēi	里程碑
+zhòng zhōng zhī zhòng	重中之重
+zhòng rèn	重任
+zhòng shāng	重伤
+zhòng chuāng	重创
+chóng dié	重叠
+chóng hé	重合
+zhòng xíng	重型
+zhòng xīn	重心
+chóng bō	重播
+chóng xiàn	重现
+chóng shēn	重申
+chóng fǎn	重返
+zhòng liàng jí	重量级
+yě shòu	野兽
+yě wài	野外
+yě xīn	野心
+yě chuī	野炊
+yě yíng	野营
+yě mán	野蛮
+yě cān	野餐
+jīn zi	金子
+jīn zì tǎ	金字塔
+jīn shǔ	金属
+zhēn jiǔ	针灸
+zhēn fēng xiāng duì	针锋相对
+dìng	钉
+dīng zi	钉子
+diào yú	钓鱼
+gài	钙
+chāo piào	钞票
+gāng	钢
+yào shi	钥匙
+qīn pèi	钦佩
+gōu	钩
+gōu zi	钩子
+jiàn yú	鉴于
+jiàn bié	鉴别
+jiàn shǎng	鉴赏
+qián cái	钱财
+qián zi	钳子
+zuàn shí	钻石
+zuān yán	钻研
+zuān kòng zi	钻空子
+qiān	铅
+tóng	铜
+lǚ	铝
+míng jì	铭记
+chǎn	铲
+chǎn zi	铲子
+yín mù	银幕
+zhù zào	铸造
+pū lù	铺路
+xiāo	销
+xiāo huǐ	销毁
+xiāo liàng	销量
+suǒ dìng	锁定
+xiù	锈
+cuò wèi	错位
+cuò bié zì	错别字
+cuò zōng fù zá	错综复杂
+cuò jué	错觉
+xī	锡
+chuí zi	锤子
+jǐn qí	锦旗
+jù	锯
+zhèn dìng	镇定
+xiāng	镶
+xiāng qiàn	镶嵌
+cháng zhēng	长征
+cháng xiào	长效
+cháng qī yǐ lái	长期以来
+zhǎng xiàng	长相
+cháng zú	长足
+zhǎng bèi	长辈
+cháng dá	长达
+mén dāng hù duì	门当户对
+mén kǎn	门槛
+mén lù	门路
+mén líng	门铃
+shǎn shuò	闪烁
+wèn shì	问世
+wèn juàn	问卷
+jiàn duàn	间断
+jiàn dié	间谍
+jiàn gé	间隔
+jiàn xì	间隙
+mēn	闷
+zhá	闸
+nào shì	闹事
+nào zhe wán r	闹着玩儿
+guī nü	闺女
+wén míng	闻名
+fá mén	阀门
+yuè lì	阅历
+yán wáng	阎王
+chǎn shù	阐述
+kuò chuò	阔绰
+duì xíng	队形
+fáng wèi	防卫
+fáng yù	防御
+fáng hù	防护
+fáng xùn	防汛
+fáng huǒ qiáng	防火墙
+fáng yì	防疫
+fáng dào	防盗
+fáng dào mén	防盗门
+yáng xìng	阳性
+yīn xìng	阴性
+yīn àn	阴暗
+zhèn róng	阵容
+zhèn yíng	阵营
+jiē céng	阶层
+jiē tī	阶梯
+jiē jí	阶级
+zǔ lì	阻力
+zǔ lán	阻拦
+zǔ náo	阻挠
+zǔ dǎng	阻挡
+ā lā bó yǔ	阿拉伯语
+fù	附
+fù jiā	附加
+fù hè	附和
+fù shǔ	附属
+fù dài	附带
+chén liè	陈列
+chén jiù	陈旧
+chén shù	陈述
+mò shēng	陌生
+jiàng lín	降临
+xiàn	限
+xiàn yú	限于
+xiàn dìng	限定
+xiàn dù	限度
+dǒu	陡
+yuàn shì	院士
+chú qù	除去
+chú wài	除外
+chú cǐ zhī wài	除此之外
+yǔn shí	陨石
+péi bàn	陪伴
+péi zàng	陪葬
+táo yě	陶冶
+táo cí	陶瓷
+táo zuì	陶醉
+xiàn	陷
+xiàn jǐng	陷阱
+lóng zhòng	隆重
+yǐn xíng	隐形
+yǐn xìng	隐性
+yǐn huàn	隐患
+yǐn qíng	隐情
+yǐn mán	隐瞒
+yǐn yuē	隐约
+yǐn bì	隐蔽
+yǐn shēn	隐身
+suí jí	随即
+suí chù kě jiàn	随处可见
+suí dà liù	随大溜
+suí xīn suǒ yù	随心所欲
+suí shí suí dì	随时随地
+suí jī	随机
+suí shēn	随身
+gé lí	隔离
+gé hé	隔阂
+suì dào	隧道
+nán wéi qíng	难为情
+nán yǐ zhì xìn	难以置信
+nán guān	难关
+nán kān	难堪
+nán chu	难处
+nán dé yī jiàn	难得一见
+nán guài	难怪
+nán diǎn	难点
+nán shuō	难说
+xióng hòu	雄厚
+jí huì	集会
+jí jié	集结
+jí zhuāng xiāng	集装箱
+jí zī	集资
+jí yóu	集邮
+gù	雇
+gù zhǔ	雇主
+gù yōng	雇佣
+gù yuán	雇员
+diāo	雕
+diāo kè	雕刻
+diāo sù	雕塑
+xuě shàng jiā shuāng	雪上加霜
+xuě shān	雪山
+líng jiàn	零件
+líng shòu	零售
+líng huā qián	零花钱
+líng qián	零钱
+léi tóng	雷同
+wù	雾
+xū	需
+zhèn	震
+zhèn dòng	震动
+zhèn hàn	震撼
+huò luàn	霍乱
+shuāng	霜
+lù tiān	露天
+lòu miàn	露面
+bà zhàn	霸占
+qīng chūn qī	青春期
+qīng wā	青蛙
+jìng zhǐ	静止
+fēi fán	非凡
+fēi děi	非得
+fēi fǎ	非法
+kào lǒng	靠拢
+miàn mù quán fēi	面目全非
+miàn fěn	面粉
+miàn hóng ěr chì	面红耳赤
+miàn bù	面部
+miàn miàn jù dào	面面俱到
+gé mìng	革命
+xuē zi	靴子
+bǎ zi	靶子
+jū gōng	鞠躬
+biān pào	鞭炮
+biān cè	鞭策
+rèn xìng	韧性
+yīn xiǎng	音响
+jìng	竟
+jìng gǎn	竟敢
+yùn wèi	韵味
+dǐng duō	顶多
+dǐng jiān	顶尖
+dǐng jí	顶级
+xiàng liàn	项链
+shùn cóng	顺从
+shùn biàn	顺便
+shùn qí zì rán	顺其自然
+shùn shì	顺势
+shùn chā	顺差
+shùn yìng	顺应
+shùn xīn	顺心
+shùn shǒu	顺手
+shùn lǐ chéng zhāng	顺理成章
+shùn chàng	顺畅
+shùn zhe	顺着
+shùn lù	顺路
+xū	须
+wán gù	顽固
+gù bu shàng	顾不上
+gù bu de	顾不得
+gù quán dà jú	顾全大局
+gù jí	顾及
+gù lǜ	顾虑
+dùn shí	顿时
+bān fā	颁发
+bān jiǎng	颁奖
+bān bù	颁布
+yù zhào	预兆
+yù xiān	预先
+yù gào	预告
+yù shòu	预售
+yù dìng	预定
+yù gǎn	预感
+yù liào	预料
+yù shì	预示
+yù suàn	预算
+yù jiàn	预见
+yù yán	预言
+yù sài	预赛
+lǐng shì	领事
+lǐng shì guǎn	领事馆
+lǐng huì	领会
+lǐng yǎng	领养
+lǐng jūn	领军
+lǐng tǔ	领土
+lǐng yù	领域
+lǐng wù	领悟
+lǐng lüè	领略
+lǐng duì	领队
+pō	颇
+jǐng bù	颈部
+pín lǜ	频率
+pín pín	频频
+tuí fèi	颓废
+é wài	额外
+diān dǎo	颠倒
+diān fù	颠覆
+chàn dǒu	颤抖
+fēng yún	风云
+fēng lì	风力
+fēng wèi	风味
+fēng hé rì lì	风和日丽
+fēng shàng	风尚
+fēng qíng	风情
+fēng qì	风气
+fēng shuǐ	风水
+fēng shā	风沙
+fēng bō	风波
+fēng liú	风流
+fēng làng	风浪
+fēng zhēng	风筝
+fēng fàn	风范
+fēng mào	风貌
+fēng qù	风趣
+fēng cǎi	风采
+fēng yǔ	风雨
+fēng fēng yǔ yǔ	风风雨雨
+fēng cān lù sù	风餐露宿
+piāo	飘
+biāo shēng	飙升
+fēi xiáng	飞翔
+fēi yuè	飞跃
+fēi sù	飞速
+shí sù	食宿
+shí yòng	食用
+jī è	饥饿
+fàn wǎn	饭碗
+yǐn shuǐ	饮水
+yǐn yòng shuǐ	饮用水
+bǎo hé	饱和
+bǎo mǎn	饱满
+sì yǎng	饲养
+sì liào	饲料
+ráo	饶
+ráo shù	饶恕
+cān zhuō	餐桌
+xiàn r	馅儿
+chán	馋
+shǒu chuàng	首创
+shǒu fǔ	首府
+shǒu pī	首批
+shǒu yào	首要
+shǒu shì	首饰
+xiāng wèi	香味
+xiāng liào	香料
+xiāng shuǐ	香水
+xiāng yóu	香油
+xiāng yān	香烟
+mǎ lì	马力
+mǎ hòu pào	马后炮
+mǎ xì	马戏
+mǎ tǒng	马桶
+mǎ hu	马虎
+tuó	驮
+xùn	驯
+chí míng	驰名
+qū dòng	驱动
+qū zhú	驱逐
+bó huí	驳回
+jià	驾
+jià chē	驾车
+jià yù	驾驭
+hài rén tīng wén	骇人听闻
+yàn	验
+yàn shōu	验收
+yàn zhèng	验证
+jùn mǎ	骏马
+piàn rén	骗人
+sāo luàn	骚乱
+sāo rǎo	骚扰
+zhòu rán	骤然
+gǔ gàn	骨干
+gǔ zhé	骨折
+gǔ qì	骨气
+gāo dī	高低
+gāo ào	高傲
+gāo yā	高压
+gāo ěr fū qiú	高尔夫球
+gāo shān	高山
+gāo fēng qī	高峰期
+gāo xiào	高效
+gāo xīn jì shù	高新技术
+gāo áng	高昂
+gāo míng	高明
+gāo zhǎng	高涨
+gāo kōng	高空
+gāo xuè yā	高血压
+gāo diào	高调
+gāo guì	高贵
+gāo chāo	高超
+gāo yǎ	高雅
+gāo é	高额
+gāo líng	高龄
+hún	魂
+pò lì	魄力
+mèi lì	魅力
+mó shù	魔术
+mó guǐ	魔鬼
+lǔ mǎng	鲁莽
+xiān huó	鲜活
+xiān měi	鲜美
+xiān xuè	鲜血
+shā yú	鲨鱼
+è yú	鳄鱼
+niǎo cháo	鸟巢
+yā què wú shēng	鸦雀无声
+gē zi	鸽子
+é	鹅
+péng chéng wàn lǐ	鹏程万里
+hè lì jī qún	鹤立鸡群
+yīng	鹰
+lù	鹿
+má	麻
+má jiàng	麻将
+má mù	麻木
+má bì	麻痹
+má là	麻辣
+má zuì	麻醉
+huáng hūn	黄昏
+lí míng	黎明
+nián	黏
+hēi kè	黑客
+hēi xīn	黑心
+hēi shǒu	黑手
+hēi bái	黑白
+hēi mǎ	黑马
+mò	墨
+mò qì	默契
+mò dú	默读
+mò mò wú wén	默默无闻
+gǔ dòng	鼓动
+gǔ wǔ	鼓舞
+bí tì	鼻涕
+qí xīn xié lì	齐心协力
+lóng zhōu	龙舟
+guī	龟
+

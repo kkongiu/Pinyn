@@ -95,4 +95,15 @@ describe('correction-engine — contesto e HSK', () => {
     assert.strictEqual(errs.length, 1);
     assert.ok(errs[0].suggestions.includes('jian'), JSON.stringify(errs[0].suggestions));
   });
+  it('detector accetta parole accentate UNITE (kāfēi, zhōngguó)', () => {
+    const det = createDetector({ engine });
+    assert.strictEqual(det.scan('kāfēi').filter((r) => r.isError).length, 0, 'kāfēi');
+    assert.strictEqual(det.scan('zhōngguó').filter((r) => r.isError).length, 0, 'zhōngguó');
+    assert.strictEqual(det.scan('xǐhuan').filter((r) => r.isError).length, 0, 'xǐhuan');
+  });
+  it('detector mantiene errore su parola senza accenti e non segmentabile', () => {
+    const det = createDetector({ engine });
+    assert.strictEqual(det.scan('kafei').filter((r) => r.isError).length, 1, 'kafei resta errore');
+    assert.strictEqual(det.scan('xzq').filter((r) => r.isError).length, 1);
+  });
 });

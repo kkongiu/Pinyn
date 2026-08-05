@@ -15,6 +15,16 @@
       <input type="checkbox" id="auto-accent" />
     </label>
     <p class="hint">Aggiunge i toni al pinyin senza accento (es. "ni hao" → "nǐ hǎo") dopo una breve pausa di digitazione.</p>
+    <label class="switch-row">
+      <span>Rete neurale dei toni</span>
+      <input type="checkbox" id="tone-net" checked />
+    </label>
+    <p class="hint">Usa la rete on-device (locale, ~200KB) per scegliere i toni col contesto. Se non disponibile, torna all'euristica.</p>
+    <label class="switch-row">
+      <span>Inserisci caratteri cinesi (hanzi)</span>
+      <input type="checkbox" id="hanzi" />
+    </label>
+    <p class="hint">Quando accetti un suggerimento dal menu, inserisce i caratteri (水) invece del pinyin (shuǐ). La conversione batch è sempre nel menu in pagina.</p>
   </section>
 
   <section>

@@ -27,9 +27,20 @@
     '4': { a: 'à', e: 'è', i: 'ì', o: 'ò', u: 'ù', ü: 'ǜ' },
   };
 
-  // Ordine di priorità per collocare il dittongo del tono (regola pinyin).
+  // Ordine di collocazione del dittongo del tono (regola pinyin):
+  // 1) a, o, e hanno la priorità
+  // 2) "iu" -> tono sulla u (qiú), "ui" -> tono sulla i (guǐ)
+  // 3) altrimenti i / u / ü
   function toneIndex(syllable) {
-    for (const v of ['a', 'o', 'e', 'i', 'u', 'ü']) {
+    for (const v of ['a', 'o', 'e']) {
+      const idx = syllable.indexOf(v);
+      if (idx !== -1) return idx;
+    }
+    const iu = syllable.indexOf('iu');
+    if (iu !== -1) return iu + 1; // la 'u'
+    const ui = syllable.indexOf('ui');
+    if (ui !== -1) return ui + 1; // la 'i'
+    for (const v of ['i', 'u', 'ü']) {
       const idx = syllable.indexOf(v);
       if (idx !== -1) return idx;
     }
@@ -81,14 +92,22 @@
     return addToneMark(base, tone);
   }
 
-  /** Rimuove i diacritici/tono: "nǐ" -> "ni" */
+  /** Rimuove TUTTI i diacritici di tono (e i numeri): "nǐ hǎo" -> "ni hao". */
   function stripTone(syllable) {
-    return extractTone(syllable).base;
+    if (!syllable) return '';
+    return normalizeVowelV(syllable.toLowerCase())
+      .replace(/[āáǎà]/g, 'a')
+      .replace(/[ēéěè]/g, 'e')
+      .replace(/[īíǐì]/g, 'i')
+      .replace(/[ōóǒò]/g, 'o')
+      .replace(/[ūúǔù]/g, 'u')
+      .replace(/[ǖǘǚǜ]/g, 'ü')
+      .replace(/[0-5]/g, '');
   }
 
   /** Un token è un candidato pinyin? (solo segmento latino/ü) */
   function isPinyinToken(token) {
-    return /^[a-zü]+$/.test(token) && token.length >= 1;
+    return /^[a-zA-Zü]+$/.test(token) && token.length >= 1;
   }
 
   /**
@@ -98,10 +117,10 @@
    */
   function tokenize(text) {
     const tokens = [];
-    const re = /[a-züōóǒòāáǎàēéěèīíǐìūúǔùǖǘǚǜ]+[0-5]?|[^a-züōóǒòāáǎàēéěèīíǐìūúǔùǖǘǚǜ]+/gi;
+    const re = /[a-zA-Züōóǒòāáǎàēéěèīíǐìūúǔùǖǘǚǜ]+[0-5]?|[^a-zA-Züōóǒòāáǎàēéěèīíǐìūúǔùǖǘǚǜ]+/gi;
     let m;
     while ((m = re.exec(text)) !== null) {
-      tokens.push({ text: m[0].toLowerCase(), isLatin: /[a-zü]/.test(m[0]) });
+      tokens.push({ text: m[0].toLowerCase(), isLatin: /[a-zA-Zü]/.test(m[0]) });
     }
     return tokens;
   }
@@ -111,7 +130,7 @@
    * "ni3 hao3" -> "nǐ hǎo"; "ma0" -> "ma".
    */
   function convertToneNumbers(text) {
-    return text.replace(/([a-zü]+)([0-5])\b/gi, (m, base, toneStr) => {
+    return text.replace(/([a-zA-Zü]+)([0-5])\b/gi, (m, base, toneStr) => {
       const tone = parseInt(toneStr, 10);
       if (tone >= 1 && tone <= 4) return addToneMark(base, tone);
       return base; // tono neutro (0/5)

@@ -78,8 +78,20 @@ describe('accentazione automatica', () => {
   it('zai jian -> zài jiàn', () => {
     assert.deepStrictEqual(engine.addAccentsToPhrase(['zai', 'jian']), ['zài', 'jiàn']);
   });
-  it('sillaba singola: xie -> xié (tono più frequente)', () => {
-    assert.strictEqual(engine.accentSingle('xie'), 'xié');
+  it('sillaba singola: wo -> wǒ (tono più probabile per studente)', () => {
+    assert.strictEqual(engine.accentSingle('wo'), 'wǒ');
+  });
+  it('sillaba singola: xie -> xiē', () => {
+    assert.strictEqual(engine.accentSingle('xie'), 'xiē');
+  });
+  it('accentRun unisce le parole (zhong guo -> zhōngguó)', () => {
+    assert.deepStrictEqual(engine.accentRun(['zhong', 'guo']), [{ count: 2, text: 'zhōngguó' }]);
+    assert.deepStrictEqual(engine.accentRun(['ni', 'hao']), [{ count: 2, text: 'nǐhǎo' }]);
+  });
+  it('accentRun separa parole diverse (wo ai ni)', () => {
+    assert.deepStrictEqual(engine.accentRun(['wo', 'ai', 'ni']), [
+      { count: 1, text: 'wǒ' }, { count: 1, text: 'ài' }, { count: 1, text: 'nǐ' },
+    ]);
   });
   it('parola non pinyin resta invariata', () => {
     assert.strictEqual(engine.accentSingle('hello'), 'hello');

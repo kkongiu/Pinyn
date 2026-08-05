@@ -8,7 +8,7 @@
 <body>
   <header>
     <h1>Pinyin Corrector</h1>
-    <span class="version">v0.1.0</span>
+    <span class="version">v0.10.3</span>
   </header>
 
   <label class="switch-row">
@@ -16,10 +16,28 @@
     <input type="checkbox" id="enabled" checked />
   </label>
 
-  <div class="stats">
-    <span>IE: <b id="errors">—</b></span>
-  </div>
+  <label class="switch-row">
+    <span>Caratteri cinesi (hanzi)</span>
+    <input type="checkbox" id="hanzi" />
+  </label>
 
+  <section class="dict">
+    <h2>Dizionario</h2>
+    <input type="search" id="search" placeholder="Cerca: hanzi, pinyin, inglese…" autocomplete="off" />
+    <div id="results" class="results"></div>
+  </section>
+
+  <section class="stats">
+    <h2>Statistiche</h2>
+    <div class="stats-grid">
+      <div><b id="st-corr">–</b><span>correzioni</span></div>
+      <div><b id="st-ign">–</b><span>ignorati</span></div>
+      <div><b id="st-acc">–</b><span>accenti</span></div>
+    </div>
+    <div id="st-levels" class="levels"></div>
+  </section>
+
+  <script src="../utils/dict-search.js"></script>
   <script src="popup.js"></script>
 </body>
 </html>

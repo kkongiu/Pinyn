@@ -38,6 +38,12 @@
     };
   }
 
+  // a è meglio di b se livello più basso, o pari livello con rank più basso
+  function better(a, b) {
+    if (a.level !== b.level) return a.level < b.level;
+    return (a.rank || 999999) < (b.rank || 999999);
+  }
+
   function stripTones(numbers) {
     return (numbers || '').toLowerCase().replace(/v/g, 'ü').replace(/[0-5]/g, '').trim();
   }
@@ -75,12 +81,21 @@
     let hskSet = buildHskSet(words, hskLevel);
     // cache per il match parola intera (compatta)
     let wordCompacts = [];
+    // chiave (bare con spazi) -> livello minimo della parola
+    const pinyinLevelMap = new Map();
+    // predictor opzionale (rete toni): (bares[]) -> Int8Array di toni 0-4
+    let predictor = (options && options.predictTones) || null;
+
+    function setTonePredictor(fn) {
+      predictor = fn || null;
+    }
 
     function indexWords() {
       wordIndex.clear();
       wordIndexCompact.clear();
       toneFreq.clear();
       wordCompacts = [];
+      pinyinLevelMap.clear();
       for (const w of words) {
         const numbers = (w.pinyin_numbers || '').trim();
         if (!numbers) continue;
@@ -88,19 +103,27 @@
         const key = bares.join(' ');
         const keyCompact = bares.join('');
         if (bares.length > 0) {
-          if (!wordIndex.has(key)) wordIndex.set(key, numbers);
-          if (!wordIndexCompact.has(keyCompact)) wordIndexCompact.set(keyCompact, numbers);
+          const entry = { numbers, level: w.level, rank: w.rank };
+          // tieni la parola PIÙ COMUNE (livello più basso, poi rank)
+          const cur = wordIndex.get(key);
+          if (!cur || better(entry, cur)) wordIndex.set(key, entry);
+          const curC = wordIndexCompact.get(keyCompact);
+          if (!curC || better(entry, curC)) wordIndexCompact.set(keyCompact, entry);
           wordCompacts.push({ compact: keyCompact, numbers, level: w.level, rank: w.rank });
+          const curL = pinyinLevelMap.get(key) || 999;
+          if (w.level < curL) pinyinLevelMap.set(key, w.level);
         }
         for (const b of bares) {
           if (!toneFreq.has(b)) toneFreq.set(b, {});
         }
         const nums = numbers.toLowerCase().split(/\s+/).filter(Boolean);
+        // peso per livello: le parole base (L1-L3) contano molto di più
+        const weight = Math.pow(0.5, Math.min(w.level, 8) - 1);
         for (let i = 0; i < bares.length; i++) {
           const m = nums[i] && nums[i].match(/([0-5])$/);
-          const t = m ? m[1] : '0';
+          const t = m ? (m[1] === '5' ? '0' : m[1]) : '0'; // 5 = neutro (0)
           const freq = toneFreq.get(bares[i]);
-          freq[t] = (freq[t] || 0) + 1;
+          freq[t] = (freq[t] || 0) + weight;
         }
       }
     }
@@ -212,9 +235,9 @@
         let matched = null;
         for (let len = Math.min(6, L - i); len >= 2; len--) {
           const slice = bares.slice(i, i + len);
-          const numbers = wordIndex.get(slice.join(' ')) || wordIndexCompact.get(slice.join(''));
-          if (numbers) {
-            const parts = numbers.toLowerCase().split(/\s+/).filter(Boolean);
+          const entry = wordIndex.get(slice.join(' ')) || wordIndexCompact.get(slice.join(''));
+          if (entry) {
+            const parts = entry.numbers.toLowerCase().split(/\s+/).filter(Boolean);
             if (parts.length === len) { matched = { len, parts }; break; }
           }
         }
@@ -261,12 +284,167 @@
       return out.slice(0, 4).map((o) => o.text);
     }
 
+    /**
+     * Segmenta una frase di sillabe in parole del dizionario (maximal munch)
+     * e restituisce segmenti accentati. Le parole vengono UNITE senza spazi
+     * (es. "zhong guo" -> {count:2, text:"zhōngguó"}).
+     * @param {string[]} bares
+     * @returns {{count:number,text:string}[]}
+     */
+    function accentRun(bares) {
+      const out = [];
+      const L = bares.length;
+      let i = 0;
+      // toni contestuali dalla rete (per il fallback per-sillaba)
+      let ctxTones = null;
+      if (predictor) {
+        try { ctxTones = predictor(bares); } catch (_) { ctxTones = null; }
+      }
+      while (i < L) {
+        // 1) match parola multi-sillaba (len >= 2)
+        let match = null;
+        for (let len = Math.min(6, L - i); len >= 2; len--) {
+          const slice = bares.slice(i, i + len);
+          const entry = wordIndex.get(slice.join(' ')) || wordIndexCompact.get(slice.join(''));
+          if (entry) { match = { len, numbers: entry.numbers }; break; }
+        }
+        if (match) {
+          const text = match.numbers
+            .toLowerCase()
+            .replace(/v/g, 'ü')
+            .split(/\s+/)
+            .filter(Boolean)
+            .map((n) => PU.toToneMark(n))
+            .join('');
+          out.push({ count: match.len, text });
+          i += match.len;
+          continue;
+        }
+        // 2) singola sillaba: se NON è una sillaba valida ma è una parola
+        //    compatta senza spazi (es. "zhongguo") -> parola accentata
+        const cur = bares[i];
+        if (!syllables.has(cur)) {
+          const entry = wordIndexCompact.get(cur);
+          if (entry) {
+            const text = entry.numbers
+              .toLowerCase()
+              .replace(/v/g, 'ü')
+              .split(/\s+/)
+              .filter(Boolean)
+              .map((n) => PU.toToneMark(n))
+              .join('');
+            out.push({ count: 1, text });
+            i++;
+            continue;
+          }
+        }
+        // 3) altrimenti accento per sillaba: ibrido.
+        //    - euristica se il tono dominante è affidabile (share alto)
+        //    - rete dei toni se la sillaba è ambigua
+        if (syllables.has(cur)) {
+          const choice = accentChoice(cur);
+          const CONF = 0.65;
+          let text;
+          if (choice.share >= CONF && choice.tone >= 0) {
+            text = PU.toToneMark(cur + choice.tone);
+          } else if (ctxTones && ctxTones[i] != null && ctxTones[i] >= 0 && ctxTones[i] <= 4) {
+            text = PU.toToneMark(cur + ctxTones[i]);
+          } else {
+            text = accentSingle(cur);
+          }
+          out.push({ count: 1, text });
+        } else {
+          out.push({ count: 1, text: accentSingle(cur) });
+        }
+        i++;
+      }
+      return out;
+    }
+
+    /**
+     * Ton + confidenza (share del tono più frequente, pesato per livello).
+     * tone: 0=neutro,1-4. Ritorna { tone, share }.
+     */
+    function accentChoice(bare) {
+      const freq = toneFreq.get(bare);
+      if (!freq) return { tone: 0, share: 0 };
+      let total = 0;
+      for (const k of Object.keys(freq)) total += freq[k];
+      if (!total) return { tone: 0, share: 0 };
+      let bestTone = 0;
+      let bestCount = -1;
+      for (const k of Object.keys(freq)) {
+        if (freq[k] > bestCount) { bestCount = freq[k]; bestTone = Number(k); }
+      }
+      return { tone: bestTone, share: bestCount / total };
+    }
+
+    /**
+     * Tutte le varianti di tono di una sillaba (ordinate per peso), per il
+     * menu di selezione. Es. "he" -> ["hé","hē","hè"]. Il neutro (0) = bare.
+     * @param {string} bare
+     * @param {number} [minShare] share minimo (default 1%)
+     */
+    function toneVariants(bare, minShare) {
+      minShare = minShare == null ? 0.01 : minShare;
+      const freq = toneFreq.get(bare);
+      if (!freq) return [];
+      let total = 0;
+      for (const k of Object.keys(freq)) total += freq[k];
+      if (!total) return [];
+      const keys = Object.keys(freq).sort((a, b) => freq[b] - freq[a]);
+      const out = [];
+      for (const k of keys) {
+        if (freq[k] / total < minShare) continue;
+        out.push(PU.toToneMark(bare + k));
+      }
+      return out;
+    }
+
+    /**
+     * Un tono è "sospetto" se la sua frequenza per quella sillaba nel
+     * vocabolario HSK è molto bassa (< 6%): probabile errore di tono.
+     */
+    function toneSuspect(bare, tone) {
+      const freq = toneFreq.get(bare);
+      if (!freq) return false;
+      let total = 0;
+      for (const k of Object.keys(freq)) total += freq[k];
+      if (!total) return false;
+      const share = (freq[tone] || 0) / total;
+      return share < 0.01;
+    }
+
+    /**
+     * Livello HSK della parola corrispondente a una stringa pinyin
+     * (accenti o numeri, es. "zhōng guó" o "hao"). Ritorna null se ignota.
+     */
+    function pinyinLevel(pinyinStr) {
+      if (!pinyinStr) return null;
+      const nums = pinyinStr
+        .toLowerCase()
+        .replace(/v/g, 'ü')
+        .split(/\s+/)
+        .filter(Boolean)
+        .map((s) => PU.toToneNumber(s))
+        .join(' ');
+      const bare = stripTones(nums);
+      const lvl = pinyinLevelMap.get(bare);
+      return lvl == null ? null : lvl;
+    }
+
     return {
       rankSuggestions,
       segment,
       findWordSuggestions,
       accentSingle,
+      accentChoice,
+      toneVariants,
       addAccentsToPhrase,
+      accentRun,
+      setTonePredictor,
+      toneSuspect,
+      pinyinLevel,
       bigramScore,
       setLevel,
       setWords,

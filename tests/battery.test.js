@@ -17,6 +17,7 @@ const HSK = JSON.parse(require('fs').readFileSync('src/data/hsk-3.0.json', 'utf8
 
 const engine = globalThis.PinynCorrectionEngine.createEngine({ syllables: SYL, hskWords: HSK, hskLevel: 9 });
 const det = globalThis.PinynErrorDetector.createDetector(SYL, { engine });
+const D = require('../src/utils/dict-search.js');
 
 let pass = 0, fail = 0;
 const failures = [];
@@ -119,6 +120,13 @@ const t0 = Date.now();
   // accentable
   const acc = det.accentable('ni hao zai jian');
   check('F accentable conta', acc.length === 4, acc.length);
+
+  // regressione: terzo tono su parole base + unione delle parole
+  check('F2 wo -> wǒ (non wò)', engine.accentSingle('wo') === 'wǒ', engine.accentSingle('wo'));
+  check('F3 zhongguo unito', engine.accentRun(['zhong','guo']).map(s=>s.text).join('') === 'zhōngguó',
+    JSON.stringify(engine.accentRun(['zhong','guo'])));
+  check('F4 wo ai ni separato', engine.accentRun(['wo','ai','ni']).map(s=>s.text).join(' ') === 'wǒ ài nǐ');
+  check('F5 zhongguo senza spazi', engine.accentRun(['zhongguo'])[0].text === 'zhōngguó');
 }
 
 // ---------- G. Suggerimenti parola ----------
@@ -195,9 +203,28 @@ const t0 = Date.now();
   check('J3 segment < 2ms', segMs < 2, segMs.toFixed(3) + 'ms');
 }
 
+// ---------- K. Dizionario inverso ----------
+{
+  const t = Date.now();
+  const idx = D.buildIndex(HSK);
+  const buildMs = Date.now() - t;
+  check('K1 buildIndex < 2s', buildMs < 2000, buildMs + 'ms');
+
+  const qs = [['好', '好'], ['hao', '好'], ['hǎo', '好'], ['hello', '你好'], ['computer', '电脑'], ['nihao', '你好']];
+  for (const [q, expect] of qs) {
+    const found = D.search(q, idx, 20).some((r) => r.word === expect);
+    check(`K2 "${q}" -> ${expect}`, found);
+  }
+  check('K3 nessun risultato', D.search('zzqqxx', idx).length === 0);
+
+  const t2 = Date.now();
+  for (let i = 0; i < 50; i++) D.search('hao', idx);
+  const qMs = (Date.now() - t2) / 50;
+  check("K4 ricerca < 15ms", qMs < 15, qMs.toFixed(2) + "ms");
+}
+
 const totalMs = Date.now() - t0;
-console.log('\n===== RAPPORTO =====');
-console.log(`Pass: ${pass}   Fail: ${fail}   Tempo: ${totalMs}ms`);
+console.log('\n===== RAPPORTO =====');console.log(`Pass: ${pass}   Fail: ${fail}   Tempo: ${totalMs}ms`);
 if (failures.length) {
   console.log('\nFallimenti:');
   failures.forEach(f => console.log('  - ' + f));

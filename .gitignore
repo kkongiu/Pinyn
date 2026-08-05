@@ -16,3 +16,7 @@ node_modules/
 
 # Ambiente
 .env
+
+# ML: artefatti intermedi (dataset e pesi fp32 rigenerabili)
+ml/data/
+ml/export/

@@ -1,9 +1,15 @@
 /**
- * UiRenderer — evidenziazione degli errori pinyin + toolbar di correzione.
+ * UiRenderer — evidenziazione degli errori pinyin + popup UNICO.
  * NON tocca mai il DOM dei campi editabili: usa un overlay speculare
  * (stesso font/padding, testo trasparente, sottolineatura rossa) sopra il
  * campo, con pointer-events:none. In questo modo la digitazione resta
- * naturale (nessun problema di caret/direzione).
+ * naturale.
+ *
+ * Il popup unico (.pc-pop) ha tre stati MUTUALMENTE ESCLUSIVI (mai
+ * sovrapposti), con priorità:
+ *   1. suggest  — suggerimenti IME (mentre scrivi, tasti 1-9)
+ *   2. errors   — riepilogo errori + Ignora/Ok + azioni (Converti/Aggiungi)
+ *   3. lookup   — traduzione su selezione di testo nella pagina
  * Espone globalmente `PinynUi`.
  */
 (function (root) {
@@ -12,7 +18,7 @@
   const NS = 'pc-';
 
   function escapeHtml(s) {
-    return s
+    return String(s)
       .replace(/&/g, '&amp;')
       .replace(/</g, '&lt;')
       .replace(/>/g, '&gt;')
@@ -67,17 +73,19 @@
     }
 
     function render(entries) {
+      if (!pluginEnabled) { code.innerHTML = ''; place(); return; }
       const text = getText();
       let i = 0;
       const parts = [];
       for (const e of entries) {
         if (e.start > i) parts.push(escapeHtml(text.slice(i, e.start)));
         const seg = escapeHtml(text.slice(e.start, e.end));
-        const title = e.suggestions.length
-          ? 'Pinyin: ' + e.suggestions.join(', ')
-          : 'Pinyin sconosciuto';
+        const isTone = e.kind === 'tone';
+        const title = isTone
+          ? 'Tono sospetto: ' + (e.suggestions.join(', ') || 'controlla il tono')
+          : (e.suggestions.length ? 'Pinyin: ' + e.suggestions.join(', ') : 'Pinyin sconosciuto');
         parts.push(
-          '<mark class="' + NS + 'err" title="' + title + '">' + seg + '</mark>'
+          '<mark class="' + NS + (isTone ? 'susp' : 'err') + '" title="' + title + '">' + seg + '</mark>'
         );
         i = Math.max(i, e.end);
       }
@@ -177,9 +185,11 @@
 
   /**
    * Accentua i token pinyin senza accento usando il dizionario (parole HSK
-   * o tono più frequente). Le sostituzioni sono lunghezza-preservanti.
+   * o tono più frequente). Le parole riconosciute vengono unite senza spazi
+   * (zhong guo -> zhōngguó). Le sostituzioni sono lunghezza-preservanti.
    */
   function applyAccentsIn(field, engine, applyReplace) {
+    if (!pluginEnabled) return 0;
     const text = field.value != null ? field.value : (field.textContent || '');
     const tokens = root.PinynUtils.tokenize(text);
     const edits = [];
@@ -191,22 +201,40 @@
         i++;
         continue;
       }
-      const run = [];
+      // raggruppa sillabe latine separate da spazi (possibile parola unica)
+      const group = [];
       let j = i;
-      while (j < tokens.length && tokens[j].isLatin) { run.push(tokens[j]); j++; }
-      const bares = run.map((t) => root.PinynUtils.stripTone(t.text));
-      const toned = engine.addAccentsToPhrase(bares);
-      let runOffset = offset;
-      for (let k = 0; k < run.length; k++) {
-        const t = run[k];
-        const start = runOffset;
-        const end = runOffset + t.text.length;
-        runOffset = end;
-        if (root.PinynUtils.isToneNumbered(t.text)) continue;
-        if (root.PinynUtils.hasToneMark(t.text)) continue;
-        if (toned[k] && toned[k] !== t.text) edits.push({ start, end, repl: toned[k] });
+      while (j < tokens.length && (tokens[j].isLatin || /^\s+$/.test(tokens[j].text))) {
+        group.push(tokens[j]);
+        j++;
       }
-      offset = runOffset;
+      let to = offset;
+      for (const t of group) { t.__s = to; t.__e = to + t.text.length; to = t.__e; }
+
+      const latins = group.filter((t) => t.isLatin);
+      const bares = latins.map((t) => root.PinynUtils.stripTone(t.text));
+      const allAccentable = latins.every(
+        (t) => !root.PinynUtils.isToneNumbered(t.text) && !root.PinynUtils.hasToneMark(t.text)
+      );
+
+      if (allAccentable) {
+        const segments = engine.accentRun(bares);
+        let ti = 0;
+        for (const seg of segments) {
+          const start = latins[ti].__s;
+          const end = latins[ti + seg.count - 1].__e;
+          const orig = text.slice(start, end);
+          if (seg.text !== orig) edits.push({ start, end, repl: seg.text });
+          ti += seg.count;
+        }
+      } else {
+        latins.forEach((t, k) => {
+          if (root.PinynUtils.isToneNumbered(t.text) || root.PinynUtils.hasToneMark(t.text)) return;
+          const acc = engine.accentSingle(bares[k]);
+          if (acc && acc !== t.text) edits.push({ start: t.__s, end: t.__e, repl: acc });
+        });
+      }
+      offset = to;
       i = j;
     }
     for (let k = edits.length - 1; k >= 0; k--) {
@@ -215,198 +243,387 @@
     return edits.length;
   }
 
+  /**
+   * Conversione batch pinyin -> caratteri cinesi (intero campo).
+   * Riusa la segmentazione di accentRun; ogni segmento viene mappato al
+   * carattere più comune tramite lookupDef (__PINYN_DEFS). I segmenti senza
+   * match restano invariati.
+   */
+  function applyHanziIn(field, engine, applyReplace) {
+    if (!pluginEnabled) return 0;
+    const text = field.value != null ? field.value : (field.textContent || '');
+    const tokens = root.PinynUtils.tokenize(text);
+    const edits = [];
+    let offset = 0;
+    let i = 0;
+    while (i < tokens.length) {
+      if (!tokens[i].isLatin) {
+        offset += tokens[i].text.length;
+        i++;
+        continue;
+      }
+      const group = [];
+      let j = i;
+      while (j < tokens.length && (tokens[j].isLatin || /^\s+$/.test(tokens[j].text))) {
+        group.push(tokens[j]);
+        j++;
+      }
+      let to = offset;
+      for (const t of group) { t.__s = to; t.__e = to + t.text.length; to = t.__e; }
+      const latins = group.filter((t) => t.isLatin);
+      const bares = latins.map((t) => root.PinynUtils.stripTone(t.text));
+      const segments = engine.accentRun(bares);
+      let ti = 0;
+      for (const seg of segments) {
+        const start = latins[ti].__s;
+        const end = latins[ti + seg.count - 1].__e;
+        let d = null;
+        if (seg.count === 1) {
+          d = hanziForTone(seg.text); // sillaba singola: hanzi per TONO (是 vs 十)
+        }
+        if (!d) {
+          const segBare = root.PinynUtils.stripTone(seg.text).replace(/\s+/g, '');
+          d = lookupDef(segBare);
+        }
+        if (d && d.hanzi && d.hanzi !== text.slice(start, end)) {
+          edits.push({ start, end, repl: d.hanzi });
+        }
+        ti += seg.count;
+      }
+      offset = to;
+      i = j;
+    }
+    for (let k = edits.length - 1; k >= 0; k--) {
+      applyReplace(edits[k].start, edits[k].end, edits[k].repl);
+    }
+    return edits.length;
+  }
   // ------------------------------------------------------------------
-  // Toolbar
-  // ------------------------------------------------------------------
-  let toolbarEl = null;
-  let active = null;
+  let active = null;        // handle del campo attivo
+  let currentEngine = null; // ultimo engine usato (lookup/reverse)
+  let insertHanzi = false;  // opzione: accetta come caratteri cinesi
+  let pluginEnabled = true; // toggle "Abilitato" dal gadget
 
-  function ensureToolbar() {
-    if (toolbarEl) return toolbarEl;
-    toolbarEl = document.createElement('div');
-    toolbarEl.className = NS + 'toolbar';
-    toolbarEl.setAttribute('role', 'menu');
-    toolbarEl.hidden = true;
-    toolbarEl.addEventListener('mousedown', (e) => e.preventDefault());
-    toolbarEl.addEventListener('click', onToolbarClick);
-    document.body.appendChild(toolbarEl);
-    return toolbarEl;
+  function setEnabled(v) {
+    pluginEnabled = !!v;
+    if (!pluginEnabled) hidePop();
   }
 
-  function onToolbarClick(e) {
-    const btn = e.target.closest('[data-pc-act]');
-    if (!btn || !btn.dataset.pcAct) return;
-    const act = btn.dataset.pcAct;
-    if (!active) return;
+  // ------------------------------------------------------------------
+  // Lookup traduzioni (window.__PINYN_DEFS / __PINYN_HSK)
+  // ------------------------------------------------------------------
+  let hanziToPinyin = null;
+  function lookupDef(bareOrAccented) {
+    const defs = root.__PINYN_DEFS;
+    if (!defs) return null;
+    const bare = root.PinynUtils.stripTone(bareOrAccented).replace(/\s+/g, '');
+    const v = defs[bare];
+    if (!v) return null;
+    const i = v.indexOf('|');
+    return { hanzi: i >= 0 ? v.slice(0, i) : v, gloss: i >= 0 ? v.slice(i + 1) : '' };
+  }
 
-    if (act === 'replace') {
-      active.replaceRange(Number(btn.dataset.s), Number(btn.dataset.e), btn.dataset.sug);
-    } else if (act === 'ignore') {
+  function pinyinForHanzi(hanzi) {
+    if (!root.__PINYN_HSK) return null;
+    if (!hanziToPinyin) {
+      hanziToPinyin = new Map();
+      for (const w of root.__PINYN_HSK) if (!hanziToPinyin.has(w.w)) hanziToPinyin.set(w.w, w.p);
+    }
+    for (let len = hanzi.length; len >= 1; len--) {
+      const w = hanziToPinyin.get(hanzi.slice(0, len));
+      if (w) return { word: hanzi.slice(0, len), pinyin_numbers: w };
+    }
+    return null;
+  }
+
+  // ---------- hanzi TONO-aware per sillabe singole ----------
+  // (bare+tone -> carattere singolo più comune; 是=shi4, 十=shi2)
+  const TONE_HANZI_OVERRIDE = {
+    shi4: '是', // to be (la ranking generico metterebbe 事)
+  };
+  let bareToneHanzi = null;
+  function ensureBareToneHanzi() {
+    if (bareToneHanzi) return bareToneHanzi;
+    bareToneHanzi = new Map();
+    const list = root.__PINYN_HSK;
+    if (!list) return bareToneHanzi;
+    for (const w of list) {
+      if (w.w.length !== 1) continue;
+      const nums = (w.p || '').toLowerCase().split(/\s+/).filter(Boolean);
+      if (nums.length !== 1) continue;
+      const m = nums[0].match(/^([a-zü]+)([0-5])$/);
+      if (!m) continue;
+      const key = m[1] + (m[2] === '0' || m[2] === '5' ? '0' : m[2]);
+      const cur = bareToneHanzi.get(key);
+      if (!cur || (w.l || 9) < cur.l) bareToneHanzi.set(key, { hanzi: w.w, l: w.l || 9 });
+    }
+    return bareToneHanzi;
+  }
+
+  /** Hanzi per una sillaba ACCENTATA singola (es. "shì" -> 是). */
+  function hanziForTone(text) {
+    if (!text) return null;
+    const e = root.PinynUtils.extractTone(text);
+    const key = e.base.replace(/\s+/g, '') + (e.tone > 0 ? e.tone : '0');
+    let hit = TONE_HANZI_OVERRIDE[key];
+    if (!hit) hit = ensureBareToneHanzi().get(key);
+    if (hit) return { hanzi: (typeof hit === 'string' ? hit : hit.hanzi), gloss: '' };
+    return lookupDef(text);
+  }
+
+  function levelOfWord(word) {
+    const list = root.__PINYN_HSK;
+    if (!list) return null;
+    for (const w of list) if (w.w === word) return w.l;
+    return null;
+  }
+
+  function levelLabel(l) {
+    if (l == null) return '?';
+    return l === 7.5 ? '7-9' : String(l);
+  }
+
+  // ---------- reverse dizionario (parola inglese -> cinese) ----------
+  const GLOSS_STOP = new Set(
+    ('to of and or the a an in at on by for with from is are was were be been being it its this that ' +
+     'these those as not no do does did can could will would should may might have has had about into ' +
+     'than then when where which who whom what how if but so very also used mostly form etc especially').split(' ')
+  );
+  const GLOSS_MARK = new Set(['loanword', 'variant', 'classifier', 'coll', 'idiom', 'surname', 'bound', 'erhua', 'dialect', 'abbreviation', 'slang', 'radical', 'kangxi']);
+
+  let reverseMap = null;
+  function ensureReverseMap() {
+    if (reverseMap === null) reverseMap = root.__PINYN_REVERSE || {};
+    return reverseMap;
+  }
+
+  /**
+   * Ricerca inversa (parola inglese -> cinese) dalla mappa completa.
+   * explicit=false (implicita): solo token >=3, non-stopword.
+   * explicit=true (prefisso "*"): match esatto anche parole corte/stopword.
+   */
+  function reverseLookup(token, explicit) {
+    const t = (token || '').toLowerCase().trim();
+    if (!t || !/^[a-z]+$/.test(t)) return [];
+    if (!explicit && (t.length < 3 || GLOSS_STOP.has(t) || GLOSS_MARK.has(t))) return [];
+    const bares = ensureReverseMap()[t];
+    if (!bares || !bares.length) return [];
+    const out = [];
+    for (const bare of bares) {
+      const d = lookupDef(bare);
+      if (!d) continue;
+      out.push({ bare, hanzi: d.hanzi, gloss: d.gloss });
+    }
+    const hasToken = (g) => g.toLowerCase().split(/[^a-z]+/).includes(t);
+    out.sort((a, b) =>
+      ((hasToken(b.gloss) ? 1 : 0) - (hasToken(a.gloss) ? 1 : 0)) ||
+      ((levelOfWord(a.hanzi) || 9) - (levelOfWord(b.hanzi) || 9)) ||
+      a.gloss.length - b.gloss.length
+    );
+    return out.slice(0, 4);
+  }
+
+  // ------------------------------------------------------------------
+  // Popup UNICO (suggerimenti / errori / lookup)
+  // ------------------------------------------------------------------
+  let popEl = null;
+  let popState = null;   // 'suggest' | 'errors' | 'lookup'
+  let candList = [];
+  let candWord = null;   // { start, end, word }
+  let candOpen = false;  // popState === 'suggest' (per i tasti 1-9)
+
+  function ensurePopEl() {
+    if (popEl) return popEl;
+    popEl = document.createElement('div');
+    popEl.className = NS + 'pop';
+    popEl.setAttribute('role', 'menu');
+    popEl.hidden = true;
+    popEl.addEventListener('mousedown', (e) => e.preventDefault());
+    popEl.addEventListener('click', onPopClick);
+    document.body.appendChild(popEl);
+    return popEl;
+  }
+
+  function hidePop() {
+    popState = null;
+    candOpen = false;
+    candList = [];
+    candWord = null;
+    if (popEl) { popEl.hidden = true; popEl.innerHTML = ''; }
+  }
+
+  function setPop(html, posFn) {
+    const el = ensurePopEl();
+    el.innerHTML = html;
+    el.hidden = false;
+    if (posFn) { try { posFn(el); } catch (_) { /* ignora */ } }
+    try {
+      const r = el.getBoundingClientRect();
+      if (r.left < 4) el.style.left = '4px';
+      if (r.right > window.innerWidth - 4) el.style.left = Math.max(4, window.innerWidth - r.width - 4) + 'px';
+      if (r.top < 4) el.style.top = '4px';
+      if (r.bottom > window.innerHeight - 4) el.style.top = Math.max(4, r.top - r.height - 8) + 'px';
+    } catch (_) { /* ignora */ }
+  }
+
+  function onPopClick(e) {
+    const item = e.target.closest('[data-i]');
+    if (item && popState === 'suggest') { acceptCandidate(Number(item.dataset.i)); return; }
+    const btn = e.target.closest('[data-pc-act]');
+    if (!btn || !btn.dataset.pcAct || !active) return;
+    const act = btn.dataset.pcAct;
+    if (act === 'ignore') {
       active.ignore(btn.dataset.token);
+      if (active.onRecord) active.onRecord('ignore', { token: btn.dataset.token });
     } else if (act === 'tonify') {
-      if (typeof active.convertTones === 'function') active.convertTones();
+      if (typeof active.convertTones === 'function') {
+        const n = active.convertTones();
+        if (active.onRecord && n > 0) active.onRecord('tonify');
+      }
     } else if (act === 'accent') {
-      if (typeof active.addAccents === 'function') active.addAccents();
+      if (typeof active.addAccents === 'function') {
+        const n = active.addAccents();
+        if (active.onRecord && n > 0) active.onRecord('accent');
+      }
+    } else if (act === 'hanzi') {
+      if (typeof active.convertToHanzi === 'function') {
+        const n = active.convertToHanzi();
+        if (active.onRecord && n > 0) active.onRecord('convert');
+      }
     }
   }
 
-  function renderToolbar(entries, accentCount) {
-    const t = ensureToolbar();
+  // ---- stato: suggerimenti (IME, tasti 1-9) ----
+  function renderSuggest(list, field) {
+    const html = list
+      .map((c, i) => {
+        const hanzi = c.hanzi ? '<span class="' + NS + 'cand-hanzi">' + escapeHtml(c.hanzi) + '</span>' : '';
+        const gloss = c.gloss ? '<span class="' + NS + 'cand-def">— ' + escapeHtml(c.gloss) + '</span>' : '';
+        return (
+          '<button class="' + NS + 'cand-item" data-i="' + i + '">' +
+          '<span class="' + NS + 'cand-num">' + (i + 1) + '</span>' +
+          '<span class="' + NS + 'cand-main">' + escapeHtml(c.text) + '</span>' + hanzi + gloss +
+          '</button>'
+        );
+      })
+      .join('') +
+      '<div class="' + NS + 'cand-hint">1-9 accetta · Esc chiude · *parola = traduci</div>';
+    popState = 'suggest';
+    setPop(html, (el) => {
+      const pos = caretScreenPos(field);
+      if (pos) { el.style.left = pos.x + 'px'; el.style.top = (pos.y + 6) + 'px'; }
+    });
+  }
+
+  // ---- stato: errori (riepilogo + Ignora/Ok + azioni) ----
+  function renderErrors(entries, accentCount, field) {
+    if (!pluginEnabled) { if (popState !== 'suggest') hidePop(); return; }
     if (!active || (entries.length === 0 && !accentCount)) {
-      t.hidden = true;
+      if (popState !== 'suggest') hidePop();
       return;
     }
+    if (popState === 'suggest') return; // priorità ai suggerimenti
     const parts = [];
     if (entries.length > 0) {
       parts.push('<div class="' + NS + 'tb-title">Pinyin — correzioni</div>');
-      entries.slice(0, 6).forEach((e) => {
+      entries.slice(0, 5).forEach((e) => {
+        const isTone = e.kind === 'tone';
         parts.push('<div class="' + NS + 'tb-row">');
-        parts.push('<span class="' + NS + 'tb-word">' + escapeHtml(e.token) + '</span>');
-        if (e.suggestions.length) {
-          e.suggestions.slice(0, 4).forEach((s) => {
-            parts.push(
-              '<button class="' + NS + 'tb-sug" data-pc-act="replace" data-s="' + e.start +
-              '" data-e="' + e.end + '" data-sug="' + escapeHtml(s) + '">' + escapeHtml(s) + '</button>'
-            );
-          });
-        }
+        parts.push('<span class="' + NS + (isTone ? 'tb-word-susp' : 'tb-word') + '">' + escapeHtml(e.token) + (isTone ? ' <em>tono</em>' : '') + '</span>');
         parts.push(
           '<button class="' + NS + 'tb-ignore" data-pc-act="ignore" data-token="' +
-          escapeHtml(e.token) + '">Ignora</button>'
+          escapeHtml(e.token) + '">' + (isTone ? 'Ok' : 'Ignora') + '</button>'
         );
         parts.push('</div>');
       });
-    } else if (accentCount > 0) {
-      parts.push('<div class="' + NS + 'tb-title">Pinyin</div>');
-      parts.push('<div class="' + NS + 'tb-row">Nessun errore. Parole da accentuare: ' + accentCount + '</div>');
     }
     parts.push('<div class="' + NS + 'tb-foot">');
     parts.push('<button class="' + NS + 'tb-tonify" data-pc-act="tonify">Converti toni (ni3 → nǐ)</button>');
     if (accentCount > 0) {
       parts.push('<button class="' + NS + 'tb-tonify" data-pc-act="accent">Aggiungi accenti (' + accentCount + ')</button>');
     }
-    parts.push('<span>Clicca una parola per sostituirla.</span>');
+    parts.push('<button class="' + NS + 'tb-tonify" data-pc-act="hanzi">Converti in caratteri</button>');
     parts.push('</div>');
-    t.innerHTML = parts.join('');
-    t.hidden = false;
-    positionToolbar();
-  }
-
-  function positionToolbar() {
-    if (!active || !toolbarEl) return;
-    const rect = active.field.getBoundingClientRect();
-    toolbarEl.style.left = rect.left + 'px';
-    const top = rect.top - toolbarEl.offsetHeight - 6;
-    toolbarEl.style.top = (top >= 4 ? top : rect.bottom + 6) + 'px';
-    toolbarEl.style.maxWidth = Math.min(360, rect.width) + 'px';
-  }
-
-  // ------------------------------------------------------------------
-  // Popup candidati (suggeritore IME-like)
-  // ------------------------------------------------------------------
-  let candEl = null;
-  let candList = [];
-  let candWord = null; // { start, end, word }
-  let candOpen = false;
-
-  function ensureCandEl() {
-    if (candEl) return candEl;
-    candEl = document.createElement('div');
-    candEl.className = NS + 'cand';
-    candEl.hidden = true;
-    candEl.addEventListener('mousedown', (e) => e.preventDefault());
-    candEl.addEventListener('click', (e) => {
-      const b = e.target.closest('[' + 'data-i' + ']');
-      if (b) acceptCandidate(Number(b.dataset.i));
+    popState = 'errors';
+    setPop(parts.join(''), (el) => {
+      const rect = field.getBoundingClientRect();
+      el.style.left = rect.left + 'px';
+      el.style.maxWidth = Math.min(360, rect.width) + 'px';
+      const top = rect.top - el.offsetHeight - 6;
+      el.style.top = (top >= 4 ? top : rect.bottom + 6) + 'px';
     });
-    document.body.appendChild(candEl);
-    return candEl;
   }
 
-  function hideCandidates() {
-    candOpen = false;
-    candList = [];
-    candWord = null;
-    if (candEl) candEl.hidden = true;
+  // ---- stato: lookup (selezione di testo nella pagina) ----
+  function renderLookupState(html, rect) {
+    popState = 'lookup';
+    setPop('<span class="' + NS + 'lookup-text">' + escapeHtml(html) + '</span>', (el) => {
+      if (!rect || !rect.width) return;
+      el.style.left = Math.max(4, rect.left) + 'px';
+      el.style.top = (rect.bottom + 6) + 'px';
+    });
   }
 
-  function currentWordAt(field) {
-    const text = field.value != null ? field.value : (field.textContent || '');
-    let caret;
-    if (field.value != null) {
-      caret = field.selectionStart != null ? field.selectionStart : text.length;
+  function showLookup(text) {
+    if (!pluginEnabled) { hidePop(); return; }
+    const t = (text || '').trim();
+    if (!t || t.length > 12) { hidePop(); return; }
+    let html = null;
+    let rect = null;
+    try {
+      const sel = window.getSelection();
+      if (sel && sel.rangeCount && !sel.isCollapsed) rect = sel.getRangeAt(0).getBoundingClientRect();
+    } catch (_) { /* ignora */ }
+
+    if (/[\u3400-\u9fff]/.test(t)) {
+      const hit = pinyinForHanzi(t);
+      if (!hit) { hidePop(); return; }
+      const d = lookupDef(hit.pinyin_numbers);
+      if (!d) { hidePop(); return; }
+      const acc = root.PinynUtils.convertToneNumbers(hit.pinyin_numbers).replace(/\s+/g, ' ');
+      html = d.hanzi + ' ' + acc + ' L' + levelLabel(levelOfWord(d.hanzi)) + (d.gloss ? ' · ' + d.gloss : '');
+    } else if (/^[a-zA-Züāáǎàēéěèīíǐìōóǒòūúǔùǖǘǚǜ]+( [a-zA-Züāáǎàēéěèīíǐìōóǒòūúǔùǖǘǚǜ]+)*$/.test(t)) {
+      const d = lookupDef(t);
+      if (!d) { hidePop(); return; }
+      const bare = root.PinynUtils.stripTone(t).replace(/\s+/g, '');
+      const acc = currentEngine ? currentEngine.accentRun([bare])[0].text : t;
+      html = d.hanzi + ' ' + acc + ' L' + levelLabel(levelOfWord(d.hanzi)) + (d.gloss ? ' · ' + d.gloss : '');
     } else {
-      caret = caretCharOffset(field);
+      hidePop();
+      return;
     }
-    const isLat = (ch) => /[a-züāáǎàēéěèīíǐìōóǒòūúǔùǖǘǚǜ]/.test(ch);
-    let start = caret;
-    while (start > 0 && isLat(text[start - 1])) start--;
-    let end = caret;
-    while (end < text.length && isLat(text[end])) end++;
-    if (start === end) return null;
-    return { start, end, word: text.slice(start, end) };
+    if (!html) { hidePop(); return; }
+    hidePop(); // nasconde eventuali stati campo: un solo popup visibile
+    renderLookupState(html, rect);
   }
 
-  function caretCharOffset(el) {
-    const sel = window.getSelection();
-    if (!sel || !sel.rangeCount) return 0;
-    const r = sel.getRangeAt(0);
-    if (!el.contains(r.startContainer)) return (el.textContent || '').length;
-    return nodeToCharOffset(el, r.startContainer, r.startOffset);
-  }
-
-  function computeCandidates(bare, engine) {
-    const out = [];
-    const seen = new Set();
-    const push = (t) => {
-      if (!t || seen.has(t)) return;
-      seen.add(t);
-      out.push(t);
-    };
-    if (bare.length >= 1) {
-      const acc = engine.accentSingle(bare);
-      if (acc && acc !== bare) push(acc);
+  let lookupInit = false;
+  function initLookup() {
+    if (lookupInit) return;
+    lookupInit = true;
+    function onMouseUp(e) {
+      if (e.target.closest && e.target.closest('.' + NS + 'pop, .' + NS + 'overlay')) return;
+      const sel = window.getSelection();
+      if (!sel || sel.isCollapsed || !sel.toString().trim()) return;
+      // se la selezione è dentro il campo attivo, il contesto è il campo
+      if (active && active.field && sel.anchorNode && active.field.contains(sel.anchorNode)) return;
+      showLookup(sel.toString());
     }
-    if (bare.length >= 2) {
-      engine.findWordSuggestions(bare, 2).forEach(push);
-    }
-    return out.slice(0, 6);
+    document.addEventListener('mouseup', onMouseUp);
+    document.addEventListener('dblclick', onMouseUp);
+    document.addEventListener('mousedown', (e) => {
+      if (e.target.closest && e.target.closest('.' + NS + 'pop')) return;
+      if (popState === 'lookup') hidePop();
+    });
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape') hidePop();
+    });
+    window.addEventListener('scroll', () => { if (popState === 'lookup') hidePop(); }, true);
   }
 
-  function updateCandidates(field, engine) {
-    if (!active || active.field !== field) { hideCandidates(); return; }
-    const wi = currentWordAt(field);
-    if (!wi) { hideCandidates(); return; }
-    const bare = root.PinynUtils.stripTone(wi.word);
-    const list = computeCandidates(bare, engine);
-    if (list.length === 0) { hideCandidates(); return; }
-    candList = list;
-    candWord = wi;
-    candOpen = true;
-    const el = ensureCandEl();
-    el.innerHTML =
-      list
-        .map((c, i) =>
-          '<button class="' + NS + 'cand-item" data-i="' + i + '"><span class="' + NS + 'cand-num">' + (i + 1) + '</span>' + escapeHtml(c) + '</button>'
-        )
-        .join('') +
-      '<div class="' + NS + 'cand-hint">1-9 accetta · Esc chiude</div>';
-    el.hidden = false;
-    positionCand(field);
-  }
-
-  function positionCand(field) {
-    if (!candEl || !active) return;
-    const pos = caretScreenPos(field);
-    if (!pos) return;
-    candEl.style.left = pos.x + 'px';
-    candEl.style.top = (pos.y + 6) + 'px';
-    // tieni dentro la viewport
-    const r = candEl.getBoundingClientRect();
-    if (r.right > window.innerWidth - 4) candEl.style.left = Math.max(4, window.innerWidth - r.width - 4) + 'px';
-    if (r.bottom > window.innerHeight - 4) candEl.style.top = Math.max(4, pos.y - r.height - 8) + 'px';
-  }
-
+  // ------------------------------------------------------------------
+  // Posizionamento del caret (per i suggerimenti)
+  // ------------------------------------------------------------------
   function caretScreenPos(field) {
     if (field.isContentEditable) {
       const sel = window.getSelection();
@@ -417,7 +634,6 @@
       const fr = field.getBoundingClientRect();
       return { x: fr.left, y: fr.bottom };
     }
-    // input/textarea: mirror
     const cs = window.getComputedStyle(field);
     const mirror = document.createElement('div');
     const s = mirror.style;
@@ -442,21 +658,147 @@
     return { x, y };
   }
 
+  // ------------------------------------------------------------------
+  // Parola corrente al caret
+  // ------------------------------------------------------------------
+  function currentWordAt(field) {
+    const text = field.value != null ? field.value : (field.textContent || '');
+    let caret;
+    if (field.value != null) {
+      caret = field.selectionStart != null ? field.selectionStart : text.length;
+    } else {
+      caret = caretCharOffset(field);
+    }
+    const isLat = (ch) => /[a-zA-Züāáǎàēéěèīíǐìōóǒòūúǔùǖǘǚǜ]/.test(ch);
+    let start = caret;
+    while (start > 0 && isLat(text[start - 1])) start--;
+    let end = caret;
+    while (end < text.length && isLat(text[end])) end++;
+    if (start === end) return null;
+    return { start, end, word: text.slice(start, end) };
+  }
+
+  function caretCharOffset(el) {
+    const sel = window.getSelection();
+    if (!sel || !sel.rangeCount) return 0;
+    const r = sel.getRangeAt(0);
+    if (!el.contains(r.startContainer)) return (el.textContent || '').length;
+    return nodeToCharOffset(el, r.startContainer, r.startOffset);
+  }
+
+  function nodeToCharOffset(root, node, nodeOffset) {
+    const walker = document.createTreeWalker(root, NodeFilter.SHOW_TEXT);
+    let offset = 0;
+    let n = walker.nextNode();
+    while (n) {
+      if (n === node) return offset + nodeOffset;
+      offset += n.nodeValue.length;
+      n = walker.nextNode();
+    }
+    if (node === root) return nodeOffset;
+    return -1;
+  }
+
+  // ------------------------------------------------------------------
+  // Candidati (pinyin + reverse dizionario inglese)
+  // ------------------------------------------------------------------
+  function computeCandidates(bare, engine, opts) {
+    opts = opts || {};
+    const out = [];
+    const seen = new Set();
+    const push = (t, meta) => {
+      if (!t || seen.has(t)) return;
+      seen.add(t);
+      const d = meta || hanziForTone(t);
+      out.push({ text: t, hanzi: d ? d.hanzi : null, gloss: d ? d.gloss : null });
+    };
+
+    // modalità esplicita (prefisso "*"): SOLO traduzione inversa
+    if (opts.explicitReverse) {
+      // usa la parola ORIGINALE (non stripTone: evita la conversione v->ü)
+      const q = opts.rawWord || bare;
+      for (const r of reverseLookup(q, true)) {
+        const accPinyin = currentEngine ? currentEngine.accentRun([r.bare])[0].text : r.bare;
+        push(accPinyin, { hanzi: r.hanzi, gloss: r.gloss });
+      }
+      return out.slice(0, 6);
+    }
+
+    const variants = engine.toneVariants(bare);
+    const accentForm = engine.accentRun([bare])[0].text;
+    const isPinyinish = variants.length > 0 || accentForm !== bare;
+    const pushPinyin = () => {
+      if (variants.length) {
+        variants.forEach((v) => push(v));
+      } else if (accentForm && accentForm !== bare) {
+        push(accentForm);
+      }
+      if (bare.length >= 2) {
+        engine.findWordSuggestions(bare, 2)
+          .map((s) => s.replace(/\s+/g, ''))
+          .forEach((s) => push(s));
+      }
+    };
+
+    // candidati inversi (parola inglese -> cinese); rawQ evita la v->ü
+    const rawQ = opts.rawWord || bare;
+    const rev = /^[a-z]+$/i.test(rawQ) ? reverseLookup(rawQ, false) : [];
+    const pushReverse = () => {
+      for (const r of rev) {
+        const accPinyin = currentEngine ? currentEngine.accentRun([r.bare])[0].text : r.bare;
+        if (!seen.has(accPinyin)) {
+          seen.add(accPinyin);
+          out.push({ text: accPinyin, hanzi: r.hanzi, gloss: r.gloss });
+        }
+      }
+    };
+
+    const strongRev = rev.length > 0;
+    if (!isPinyinish && strongRev) {
+      pushReverse();
+      pushPinyin();
+    } else {
+      pushPinyin();
+      pushReverse();
+    }
+    return out.slice(0, 8);
+  }
+
+  function updateCandidates(field, engine) {
+    if (!pluginEnabled) return;
+    if (!active || active.field !== field) return;
+    const wi = currentWordAt(field);
+    if (!wi) return; // lascia lo stato attuale (es. errori mostrati da render)
+    const text = field.value != null ? field.value : (field.textContent || '');
+    // prefisso "*" = traduci esplicitamente questa parola inglese
+    const explicitReverse = wi.start > 0 && text[wi.start - 1] === '*';
+    if (root.PinynUtils.hasToneMark(wi.word) || root.PinynUtils.isToneNumbered(wi.word)) return;
+    const bare = root.PinynUtils.stripTone(wi.word);
+    const list = computeCandidates(bare, engine, { explicitReverse, rawWord: wi.word });
+    if (list.length === 0) return; // niente da suggerire: resta lo stato attuale
+    candList = list;
+    // in modalità "*" l'accettazione consuma anche l'asterisco
+    candWord = explicitReverse ? { start: wi.start - 1, end: wi.end, word: wi.word } : wi;
+    candOpen = true;
+    renderSuggest(list, field); // promuove a suggerimenti
+  }
+
   function acceptCandidate(i) {
+    if (!pluginEnabled) return;
     const field = active ? active.field : null;
     if (!field || !candWord || !candList[i]) return;
-    const replacement = candList[i];
+    // con l'opzione attiva inserisce i caratteri (hanzi), altrimenti il pinyin
+    const replacement = (insertHanzi && candList[i].hanzi) ? candList[i].hanzi : candList[i].text;
     const { start, end } = candWord;
+    const token = candWord.word;
     const text = field.value != null ? field.value : (field.textContent || '');
     const newText = text.slice(0, start) + replacement + text.slice(end);
     if (field.value != null) {
       field.value = newText;
-      // caret collassato DOPO la parola accettata (niente selezione)
       try { field.setSelectionRange(start + replacement.length, start + replacement.length); } catch (_) { /* ignore */ }
       field.dispatchEvent(new Event('input', { bubbles: true }));
     } else {
       replaceInContentEditable(field, start, end, replacement);
-      // caret alla fine della sostituzione
       try {
         const a = textNodeAtOffset(field, start + replacement.length);
         if (a) {
@@ -469,11 +811,14 @@
         }
       } catch (_) { /* ignore */ }
     }
-    hideCandidates();
+    hidePop();
+    if (active && active.onRecord && token) {
+      active.onRecord('correction', { token, suggestion: replacement });
+    }
   }
 
   function onKeyDown(e) {
-    if (!candOpen) return;
+    if (!pluginEnabled || !candOpen) return;
     if (/^[1-9]$/.test(e.key)) {
       const idx = Number(e.key) - 1;
       if (idx < candList.length) {
@@ -487,13 +832,13 @@
       }
     } else if (e.key === 'Escape') {
       e.preventDefault();
-      hideCandidates();
+      hidePop();
     }
   }
 
-  /**
-   * Gestisce l'auto-accentuazione con debounce. Ritorna { set(enabled), clear() }.
-   */
+  // ------------------------------------------------------------------
+  // Auto-accentuazione (debounce)
+  // ------------------------------------------------------------------
   function makeAutoAccent(enabled, action) {
     let active_ = !!enabled;
     let timer = null;
@@ -501,7 +846,6 @@
       clearTimeout(timer);
       if (!active_) return;
       timer = setTimeout(() => {
-        // accentua solo se l'utente è ancora in quel campo
         if (document.activeElement !== action.field) return;
         const n = action.apply();
         if (n > 0) action.render();
@@ -529,7 +873,6 @@
         end: field.selectionEnd != null ? field.selectionEnd : field.selectionStart,
       };
     }
-    // contenteditable: offset di carattere nel textContent
     const sel = window.getSelection();
     if (!sel || !sel.rangeCount) return null;
     const range = sel.getRangeAt(0);
@@ -550,7 +893,6 @@
       } catch (_) { /* ignore */ }
       return;
     }
-    // contenteditable
     if (caret.start < 0) return;
     try {
       const a = textNodeAtOffset(field, caret.start);
@@ -570,20 +912,6 @@
     } catch (_) { /* ignore */ }
   }
 
-  function nodeToCharOffset(root, node, nodeOffset) {
-    const walker = document.createTreeWalker(root, NodeFilter.SHOW_TEXT);
-    let offset = 0;
-    let n = walker.nextNode();
-    while (n) {
-      if (n === node) return offset + nodeOffset;
-      offset += n.nodeValue.length;
-      n = walker.nextNode();
-    }
-    // il nodo non è un text node (es. l'elemento stesso): stima
-    if (node === root) return nodeOffset;
-    return -1;
-  }
-
   // ------------------------------------------------------------------
   // Handle per textarea/input
   // ------------------------------------------------------------------
@@ -597,7 +925,7 @@
     function render(entries) {
       entries = entries || getEntries();
       mirror.render(entries);
-      renderToolbar(entries, getAccentCount());
+      renderErrors(entries, getAccentCount(), field);
       return entries;
     }
 
@@ -636,6 +964,18 @@
       return n;
     }
 
+    function convertToHanzi() {
+      const before = field.value;
+      const n = applyHanziIn(field, engine, (s, e, r) => {
+        const v = field.value;
+        field.value = v.slice(0, s) + r + v.slice(e);
+      });
+      if (n > 0 && field.value !== before) {
+        field.dispatchEvent(new Event('input', { bubbles: true }));
+      }
+      return n;
+    }
+
     const autoAccent = makeAutoAccent(options && options.autoAccent, {
       field,
       apply: addAccents,
@@ -658,6 +998,8 @@
       replaceRange,
       convertTones,
       addAccents,
+      convertToHanzi,
+      setInsertHanzi: (v) => { insertHanzi = !!v; },
       setAutoAccent: autoAccent.set,
       ignore: (token) => { detector.ignore(token); render(); },
       destroy() {
@@ -670,7 +1012,7 @@
   }
 
   // ------------------------------------------------------------------
-  // Handle per contenteditable (nessuna modifica del DOM editabile)
+  // Handle per contenteditable
   // ------------------------------------------------------------------
   function installContentEditable(el, detector, engine, options) {
     el.style.position = 'relative';
@@ -682,7 +1024,7 @@
       const entries = detector.scan(getText());
       const accentCount = detector.accentable(getText()).length;
       mirror.render(entries);
-      renderToolbar(entries, accentCount);
+      renderErrors(entries, accentCount, el);
       return entries;
     }
 
@@ -703,6 +1045,12 @@
       const n = applyAccentsIn(el, engine, (s, e, r) => replaceInContentEditable(el, s, e, r));
       if (n > 0) el.dispatchEvent(new Event('input', { bubbles: true }));
       restoreCaret(el, caret);
+      return n;
+    }
+
+    function convertToHanzi() {
+      const n = applyHanziIn(el, engine, (s, e, r) => replaceInContentEditable(el, s, e, r));
+      if (n > 0) el.dispatchEvent(new Event('input', { bubbles: true }));
       return n;
     }
 
@@ -727,6 +1075,8 @@
       replaceRange,
       convertTones,
       addAccents,
+      convertToHanzi,
+      setInsertHanzi: (v) => { insertHanzi = !!v; },
       setAutoAccent: autoAccent.set,
       ignore: (token) => { detector.ignore(token); render(); },
       destroy() {
@@ -747,17 +1097,14 @@
   }
   function deactivate() {
     active = null;
-    if (toolbarEl) toolbarEl.hidden = true;
+    hidePop();
   }
 
   function isEditable(el) {
     if (!el || el.nodeType !== 1) return false;
-    // Ignora la nostra UI
     if (el.classList && el.classList.contains(NS + 'overlay')) return false;
-    if (el.closest && el.closest('.' + NS + 'overlay, .' + NS + 'toolbar')) return false;
+    if (el.closest && el.closest('.' + NS + 'overlay, .' + NS + 'pop')) return false;
     if (el.isContentEditable) {
-      // Solo l'editing host vero, non i suoi discendenti (in Chrome
-      // riportano isContentEditable === true ma non sono campi).
       const host = el.closest('[contenteditable]');
       return host === el;
     }
@@ -770,18 +1117,23 @@
   }
 
   function attach(element, detector, engine, options) {
+    options = options || {};
     const handle = element.isContentEditable
       ? installContentEditable(element, detector, engine, options)
       : installOverlay(element, detector, engine, options);
 
+    handle.onRecord = options.onRecord || null;
+    currentEngine = engine;
+    insertHanzi = !!options.insertHanzi;
+    initLookup();
+
     element.addEventListener('focus', () => {
       setActive(handle);
       handle.render();
-      positionToolbar();
       updateCandidates(element, engine);
     });
     element.addEventListener('blur', () => {
-      hideCandidates();
+      hidePop();
       if (active && active.field === element) deactivate();
     });
     element.addEventListener('keydown', onKeyDown);
@@ -790,5 +1142,5 @@
     return handle;
   }
 
-  root.PinynUi = { attach, isEditable };
+  root.PinynUi = { attach, isEditable, setEnabled };
 })(typeof globalThis !== 'undefined' ? globalThis : this);

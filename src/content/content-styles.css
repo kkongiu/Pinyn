@@ -20,7 +20,22 @@
   color: inherit;
 }
 
-.pc-toolbar {
+.pc-susp {
+  background: repeating-linear-gradient(
+    -45deg,
+    transparent 0px,
+    transparent 2px,
+    rgba(217, 164, 32, 0.9) 2px,
+    rgba(217, 164, 32, 0.9) 3px
+  );
+  background-size: 3px 3px;
+  background-repeat: repeat-x;
+  background-position: 0 100%;
+  padding-bottom: 2px;
+  color: inherit;
+}
+
+.pc-pop {
   position: fixed;
   z-index: 2147483647;
   background: #ffffff;
@@ -54,16 +69,20 @@
   color: #cf222e;
   margin-right: 2px;
 }
-.pc-tb-sug {
-  font-size: 12px;
-  padding: 2px 8px;
-  border: 1px solid #d0d7de;
-  border-radius: 999px;
-  background: #f6f8fa;
-  color: #0969da;
-  cursor: pointer;
+.pc-tb-word-susp {
+  font-weight: 600;
+  color: #9a6700;
+  margin-right: 2px;
 }
-.pc-tb-sug:hover { background: #dff3ff; }
+.pc-tb-word-susp em {
+  font-style: normal;
+  font-size: 10px;
+  color: #9a6700;
+  border: 1px solid #d4a72c;
+  border-radius: 4px;
+  padding: 0 4px;
+  margin-left: 4px;
+}
 .pc-tb-ignore {
   font-size: 11px;
   padding: 2px 6px;
@@ -95,22 +114,10 @@
 }
 .pc-tb-tonify:hover { background: #eef1f4; }
 
-.pc-cand {
-  position: fixed;
-  z-index: 2147483646;
-  background: #ffffff;
-  border: 1px solid #d0d7de;
-  border-radius: 8px;
-  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.18);
-  padding: 6px;
-  font-family: system-ui, -apple-system, sans-serif;
-  min-width: 140px;
-  max-width: 320px;
-}
 .pc-cand-item {
   display: flex;
   align-items: center;
-  gap: 8px;
+  gap: 6px;
   width: 100%;
   text-align: left;
   border: none;
@@ -122,6 +129,9 @@
   cursor: pointer;
 }
 .pc-cand-item:hover, .pc-cand-item:focus { background: #dff3ff; }
+.pc-cand-main { font-weight: 500; white-space: nowrap; }
+.pc-cand-hanzi { font-size: 16px; color: #1f2328; }
+.pc-cand-def { font-size: 11px; color: #57606a; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
 .pc-cand-num {
   flex: 0 0 18px;
   height: 18px;
@@ -141,3 +151,5 @@
   border-top: 1px solid #eef1f4;
   margin-top: 4px;
 }
+
+.pc-lookup-text { white-space: nowrap; }

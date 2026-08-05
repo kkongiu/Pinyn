@@ -27,6 +27,14 @@ describe('pinyin-utils', () => {
     assert.strictEqual(P.toToneNumber('nǐ'), 'ni3');
     assert.strictEqual(P.toToneMark('hao3'), 'hǎo');
   });
+  it('collocazione tono su dittonghi iu/ui', () => {
+    assert.strictEqual(P.toToneMark('qiu2'), 'qiú');
+    assert.strictEqual(P.toToneMark('liu4'), 'liù');
+    assert.strictEqual(P.toToneMark('jiu3'), 'jiǔ');
+    assert.strictEqual(P.toToneMark('gui3'), 'guǐ');
+    assert.strictEqual(P.toToneMark('shui3'), 'shuǐ');
+    assert.strictEqual(P.toToneMark('you3'), 'yǒu');
+  });
   it('tokenizza preservando testo non-latino', () => {
     const toks = P.tokenize('ciao ni hao! 你好');
     assert.strictEqual(toks.length, 6);
@@ -34,6 +42,19 @@ describe('pinyin-utils', () => {
     assert.strictEqual(toks[0].isLatin, true);
     assert.strictEqual(toks[4].text, 'hao');
     assert.strictEqual(toks[5].isLatin, false);
+  });
+  it('stripTone rimuove TUTTI i toni', () => {
+    assert.strictEqual(P.stripTone('kāfēi'), 'kafei');
+    assert.strictEqual(P.stripTone('zhōngguó'), 'zhongguo');
+    assert.strictEqual(P.stripTone('nǐ hǎo'), 'ni hao');
+    assert.strictEqual(P.stripTone('hao3'), 'hao');
+  });
+  it('case-insensitive: maiuscole sono pinyin (Wo, Wo3)', () => {
+    const t = P.tokenize('Wo3 ni Hao');
+    assert.ok(t.some((x) => x.text === 'wo3' && x.isLatin), JSON.stringify(t));
+    assert.ok(t.some((x) => x.text === 'hao' && x.isLatin));
+    assert.strictEqual(P.toToneMark('Wo3'), 'wǒ');
+    assert.strictEqual(P.convertToneNumbers('Wo3'), 'wǒ');
   });
 });
 

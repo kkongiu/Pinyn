@@ -18,7 +18,7 @@
 
     /**
      * @param {string} text
-     * @returns {{token:string,start:number,end:number,isError:boolean,suggestions:string[]}[]}
+     * @returns {{token:string,start:number,end:number,isError:boolean,kind:'error'|'tone',suggestions:string[]}[]}
      */
     function scan(text) {
       const results = [];
@@ -38,7 +38,31 @@
         // sillabe standalone valide
         if (validBare) {
           prev = bare;
+          // tono sospetto: sillaba valida ma con tono raro nel vocabolario
+          if (engine && (PinynUtils.isToneNumbered(t.text) || PinynUtils.hasToneMark(t.text))) {
+            const { tone } = PinynUtils.extractTone(t.text);
+            if (engine.toneSuspect(bare, tone)) {
+              results.push({
+                token: t.text,
+                start,
+                end,
+                isError: false,
+                kind: 'tone',
+                suggestions: toneSuggestions(bare, tone),
+              });
+            }
+          }
           continue;
+        }
+
+        // token ACCENTATO multi-sillaba (es. "kāfēi", "zhōngguó"): è pinyin
+        // corretto se si segmenta in sillabe valide
+        if (PinynUtils.hasToneMark(t.text) && engine) {
+          const seg = engine.segment(bare);
+          if (seg && seg.join('') === bare) {
+            prev = seg[seg.length - 1];
+            continue;
+          }
         }
 
         // errore: token latino non riconosciuto come sillaba pinyin
@@ -47,10 +71,23 @@
           start,
           end,
           isError: true,
+          kind: 'error',
           suggestions: suggest(bare, prev),
         });
       }
       return results;
+    }
+
+    /** Suggerimenti per un tono sospetto: la forma con il tono più frequente. */
+    function toneSuggestions(bare, givenTone) {
+      const out = [];
+      if (engine) {
+        const acc = engine.accentSingle(bare);
+        const accTone = PinynUtils.extractTone(acc).tone;
+        if (accTone > 0 && accTone !== givenTone) out.push(acc);
+        if (out.length === 0 && acc) out.push(acc);
+      }
+      return out.slice(0, 3);
     }
 
     /** Suggerimenti: parola intera -> segmentazione -> sillaba (engine). */

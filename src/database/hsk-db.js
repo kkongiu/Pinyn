@@ -58,5 +58,36 @@
     });
   }
 
-  root.PinynHskDb = { getDb, seed, countWords };
+  let statSeq = 0;
+
+  /** Registra un evento utente (correzione, ignore, accento, ecc.). */
+  async function recordStat(entry) {
+    const db = await getDb();
+    return new Promise((resolve, reject) => {
+      const tx = db.transaction('user_stats', 'readwrite');
+      tx.objectStore('user_stats').put({
+        id: Date.now() + '-' + (++statSeq),
+        type: entry.type || 'event',
+        token: entry.token || null,
+        suggestion: entry.suggestion || null,
+        level: entry.level == null ? null : entry.level,
+        timestamp: Date.now(),
+      });
+      tx.oncomplete = () => resolve(true);
+      tx.onerror = () => reject(tx.error);
+    });
+  }
+
+  /** Legge tutti gli eventi registrati. */
+  async function getStats() {
+    const db = await getDb();
+    return new Promise((resolve, reject) => {
+      const tx = db.transaction('user_stats', 'readonly');
+      const req = tx.objectStore('user_stats').getAll();
+      req.onsuccess = () => resolve(req.result);
+      req.onerror = () => reject(req.error);
+    });
+  }
+
+  root.PinynHskDb = { getDb, seed, countWords, recordStat, getStats };
 })(typeof globalThis !== 'undefined' ? globalThis : this);
