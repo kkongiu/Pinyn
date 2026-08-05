@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="utf-8" />
+  <title>Pinyin Corrector — Impostazioni</title>
+  <link rel="stylesheet" href="options.css" />
+</head>
+<body>
+  <h1>Impostazioni Pinyin Corrector</h1>
+
+  <section>
+    <h2>Correzione</h2>
+    <label class="switch-row">
+      <span>Aggiungi accenti automaticamente</span>
+      <input type="checkbox" id="auto-accent" />
+    </label>
+    <p class="hint">Aggiunge i toni al pinyin senza accento (es. "ni hao" → "nǐ hǎo") dopo una breve pausa di digitazione.</p>
+  </section>
+
+  <section>
+    <h2>Livello HSK</h2>
+    <p class="hint">Filtra i suggerimenti (in sviluppo).</p>
+    <label>Livello <select id="hsk-level">
+      <option value="1">1</option><option value="2">2</option>
+      <option value="3" selected>3</option><option value="4">4</option>
+      <option value="5">5</option><option value="6">6</option>
+      <option value="7">7</option><option value="8">8</option>
+      <option value="9">9</option>
+    </select></label>
+  </section>
+
+  <script src="options.js"></script>
+</body>
+</html>

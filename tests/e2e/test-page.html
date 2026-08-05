@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="utf-8" />
+  <title>Pinyin Corrector — pagina di test</title>
+  <style>
+    body { font-family: system-ui, sans-serif; max-width: 720px; margin: 40px auto; padding: 0 16px; color: #1f2328; }
+    pre { background: #f6f8fa; padding: 12px; border-radius: 8px; overflow-x: auto; }
+    label { display: block; margin: 24px 0 6px; font-weight: 600; }
+    fieldset { border: 1px solid #d0d7de; border-radius: 8px; padding: 8px 12px 12px; min-width: 0; }
+    textarea, input[type="text"] { width: 100%; box-sizing: border-box; padding: 8px; font-size: 15px; border: 1px solid #d0d7de; border-radius: 6px; }
+    [contenteditable] { border: 1px solid #d0d7de; border-radius: 6px; padding: 8px; min-height: 60px; }
+    h2 { font-size: 18px; }
+    .ok { color: #1a7f37; }
+    .warn { color: #9a6700; }
+  </style>
+</head>
+<body>
+  <h1>Pinyin Corrector — test</h1>
+  <ol>
+    <li class="warn">Se non vedi sottolineature: carica l'estensione da <code>chrome://extensions</code> (cartella <code>src/</code>).</li>
+    <li>Digita pinyin nei campi seguenti e verifica evidenziazione + toolbar.</li>
+  </ol>
+
+  <h2>Esempi da provare</h2>
+  <pre>ni hkao        → hkao errato (suggerito: hao)
+ni hao zhong gguo → gguo errato
+xie xie ni     → ok (senza toni o.con lettere valide)
+nihao          → nihao errore (manca spazi isolati?)</pre>
+
+  <label for="ta1">Textarea</label>
+  <fieldset>
+    <textarea id="ta1" rows="4">ni hao, come stai? oggi uso gguo hkao</textarea>
+  </fieldset>
+
+  <label for="in1">Input</label>
+  <fieldset>
+    <input id="in1" type="text" value="xie xie gguo" />
+  </fieldset>
+
+  <label>Contenteditable</label>
+  <fieldset>
+    <div contenteditable="true">ni hao gguo hkao</div>
+  </fieldset>
+</body>
+</html>

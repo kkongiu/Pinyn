@@ -1,0 +1,14 @@
+{
+  "name": "pinyin-corrector-extension",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Correzione pinyin contestuale e conversione in caratteri cinesi (estensione browser)",
+  "license": "UNLICENSED",
+  "scripts": {
+    "test": "node --test \"tests/unit/**/*.test.js\"",
+    "test:extended": "node tests/battery.test.js"
+  },
+  "engines": {
+    "node": ">=18"
+  }
+}

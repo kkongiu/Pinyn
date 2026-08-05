@@ -1,0 +1,22 @@
+
+### 4. REQUISITI TECNICI
+- Linguaggio: JavaScript (TypeScript preferito)
+- Framework UI: React/Vue per la options page
+- Database: IndexedDB per memorizzare dizionari offline
+- API: Supporto per chiamate a OpenAI/Anthropic/Google (opzionale)
+- Compatibilità: Chrome 141+ (per Proofreader API), Edge, Firefox (future)
+
+### 5. STRUTTURA DATABASE HSK
+
+```javascript
+{
+  "word": "你好",
+  "pinyin": "nǐ hǎo",
+  "pinyin_numbers": "ni3 hao3",  // versione con numeri per i toni
+  "level": 1,
+  "definitions": ["Hello", "Hi"],
+  "components": { // per decompressione di parole composte
+    "nǐ": "你",
+    "hǎo": "好"
+  }
+}

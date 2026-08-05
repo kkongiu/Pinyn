@@ -1,0 +1,13 @@
+{
+  "description": "Errori di battitura comuni nel pinyin dovuti a tastiera QWERTY. Ogni voce è {pattern, correction, type, note}.",
+  "errors": [
+    { "type": "swap",  "from": "hkao", "to": "hao",   "note": "Inversione lettere adiacenti" },
+    { "type": "swap",  "from": "xio",  "to": "xiao",  "note": "Omissione vocale" },
+    { "type": "swap",  "from": "shu",  "to": "shou",  "note": "Confusione finale" },
+    { "type": "sub",   "from": "ni3",  "to": "nǐ",    "note": "Tono numerico -> diacritico" },
+    { "type": "sub",   "from": "nihao","to": "ni hao","note": "Parola senza spaziatura" },
+    { "type": "grecism","from": "xie xie", "to": "xièxie", "note": "Spaziatura + tono mancanti" },
+    { "type": "tone",  "from": "ma1",  "to": "mā",    "note": "Numero tono -> mark" },
+    { "type": "tone",  "from": "da0",  "to": "da",    "note": "Tono neutro esplicito" }
+  ]
+}

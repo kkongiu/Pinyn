@@ -1,0 +1,47 @@
+pinyin-corrector-extension/
+├── src/
+│   ├── manifest.json
+│   ├── background/
+│   │   ├── service-worker.js
+│   │   └── correction-engine.js
+│   ├── content/
+│   │   ├── content-script.js
+│   │   ├── error-detector.js
+│   │   └── ui-renderer.js
+│   ├── popup/
+│   │   ├── popup.html
+│   │   ├── popup.js
+│   │   └── popup.css
+│   ├── options/
+│   │   ├── options.html
+│   │   ├── options.js
+│   │   └── options.css
+│   ├── database/
+│   │   ├── hsk-db.js
+│   │   ├── pinyin-dict.js
+│   │   └── migrations.js
+│   ├── llm/
+│   │   ├── proofreader-api.js
+│   │   ├── openai-api.js
+│   │   └── claude-api.js
+│   └── utils/
+│       ├── pinyin-utils.js
+│       ├── tone-utils.js
+│       └── levenshtein.js
+├── data/
+│   ├── hsk-3.0.json
+│   ├── pinyin-syllables.json
+│   └── common-errors.json
+├── tests/
+│   ├── unit/
+│   ├── integration/
+│   └── e2e/
+├── docs/
+│   ├── API.md
+│   ├── USER-GUIDE.md
+│   └── DEVELOPER-GUIDE.md
+├── build/
+│   └── webpack.config.js
+├── package.json
+├── tsconfig.json
+└── README.md

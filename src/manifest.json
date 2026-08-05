@@ -1,0 +1,43 @@
+{
+  "manifest_version": 3,
+  "name": "Pinyin Corrector",
+  "version": "0.1.0",
+  "description": "Correzione pinyin contestuale e conversione in caratteri cinesi",
+  "permissions": [
+    "storage"
+  ],
+  "background": {
+    "service_worker": "background/service-worker.js"
+  },
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": [
+        "utils/pinyin-utils.js",
+        "utils/levenshtein.js",
+        "utils/correction-engine.js",
+        "data/pinyin-syllables.js",
+        "data/hsk-3.0.js",
+        "content/error-detector.js",
+        "content/ui-renderer.js",
+        "database/hsk-db.js",
+        "content/content-script.js"
+      ],
+      "css": ["content/content-styles.css"],
+      "run_at": "document_end"
+    }
+  ],
+  "action": {
+    "default_popup": "popup/popup.html"
+  },
+  "options_ui": {
+    "page": "options/options.html",
+    "open_in_tab": true
+  },
+  "web_accessible_resources": [
+    {
+      "resources": ["data/pinyin-syllables.json"],
+      "matches": ["<all_urls>"]
+    }
+  ]
+}
