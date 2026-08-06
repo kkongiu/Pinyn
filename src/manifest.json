@@ -2,7 +2,7 @@
   "manifest_version": 3,
   "name": "Pinyin Corrector",
   "version": "0.15.0",
-  "description": "Correzione pinyin contestuale e conversione in caratteri cinesi",
+  "description": "Correzione pinyin contestuale e conversione in caratteri cinesi, per chi studia il cinese (HSK 1-9).",
   "icons": {
     "16": "icons/icon16.png",
     "32": "icons/icon32.png",

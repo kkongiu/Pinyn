@@ -17,6 +17,8 @@ La pubblicazione su Google richiede i passi seguenti.
 
 ## 4. Scheda pubblica (dev console)
 - [ ] Nome, descrizione (inglese consigliato), categoria, età target.
+- [ ] Descrizione (manifest, max 132 caratteri): *"Correzione pinyin contestuale e conversione in caratteri cinesi, per chi studia il cinese (HSK 1-9)."* — specifica il target (studenti di cinese) e i limiti HSK (1–9).
+- [ ] Descrizione lunga della scheda: pubblico (studenti di cinese, livelli HSK 1–9) + funzioni principali (correzione toni/errori, conversione pinyin→hanzi, reverse dizionario, verifica forma frase, tutto locale) + gratuita/open-source con supporto.
 - [ ] Screenshot (1280×800 o 640×400).
 - [ ] Immagine promozionale.
 - [ ] Link: sito di supporto.
