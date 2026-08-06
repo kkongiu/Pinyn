@@ -242,14 +242,18 @@ function cleanDefs(definitions) {
 }
 
 // ---------- statistiche ----------
+// I content script aggregano gli eventi in chrome.storage.local (`pcStats`);
+// il popup li legge direttamente. Niente round-trip al service worker: in MV3
+// il SW usa una partizione IndexedDB separata da quella dei content script,
+// quindi leggere le statistiche lì restituirebbe sempre 0.
 function renderStats() {
-  chrome.runtime.sendMessage({ type: 'PC_GET_STATS' }, (res) => {
-    const d = (res && res.stats) || { corrections: 0, ignores: 0, accents: 0, levels: {} };
-    document.getElementById('st-corr').textContent = String(d.corrections);
-    document.getElementById('st-ign').textContent = String(d.ignores);
-    document.getElementById('st-acc').textContent = String(d.accents);
+  chrome.storage.local.get('pcStats', (data) => {
+    const d = data.pcStats || { corrections: 0, ignores: 0, accents: 0, levels: {} };
+    document.getElementById('st-corr').textContent = String(d.corrections || 0);
+    document.getElementById('st-ign').textContent = String(d.ignores || 0);
+    document.getElementById('st-acc').textContent = String(d.accents || 0);
     const levels = document.getElementById('st-levels');
-    const keys = Object.keys(d.levels).sort((a, b) => Number(a) - Number(b));
+    const keys = Object.keys(d.levels || {}).sort((a, b) => Number(a) - Number(b));
     levels.innerHTML = keys.length
       ? keys.map((k) => '<span class="lvl">L' + k + ': ' + d.levels[k] + '</span>').join('')
       : '<span class="hint">Correggi qualcosa per vedere il progresso per livello.</span>';
@@ -257,3 +261,14 @@ function renderStats() {
 }
 
 renderStats();
+
+// ---------- supporto ----------
+const support = document.getElementById('support');
+const supportClose = document.getElementById('support-close');
+chrome.storage.local.get('supportDismissed', (data) => {
+  if (data.supportDismissed) support.hidden = true;
+});
+supportClose.addEventListener('click', () => {
+  support.hidden = true;
+  chrome.storage.local.set({ supportDismissed: true });
+});

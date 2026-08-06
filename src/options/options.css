@@ -21,3 +21,9 @@ section {
   gap: 16px;
   font-weight: 500;
 }
+.support-link {
+  color: #0969da;
+  font-weight: 600;
+  text-decoration: none;
+}
+.support-link:hover { text-decoration: underline; }

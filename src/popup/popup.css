@@ -115,3 +115,30 @@ h1 { font-size: 16px; margin: 0; }
   border-radius: 999px; padding: 2px 8px;
 }
 .levels .hint { font-size: 11px; color: #8c959f; }
+
+/* ---- supporto ---- */
+.support {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  border-top: 1px solid #eef1f4;
+  margin-top: 10px;
+  padding-top: 10px;
+}
+.support a {
+  color: #0969da;
+  font-size: 13px;
+  font-weight: 500;
+  text-decoration: none;
+}
+.support a:hover { text-decoration: underline; }
+.support button {
+  border: none;
+  background: transparent;
+  color: #8c959f;
+  cursor: pointer;
+  font-size: 12px;
+  padding: 0 2px;
+}
+.support button:hover { color: #cf222e; }

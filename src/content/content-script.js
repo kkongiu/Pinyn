@@ -225,11 +225,17 @@
     window.__PINYN_HSK_SEED = PinynHskDb.seed(full).catch(() => false);
   }
 
-  // Statistiche: scrive gli eventi su IndexedDB (non bloccante, con coda).
+  // Statistiche: aggrega gli eventi in chrome.storage.local (non bloccante, con coda).
+  // chrome.storage.local è l'unico storage condiviso in modo affidabile da tutti i
+  // contesti MV3 (content script, popup, options, service worker). IndexedDB non
+  // funziona qui: il service worker usa una partizione separata da quella dei
+  // content script, quindi un lettore lato SW non vede mai gli eventi scritti.
+  const PinynStats = window.PinynStats || null;
+  const STATS_KEY = PinynStats ? PinynStats.STATS_KEY : 'pcStats';
   const statQueue = [];
   let statFlushing = false;
   function recordStat(type, detail) {
-    if (!PinynHskDb) return;
+    if (!PinynStats) return;
     statQueue.push({ type, detail: detail || {} });
     flushStats();
   }
@@ -239,12 +245,15 @@
     while (statQueue.length) {
       const { type, detail } = statQueue.shift();
       try {
-        await PinynHskDb.recordStat({
+        const entry = {
           type,
           token: detail.token || null,
           suggestion: detail.suggestion || null,
           level: detail.suggestion ? engine.pinyinLevel(detail.suggestion) : null,
-        });
+        };
+        const cur = await chrome.storage.local.get(STATS_KEY);
+        const next = PinynStats.applyEvent(cur[STATS_KEY] || null, entry);
+        await chrome.storage.local.set({ [STATS_KEY]: next });
       } catch (_) { /* ignora errori di scrittura */ }
     }
     statFlushing = false;

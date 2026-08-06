@@ -1,7 +1,12 @@
 /**
  * HskDb — wrapper IndexedDB per il vocabolario HSK.
- * Crea gli store secondo schema.js e popola con il campione se vuoto.
+ * Crea lo store hsk_words e popola con il campione se vuoto.
  * Espone globalmente `PinynHskDb`.
+ *
+ * Nota: le statistiche utente NON vivono qui ma in chrome.storage.local
+ * (`pcStats`, aggregato dai content script): in MV3 il service worker usa una
+ * partizione IndexedDB separata da quella dei content script, quindi uno store
+ * condiviso per le statistiche non è affidabile.
  */
 (function (root) {
   'use strict';
@@ -18,10 +23,7 @@
           const s = db.createObjectStore('hsk_words', { keyPath: 'id' });
           s.createIndex('level', 'level', { unique: false });
           s.createIndex('pinyin', 'pinyin', { unique: false });
-        s.createIndex('word', 'word', { unique: false });
-      }
-      if (!db.objectStoreNames.contains('user_stats')) {
-          db.createObjectStore('user_stats', { keyPath: 'id' });
+          s.createIndex('word', 'word', { unique: false });
         }
       };
       open.onsuccess = () => resolve(open.result);
@@ -55,36 +57,5 @@
     });
   }
 
-  let statSeq = 0;
-
-  /** Registra un evento utente (correzione, ignore, accento, ecc.). */
-  async function recordStat(entry) {
-    const db = await getDb();
-    return new Promise((resolve, reject) => {
-      const tx = db.transaction('user_stats', 'readwrite');
-      tx.objectStore('user_stats').put({
-        id: Date.now() + '-' + (++statSeq),
-        type: entry.type || 'event',
-        token: entry.token || null,
-        suggestion: entry.suggestion || null,
-        level: entry.level == null ? null : entry.level,
-        timestamp: Date.now(),
-      });
-      tx.oncomplete = () => resolve(true);
-      tx.onerror = () => reject(tx.error);
-    });
-  }
-
-  /** Legge tutti gli eventi registrati. */
-  async function getStats() {
-    const db = await getDb();
-    return new Promise((resolve, reject) => {
-      const tx = db.transaction('user_stats', 'readonly');
-      const req = tx.objectStore('user_stats').getAll();
-      req.onsuccess = () => resolve(req.result);
-      req.onerror = () => reject(req.error);
-    });
-  }
-
-  root.PinynHskDb = { getDb, seed, countWords, recordStat, getStats };
+  root.PinynHskDb = { getDb, seed, countWords };
 })(typeof globalThis !== 'undefined' ? globalThis : this);

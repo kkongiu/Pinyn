@@ -516,8 +516,7 @@
       }
     } else if (act === 'accent') {
       if (typeof active.addAccents === 'function') {
-        const n = active.addAccents();
-        if (active.onRecord && n > 0) active.onRecord('accent');
+        active.addAccents(); // registra 'accent' internamente (copia anche l'auto-accento)
       }
     } else if (act === 'hanzi') {
       if (typeof active.convertToHanzi === 'function') {
@@ -1143,6 +1142,7 @@
         field.dispatchEvent(new Event('input', { bubbles: true }));
       }
       restoreCaret(field, caret);
+      if (n > 0 && active && active.onRecord) active.onRecord('accent');
       return n;
     }
 
@@ -1241,6 +1241,7 @@
       const n = applyAccentsIn(el, engine, (s, e, r) => replaceInContentEditable(el, s, e, r));
       if (n > 0) el.dispatchEvent(new Event('input', { bubbles: true }));
       restoreCaret(el, caret);
+      if (n > 0 && active && active.onRecord) active.onRecord('accent');
       return n;
     }
 

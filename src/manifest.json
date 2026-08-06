@@ -37,6 +37,7 @@
         "llm/sentence-net.js",
         "utils/grammar-rules.js",
         "utils/custom-terms.js",
+        "utils/stats.js",
         "content/content-script.js"
       ],
       "css": [

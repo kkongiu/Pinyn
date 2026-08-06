@@ -21,14 +21,14 @@ Estensione per browser (Chrome/Edge, Manifest V3) che **corregge il pinyin** cin
 ```
 src/
 ├── manifest.json            # MV3
-├── background/              # service worker (stato, statistiche)
+├── background/              # service worker (stato, traduzione)
 ├── content/
-│   ├── content-script.js    # orchestrazione (attach, osservatore, opzioni)
+│   ├── content-script.js    # orchestrazione (attach, osservatore, opzioni, statistiche)
 │   ├── error-detector.js    # rilevamento errori/toni sospetti
 │   └── ui-renderer.js       # overlay + popup UNICO (suggerimenti/errori/lookup)
 ├── popup/                   # gadget: abilitato, hanzi, dizionario, statistiche
 ├── options/                 # impostazioni (auto-accenti, rete toni, hanzi, HSK)
-├── database/                # IndexedDB (vocabolario, statistiche)
+├── database/                # IndexedDB (vocabolario; statistiche in chrome.storage.local)
 ├── llm/
 │   ├── tone-net.js          # runtime JS della rete dei toni (int8)
 │   └── sentence-net.js      # runtime JS del LM di forma (int8, lazy)
@@ -38,6 +38,7 @@ src/
 │   ├── correction-engine.js # ranking contestuale, segmentazione, accenti, HSK
 │   ├── grammar-rules.js     # regole grammaticali (POS, conservative)
 │   ├── custom-terms.js      # dizionario utente (convalida + applicazione)
+│   ├── stats.js             # aggregazione statistiche (chrome.storage.local)
 │   └── dict-search.js       # ricerca dizionario
 └── data/
     ├── pinyin-syllables.js  # 444 sillabe valide
@@ -91,7 +92,7 @@ npm test               # unit (node:test)
 npm run test:extended  # batteria + autotest sul corpus pinyin per livello
 ```
 
-- **123 test unit** (tokenizer, toni, engine, reverse, defs, tone-net, regole grammaticali, LM di forma, termini personalizzati)
+- **135 test unit** (tokenizer, toni, engine, reverse, defs, tone-net, regole grammaticali, LM di forma, termini personalizzati, statistiche)
 - **batteria** di robustezza (fuzz, performance, dataset)
 - **autotest pinyin**: corpus per livello HSK (1–7/9) — 0 errori rossi, diagnostica dei toni sospetti
 
@@ -100,6 +101,10 @@ npm run test:extended  # batteria + autotest sul corpus pinyin per livello
 - La conversione **batch** pinyin→hanzi è basata su parole del dizionario: le frasi possono segmentarsi diversamente (es. `wo shi` → `卧室`, non `我是`). La via precisa è il menu candidati.
 - I toni di una sillaba singola possono essere ambigui; la rete/euristica scelgono il più probabile, il menu permette di correggere.
 - La verifica di forma è **soft**: le regole coprono solo i 3 errori più comuni e il LM segnala la probabilità bassa (non un errore certo); su frasi corte il LM non viene valutato.
+
+## Supporto
+
+Pinyn è gratuito e open-source. Se ti è utile e vuoi sostenere lo sviluppo, puoi offrirmi una birra: [paypal.me/kkongiu](https://paypal.me/kkongiu).
 
 ## Licenza
 
