@@ -109,3 +109,9 @@ disattivabile** (default off), per non tradire la promessa "no ads". ROI basso.
   chiaramente (es. trasmissione dati nel Cloud).
 - Donazione/link mai invasivi: banner dismissibile, niente interstitial.
 - Prezzi in EUR/USD, fatture gestite dal merchant of record.
+- **Open source (MIT)**: il repo diventa pubblico al lancio sullo store. Il
+  codice client è già distribuibile nel CRX, quindi la pubblicazione non
+  aumenta il rischio di clonazione; il valore a pagamento (licenze server,
+  cloud, dashboard B2B) resta server-side e privato. GPL non bloccherebbe
+  comunque una pubblicazione concorrente sul CWS: la difesa dall'anticipazione
+  è il timing (pubblicare prima sullo store).

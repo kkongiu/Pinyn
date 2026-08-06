@@ -43,3 +43,4 @@ La pubblicazione su Google richiede i passi seguenti.
 ## 8. Dopo la submission
 - [ ] Inviare e attendere la review di Google (giorni/settimane).
 - [ ] Rispondere a eventuali richieste della review.
+- [ ] **Rendere pubblico il repository** (`kkongiu/Pinyn`, licenza MIT) solo a lancio/approvazione avvenuta: il codice client è già distribuito nel CRX; il valore a pagamento (licenze server, cloud, dashboard B2B) resta privato e non è esposto. Prima del pubblico: scan segreti già eseguito (pulito) e nessun artefatto proprietario in repo.
