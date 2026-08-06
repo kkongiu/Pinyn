@@ -6,8 +6,9 @@ const grammar = document.getElementById('grammar');
 const spaceAfterAccept = document.getElementById('spaceAfterAccept');
 const translate = document.getElementById('translate');
 const translateLang = document.getElementById('translate-lang');
+const translateMax = document.getElementById('translate-max');
 
-chrome.storage.sync.get({ hskLevel: 3, autoAccent: false, toneNet: true, hanzi: false, grammar: true, spaceAfterAccept: false, translate: true, translateLang: '' }, (data) => {
+chrome.storage.sync.get({ hskLevel: 3, autoAccent: false, toneNet: true, hanzi: false, grammar: true, spaceAfterAccept: false, translate: true, translateLang: '', translateMaxLen: 500 }, (data) => {
   level.value = String(data.hskLevel || 3);
   autoAccent.checked = !!data.autoAccent;
   toneNet.checked = data.toneNet !== false;
@@ -16,6 +17,8 @@ chrome.storage.sync.get({ hskLevel: 3, autoAccent: false, toneNet: true, hanzi: 
   spaceAfterAccept.checked = !!data.spaceAfterAccept;
   translate.checked = data.translate !== false;
   if (translateLang.value !== String(data.translateLang || '')) translateLang.value = String(data.translateLang || '');
+  const n = Number(data.translateMaxLen);
+  translateMax.value = String(n >= 1 && n <= 2000 ? n : 500);
 });
 
 level.addEventListener('change', () => {
@@ -48,4 +51,9 @@ translate.addEventListener('change', () => {
 
 translateLang.addEventListener('change', () => {
   chrome.storage.sync.set({ translateLang: translateLang.value });
+});
+
+translateMax.addEventListener('change', () => {
+  const n = Number(translateMax.value);
+  if (n >= 1 && n <= 2000) chrome.storage.sync.set({ translateMaxLen: n });
 });

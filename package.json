@@ -6,7 +6,8 @@
   "license": "UNLICENSED",
   "scripts": {
     "test": "node --test \"tests/unit/**/*.test.js\"",
-    "test:extended": "node tests/battery.test.js && node tests/autotest-pinyin.js"
+    "test:extended": "node tests/battery.test.js && node tests/autotest-pinyin.js",
+    "package": "node scripts/package.cjs"
   },
   "engines": {
     "node": ">=18"

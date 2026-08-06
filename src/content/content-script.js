@@ -58,6 +58,7 @@
   let spaceAfterAccept = false;
   let translateEnabled = true;
   let translateLang = defaultTranslateLang();
+  let translateMaxLen = 500;
 
   function defaultTranslateLang() {
     try {
@@ -68,7 +69,7 @@
     }
   }
 
-  chrome.storage.sync.get({ hskLevel: 3, autoAccent: false, hanzi: false, grammar: true, spaceAfterAccept: false, translate: true, translateLang: '' }, (data) => {
+  chrome.storage.sync.get({ hskLevel: 3, autoAccent: false, hanzi: false, grammar: true, spaceAfterAccept: false, translate: true, translateLang: '', translateMaxLen: 500 }, (data) => {
     engine.setLevel(Number(data.hskLevel) || 3);
     autoAccentEnabled = !!data.autoAccent;
     insertHanzi = !!data.hanzi;
@@ -76,6 +77,8 @@
     spaceAfterAccept = !!data.spaceAfterAccept;
     translateEnabled = data.translate !== false;
     translateLang = /^[a-z]{2}(-[A-Za-z]{2,4})?$/.test(String(data.translateLang || '')) ? data.translateLang : defaultTranslateLang();
+    const n = Number(data.translateMaxLen);
+    translateMaxLen = n >= 1 && n <= 2000 ? n : 500;
     propagateOptions();
   });
   chrome.storage.onChanged.addListener((changes, area) => {
@@ -114,6 +117,11 @@
     if (changes.translateLang) {
       const v = String(changes.translateLang.newValue || '');
       translateLang = /^[a-z]{2}(-[A-Za-z]{2,4})?$/.test(v) ? v : defaultTranslateLang();
+      propagateOptions();
+    }
+    if (changes.translateMaxLen) {
+      const n = Number(changes.translateMaxLen.newValue);
+      translateMaxLen = n >= 1 && n <= 2000 ? n : 500;
       propagateOptions();
     }
   });
@@ -198,7 +206,7 @@
         handle.setSpaceAfterAccept(spaceAfterAccept);
       }
       if (handle && typeof handle.setTranslateEnabled === 'function') {
-        handle.setTranslateEnabled(translateEnabled, translateLang);
+        handle.setTranslateEnabled(translateEnabled, translateLang, translateMaxLen);
       }
       if (handle && typeof handle.setSentenceModel === 'function') {
         handle.setSentenceModel(checkForm ? sentenceModel : null);
@@ -253,6 +261,7 @@
       spaceAfterAccept,
       translateEnabled,
       translateLang,
+      translateMaxLen,
       onRecord: recordStat,
     });
     active.set(field, handle);

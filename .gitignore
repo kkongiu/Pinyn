@@ -16,6 +16,10 @@ node_modules/
 
 # Screenshot locali
 *.png
+!src/icons/*.png
+
+# Pacchetti pubblicazione
+dist/
 
 # Ambiente
 .env

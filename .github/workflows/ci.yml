@@ -1,0 +1,23 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+      - name: Unit test
+        run: npm test
+      - name: Battery test
+        run: node tests/battery.test.js
+      - name: Pinyin autotest
+        run: node tests/autotest-pinyin.js
+      - name: Validate manifest
+        run: node -e "JSON.parse(require('fs').readFileSync('src/manifest.json','utf8')); console.log('manifest OK')"

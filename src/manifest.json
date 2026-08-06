@@ -1,8 +1,14 @@
 {
   "manifest_version": 3,
   "name": "Pinyin Corrector",
-  "version": "0.14.0",
+  "version": "0.15.0",
   "description": "Correzione pinyin contestuale e conversione in caratteri cinesi",
+  "icons": {
+    "16": "icons/icon16.png",
+    "32": "icons/icon32.png",
+    "48": "icons/icon48.png",
+    "128": "icons/icon128.png"
+  },
   "permissions": [
     "storage"
   ],
@@ -40,7 +46,13 @@
     }
   ],
   "action": {
-    "default_popup": "popup/popup.html"
+    "default_popup": "popup/popup.html",
+    "default_icon": {
+      "16": "icons/icon16.png",
+      "32": "icons/icon32.png",
+      "48": "icons/icon48.png",
+      "128": "icons/icon128.png"
+    }
   },
   "commands": {
     "toggle-enabled": {

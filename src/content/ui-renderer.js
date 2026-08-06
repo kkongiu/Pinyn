@@ -307,8 +307,8 @@
   let spaceAfterAccept = false; // spazio dopo il suggerimento accettato
   let translateEnabled = true;  // traduzione automatica sulla selezione
   let translateLang = 'it';     // lingua di destinazione (es. "it", "zh-CN")
+  let translateMaxLen = 500;    // limite caratteri tradotti sulla selezione
   let translateSeq = 0;         // token per scartare traduzioni in ritardo
-  const MAX_TRANSLATE = 500;    // limite caratteri tradotti sulla selezione
   let lastTypingAt = 0;         // timestamp ultimo input (per non coprire mentre si digita)
   let suggestTimer = null;      // debounce dei suggerimenti IME
   let suppressWord = null;      // parola appena accettata: non riproporla
@@ -318,9 +318,11 @@
     if (!pluginEnabled) hidePop();
   }
 
-  function setTranslate(v, lang) {
+  function setTranslate(v, lang, maxLen) {
     translateEnabled = !!v;
     if (/^[a-z]{2}(-[A-Za-z]{2,4})?$/.test(String(lang || ''))) translateLang = lang;
+    const n = Number(maxLen);
+    if (n >= 1 && n <= 2000) translateMaxLen = n;
   }
 
   // ------------------------------------------------------------------
@@ -730,7 +732,7 @@
 
     // lookup locale solo per testi brevi (una parola); la traduzione copre tutto
     const dictHtml = t.length <= 12 ? lookupDictHtml(t) : null;
-    const canTranslate = translateEnabled && t.length <= MAX_TRANSLATE;
+    const canTranslate = translateEnabled && t.length <= translateMaxLen;
     if (!dictHtml && !canTranslate) { hidePop(); return; }
 
     hidePop(); // nasconde eventuali stati campo: un solo popup visibile
@@ -1184,7 +1186,7 @@
       setInsertHanzi: (v) => { insertHanzi = !!v; },
       setCheckForm: (v) => { checkForm = v !== false; },
       setSpaceAfterAccept: (v) => { spaceAfterAccept = !!v; },
-      setTranslateEnabled: (v, lang) => { setTranslate(v, lang); },
+      setTranslateEnabled: (v, lang, maxLen) => { setTranslate(v, lang, maxLen); },
       setSentenceModel: (m) => {
         sentenceModel = m;
         if (active && active.field === field) render();
@@ -1275,7 +1277,7 @@
       setInsertHanzi: (v) => { insertHanzi = !!v; },
       setCheckForm: (v) => { checkForm = v !== false; },
       setSpaceAfterAccept: (v) => { spaceAfterAccept = !!v; },
-      setTranslateEnabled: (v, lang) => { setTranslate(v, lang); },
+      setTranslateEnabled: (v, lang, maxLen) => { setTranslate(v, lang, maxLen); },
       setSentenceModel: (m) => {
         sentenceModel = m;
         if (active && active.field === field) render();
@@ -1336,7 +1338,7 @@
     insertHanzi = !!options.insertHanzi;
     checkForm = options.checkForm !== false;
     spaceAfterAccept = !!options.spaceAfterAccept;
-    setTranslate(options.translateEnabled !== false, options.translateLang);
+    setTranslate(options.translateEnabled !== false, options.translateLang, options.translateMaxLen);
     initLookup();
 
     element.addEventListener('focus', () => {
