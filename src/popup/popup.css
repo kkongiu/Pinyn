@@ -120,25 +120,30 @@ h1 { font-size: 16px; margin: 0; }
 .support {
   display: flex;
   align-items: center;
-  justify-content: space-between;
-  gap: 8px;
-  border-top: 1px solid #eef1f4;
-  margin-top: 10px;
-  padding-top: 10px;
+  gap: 6px;
+  margin-bottom: 12px;
 }
-.support a {
-  color: #0969da;
-  font-size: 13px;
-  font-weight: 500;
+.support-btn {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  padding: 8px 10px;
+  background: #0969da;
+  color: #fff;
+  border-radius: 8px;
   text-decoration: none;
+  font-size: 13px;
+  font-weight: 600;
 }
-.support a:hover { text-decoration: underline; }
+.support-btn:hover { background: #0558c4; }
 .support button {
   border: none;
   background: transparent;
   color: #8c959f;
   cursor: pointer;
-  font-size: 12px;
-  padding: 0 2px;
+  font-size: 13px;
+  padding: 4px;
 }
 .support button:hover { color: #cf222e; }

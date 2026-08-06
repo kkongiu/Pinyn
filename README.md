@@ -104,7 +104,7 @@ npm run test:extended  # batteria + autotest sul corpus pinyin per livello
 
 ## Supporto
 
-Pinyn è gratuito e open-source. Se ti è utile e vuoi sostenere lo sviluppo, puoi offrirmi una birra: [paypal.me/kkongiu](https://paypal.me/kkongiu).
+Pinyn è gratuito e open-source. Se ti è utile e vuoi sostenere lo sviluppo, puoi offrirmi un caffè (3€): [paypal.me/kkongiu/3](https://paypal.me/kkongiu/3).
 
 ## Licenza
 

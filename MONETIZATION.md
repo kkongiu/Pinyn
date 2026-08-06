@@ -18,8 +18,10 @@ fiducia del prodotto.
 
 Nessun feature gating. Solo rimuovere la frizione per chi vuole sostenere:
 
-- Footer discreto "Offrimi una birra" nel popup → **PayPal** (`paypal.me/kkongiu`),
-  chiudibile (dismiss persistito in `storage.local`, chiave `supportDismissed`).
+- Bottone in evidenza "☕ qǐng wǒ hē kāfēi 请我喝咖啡" in cima al popup (subito
+  sotto l'intestazione) → **PayPal** con importo suggerito 3€
+  (`paypal.me/kkongiu/3`, modificabile dall'utente), chiudibile (dismiss
+  persistito in `storage.local`, chiave `supportDismissed`).
 - Sezione "Supporto" nelle opzioni con il link PayPal.
 - Paragrafo "Supporto" nel README.
 
