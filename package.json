@@ -5,7 +5,7 @@
   "description": "Correzione pinyin contestuale e conversione in caratteri cinesi (estensione browser)",
   "license": "UNLICENSED",
   "scripts": {
-    "test": "node --test \"tests/unit/**/*.test.js\"",
+    "test": "node --test tests/unit/*.test.js",
     "test:extended": "node tests/battery.test.js && node tests/autotest-pinyin.js",
     "package": "node scripts/package.cjs"
   },
