@@ -305,10 +305,22 @@
   let pluginEnabled = true; // toggle "Abilitato" dal gadget
   let checkForm = true;     // verifica grammaticale (regole + LM)
   let spaceAfterAccept = false; // spazio dopo il suggerimento accettato
+  let translateEnabled = true;  // traduzione automatica sulla selezione
+  let translateLang = 'it';     // lingua di destinazione (es. "it", "zh-CN")
+  let translateSeq = 0;         // token per scartare traduzioni in ritardo
+  const MAX_TRANSLATE = 500;    // limite caratteri tradotti sulla selezione
+  let lastTypingAt = 0;         // timestamp ultimo input (per non coprire mentre si digita)
+  let suggestTimer = null;      // debounce dei suggerimenti IME
+  let suppressWord = null;      // parola appena accettata: non riproporla
 
   function setEnabled(v) {
     pluginEnabled = !!v;
     if (!pluginEnabled) hidePop();
+  }
+
+  function setTranslate(v, lang) {
+    translateEnabled = !!v;
+    if (/^[a-z]{2}(-[A-Za-z]{2,4})?$/.test(String(lang || ''))) translateLang = lang;
   }
 
   // ------------------------------------------------------------------
@@ -540,13 +552,42 @@
       const vh = window.innerHeight;
       const elH = el.offsetHeight || 120;
       const elW = el.offsetWidth || 240;
-      // orizzontale: resta nella viewport
+      const maxH = 45 * vh / 100;
+      let fieldTop = NaN;
+      let fieldBottom = NaN;
+      try {
+        const fr = field.getBoundingClientRect();
+        fieldTop = fr.top;
+        fieldBottom = fr.bottom;
+      } catch (_) { /* ignora */ }
+      // orizzontale: inizia a destra dell'ultimo carattere scritto (al caret).
+      // Se non c'è spazio a destra, allinea il bordo DESTRO del popup al caret
+      // (cresce verso sinistra restando adiacente) invece di saltare a sinistra.
       let left = pos.x;
-      if (left + elW > vw - 4) left = Math.max(4, vw - elW - 4);
-      // verticale: sotto il caret, ma se esce dalla viewport -> sopra
-      let top = pos.y + 6;
-      if (top + elH > vh - 4) top = pos.y - elH - 6;
-      if (top < 4) top = 4;
+      if (left + elW > vw - 4) {
+        const maxLeft = vw - elW - 4;
+        const rightAlign = Math.max(4, pos.x - elW + 4);
+        left = Math.max(4, Math.min(maxLeft, rightAlign));
+      }
+      // verticale: il popup non deve MAI coprire il campo di testo. Di norma
+      // sta sotto il campo; se non c'è spazio, va sopra restando ad almeno
+      // ~1,5cm (63px) dal bordo superiore del campo.
+      const gap = 63; // 6px + ~1,5cm (57px)
+      let top;
+      if (isFinite(fieldBottom)) {
+        top = fieldBottom + 6;
+        const spaceBelow = vh - 4 - top;
+        if (spaceBelow >= Math.min(elH, maxH)) {
+          el.style.maxHeight = Math.min(maxH, spaceBelow) + 'px';
+        } else {
+          top = fieldTop - elH - gap;
+          if (top < 4) top = 4;
+          el.style.maxHeight = Math.min(maxH, Math.max(60, fieldTop - gap - top)) + 'px';
+        }
+      } else {
+        top = pos.y + 6;
+        el.style.maxHeight = Math.min(maxH, vh - 4 - top) + 'px';
+      }
       el.style.left = left + 'px';
       el.style.top = top + 'px';
     });
@@ -597,11 +638,15 @@
   function renderErrors(entries, accentCount, formNotes, field) {
     formNotes = formNotes || [];
     if (!pluginEnabled) { if (popState !== 'suggest') hidePop(); return; }
-    if (!active || (entries.length === 0 && !accentCount && formNotes.length === 0)) {
-      if (popState !== 'suggest') hidePop();
+    const typing = Date.now() - lastTypingAt < 400;
+    // il popup "correzioni" appare solo per errori REALI o note di forma,
+    // non per il semplice pinyin da accentare (quello lo coprono i suggerimenti)
+    if (!active || (entries.length === 0 && formNotes.length === 0)) {
+      if (!typing && popState !== 'suggest') hidePop();
       return;
     }
     if (popState === 'suggest') return; // priorità ai suggerimenti
+    if (typing) return; // non coprire il testo mentre si digita
     const parts = [];
     if (entries.length > 0) {
       parts.push('<div class="' + NS + 'tb-title">Pinyin — correzioni</div>');
@@ -640,46 +685,69 @@
   }
 
   // ---- stato: lookup (selezione di testo nella pagina) ----
-  function renderLookupState(html, rect) {
-    popState = 'lookup';
-    setPop('<span class="' + NS + 'lookup-text">' + escapeHtml(html) + '</span>', (el) => {
-      if (!rect || !rect.width) return;
-      el.style.left = Math.max(4, rect.left) + 'px';
-      el.style.top = (rect.bottom + 6) + 'px';
-    });
+  function requestTranslate(text, tl, token) {
+    const messenger = root.chrome;
+    if (!messenger || !messenger.runtime || !messenger.runtime.sendMessage) return;
+    try {
+      messenger.runtime.sendMessage({ type: 'PC_TRANSLATE', text: text, tl: tl }, (res) => {
+        if (messenger.runtime.lastError) return;
+        if (translateSeq !== token) return; // selezione superata
+        if (!res || !res.ok) return;        // lascia il placeholder, non bloccare
+        const el = popEl && popEl.querySelector('.' + NS + 'translate');
+        if (el) el.textContent = res.translation;
+      });
+    } catch (_) { /* ignora */ }
+  }
+
+  function lookupDictHtml(t) {
+    if (/[\u3400-\u9fff]/.test(t)) {
+      const hit = pinyinForHanzi(t);
+      if (!hit) return null;
+      const d = lookupDef(hit.pinyin_numbers);
+      if (!d) return null;
+      const acc = root.PinynUtils.convertToneNumbers(hit.pinyin_numbers).replace(/\s+/g, ' ');
+      return d.hanzi + ' ' + acc + ' L' + levelLabel(levelOfWord(d.hanzi)) + (d.gloss ? ' · ' + d.gloss : '');
+    }
+    if (/^[a-zA-Züāáǎàēéěèīíǐìōóǒòūúǔùǖǘǚǜ]+( [a-zA-Züāáǎàēéěèīíǐìōóǒòūúǔùǖǘǚǜ]+)*$/.test(t)) {
+      const d = lookupDef(t);
+      if (!d) return null;
+      const bare = root.PinynUtils.stripTone(t).replace(/\s+/g, '');
+      const acc = currentEngine ? currentEngine.accentRun([bare])[0].text : t;
+      return d.hanzi + ' ' + acc + ' L' + levelLabel(levelOfWord(d.hanzi)) + (d.gloss ? ' · ' + d.gloss : '');
+    }
+    return null;
   }
 
   function showLookup(text) {
     if (!pluginEnabled) { hidePop(); return; }
     const t = (text || '').trim();
-    if (!t || t.length > 12) { hidePop(); return; }
-    let html = null;
+    if (!t) { hidePop(); return; }
     let rect = null;
     try {
       const sel = window.getSelection();
       if (sel && sel.rangeCount && !sel.isCollapsed) rect = sel.getRangeAt(0).getBoundingClientRect();
     } catch (_) { /* ignora */ }
 
-    if (/[\u3400-\u9fff]/.test(t)) {
-      const hit = pinyinForHanzi(t);
-      if (!hit) { hidePop(); return; }
-      const d = lookupDef(hit.pinyin_numbers);
-      if (!d) { hidePop(); return; }
-      const acc = root.PinynUtils.convertToneNumbers(hit.pinyin_numbers).replace(/\s+/g, ' ');
-      html = d.hanzi + ' ' + acc + ' L' + levelLabel(levelOfWord(d.hanzi)) + (d.gloss ? ' · ' + d.gloss : '');
-    } else if (/^[a-zA-Züāáǎàēéěèīíǐìōóǒòūúǔùǖǘǚǜ]+( [a-zA-Züāáǎàēéěèīíǐìōóǒòūúǔùǖǘǚǜ]+)*$/.test(t)) {
-      const d = lookupDef(t);
-      if (!d) { hidePop(); return; }
-      const bare = root.PinynUtils.stripTone(t).replace(/\s+/g, '');
-      const acc = currentEngine ? currentEngine.accentRun([bare])[0].text : t;
-      html = d.hanzi + ' ' + acc + ' L' + levelLabel(levelOfWord(d.hanzi)) + (d.gloss ? ' · ' + d.gloss : '');
-    } else {
-      hidePop();
-      return;
-    }
-    if (!html) { hidePop(); return; }
+    // lookup locale solo per testi brevi (una parola); la traduzione copre tutto
+    const dictHtml = t.length <= 12 ? lookupDictHtml(t) : null;
+    const canTranslate = translateEnabled && t.length <= MAX_TRANSLATE;
+    if (!dictHtml && !canTranslate) { hidePop(); return; }
+
     hidePop(); // nasconde eventuali stati campo: un solo popup visibile
-    renderLookupState(html, rect);
+
+    const token = ++translateSeq;
+    const parts = [];
+    if (dictHtml) parts.push('<span class="' + NS + 'lookup-text">' + escapeHtml(dictHtml) + '</span>');
+    if (canTranslate) parts.push('<div class="' + NS + 'translate">Traduzione…</div>');
+
+    popState = 'lookup';
+    setPop(parts.join(''), (el) => {
+      if (!rect || !rect.width) return;
+      el.style.left = Math.max(4, rect.left) + 'px';
+      el.style.top = (rect.bottom + 6) + 'px';
+    });
+
+    if (canTranslate) requestTranslate(t, translateLang, token);
   }
 
   let lookupInit = false;
@@ -855,11 +923,27 @@
     const wi = currentWordAt(field);
     if (!wi) return; // lascia lo stato attuale (es. errori mostrati da render)
     const text = field.value != null ? field.value : (field.textContent || '');
+    // dopo l'accettazione, non riproporre subito la stessa parola
+    if (suppressWord) {
+      if (wi.word === suppressWord) return;
+      suppressWord = null; // l'utente ha cambiato parola: riattiva
+    }
+    const caret = field.value != null
+      ? (field.selectionStart != null ? field.selectionStart : text.length)
+      : caretCharOffset(field);
     // prefisso "*" = traduci esplicitamente questa parola inglese
     const explicitReverse = wi.start > 0 && text[wi.start - 1] === '*';
+    // suggerimenti solo quando il caret è a fine testo (o modalità "*"): niente
+    // popup che copre mentre si modifica/scorre in mezzo al testo
+    if (caret < text.length && !explicitReverse) return;
     const bare = root.PinynUtils.stripTone(wi.word);
     const list = computeCandidates(bare, engine, { explicitReverse, rawWord: wi.word });
-    if (list.length === 0) return; // niente da suggerire: resta lo stato attuale
+    if (list.length === 0) {
+      // niente da suggerire: se erano aperti, chiudi i suggerimenti (evita
+      // popup stantio che copre mentre si continua a digitare)
+      if (popState === 'suggest') hidePop();
+      return;
+    }
     candList = list;
     // in modalità "*" l'accettazione consuma anche l'asterisco
     candWord = explicitReverse ? { start: wi.start - 1, end: wi.end, word: wi.word } : wi;
@@ -877,6 +961,8 @@
     if (/^[A-Z]/.test(candWord.word) && /^[a-zü]/.test(replacement)) {
       replacement = replacement.charAt(0).toUpperCase() + replacement.slice(1);
     }
+    // non riproporre la parola appena accettata
+    suppressWord = replacement;
     // opzione: spazio dopo il suggerimento
     if (spaceAfterAccept) replacement += ' ';
     const { start, end } = candWord;
@@ -910,6 +996,10 @@
   function onKeyDown(e) {
     if (!pluginEnabled || !candOpen) return;
     if (/^[1-9]$/.test(e.key)) {
+      // Seleziona il suggerimento numerato (1-9), come mostrato nel popup.
+      // I numeri dei toni (ni3 -> nǐ) si digitano normalmente: durante la
+      // digitazione veloce il popup non è ancora aperto (debounce 200ms),
+      // quindi le cifre non vengono intercettate.
       const idx = Number(e.key) - 1;
       if (idx < candList.length) {
         e.preventDefault();
@@ -1073,6 +1163,8 @@
     });
 
     const inputListener = () => {
+      lastTypingAt = Date.now();
+      hidePop(); // non coprire il testo mentre si digita; i suggerimenti riappaiono dopo la pausa
       if (!field.value) { render([]); return; }
       render();
       autoAccent.schedule();
@@ -1092,6 +1184,7 @@
       setInsertHanzi: (v) => { insertHanzi = !!v; },
       setCheckForm: (v) => { checkForm = v !== false; },
       setSpaceAfterAccept: (v) => { spaceAfterAccept = !!v; },
+      setTranslateEnabled: (v, lang) => { setTranslate(v, lang); },
       setSentenceModel: (m) => {
         sentenceModel = m;
         if (active && active.field === field) render();
@@ -1162,6 +1255,8 @@
     });
 
     const inputListener = () => {
+      lastTypingAt = Date.now();
+      hidePop(); // non coprire il testo mentre si digita
       render();
       autoAccent.schedule();
     };
@@ -1180,6 +1275,7 @@
       setInsertHanzi: (v) => { insertHanzi = !!v; },
       setCheckForm: (v) => { checkForm = v !== false; },
       setSpaceAfterAccept: (v) => { spaceAfterAccept = !!v; },
+      setTranslateEnabled: (v, lang) => { setTranslate(v, lang); },
       setSentenceModel: (m) => {
         sentenceModel = m;
         if (active && active.field === field) render();
@@ -1209,6 +1305,7 @@
   }
   function deactivate() {
     active = null;
+    suppressWord = null;
     hidePop();
   }
 
@@ -1239,6 +1336,7 @@
     insertHanzi = !!options.insertHanzi;
     checkForm = options.checkForm !== false;
     spaceAfterAccept = !!options.spaceAfterAccept;
+    setTranslate(options.translateEnabled !== false, options.translateLang);
     initLookup();
 
     element.addEventListener('focus', () => {
@@ -1247,11 +1345,21 @@
       updateCandidates(element, engine);
     });
     element.addEventListener('blur', () => {
+      clearTimeout(suggestTimer);
+      suppressWord = null;
       hidePop();
       if (active && active.field === element) deactivate();
     });
     element.addEventListener('keydown', onKeyDown);
-    element.addEventListener('input', () => updateCandidates(element, engine));
+    element.addEventListener('input', () => {
+      // debounce: i suggerimenti compaiono dopo una breve pausa, così non
+      // coprono il testo mentre si digita velocemente
+      clearTimeout(suggestTimer);
+      suggestTimer = setTimeout(() => {
+        suggestTimer = null;
+        updateCandidates(element, engine);
+      }, 200);
+    });
 
     return handle;
   }

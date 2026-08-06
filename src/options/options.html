@@ -38,6 +38,32 @@
   </section>
 
   <section>
+    <h2>Traduzione</h2>
+    <label class="switch-row">
+      <span>Traduzione automatica sulla selezione</span>
+      <input type="checkbox" id="translate" checked />
+    </label>
+    <p class="hint">Selezionando del testo in una pagina, il popup mostra la traduzione (endpoint gratuito di Google, fino a 500 caratteri). Il testo selezionato viene inviato a Google Translate.</p>
+    <label>Lingua di destinazione
+      <select id="translate-lang">
+        <option value="">Lingua del browser</option>
+        <option value="it">Italiano</option>
+        <option value="en">Inglese</option>
+        <option value="fr">Francese</option>
+        <option value="de">Tedesco</option>
+        <option value="es">Spagnolo</option>
+        <option value="pt">Portoghese</option>
+        <option value="nl">Olandese</option>
+        <option value="ru">Russo</option>
+        <option value="zh-CN">Cinese (semplificato)</option>
+        <option value="zh-TW">Cinese (tradizionale)</option>
+        <option value="ja">Giapponese</option>
+        <option value="ko">Coreano</option>
+      </select>
+    </label>
+  </section>
+
+  <section>
     <h2>Livello HSK</h2>
     <p class="hint">Filtra i suggerimenti (in sviluppo).</p>
     <label>Livello <select id="hsk-level">

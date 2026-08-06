@@ -4,6 +4,7 @@ const resultsEl = document.getElementById('results');
 const hanziToggle = document.getElementById('hanzi');
 const grammarToggle = document.getElementById('grammar');
 const spaceToggle = document.getElementById('spaceAfterAccept');
+const translateToggle = document.getElementById('translate');
 
 const tHanzi = document.getElementById('t-hanzi');
 const tPinyin = document.getElementById('t-pinyin');
@@ -57,6 +58,14 @@ chrome.storage.sync.get('spaceAfterAccept', (data) => {
 });
 spaceToggle.addEventListener('change', () => {
   chrome.storage.sync.set({ spaceAfterAccept: spaceToggle.checked });
+});
+
+// ---------- traduzione su selezione ----------
+chrome.storage.sync.get('translate', (data) => {
+  translateToggle.checked = data.translate !== false;
+});
+translateToggle.addEventListener('change', () => {
+  chrome.storage.sync.set({ translate: translateToggle.checked });
 });
 
 // ---------- termini personalizzati ----------

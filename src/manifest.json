@@ -1,10 +1,13 @@
 {
   "manifest_version": 3,
   "name": "Pinyin Corrector",
-  "version": "0.13.0",
+  "version": "0.14.0",
   "description": "Correzione pinyin contestuale e conversione in caratteri cinesi",
   "permissions": [
     "storage"
+  ],
+  "host_permissions": [
+    "https://translate.googleapis.com/*"
   ],
   "background": {
     "service_worker": "background/service-worker.js"
@@ -38,6 +41,14 @@
   ],
   "action": {
     "default_popup": "popup/popup.html"
+  },
+  "commands": {
+    "toggle-enabled": {
+      "suggested_key": {
+        "default": "Alt+Shift+W"
+      },
+      "description": "Attiva/disattiva Pinyin Corrector"
+    }
   },
   "options_ui": {
     "page": "options/options.html",

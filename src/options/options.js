@@ -4,14 +4,18 @@ const toneNet = document.getElementById('tone-net');
 const hanzi = document.getElementById('hanzi');
 const grammar = document.getElementById('grammar');
 const spaceAfterAccept = document.getElementById('spaceAfterAccept');
+const translate = document.getElementById('translate');
+const translateLang = document.getElementById('translate-lang');
 
-chrome.storage.sync.get({ hskLevel: 3, autoAccent: false, toneNet: true, hanzi: false, grammar: true, spaceAfterAccept: false }, (data) => {
+chrome.storage.sync.get({ hskLevel: 3, autoAccent: false, toneNet: true, hanzi: false, grammar: true, spaceAfterAccept: false, translate: true, translateLang: '' }, (data) => {
   level.value = String(data.hskLevel || 3);
   autoAccent.checked = !!data.autoAccent;
   toneNet.checked = data.toneNet !== false;
   hanzi.checked = !!data.hanzi;
   grammar.checked = data.grammar !== false;
   spaceAfterAccept.checked = !!data.spaceAfterAccept;
+  translate.checked = data.translate !== false;
+  if (translateLang.value !== String(data.translateLang || '')) translateLang.value = String(data.translateLang || '');
 });
 
 level.addEventListener('change', () => {
@@ -36,4 +40,12 @@ grammar.addEventListener('change', () => {
 
 spaceAfterAccept.addEventListener('change', () => {
   chrome.storage.sync.set({ spaceAfterAccept: spaceAfterAccept.checked });
+});
+
+translate.addEventListener('change', () => {
+  chrome.storage.sync.set({ translate: translate.checked });
+});
+
+translateLang.addEventListener('change', () => {
+  chrome.storage.sync.set({ translateLang: translateLang.value });
 });

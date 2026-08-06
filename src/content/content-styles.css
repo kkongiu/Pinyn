@@ -166,3 +166,14 @@
 }
 
 .pc-lookup-text { white-space: nowrap; }
+
+.pc-translate {
+  margin-top: 6px;
+  padding-top: 5px;
+  border-top: 1px dashed #dfe5ec;
+  font-size: 12px;
+  line-height: 1.45;
+  color: #1f6feb;
+  max-width: 320px;
+}
+.pc-translate:empty { display: none; }

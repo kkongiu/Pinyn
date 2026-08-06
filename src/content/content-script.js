@@ -56,17 +56,33 @@
   let insertHanzi = false;
   let checkForm = true;
   let spaceAfterAccept = false;
+  let translateEnabled = true;
+  let translateLang = defaultTranslateLang();
 
-  chrome.storage.sync.get({ hskLevel: 3, autoAccent: false, hanzi: false, grammar: true, spaceAfterAccept: false }, (data) => {
+  function defaultTranslateLang() {
+    try {
+      const ui = (chrome.i18n.getUILanguage() || '').split('-')[0].toLowerCase();
+      return /^[a-z]{2}$/.test(ui) ? ui : 'it';
+    } catch (_) {
+      return 'it';
+    }
+  }
+
+  chrome.storage.sync.get({ hskLevel: 3, autoAccent: false, hanzi: false, grammar: true, spaceAfterAccept: false, translate: true, translateLang: '' }, (data) => {
     engine.setLevel(Number(data.hskLevel) || 3);
     autoAccentEnabled = !!data.autoAccent;
     insertHanzi = !!data.hanzi;
     checkForm = data.grammar !== false;
     spaceAfterAccept = !!data.spaceAfterAccept;
+    translateEnabled = data.translate !== false;
+    translateLang = /^[a-z]{2}(-[A-Za-z]{2,4})?$/.test(String(data.translateLang || '')) ? data.translateLang : defaultTranslateLang();
     propagateOptions();
   });
   chrome.storage.onChanged.addListener((changes, area) => {
     if (area !== 'sync') return;
+    if (changes.enabled) {
+      applyEnabled(changes.enabled.newValue !== false);
+    }
     if (changes.hskLevel) {
       engine.setLevel(Number(changes.hskLevel.newValue) || 3);
     }
@@ -89,6 +105,15 @@
     }
     if (changes.spaceAfterAccept) {
       spaceAfterAccept = !!changes.spaceAfterAccept.newValue;
+      propagateOptions();
+    }
+    if (changes.translate) {
+      translateEnabled = changes.translate.newValue !== false;
+      propagateOptions();
+    }
+    if (changes.translateLang) {
+      const v = String(changes.translateLang.newValue || '');
+      translateLang = /^[a-z]{2}(-[A-Za-z]{2,4})?$/.test(v) ? v : defaultTranslateLang();
       propagateOptions();
     }
   });
@@ -172,6 +197,9 @@
       if (handle && typeof handle.setSpaceAfterAccept === 'function') {
         handle.setSpaceAfterAccept(spaceAfterAccept);
       }
+      if (handle && typeof handle.setTranslateEnabled === 'function') {
+        handle.setTranslateEnabled(translateEnabled, translateLang);
+      }
       if (handle && typeof handle.setSentenceModel === 'function') {
         handle.setSentenceModel(checkForm ? sentenceModel : null);
       }
@@ -223,6 +251,8 @@
       insertHanzi,
       checkForm,
       spaceAfterAccept,
+      translateEnabled,
+      translateLang,
       onRecord: recordStat,
     });
     active.set(field, handle);
