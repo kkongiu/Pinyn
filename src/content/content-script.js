@@ -12,7 +12,10 @@
   // Sillabe iniettate direttamente (data/pinyin-syllables.js) — nessun fetch,
   // quindi funziona anche senza web_accessible_resources.
   const syllableSet = new Set(window.__PINYN_SYLLABLES || []);
-  const hskWords = window.__PINYN_HSK || [];
+  // Copia BASE del vocabolario compatto: non viene mai mutata, così i termini
+  // utente si applicano in modo idempotente senza accumuli.
+  const baseHsk = (window.__PINYN_HSK || []).slice();
+  const hskWords = baseHsk;
 
   // Engine condiviso (i detector lo referenziano: i cambi di livello si
   // propagano a tutti senza riattaccare i campi).
@@ -22,15 +25,44 @@
     hskLevel: 3,
   });
 
+  // ---------- termini personalizzati (dizionario utente) ----------
+  const CT = window.PinynCustomTerms;
+  let customTerms = [];
+  const customRestore = {};
+  function applyCustomTerms(terms) {
+    customTerms = terms || [];
+    if (CT) CT.pruneGlobals(baseHsk, customTerms, customRestore);
+    engine.setWords(baseHsk.concat(customTerms.map(CT ? CT.toHskEntry : (t) => ({ w: t.hanzi, p: t.pinyin, l: 0 }))));
+    propagateOptions();
+  }
+  function loadCustomTerms() {
+    chrome.storage.local.get('customTerms', (data) => {
+      if (Array.isArray(data.customTerms)) {
+        applyCustomTerms(data.customTerms);
+      } else {
+        // migra da storage.sync (nuovo dispositivo / versione precedente)
+        chrome.storage.sync.get('customTerms', (syncData) => {
+          if (Array.isArray(syncData.customTerms) && syncData.customTerms.length) {
+            chrome.storage.local.set({ customTerms: syncData.customTerms });
+            applyCustomTerms(syncData.customTerms);
+          }
+        });
+      }
+    });
+  }
+  loadCustomTerms();
+
   let autoAccentEnabled = false;
   let insertHanzi = false;
   let checkForm = true;
+  let spaceAfterAccept = false;
 
-  chrome.storage.sync.get({ hskLevel: 3, autoAccent: false, hanzi: false, grammar: true }, (data) => {
+  chrome.storage.sync.get({ hskLevel: 3, autoAccent: false, hanzi: false, grammar: true, spaceAfterAccept: false }, (data) => {
     engine.setLevel(Number(data.hskLevel) || 3);
     autoAccentEnabled = !!data.autoAccent;
     insertHanzi = !!data.hanzi;
     checkForm = data.grammar !== false;
+    spaceAfterAccept = !!data.spaceAfterAccept;
     propagateOptions();
   });
   chrome.storage.onChanged.addListener((changes, area) => {
@@ -54,6 +86,15 @@
       checkForm = changes.grammar.newValue !== false;
       if (checkForm && !sentenceModel) loadSentenceModel();
       propagateOptions();
+    }
+    if (changes.spaceAfterAccept) {
+      spaceAfterAccept = !!changes.spaceAfterAccept.newValue;
+      propagateOptions();
+    }
+  });
+  chrome.storage.onChanged.addListener((changes, area) => {
+    if (area === 'local' && changes.customTerms) {
+      applyCustomTerms(changes.customTerms.newValue || []);
     }
   });
 
@@ -109,7 +150,11 @@
     if (window.__PINYN_POS == null) {
       jobs.push(fetchLazyData('hsk-pos.js').then((d) => { window.__PINYN_POS = d; }).catch(() => {}));
     }
-    if (jobs.length) Promise.all(jobs).then(() => propagateOptions());
+    if (jobs.length) Promise.all(jobs).then(() => {
+      propagateOptions();
+      // il reverse appena caricato ha sostituito il global: ri-applica i termini
+      if (customTerms.length) applyCustomTerms(customTerms);
+    });
   }
   setTimeout(loadLazyData, 800);
 
@@ -123,6 +168,9 @@
       }
       if (handle && typeof handle.setCheckForm === 'function') {
         handle.setCheckForm(checkForm);
+      }
+      if (handle && typeof handle.setSpaceAfterAccept === 'function') {
+        handle.setSpaceAfterAccept(spaceAfterAccept);
       }
       if (handle && typeof handle.setSentenceModel === 'function') {
         handle.setSentenceModel(checkForm ? sentenceModel : null);
@@ -174,6 +222,7 @@
       autoAccent: autoAccentEnabled,
       insertHanzi,
       checkForm,
+      spaceAfterAccept,
       onRecord: recordStat,
     });
     active.set(field, handle);

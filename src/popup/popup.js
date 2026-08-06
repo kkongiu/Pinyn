@@ -3,6 +3,15 @@ const searchInput = document.getElementById('search');
 const resultsEl = document.getElementById('results');
 const hanziToggle = document.getElementById('hanzi');
 const grammarToggle = document.getElementById('grammar');
+const spaceToggle = document.getElementById('spaceAfterAccept');
+
+const tHanzi = document.getElementById('t-hanzi');
+const tPinyin = document.getElementById('t-pinyin');
+const tGloss = document.getElementById('t-gloss');
+const tEn = document.getElementById('t-en');
+const tAdd = document.getElementById('t-add');
+const tError = document.getElementById('t-error');
+const tList = document.getElementById('t-list');
 
 function escapeHtml(s) {
   return String(s)
@@ -40,6 +49,81 @@ chrome.storage.sync.get('grammar', (data) => {
 });
 grammarToggle.addEventListener('change', () => {
   chrome.storage.sync.set({ grammar: grammarToggle.checked });
+});
+
+// ---------- spazio dopo suggerimento ----------
+chrome.storage.sync.get('spaceAfterAccept', (data) => {
+  spaceToggle.checked = !!data.spaceAfterAccept;
+});
+spaceToggle.addEventListener('change', () => {
+  chrome.storage.sync.set({ spaceAfterAccept: spaceToggle.checked });
+});
+
+// ---------- termini personalizzati ----------
+const CT = window.PinynCustomTerms;
+let customTerms = [];
+let syllableSet = null;
+
+fetch(chrome.runtime.getURL('data/pinyin-syllables.json'))
+  .then((r) => (r.ok ? r.json() : Promise.reject()))
+  .then((d) => { syllableSet = new Set(d.syllables); })
+  .catch(() => {});
+
+chrome.storage.local.get('customTerms', (data) => {
+  customTerms = Array.isArray(data.customTerms) ? data.customTerms : [];
+  renderTerms();
+});
+
+function saveTerms(next) {
+  customTerms = next;
+  chrome.storage.local.set({ customTerms });
+  // mirror best-effort in storage.sync (quota limitata): sotto ~50KB
+  const size = CT ? CT.sizeBytes(customTerms) : JSON.stringify(customTerms).length;
+  if (size <= 50 * 1024) chrome.storage.sync.set({ customTerms });
+  else chrome.storage.sync.remove('customTerms');
+  renderTerms();
+}
+
+function renderTerms() {
+  tList.innerHTML = '';
+  if (!customTerms.length) {
+    tList.innerHTML = '<li class="term-empty">Nessun termine personalizzato.</li>';
+    return;
+  }
+  customTerms.forEach((t, i) => {
+    const li = document.createElement('li');
+    const info = document.createElement('span');
+    info.className = 'term-info';
+    info.textContent = t.hanzi + ' ' + t.pinyin + (t.gloss ? ' — ' + t.gloss : '') + (t.en ? '  [*' + t.en + ']' : '');
+    const del = document.createElement('button');
+    del.className = 'term-del';
+    del.textContent = '✕';
+    del.title = 'Rimuovi';
+    del.addEventListener('click', () => saveTerms(customTerms.filter((_, j) => j !== i)));
+    li.appendChild(info);
+    li.appendChild(del);
+    tList.appendChild(li);
+  });
+}
+
+function addTerm() {
+  const res = CT.validateTerm({ hanzi: tHanzi.value, pinyin: tPinyin.value, gloss: tGloss.value, en: tEn.value }, syllableSet);
+  if (!res.ok) {
+    tError.textContent = res.error;
+    return;
+  }
+  tError.textContent = '';
+  if (customTerms.some((t) => t.hanzi === res.value.hanzi)) {
+    tError.textContent = 'Termine già presente.';
+    return;
+  }
+  saveTerms(customTerms.concat([res.value]));
+  tHanzi.value = tPinyin.value = tGloss.value = tEn.value = '';
+  tHanzi.focus();
+}
+tAdd.addEventListener('click', addTerm);
+[tHanzi, tPinyin, tGloss, tEn].forEach((el) => {
+  el.addEventListener('keydown', (e) => { if (e.key === 'Enter') addTerm(); });
 });
 
 // ---------- dizionario ----------
@@ -85,10 +169,39 @@ function renderResults() {
       return;
     }
     if (!results.length) {
-      resultsEl.innerHTML = '<div class="no-results">Nessun risultato</div>';
+      resultsEl.innerHTML =
+        '<div class="no-results">Nessun risultato</div>' +
+        '<button class="add-from-search" id="add-from-search">Aggiungi come termine</button>';
+      const btn = document.getElementById('add-from-search');
+      btn.addEventListener('click', () => {
+        if (/[\u3400-\u9fff]/.test(q)) tHanzi.value = q.trim();
+        else tPinyin.value = q.trim();
+        const sec = document.querySelector('.terms');
+        if (sec) sec.scrollIntoView({ block: 'center' });
+        (tHanzi.value ? tHanzi : tPinyin).focus();
+      });
       return;
     }
     resultsEl.innerHTML = results.map(entryHtml).join('');
+    resultsEl.querySelectorAll('[data-correct]').forEach((btn) => {
+      btn.addEventListener('click', () => {
+        const word = btn.dataset.word || '';
+        const pinyin = btn.dataset.pinyin || '';
+        const gloss = btn.dataset.gloss || '';
+        // se esiste già un termine con lo stesso hanzi, lo rimuove così
+        // il salvataggio del valore corretto non trova duplicati
+        const idx = customTerms.findIndex((t) => t.hanzi === word);
+        if (idx >= 0) saveTerms(customTerms.filter((_, i) => i !== idx));
+        tHanzi.value = word;
+        tPinyin.value = pinyin;
+        tGloss.value = gloss;
+        tEn.value = '';
+        tError.textContent = '';
+        const sec = document.querySelector('.terms');
+        if (sec) sec.scrollIntoView({ block: 'center' });
+        tHanzi.focus();
+      });
+    });
   });
 }
 
@@ -96,6 +209,7 @@ function entryHtml(r) {
   const lvl = r.level === 7.5 ? '7-9' : r.level;
   const pos = r.pos ? ' <span class="pos">' + escapeHtml(r.pos) + '</span>' : '';
   const defs = cleanDefs(r.definitions);
+  const gloss = defs.text || (r.definitions && r.definitions[0]) || '';
   return (
     '<div class="entry">' +
     '<div class="entry-head">' +
@@ -104,6 +218,7 @@ function entryHtml(r) {
     '<span class="badge">L' + escapeHtml(String(lvl)) + '</span>' +
     '</div>' +
     '<div class="defs">' + escapeHtml(defs.text) + pos + (defs.extra ? ' <span class="more">+' + defs.extra + ' altre</span>' : '') + '</div>' +
+    '<button class="entry-correct" data-correct="1" data-word="' + escapeHtml(r.word) + '" data-pinyin="' + escapeHtml(r.pinyin) + '" data-gloss="' + escapeHtml(gloss) + '">Correggi / override</button>' +
     '</div>'
   );
 }

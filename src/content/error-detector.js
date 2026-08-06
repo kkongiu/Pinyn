@@ -55,11 +55,13 @@
           continue;
         }
 
-        // token ACCENTATO multi-sillaba (es. "kāfēi", "zhōngguó"): è pinyin
-        // corretto se si segmenta in sillabe valide
-        if (PinynUtils.hasToneMark(t.text) && engine) {
+        // token multi-sillaba senza spazi (es. "kāfēi", "hele", "xuexiao"):
+        // è pinyin valido se si segmenta in sillabe valide (copertura totale).
+        // Esclude sillabe di una sola lettera (a/e/o): compaiono solo in
+        // refusi/segmentationi spurie (es. "xuexioa" -> xue+xi+o+a).
+        if (engine) {
           const seg = engine.segment(bare);
-          if (seg && seg.join('') === bare) {
+          if (seg && seg.join('') === bare && seg.every((s) => s.length >= 2)) {
             prev = seg[seg.length - 1];
             continue;
           }

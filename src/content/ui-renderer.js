@@ -304,6 +304,7 @@
   let insertHanzi = false;  // opzione: accetta come caratteri cinesi
   let pluginEnabled = true; // toggle "Abilitato" dal gadget
   let checkForm = true;     // verifica grammaticale (regole + LM)
+  let spaceAfterAccept = false; // spazio dopo il suggerimento accettato
 
   function setEnabled(v) {
     pluginEnabled = !!v;
@@ -343,6 +344,12 @@
     shi4: '是', // to be (la ranking generico metterebbe 事)
   };
   let bareToneHanzi = null;
+  let syllableSet = null;
+  function ensureSyllableSet() {
+    if (syllableSet) return syllableSet;
+    syllableSet = new Set(root.__PINYN_SYLLABLES || []);
+    return syllableSet;
+  }
   function ensureBareToneHanzi() {
     if (bareToneHanzi) return bareToneHanzi;
     bareToneHanzi = new Map();
@@ -368,7 +375,19 @@
     const key = e.base.replace(/\s+/g, '') + (e.tone > 0 ? e.tone : '0');
     let hit = TONE_HANZI_OVERRIDE[key];
     if (!hit) hit = ensureBareToneHanzi().get(key);
-    if (hit) return { hanzi: (typeof hit === 'string' ? hit : hit.hanzi), gloss: '' };
+    if (hit) {
+      const hanzi = typeof hit === 'string' ? hit : hit.hanzi;
+      let gloss = '';
+      // gloss solo se il defs della sillaba nuda corrisponde a QUESTO hanzi
+      // (evita di attribuire a hé il gloss di 喝: defs[he]=喝|to drink)
+      const d = lookupDef(text);
+      if (d && d.hanzi === hanzi) gloss = d.gloss;
+      return { hanzi, gloss };
+    }
+    // Sillaba singola senza carattere tono-specifico: NIENTE fallback al defs
+    // (è tone-agnostico e abbinerebbe il tono sbagliato, es. hè -> 喝).
+    const bare = root.PinynUtils.stripTone(text).replace(/\s+/g, '');
+    if (ensureSyllableSet().has(bare)) return null;
     return lookupDef(text);
   }
 
@@ -516,7 +535,20 @@
     popState = 'suggest';
     setPop(html, (el) => {
       const pos = caretScreenPos(field);
-      if (pos) { el.style.left = pos.x + 'px'; el.style.top = (pos.y + 6) + 'px'; }
+      if (!pos) return;
+      const vw = window.innerWidth;
+      const vh = window.innerHeight;
+      const elH = el.offsetHeight || 120;
+      const elW = el.offsetWidth || 240;
+      // orizzontale: resta nella viewport
+      let left = pos.x;
+      if (left + elW > vw - 4) left = Math.max(4, vw - elW - 4);
+      // verticale: sotto il caret, ma se esce dalla viewport -> sopra
+      let top = pos.y + 6;
+      if (top + elH > vh - 4) top = pos.y - elH - 6;
+      if (top < 4) top = 4;
+      el.style.left = left + 'px';
+      el.style.top = top + 'px';
     });
   }
 
@@ -722,7 +754,7 @@
     } else {
       caret = caretCharOffset(field);
     }
-    const isLat = (ch) => /[a-zA-Züāáǎàēéěèīíǐìōóǒòūúǔùǖǘǚǜ]/.test(ch);
+    const isLat = (ch) => /[a-zA-Züāáǎàēéěèīíǐìōóǒòūúǔùǖǘǚǜ0-5]/.test(ch);
     let start = caret;
     while (start > 0 && isLat(text[start - 1])) start--;
     let end = caret;
@@ -825,7 +857,6 @@
     const text = field.value != null ? field.value : (field.textContent || '');
     // prefisso "*" = traduci esplicitamente questa parola inglese
     const explicitReverse = wi.start > 0 && text[wi.start - 1] === '*';
-    if (root.PinynUtils.hasToneMark(wi.word) || root.PinynUtils.isToneNumbered(wi.word)) return;
     const bare = root.PinynUtils.stripTone(wi.word);
     const list = computeCandidates(bare, engine, { explicitReverse, rawWord: wi.word });
     if (list.length === 0) return; // niente da suggerire: resta lo stato attuale
@@ -841,7 +872,13 @@
     const field = active ? active.field : null;
     if (!field || !candWord || !candList[i]) return;
     // con l'opzione attiva inserisce i caratteri (hanzi), altrimenti il pinyin
-    const replacement = (insertHanzi && candList[i].hanzi) ? candList[i].hanzi : candList[i].text;
+    let replacement = (insertHanzi && candList[i].hanzi) ? candList[i].hanzi : candList[i].text;
+    // preserva la maiuscola iniziale del token originale (Wo -> Wǒ)
+    if (/^[A-Z]/.test(candWord.word) && /^[a-zü]/.test(replacement)) {
+      replacement = replacement.charAt(0).toUpperCase() + replacement.slice(1);
+    }
+    // opzione: spazio dopo il suggerimento
+    if (spaceAfterAccept) replacement += ' ';
     const { start, end } = candWord;
     const token = candWord.word;
     const text = field.value != null ? field.value : (field.textContent || '');
@@ -1054,12 +1091,14 @@
       convertToHanzi,
       setInsertHanzi: (v) => { insertHanzi = !!v; },
       setCheckForm: (v) => { checkForm = v !== false; },
+      setSpaceAfterAccept: (v) => { spaceAfterAccept = !!v; },
       setSentenceModel: (m) => {
         sentenceModel = m;
         if (active && active.field === field) render();
       },
       setLazyData: () => {
         reverseMap = null;
+        hanziToPinyin = null;
         if (active) render();
       },
       setAutoAccent: autoAccent.set,
@@ -1140,12 +1179,14 @@
       convertToHanzi,
       setInsertHanzi: (v) => { insertHanzi = !!v; },
       setCheckForm: (v) => { checkForm = v !== false; },
+      setSpaceAfterAccept: (v) => { spaceAfterAccept = !!v; },
       setSentenceModel: (m) => {
         sentenceModel = m;
         if (active && active.field === field) render();
       },
       setLazyData: () => {
         reverseMap = null;
+        hanziToPinyin = null;
         if (active) render();
       },
       setAutoAccent: autoAccent.set,
@@ -1197,6 +1238,7 @@
     currentEngine = engine;
     insertHanzi = !!options.insertHanzi;
     checkForm = options.checkForm !== false;
+    spaceAfterAccept = !!options.spaceAfterAccept;
     initLookup();
 
     element.addEventListener('focus', () => {

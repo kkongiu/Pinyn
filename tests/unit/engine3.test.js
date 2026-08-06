@@ -45,12 +45,17 @@ describe('segmentazione', () => {
   it('stringa non segmentabile -> null', () => {
     assert.strictEqual(engine.segment('xzq'), null);
   });
-  it('detector: suggerimento segmentato in testa', () => {
+  it('contrazioni valide senza spazi accettate (nihao, hele, xuexiao)', () => {
     const det = createDetector({ engine });
-    const errs = det.scan('nihao hao').filter((r) => r.isError);
-    assert.ok(errs.length >= 1);
-    assert.strictEqual(errs[0].token, 'nihao');
-    assert.strictEqual(errs[0].suggestions[0], 'ni hao');
+    for (const t of ['nihao', 'hele', 'xuexiao', 'kafei']) {
+      const errs = det.scan(t + ' hao').filter((r) => r.isError);
+      assert.ok(!errs.some((e) => e.token === t), t + ' dovrebbe essere accettato');
+    }
+  });
+  it('refuso con sillabe di una sola lettera -> errore (xuexioa)', () => {
+    const det = createDetector({ engine });
+    const errs = det.scan('xuexioa hao').filter((r) => r.isError);
+    assert.ok(errs.some((e) => e.token === 'xuexioa'), 'xuexioa dovrebbe essere un errore');
   });
   it('match parola: zonguo -> zhōng guó', () => {
     const det = createDetector({ engine });

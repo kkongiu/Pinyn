@@ -10,6 +10,8 @@ Estensione per browser (Chrome/Edge, Manifest V3) che **corregge il pinyin** cin
 - **Reverse dizionario**: scrivi una parola inglese (`water`, `*want`) → propone l'equivalente cinese con pinyin e traduzione.
 - **Conversione pinyin → caratteri**: opzione per inserire hanzi invece di pinyin all'accettazione, più azione batch "Converti in caratteri" sull'intero campo.
 - **Verifica forma della frase**: regole grammaticali precise (很+nome, 是+verbo, 吗 non finale) + LM probabilistico che segnala le frasi dalla forma insolita; attivabile dal gadget e dalle opzioni.
+- **Termini personalizzati**: aggiungi parole mancanti dal dizionario dal popup (hanzi, pinyin anche compatto es. `moka`, traduzione, inglese opzionale per il reverse `*parola`); vengono riconosciute in pagina, ricercabili e sincronizzate (local + mirror in sync).
+- **Spazio dopo suggerimento**: opzione attivabile (gadget e opzioni) che aggiunge uno spazio dopo il pinyin/hanzi accettato dal menu.
 - **Dizionario nel popup**: cerca per hanzi, pinyin o inglese.
 - **Lookup su selezione**: selezioni una parola nella pagina → tooltip con hanzi, pinyin, livello e traduzione.
 - **Statistiche**: correzioni/ignorati/accenti per livello HSK.
@@ -35,6 +37,7 @@ src/
 │   ├── levenshtein.js       # distanza di edit con transposizione
 │   ├── correction-engine.js # ranking contestuale, segmentazione, accenti, HSK
 │   ├── grammar-rules.js     # regole grammaticali (POS, conservative)
+│   ├── custom-terms.js      # dizionario utente (convalida + applicazione)
 │   └── dict-search.js       # ricerca dizionario
 └── data/
     ├── pinyin-syllables.js  # 444 sillabe valide
@@ -88,7 +91,7 @@ npm test               # unit (node:test)
 npm run test:extended  # batteria + autotest sul corpus pinyin per livello
 ```
 
-- **108 test unit** (tokenizer, toni, engine, reverse, defs, tone-net, regole grammaticali, LM di forma)
+- **123 test unit** (tokenizer, toni, engine, reverse, defs, tone-net, regole grammaticali, LM di forma, termini personalizzati)
 - **batteria** di robustezza (fuzz, performance, dataset)
 - **autotest pinyin**: corpus per livello HSK (1–7/9) — 0 errori rossi, diagnostica dei toni sospetti
 

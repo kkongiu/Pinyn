@@ -79,9 +79,14 @@ const t0 = Date.now();
     const errs = det.scan(bad).filter(r => r.isError);
     check(`D errore "${bad}"->${expect}`, errs.length === 1 && errs[0].suggestions.includes(expect), JSON.stringify(errs.map(e=>e.suggestions)));
   }
-  // suggerimento segmentato in testa per parole senza spazi
-  const ni = det.scan('nihao').filter(r=>r.isError);
-  check('D nihao->ni hao primo', ni.length === 1 && ni[0].suggestions[0] === 'ni hao', JSON.stringify(ni.map(e=>e.suggestions)));
+  // contrazioni valide senza spazi accettate (nihao, hele, xuexiao)
+  for (const good of ['nihao', 'hele', 'xuexiao', 'kafei']) {
+    const ok = det.scan(good).filter(r => r.isError).length === 0;
+    check(`D contrazione accettata "${good}"`, ok, good);
+  }
+  // refuso con sillabe di una sola lettera -> errore (xuexioa)
+  const xo = det.scan('xuexioa').filter(r => r.isError);
+  check('D xuexioa->errore', xo.length === 1, JSON.stringify(xo.map(e => e.suggestions)));
   // match parola per zonguo
   const zg = det.scan('zonguo').filter(r=>r.isError);
   check('D zonguo->zhōng guó', zg.length === 1 && zg[0].suggestions.includes('zhōng guó'), JSON.stringify(zg.map(e=>e.suggestions)));

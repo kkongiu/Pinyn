@@ -8,7 +8,7 @@
 <body>
   <header>
     <h1>Pinyin Corrector</h1>
-    <span class="version">v0.11.0</span>
+    <span class="version">v0.13.0</span>
   </header>
 
   <label class="switch-row">
@@ -26,10 +26,29 @@
     <input type="checkbox" id="grammar" checked />
   </label>
 
+  <label class="switch-row">
+    <span>Spazio dopo suggerimento</span>
+    <input type="checkbox" id="spaceAfterAccept" />
+  </label>
+
   <section class="dict">
     <h2>Dizionario</h2>
     <input type="search" id="search" placeholder="Cerca: hanzi, pinyin, inglese…" autocomplete="off" />
     <div id="results" class="results"></div>
+  </section>
+
+  <section class="terms">
+    <h2>Termini personalizzati</h2>
+    <p class="hint">Aggiungi parole mancanti dal dizionario: vengono riconosciute in pagina (suggerimenti, accenti, reverse).</p>
+    <div class="term-form">
+      <input type="text" id="t-hanzi" placeholder="Hanzi (例：拉面)" autocomplete="off" />
+      <input type="text" id="t-pinyin" placeholder="Pinyin (lā miàn / la1 mian4)" autocomplete="off" />
+      <input type="text" id="t-gloss" placeholder="Traduzione" autocomplete="off" />
+      <input type="text" id="t-en" placeholder="Inglese (per *reverse)" autocomplete="off" />
+      <button id="t-add">Aggiungi</button>
+    </div>
+    <div id="t-error" class="term-error"></div>
+    <ul id="t-list" class="term-list"></ul>
   </section>
 
   <section class="stats">
@@ -42,6 +61,8 @@
     <div id="st-levels" class="levels"></div>
   </section>
 
+  <script src="../utils/pinyin-utils.js"></script>
+  <script src="../utils/custom-terms.js"></script>
   <script src="popup.js"></script>
 </body>
 </html>

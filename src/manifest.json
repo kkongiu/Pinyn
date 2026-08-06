@@ -1,7 +1,7 @@
 {
   "manifest_version": 3,
   "name": "Pinyin Corrector",
-  "version": "0.11.0",
+  "version": "0.13.0",
   "description": "Correzione pinyin contestuale e conversione in caratteri cinesi",
   "permissions": [
     "storage"
@@ -27,6 +27,7 @@
         "llm/tone-net.js",
         "llm/sentence-net.js",
         "utils/grammar-rules.js",
+        "utils/custom-terms.js",
         "content/content-script.js"
       ],
       "css": [

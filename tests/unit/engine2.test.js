@@ -101,9 +101,9 @@ describe('correction-engine — contesto e HSK', () => {
     assert.strictEqual(det.scan('zhōngguó').filter((r) => r.isError).length, 0, 'zhōngguó');
     assert.strictEqual(det.scan('xǐhuan').filter((r) => r.isError).length, 0, 'xǐhuan');
   });
-  it('detector mantiene errore su parola senza accenti e non segmentabile', () => {
+  it('detector accetta contrazioni valide non accentate e mantiene errore su non segmentabili', () => {
     const det = createDetector({ engine });
-    assert.strictEqual(det.scan('kafei').filter((r) => r.isError).length, 1, 'kafei resta errore');
+    assert.strictEqual(det.scan('kafei').filter((r) => r.isError).length, 0, 'kafei contrazione valida');
     assert.strictEqual(det.scan('xzq').filter((r) => r.isError).length, 1);
   });
 });
