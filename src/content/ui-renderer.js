@@ -691,13 +691,31 @@
     if (!messenger || !messenger.runtime || !messenger.runtime.sendMessage) return;
     try {
       messenger.runtime.sendMessage({ type: 'PC_TRANSLATE', text: text, tl: tl }, (res) => {
-        if (messenger.runtime.lastError) return;
         if (translateSeq !== token) return; // selezione superata
-        if (!res || !res.ok) return;        // lascia il placeholder, non bloccare
         const el = popEl && popEl.querySelector('.' + NS + 'translate');
+        if (messenger.runtime.lastError || !res || !res.ok) {
+          if (el) el.textContent = 'Traduzione non disponibile';
+          return;
+        }
         if (el) el.textContent = res.translation;
       });
     } catch (_) { /* ignora */ }
+  }
+
+  // Engine per lookup/conversione: usa quello del campo attivo, altrimenti ne
+  // crea uno dai dati globali (pagine senza campi editabili non avviano attach).
+  function ensureLookupEngine() {
+    if (currentEngine) return currentEngine;
+    if (root.PinynCorrectionEngine && root.__PINYN_HSK) {
+      try {
+        currentEngine = root.PinynCorrectionEngine.createEngine({
+          syllables: new Set(root.__PINYN_SYLLABLES || []),
+          hskWords: root.__PINYN_HSK,
+          hskLevel: 3,
+        });
+      } catch (_) { /* ignora */ }
+    }
+    return currentEngine;
   }
 
   function lookupDictHtml(t) {
@@ -713,7 +731,7 @@
       const d = lookupDef(t);
       if (!d) return null;
       const bare = root.PinynUtils.stripTone(t).replace(/\s+/g, '');
-      const acc = currentEngine ? currentEngine.accentRun([bare])[0].text : t;
+      const acc = ensureLookupEngine() ? ensureLookupEngine().accentRun([bare])[0].text : t;
       return d.hanzi + ' ' + acc + ' L' + levelLabel(levelOfWord(d.hanzi)) + (d.gloss ? ' · ' + d.gloss : '');
     }
     return null;
@@ -726,7 +744,7 @@
    */
   function hanziForPinyinText(text) {
     const U = root.PinynUtils;
-    const engine = currentEngine;
+    const engine = ensureLookupEngine();
     if (!U || !engine) return '';
     const tokens = U.tokenize(text);
     const parts = [];
@@ -741,14 +759,15 @@
       }
       const latins = group.filter((x) => x.isLatin);
       if (!latins.length) { i = j; continue; }
-      const bares = latins.map((x) => U.stripTone(x.text));
+      // minuscole + senza toni numerici ("Ni3 Hao3" -> ni hao)
+      const bares = latins.map((x) => U.stripTone(x.text).replace(/[0-5]/g, '').toLowerCase());
       const segments = engine.accentRun(bares);
       let ti = 0;
       for (const seg of segments) {
         let d = null;
         if (seg.count === 1) d = hanziForTone(seg.text);
         if (!d) {
-          const segBare = U.stripTone(seg.text).replace(/\s+/g, '');
+          const segBare = U.stripTone(seg.text).replace(/[0-5]/g, '').replace(/\s+/g, '').toLowerCase();
           d = lookupDef(segBare);
         }
         parts.push(d && d.hanzi ? d.hanzi : seg.text);
@@ -776,7 +795,8 @@
 
     // Se la selezione è pinyin, convertilo in hanzi (best-effort) così Google
     // traduce il cinese ("ni hao" -> 你好 -> "ciao") e non il pinyin grezzo.
-    const isLatinOnly = /^[a-zA-Züāáǎàēéěèīíǐìōóǒòūúǔùǖǘǚǜ\s]+$/.test(t);
+    // Accetta anche toni numerici (ni3 hao3) e maiuscole.
+    const isLatinOnly = /^[a-zA-Züāáǎàēéěèīíǐìōóǒòūúǔùǖǘǚǜ0-9\s]+$/.test(t);
     let sourceForTranslate = t;
     let hanziForm = '';
     if (isLatinOnly && t.length <= 80) {
@@ -1421,4 +1441,9 @@
   }
 
   root.PinynUi = { attach, isEditable, setEnabled };
+
+  // Il lookup/traduzione su selezione deve funzionare su QUALSIASI pagina,
+  // non solo su quelle con campi editabili: attach() lo inizializzava solo in
+  // quel caso. Lo attiviamo subito (idempotente, guardia lookupInit).
+  initLookup();
 })(typeof globalThis !== 'undefined' ? globalThis : this);
