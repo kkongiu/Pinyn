@@ -14,6 +14,8 @@ Estensione per browser (Chrome/Edge, Manifest V3) che **corregge il pinyin** cin
 - **Spazio dopo suggerimento**: opzione attivabile (gadget e opzioni) che aggiunge uno spazio dopo il pinyin/hanzi accettato dal menu.
 - **Dizionario nel popup**: cerca per hanzi, pinyin o inglese.
 - **Lookup su selezione**: selezioni una parola nella pagina → tooltip con hanzi, pinyin, livello e traduzione.
+- **Traduzione su selezione**: il testo selezionato viene tradotto via Google (endpoint opzionale, disattivabile). Se è **pinyin**, viene prima convertito in hanzi ("ni hao" → 你好 → "ciao") così la traduzione funziona anche senza caratteri.
+- **Siti esclusi / usa solo qui**: dal popup "Non usare in questa pagina" o "Usa solo in questa pagina" (gestibili anche dalle opzioni) controlli su quali siti l'estensione è attiva, per non disturbare quando non studi. L'interruttore "Abilitato" resta il master switch globale.
 - **Statistiche**: correzioni/ignorati/accenti per livello HSK.
 
 ## Architettura

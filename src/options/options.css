@@ -27,3 +27,24 @@ section {
   text-decoration: none;
 }
 .support-link:hover { text-decoration: underline; }
+.blocked-list { list-style: none; margin: 8px 0 0; padding: 0; }
+.blocked-list li {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  padding: 6px 10px;
+  border: 1px solid #d0d7de;
+  border-radius: 6px;
+  margin-bottom: 6px;
+  font-size: 13px;
+}
+.blocked-list .empty { color: #57606a; border-style: dashed; justify-content: flex-start; }
+.blocked-list button {
+  border: none;
+  background: transparent;
+  color: #cf222e;
+  cursor: pointer;
+  font-size: 12px;
+}
+.blocked-list button:hover { text-decoration: underline; }

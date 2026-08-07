@@ -36,6 +36,53 @@ enabled.addEventListener('change', () => {
   });
 });
 
+// ---------- non usare in questa pagina / usa solo in questa pagina ----------
+const siteBlocked = document.getElementById('site-blocked');
+const siteAllowed = document.getElementById('site-allowed');
+let currentHostname = null;
+
+chrome.tabs.query({ active: true, currentWindow: true }, (tabs) => {
+  if (tabs[0] && tabs[0].id != null) {
+    chrome.tabs.sendMessage(tabs[0].id, { type: 'PC_GET_SITE_INFO' }, (res) => {
+      if (res && res.hostname) {
+        currentHostname = res.hostname;
+        siteBlocked.checked = !!res.blocked;
+        siteBlocked.disabled = false;
+        siteAllowed.checked = !!res.allowed;
+        siteAllowed.disabled = false;
+      }
+    });
+  }
+});
+
+siteBlocked.addEventListener('change', () => {
+  if (!currentHostname) return;
+  chrome.storage.sync.get({ blockedHosts: [], allowedHosts: [] }, (data) => {
+    const list = Array.isArray(data.blockedHosts) ? data.blockedHosts : [];
+    const allowed = Array.isArray(data.allowedHosts) ? data.allowedHosts : [];
+    const next = siteBlocked.checked
+      ? (list.includes(currentHostname) ? list : list.concat([currentHostname]))
+      : list.filter((h) => h !== currentHostname);
+    // mutua esclusione: bloccare rimuove dall'allowlist
+    const nextAllowed = siteBlocked.checked ? allowed.filter((h) => h !== currentHostname) : allowed;
+    chrome.storage.sync.set({ blockedHosts: next, allowedHosts: nextAllowed });
+  });
+});
+
+siteAllowed.addEventListener('change', () => {
+  if (!currentHostname) return;
+  chrome.storage.sync.get({ blockedHosts: [], allowedHosts: [] }, (data) => {
+    const list = Array.isArray(data.blockedHosts) ? data.blockedHosts : [];
+    const allowed = Array.isArray(data.allowedHosts) ? data.allowedHosts : [];
+    const nextAllowed = siteAllowed.checked
+      ? (allowed.includes(currentHostname) ? allowed : allowed.concat([currentHostname]))
+      : allowed.filter((h) => h !== currentHostname);
+    // mutua esclusione: "usa solo qui" rimuove dal blocco
+    const nextBlocked = siteAllowed.checked ? list.filter((h) => h !== currentHostname) : list;
+    chrome.storage.sync.set({ blockedHosts: nextBlocked, allowedHosts: nextAllowed });
+  });
+});
+
 // ---------- caratteri cinesi (hanzi) ----------
 chrome.storage.sync.get('hanzi', (data) => {
   hanziToggle.checked = !!data.hanzi;

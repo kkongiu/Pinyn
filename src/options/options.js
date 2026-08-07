@@ -57,3 +57,48 @@ translateMax.addEventListener('change', () => {
   const n = Number(translateMax.value);
   if (n >= 1 && n <= 2000) chrome.storage.sync.set({ translateMaxLen: n });
 });
+
+// ---------- siti esclusi / consentiti ----------
+const blockedList = document.getElementById('blocked-list');
+const allowedList = document.getElementById('allowed-list');
+
+function escapeHtml(s) {
+  return String(s)
+    .replace(/&/g, '&amp;')
+    .replace(/</g, '&lt;')
+    .replace(/>/g, '&gt;')
+    .replace(/"/g, '&quot;');
+}
+
+function renderSites(el, key, emptyText) {
+  const defaults = {};
+  defaults[key] = [];
+  chrome.storage.sync.get(defaults, (data) => {
+    const list = Array.isArray(data[key]) ? data[key] : [];
+    el.innerHTML = list.length
+      ? list.map((h) => '<li><span>' + escapeHtml(h) + '</span><button data-h="' + escapeHtml(h) + '">Rimuovi</button></li>').join('')
+      : '<li class="empty">' + emptyText + '</li>';
+    el.querySelectorAll('[data-h]').forEach((btn) => {
+      btn.addEventListener('click', () => {
+        const defaults2 = {};
+        defaults2[key] = [];
+        chrome.storage.sync.get(defaults2, (data) => {
+          const arr = Array.isArray(data[key]) ? data[key] : [];
+          const set = {};
+          set[key] = arr.filter((h) => h !== btn.dataset.h);
+          chrome.storage.sync.set(set);
+        });
+      });
+    });
+  });
+}
+
+function renderSitesAll() {
+  renderSites(blockedList, 'blockedHosts', 'Nessun sito escluso.');
+  renderSites(allowedList, 'allowedHosts', 'Nessun sito. Estensione attiva ovunque.');
+}
+
+renderSitesAll();
+chrome.storage.onChanged.addListener((changes, area) => {
+  if (area === 'sync' && (changes.blockedHosts || changes.allowedHosts)) renderSitesAll();
+});

@@ -719,6 +719,46 @@
     return null;
   }
 
+  /**
+   * Converte una stringa di pinyin (anche con toni o compatta) in hanzi
+   * best-effort, riusando la segmentazione del motore. Ritorna '' se non
+   * produce alcun carattere cinese (es. testo in altre lingue).
+   */
+  function hanziForPinyinText(text) {
+    const U = root.PinynUtils;
+    const engine = currentEngine;
+    if (!U || !engine) return '';
+    const tokens = U.tokenize(text);
+    const parts = [];
+    for (let i = 0; i < tokens.length; ) {
+      const t = tokens[i];
+      if (!t.isLatin) { parts.push(t.text); i++; continue; }
+      const group = [];
+      let j = i;
+      while (j < tokens.length && (tokens[j].isLatin || /^\s+$/.test(tokens[j].text))) {
+        group.push(tokens[j]);
+        j++;
+      }
+      const latins = group.filter((x) => x.isLatin);
+      if (!latins.length) { i = j; continue; }
+      const bares = latins.map((x) => U.stripTone(x.text));
+      const segments = engine.accentRun(bares);
+      let ti = 0;
+      for (const seg of segments) {
+        let d = null;
+        if (seg.count === 1) d = hanziForTone(seg.text);
+        if (!d) {
+          const segBare = U.stripTone(seg.text).replace(/\s+/g, '');
+          d = lookupDef(segBare);
+        }
+        parts.push(d && d.hanzi ? d.hanzi : seg.text);
+        ti += seg.count;
+      }
+      i = j;
+    }
+    return parts.join('');
+  }
+
   function showLookup(text) {
     if (!pluginEnabled) { hidePop(); return; }
     const t = (text || '').trim();
@@ -734,11 +774,23 @@
     const canTranslate = translateEnabled && t.length <= translateMaxLen;
     if (!dictHtml && !canTranslate) { hidePop(); return; }
 
+    // Se la selezione è pinyin, convertilo in hanzi (best-effort) così Google
+    // traduce il cinese ("ni hao" -> 你好 -> "ciao") e non il pinyin grezzo.
+    const isLatinOnly = /^[a-zA-Züāáǎàēéěèīíǐìōóǒòūúǔùǖǘǚǜ\s]+$/.test(t);
+    let sourceForTranslate = t;
+    let hanziForm = '';
+    if (isLatinOnly && t.length <= 80) {
+      hanziForm = hanziForPinyinText(t);
+      if (/[\u3400-\u9fff]/.test(hanziForm)) sourceForTranslate = hanziForm;
+      else hanziForm = '';
+    }
+
     hidePop(); // nasconde eventuali stati campo: un solo popup visibile
 
     const token = ++translateSeq;
     const parts = [];
     if (dictHtml) parts.push('<span class="' + NS + 'lookup-text">' + escapeHtml(dictHtml) + '</span>');
+    else if (hanziForm) parts.push('<span class="' + NS + 'lookup-text">' + escapeHtml(hanziForm) + '</span>');
     if (canTranslate) parts.push('<div class="' + NS + 'translate">Traduzione…</div>');
 
     popState = 'lookup';
@@ -748,7 +800,7 @@
       el.style.top = (rect.bottom + 6) + 'px';
     });
 
-    if (canTranslate) requestTranslate(t, translateLang, token);
+    if (canTranslate) requestTranslate(sourceForTranslate, translateLang, token);
   }
 
   let lookupInit = false;
@@ -1027,6 +1079,7 @@
       clearTimeout(timer);
       if (!active_) return;
       timer = setTimeout(() => {
+        if (!pluginEnabled) return; // rispetta il toggle globale
         if (document.activeElement !== action.field) return;
         const n = action.apply();
         if (n > 0) action.render();

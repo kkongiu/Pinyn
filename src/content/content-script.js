@@ -84,7 +84,20 @@
   chrome.storage.onChanged.addListener((changes, area) => {
     if (area !== 'sync') return;
     if (changes.enabled) {
-      applyEnabled(changes.enabled.newValue !== false);
+      globalEnabled = changes.enabled.newValue !== false;
+      applyEnabled();
+    }
+    if (changes.blockedHosts) {
+      blockedHosts = Array.isArray(changes.blockedHosts.newValue)
+        ? changes.blockedHosts.newValue.map((h) => String(h).toLowerCase())
+        : [];
+      applyEnabled();
+    }
+    if (changes.allowedHosts) {
+      allowedHosts = Array.isArray(changes.allowedHosts.newValue)
+        ? changes.allowedHosts.newValue.map((h) => String(h).toLowerCase())
+        : [];
+      applyEnabled();
     }
     if (changes.hskLevel) {
       engine.setLevel(Number(changes.hskLevel.newValue) || 3);
@@ -319,19 +332,41 @@
     mo.observe(document.body, { childList: true, subtree: true });
   });
 
-  function applyEnabled(enabled) {
+  function applyEnabled() {
+    const enabled = effectiveEnabled();
     document.body.classList.toggle('pc-disabled', !enabled);
     if (PinynUi.setEnabled) PinynUi.setEnabled(enabled);
   }
-  chrome.storage.sync.get({ enabled: true }, (data) => {
-    applyEnabled(data.enabled !== false);
+  let globalEnabled = true;
+  let blockedHosts = [];
+  let allowedHosts = [];
+  const hostname = location.hostname.toLowerCase();
+  function isSiteBlocked() {
+    return blockedHosts.includes(hostname);
+  }
+  function isSiteAllowed() {
+    // lista "usa solo qui" attiva: solo i siti in allowedHosts
+    return allowedHosts.length === 0 || allowedHosts.includes(hostname);
+  }
+  function effectiveEnabled() {
+    // l'interruttore globale (Abilitato) resta il master switch
+    return globalEnabled && isSiteAllowed() && !isSiteBlocked();
+  }
+  chrome.storage.sync.get({ enabled: true, blockedHosts: [], allowedHosts: [] }, (data) => {
+    globalEnabled = data.enabled !== false;
+    blockedHosts = Array.isArray(data.blockedHosts) ? data.blockedHosts.map((h) => String(h).toLowerCase()) : [];
+    allowedHosts = Array.isArray(data.allowedHosts) ? data.allowedHosts.map((h) => String(h).toLowerCase()) : [];
+    applyEnabled();
   });
 
   chrome.runtime.onMessage.addListener((msg, sender, sendResponse) => {
     if (!sender || sender.id !== chrome.runtime.id) return;
     if (msg && msg.type === 'PC_SET_ENABLED') {
-      applyEnabled(!!msg.enabled);
+      globalEnabled = !!msg.enabled;
+      applyEnabled();
       sendResponse({ ok: true });
+    } else if (msg && msg.type === 'PC_GET_SITE_INFO') {
+      sendResponse({ hostname, blocked: isSiteBlocked(), allowed: allowedHosts.includes(hostname) });
     } else if (msg && msg.type === 'PC_GET_SELECTION') {
       const sel = window.getSelection();
       const text = (sel && sel.toString() || '').trim();
