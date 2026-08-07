@@ -89,13 +89,13 @@
     }
     if (changes.blockedHosts) {
       blockedHosts = Array.isArray(changes.blockedHosts.newValue)
-        ? changes.blockedHosts.newValue.map((h) => String(h).toLowerCase())
+        ? changes.blockedHosts.newValue.map(normalizeHost)
         : [];
       applyEnabled();
     }
     if (changes.allowedHosts) {
       allowedHosts = Array.isArray(changes.allowedHosts.newValue)
-        ? changes.allowedHosts.newValue.map((h) => String(h).toLowerCase())
+        ? changes.allowedHosts.newValue.map(normalizeHost)
         : [];
       applyEnabled();
     }
@@ -340,13 +340,27 @@
   let globalEnabled = true;
   let blockedHosts = [];
   let allowedHosts = [];
-  const hostname = location.hostname.toLowerCase();
+  // Normalizza un host: minuscolo e senza prefisso www. ("www.example.com" -> "example.com").
+  function normalizeHost(h) {
+    return String(h || '').toLowerCase().replace(/^www\./, '');
+  }
+  // Un host corrisponde se è uguale a un'entry della lista o ne è un sottodominio
+  // (es. entry "example.com" copre www.example.com e blog.example.com). Così,
+  // cambiando pagina (anche su sottodomini), il sito resta riconosciuto.
+  function hostMatches(list, host) {
+    const h = normalizeHost(host);
+    return list.some((entry) => {
+      const e = normalizeHost(entry);
+      return h === e || h.endsWith('.' + e);
+    });
+  }
+  const hostname = normalizeHost(location.hostname);
   function isSiteBlocked() {
-    return blockedHosts.includes(hostname);
+    return hostMatches(blockedHosts, hostname);
   }
   function isSiteAllowed() {
-    // lista "usa solo qui" attiva: solo i siti in allowedHosts
-    return allowedHosts.length === 0 || allowedHosts.includes(hostname);
+    // lista "usa solo qui" attiva: solo i siti in allowedHosts (e sottodomini)
+    return allowedHosts.length === 0 || hostMatches(allowedHosts, hostname);
   }
   function effectiveEnabled() {
     // l'interruttore globale (Abilitato) resta il master switch
@@ -354,8 +368,8 @@
   }
   chrome.storage.sync.get({ enabled: true, blockedHosts: [], allowedHosts: [] }, (data) => {
     globalEnabled = data.enabled !== false;
-    blockedHosts = Array.isArray(data.blockedHosts) ? data.blockedHosts.map((h) => String(h).toLowerCase()) : [];
-    allowedHosts = Array.isArray(data.allowedHosts) ? data.allowedHosts.map((h) => String(h).toLowerCase()) : [];
+    blockedHosts = Array.isArray(data.blockedHosts) ? data.blockedHosts.map(normalizeHost) : [];
+    allowedHosts = Array.isArray(data.allowedHosts) ? data.allowedHosts.map(normalizeHost) : [];
     applyEnabled();
   });
 
@@ -366,7 +380,7 @@
       applyEnabled();
       sendResponse({ ok: true });
     } else if (msg && msg.type === 'PC_GET_SITE_INFO') {
-      sendResponse({ hostname, blocked: isSiteBlocked(), allowed: allowedHosts.includes(hostname) });
+      sendResponse({ hostname, blocked: isSiteBlocked(), allowed: hostMatches(allowedHosts, hostname) });
     } else if (msg && msg.type === 'PC_GET_SELECTION') {
       const sel = window.getSelection();
       const text = (sel && sel.toString() || '').trim();
