@@ -1,5 +1,10 @@
 # Pinyn — Correzione pinyin contestuale
 
+![status: alpha](https://img.shields.io/badge/status-alpha-red)
+
+> ⚠️ **Status: alpha** — early-stage software, may be incomplete or unstable.
+> **Use at your own risk.**
+
 Estensione per browser (Chrome/Edge, Manifest V3) che **corregge il pinyin** cinese mentre scrivi e lo **converte in caratteri cinesi**. Pensata per chi studia il cinese (HSK 1–9).
 
 ## Funzionalità
