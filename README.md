@@ -110,4 +110,4 @@ Pinyn è gratuito e open-source. Se ti è utile e vuoi sostenere lo sviluppo, pu
 
 ## Licenza
 
-Codice: MIT (vedi `LICENSE`). Dati di terze parti soggetti alle rispettive licenze (CC-CEDICT CC-BY-SA, Tatoeba CC-BY, ivankra/hsk30 MIT). Il repository diventa pubblico al lancio sul Web Store; il codice client è comunque già distribuibile, mentre i servizi a pagamento (cloud, dashboard) restano server-side e privati.
+Codice: MIT (vedi [`LICENSE`](LICENSE)). Dati di terze parti soggetti alle rispettive licenze (CC-CEDICT CC-BY-SA 4.0, Tatoeba CC-BY, ivankra/hsk30 MIT), come dettagliato in fondo al file `LICENSE`. I servizi a pagamento (cloud, dashboard) restano server-side e non fanno parte di questo repository.

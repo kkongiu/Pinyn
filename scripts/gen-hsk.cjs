@@ -1,5 +1,5 @@
 const fs = require('fs');
-const PROJECT = '/home/kongiu/projects/Pinyn';
+const PROJECT = require('path').join(__dirname, '..');
 
 // riusa pinyin-utils per convertire numeri -> diacritici
 const P = require(PROJECT + '/src/utils/pinyin-utils.js');
